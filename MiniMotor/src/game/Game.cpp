@@ -17,7 +17,7 @@ Game:: ~Game(){
     }
 
     this->windowWidth= 800;
-     this->windowHeight = 600;
+    this->windowHeight = 600;
 
       //Creacion de la ventana
     this->window = SDL_CreateWindow(
@@ -38,6 +38,19 @@ Game:: ~Game(){
     );
 
     this->isRunning = true;
+
+    // Inicilaizar datos de la imagen
+    this->imageWidth = 32;
+    this->imageHeight = 32;
+    this->pos.x = (this->windowWidth /2) - (this->imageWidth / 2);
+    this->pos.y = (this->windowHeight /2) - (this->imageHeight/ 2);
+    SDL_Surface* imgSurface = IMG_Load("./assets/images/skull_00.png");
+    this->imgTexture = SDL_CreateTextureFromSurface(this->renderer, imgSurface);
+    SDL_FreeSurface(imgSurface);
+    this->srcRect.x = 0;
+    this->srcRect.y = 0;
+    this->srcRect.w = this->imageWidth;
+    this->srcRect.h = this->imageHeight;
 
 
  }
@@ -63,12 +76,6 @@ void Game::processInput(){
             }
 
         }
-
-        //Limpiar ventana
-        SDL_RenderClear(renderer);
-        //Actualizar ventana
-        SDL_RenderPresent(renderer);
-
 }
 
 void::Game::render(){
@@ -76,6 +83,25 @@ void::Game::render(){
     SDL_SetRenderDrawColor(this->renderer, 30, 30, 30, 255);
     //Limpiar ventana
     SDL_RenderClear(this->renderer);
+
+    SDL_Rect dstRect = {
+        static_cast<int>(this->pos.x),
+        static_cast<int>(this->pos.y),
+        static_cast<int>(this->imageWidth),
+        static_cast<int>(this->imageHeight)
+    };
+
+    //Dibujar imagen
+    SDL_RenderCopyEx(
+        this->renderer,
+        this->imgTexture,
+        &this->srcRect,
+        &dstRect,
+        this->angle,
+        NULL,
+        SDL_FLIP_NONE
+    );
+
     //Actualizar ventana
     SDL_RenderPresent(this->renderer);
 
