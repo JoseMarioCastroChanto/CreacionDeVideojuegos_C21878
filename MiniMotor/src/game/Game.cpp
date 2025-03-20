@@ -54,6 +54,8 @@ Game:: ~Game(){
     this->imageHeight = 32;
     this->pos.x = (this->windowWidth /2) - (this->imageWidth / 2);
     this->pos.y = (this->windowHeight /2) - (this->imageHeight/ 2);
+    this->imgVel.x = 50; // 50 pixels por segundo
+     this->imgVel.y = -50; // 50 pixels por segundo
     SDL_Surface* imgSurface = IMG_Load("./assets/images/skull_00.png");
     this->imgTexture = SDL_CreateTextureFromSurface(this->renderer, imgSurface);
     SDL_FreeSurface(imgSurface);
@@ -101,6 +103,25 @@ void Game::processInput(){
             }
 
         }
+}
+
+void Game::update(){
+    //Calcular la espera; SDL_GetTicks retorna la cantidad de milisegundos que han pasado
+    // desde que se inicio SDL
+    int timeToWait = MILLISECS_PER_FRAME - (SDL_GetTicks()- this->mPrvsFrame);
+
+    if(0 < timeToWait && timeToWait <= MILLISECS_PER_FRAME){
+        SDL_Delay(timeToWait);
+    }
+
+    //Calcular delta time
+    //Dividimos entre 1000 porque queremos el delta time en segundos 
+    double deltaTime = (SDL_GetTicks() - this->mPrvsFrame) / 1000.0;
+
+    this->mPrvsFrame = SDL_GetTicks();
+
+    this->pos.x += this->imgVel.x * deltaTime;
+    this->pos.y += this->imgVel.y * deltaTime;
 }
 
 void::Game::render(){
@@ -153,7 +174,7 @@ void::Game::render(){
 void Game::run(){
     while(this->isRunning){
         processInput();
-        //update();
+        update();
         render();
         }
  }
