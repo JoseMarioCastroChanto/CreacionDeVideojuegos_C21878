@@ -12,8 +12,14 @@ Game:: ~Game(){
  void Game::init(){
     // Inicializar SDL2
      if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
-        std::cerr << "Error al inicializar SDL" << std::endl;
+        std::cout << "Error al inicializar SDL" << std::endl;
         return;
+    }
+
+    if(TTF_Init() < 0){
+         std::cout << "Error al inicializar SDL TTF" << std::endl;
+        return;
+
     }
 
     this->windowWidth= 800;
@@ -37,6 +43,10 @@ Game:: ~Game(){
       0 // Flags  
     );
 
+    //Cargar texto
+    this->fontSize = 20;
+    this->font = TTF_OpenFont("./assets/fonts/press_start_2p.ttf", this->fontSize);
+
     this->isRunning = true;
 
     // Inicilaizar datos de la imagen
@@ -51,6 +61,21 @@ Game:: ~Game(){
     this->srcRect.y = 0;
     this->srcRect.w = this->imageWidth;
     this->srcRect.h = this->imageHeight;
+
+     // Inicilaizar datos del texto
+     this->message = "miniMotor";
+     this->fontColor.r = 255;
+     SDL_Surface* txtSurface = TTF_RenderText_Solid(
+        this->font, //fuente
+        this->message.c_str(), //texto
+        this->fontColor //color
+        );
+    this->txtTexture = SDL_CreateTextureFromSurface(this->renderer, txtSurface);
+    this->txtWidth= txtSurface->w;
+    this->txtHeight= txtSurface->h;
+    this->txtPos.x = (this->windowWidth / 2) - (this->txtWidth / 2);
+    this->txtPos.y = 20;
+    SDL_FreeSurface(txtSurface);
 
 
  }
@@ -84,11 +109,18 @@ void::Game::render(){
     //Limpiar ventana
     SDL_RenderClear(this->renderer);
 
-    SDL_Rect dstRect = {
+    SDL_Rect imgDstRect = {
         static_cast<int>(this->pos.x),
         static_cast<int>(this->pos.y),
         static_cast<int>(this->imageWidth),
         static_cast<int>(this->imageHeight)
+    };
+
+    SDL_Rect txtDstRect = {
+        static_cast<int>(this->txtPos.x),
+        static_cast<int>(this->txtPos.y),
+        static_cast<int>(this->txtWidth),
+        static_cast<int>(this->txtHeight)
     };
 
     //Dibujar imagen
@@ -96,8 +128,19 @@ void::Game::render(){
         this->renderer,
         this->imgTexture,
         &this->srcRect,
-        &dstRect,
+        &imgDstRect,
         this->angle,
+        NULL,
+        SDL_FLIP_NONE
+    );
+
+    //Dibujar texto
+    SDL_RenderCopyEx(
+        this->renderer,
+        this->txtTexture,
+        NULL, // si es null dibuja toda la textura
+        &txtDstRect,
+        this->txtAngle,
         NULL,
         SDL_FLIP_NONE
     );
@@ -117,8 +160,13 @@ void Game::run(){
 
 void Game::destroy(){
     // Liberar recursos
+    SDL_DestroyTexture(this->imgTexture);
+    SDL_DestroyTexture(this->txtTexture);
+
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
+
+    TTF_Quit();
     SDL_Quit();
  }
 
