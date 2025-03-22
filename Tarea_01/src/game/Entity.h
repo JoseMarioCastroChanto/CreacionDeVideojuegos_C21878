@@ -39,22 +39,22 @@ public:
     void setDirectory(const std::string dir) { directory = dir; }
     std::string getDirectory() const { return directory; }
 
-    void setImgPosX(int pos) { imgPos.x = pos; }
-    void setImgPosY(int pos) { imgPos.y = pos; }
+    void setImgPosX(double pos) { imgPos.x = pos; }
+    void setImgPosY(double pos) { imgPos.y = pos; }
     glm::vec2 getImgPos() const { return imgPos; }
 
-    void setTxtPosX(int pos) { txtPos.x = pos; }
-    void setTxtPosY(int pos) { txtPos.y = pos; }
+    void setTxtPosX(double pos) { txtPos.x = pos; }
+    void setTxtPosY(double pos) { txtPos.y = pos; }
     glm::vec2 getTxtPos() const { return txtPos; }
 
-    void setImgVelX(int vel) { imgVel.x = vel; }
-    void setImgVelY(int vel) { imgVel.y = vel; }
+    void setImgVelX(double vel) { imgVel.x = vel; }
+    void setImgVelY(double vel) { imgVel.y = vel; }
     glm::vec2 getImgVel() const { return imgVel; }
 
     void setImgWidth(int width) {imgWidth = width;}
     int getImgWidth() const { return imgWidth; }
 
-    void setImgHeight(int height) {txtHeight = height;}
+    void setImgHeight(int height) {imgHeight = height;}
     int getImgHeight() const { return imgHeight; }
 
     void setTxtWidth(int width) {txtWidth = width;}

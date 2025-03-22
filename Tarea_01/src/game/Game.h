@@ -22,7 +22,7 @@ struct Window{
 
 struct Font{
     std::string directory;
-    SDL_Color fontColor = {0,0,0};
+    SDL_Color fontColor =  {0,0,0};
     int size = 0;
 };
 
@@ -34,27 +34,29 @@ class Game{
     TTF_Font* font = nullptr;
     Font fontData;
 
-    Entity<Calavera> calavera;
-    Entity<Anillo> anillo;
-    Entity<Carta> carta;
+    Entity<Calavera>* calavera = nullptr;
+    Entity<Anillo>* anillo = nullptr;
+    Entity<Carta>* carta = nullptr;
 
     bool isRunning = false;
+    bool isPaused = false;
+    bool wasPaused = false;
     int mPrvsFrame = 0;
 
     void getConfig();
     template<typename T>
-    void loadEntity(Entity<T>& , std::ifstream&,std::string);
+    void loadEntity(Entity<T>* , std::ifstream&,std::string);
     template<typename T>
-    void initEntity(Entity<T>&);
+    void initEntity(Entity<T>*);
     void processInput();
     void update();
     template<typename T>
-    void updateEntity(Entity<T>&,double);
+    void updateEntity(Entity<T>*,double);
     void render();
     template<typename T>
-    void renderEntity(Entity<T>&);
+    void renderEntity(Entity<T>*);
     template<typename T>
-    void destroyEntity(Entity<T>&);
+    void destroyEntity(Entity<T>*);
 
 public:
     Game();

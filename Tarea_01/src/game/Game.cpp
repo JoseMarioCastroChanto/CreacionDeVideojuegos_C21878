@@ -3,11 +3,13 @@
 #include <fstream>
 
 Game:: Game(){
- std::cout << "Se ejecuta constructor Game"<< std::endl; 
+    this->calavera = new Entity<Calavera>();
+    this->anillo = new Entity<Anillo>();
+    this->carta = new Entity<Carta>();
  }
 
 Game:: ~Game(){
- std::cout << "Se ejecuta destructor Game"<< std::endl; 
+
  }
 
  void Game::init(){
@@ -27,7 +29,7 @@ Game:: ~Game(){
 
       //Creacion de la ventana
     this->window = SDL_CreateWindow(
-        "MiniMotor", //Titulo de la ventana
+        "Tarea 01", //Titulo de la ventana
         SDL_WINDOWPOS_CENTERED, //Pos x en la pantalla
         SDL_WINDOWPOS_CENTERED, //Pos y en la pantalla
         this->windowData.windowWidth, //Ancho
@@ -54,22 +56,22 @@ Game:: ~Game(){
  }
 
 template<typename T>
-void Game::initEntity(Entity<T>& entity){
+void Game::initEntity(Entity<T>* entity){
      
      // Inicilaizar datos de la imagen
-    SDL_Surface* imgSurface = IMG_Load(entity.getDirectory().c_str());
-    entity.setImgTexture (SDL_CreateTextureFromSurface(this->renderer, imgSurface));
+    SDL_Surface* imgSurface = IMG_Load(entity->getDirectory().c_str());
+    entity->setImgTexture (SDL_CreateTextureFromSurface(this->renderer, imgSurface));
     SDL_FreeSurface(imgSurface);
-    entity.setSrcRect(entity.getImgPos().x,entity.getImgPos().y,
-    entity.getImgWidth(),entity.getImgHeight());
+    entity->setSrcRect(0,0,
+    entity->getImgWidth(),entity->getImgHeight());
 
      // Inicilaizar datos del texto
      SDL_Surface* txtSurface = TTF_RenderText_Solid(
         this->font, //fuente
-        entity.getMessage().c_str(), //texto
+        entity->getMessage().c_str(), //texto
         this->fontData.fontColor//color
         );
-    entity.setTxtTexture (SDL_CreateTextureFromSurface(this->renderer, txtSurface));
+    entity->setTxtTexture (SDL_CreateTextureFromSurface(this->renderer, txtSurface));
     SDL_FreeSurface(txtSurface);
 
 }
@@ -113,7 +115,7 @@ void Game::getConfig(){
 
 }
 template<typename T>
-void Game::loadEntity(Entity<T>& entity, std::ifstream& inputFile, std::string name) {
+void Game::loadEntity(Entity<T>* entity, std::ifstream& inputFile, std::string name) {
     std::string directory;
     int width, height, posX, posY, velX, velY;
     double angle;
@@ -121,22 +123,22 @@ void Game::loadEntity(Entity<T>& entity, std::ifstream& inputFile, std::string n
     inputFile >> directory >> width >> height >> posX >> posY >> velX >> velY >> angle;
 
     //Cargar los valres de la imagen
-    entity.setDirectory(directory);
-    entity.setImgWidth(width);
-    entity.setImgHeight(height);
-    entity.setImgPosX(posX);
-    entity.setImgPosY(posY);
-    entity.setImgVelX(velX);
-    entity.setImgVelY(velY);
-    entity.setImgAngle(angle);
+    entity->setDirectory(directory);
+    entity->setImgWidth(width);
+    entity->setImgHeight(height);
+    entity->setImgPosX(posX);
+    entity->setImgPosY(posY);
+    entity->setImgVelX(velX);
+    entity->setImgVelY(velY);
+    entity->setImgAngle(angle);
 
     // Cargar los valores del texto
-    entity.setMessage(name); 
-    entity.setTxtWidth(width);
-    entity.setTxtHeight(height);
-    entity.setTxtPosX(posX);
-    entity.setTxtPosY(posY);
-    entity.setTxtAngle(angle);
+    entity->setMessage(name); 
+    entity->setTxtWidth(width);
+    entity->setTxtHeight(height);
+    entity->setTxtPosX(posX);
+    entity->setTxtPosY(posY);
+    entity->setTxtAngle(angle);
 }
 
 void Game::processInput(){
@@ -153,8 +155,14 @@ void Game::processInput(){
             case SDL_KEYDOWN:
                 if(sdlEvent.key.keysym.sym == SDLK_ESCAPE){
                     isRunning = false;
+                } else if (sdlEvent.key.keysym.sym == SDLK_p) {  
+                    this->isPaused = !this->isPaused;
+                     if (this->isPaused) {
+                        this->wasPaused = true;
+                    }  
                 }
                 break;
+            
             default:
                 break;
             }
@@ -162,57 +170,62 @@ void Game::processInput(){
         }
 }
 
-void Game::update(){
-    //Calcular la espera; SDL_GetTicks retorna la cantidad de milisegundos que han pasado
-    // desde que se inicio SDL
-    int timeToWait = MILLISECS_PER_FRAME - (SDL_GetTicks()- this->mPrvsFrame);
+void Game::update() {
+    if (this->isPaused) {
+        // No actualizar nada mientras está pausado
+        return;
+    }
 
-    if(0 < timeToWait && timeToWait <= MILLISECS_PER_FRAME){
+    // Evitar un salto en deltaTime
+    if (this->wasPaused) {
+        this->mPrvsFrame = SDL_GetTicks();  
+        this->wasPaused = false;  
+    }
+
+    // Calcular la espera
+    int timeToWait = MILLISECS_PER_FRAME - (SDL_GetTicks() - this->mPrvsFrame);
+    if (0 < timeToWait && timeToWait <= MILLISECS_PER_FRAME) {
         SDL_Delay(timeToWait);
     }
 
-    //Calcular delta time
-    //Dividimos entre 1000 porque queremos el delta time en segundos 
+    // Calcular deltaTime en segundos
     double deltaTime = (SDL_GetTicks() - this->mPrvsFrame) / 1000.0;
-
     this->mPrvsFrame = SDL_GetTicks();
 
     this->updateEntity(this->calavera, deltaTime);
     this->updateEntity(this->anillo, deltaTime);
     this->updateEntity(this->carta, deltaTime);
-
-
-   
 }
 
 template<typename T>
-void Game::updateEntity(Entity<T>& entity, double deltaTime){
-
+void Game::updateEntity(Entity<T>* entity, double deltaTime) {
     // Nuevas posiciones
-    glm::vec2 pos = entity.getImgPos();
-    pos.x += entity.getImgVel().x * deltaTime;
-    int newPosX = pos.x;
-    pos.y += entity.getImgVel().x * deltaTime;
-    int newPosY = pos.y;
+    double newPosX = entity->getImgPos().x;
+    double newPosY = entity->getImgPos().y;
+    newPosX += entity->getImgVel().x * deltaTime;
+    newPosY += entity->getImgVel().y * deltaTime;
 
-    // Dimensiones de las imagenes
-    int width = entity.getImgWidth();
-    int height = entity.getImgHeight();
+    // Dimensiones de la imagen
+    int width = entity->getImgWidth();
+    int height = entity->getImgHeight();
 
-    // Verificar choque y rebotar 
+      // Verificar choque y rebotar
     if (newPosX <= 0 || newPosX + width >= this->windowData.windowWidth) {
-        entity.setImgVelX(-entity.getImgVel().x);
-    } else {
-        entity.setImgPosX(newPosX);
+        entity->setImgVelX(-entity->getImgVel().x);
+    } 
+    
+    if (newPosY <= 0 || newPosY + height >= this->windowData.windowHeight) {
+        entity->setImgVelY(-entity->getImgVel().y);
     }
 
-    if (newPosY <= 0 || newPosY + height >= this->windowData.windowHeight) {
-        entity.setImgVelY(-entity.getImgVel().y);
-    } else {
-        entity.setImgPosY(newPosY);
-    }
+  
+    entity->setImgPosX(newPosX);
+    entity->setTxtPosX(newPosX);
+    entity->setImgPosY(newPosY);
+    entity->setTxtPosY(newPosY); 
     
 }
+
 
 void::Game::render(){
     //Establece el color con el que se va a dibujar la ventana
@@ -231,29 +244,30 @@ void::Game::render(){
 }
 
 template<typename T>
-void Game::renderEntity(Entity<T>& entity){
+void Game::renderEntity(Entity<T>* entity){
+
 
     SDL_Rect imgDstRect = {
-        static_cast<int>(entity.getImgPos().x),
-        static_cast<int>(entity.getImgPos().y),
-        static_cast<int>(entity.getImgWidth()),
-        static_cast<int>(entity.getImgHeight())
+        static_cast<int>(entity->getImgPos().x),
+        static_cast<int>(entity->getImgPos().y),
+        static_cast<int>(entity->getImgWidth()),
+        static_cast<int>(entity->getImgHeight())
     };
 
     SDL_Rect txtDstRect = {
-        static_cast<int>(entity.getTxtPos().x),
-        static_cast<int>(entity.getTxtPos().y),
-        static_cast<int>(entity.getImgWidth()),
-        static_cast<int>(entity.getImgHeight())
+        static_cast<int>(entity->getTxtPos().x),
+        static_cast<int>(entity->getTxtPos().y),
+        static_cast<int>(entity->getTxtWidth()),
+        static_cast<int>(entity->getTxtHeight())
     };
 
     //Dibujar imagen
     SDL_RenderCopyEx(
         this->renderer,
-        entity.getImgTexture(),
-        &entity.getSrcRect(),
+        entity->getImgTexture(),
+        &entity->getSrcRect(),
         &imgDstRect,
-        entity.getImgAngle(),
+        entity->getImgAngle(),
         NULL,
         SDL_FLIP_NONE
     );
@@ -261,10 +275,10 @@ void Game::renderEntity(Entity<T>& entity){
     //Dibujar texto
     SDL_RenderCopyEx(
         this->renderer,
-        entity.getTxtTexture(),
+        entity->getTxtTexture(),
         NULL, // si es null dibuja toda la textura
         &txtDstRect,
-        entity.getTxtAngle(),
+        entity->getTxtAngle(),
         NULL,
         SDL_FLIP_NONE
     );
@@ -277,7 +291,7 @@ void Game::run(){
         processInput();
         update();
         render();
-        }
+            }
  }
 
 void Game::destroy(){
@@ -285,6 +299,9 @@ void Game::destroy(){
     this->destroyEntity(this->calavera);
     this->destroyEntity(this->anillo);
     this->destroyEntity(this->carta);
+    delete calavera;
+    delete anillo;
+    delete carta;
    
 
     SDL_DestroyRenderer(this->renderer);
@@ -295,7 +312,7 @@ void Game::destroy(){
  }
 
 template<typename T>
-void Game::destroyEntity(Entity<T>& entity){
-    SDL_DestroyTexture(entity.getImgTexture());
-    SDL_DestroyTexture(entity.getTxtTexture());
+void Game::destroyEntity(Entity<T>* entity){
+    SDL_DestroyTexture(entity->getImgTexture());
+    SDL_DestroyTexture(entity->getTxtTexture());
 }
