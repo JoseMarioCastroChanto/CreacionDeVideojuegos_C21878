@@ -64,7 +64,6 @@ void Game::initEntity(Entity<T>* entity){
     SDL_FreeSurface(imgSurface);
     entity->setSrcRect(0,0,
     entity->getImgWidth(),entity->getImgHeight());
-
      // Inicilaizar datos del texto
      SDL_Surface* txtSurface = TTF_RenderText_Solid(
         this->font, //fuente
@@ -91,10 +90,14 @@ void Game::getConfig(){
             inputFile >> this->windowData.b;
         }
         else if(label.compare("font") == 0){
+            int color = 0;
             inputFile >> this->fontData.directory;
-            inputFile >> this->fontData.fontColor.r;
-            inputFile >> this->fontData.fontColor.g;
-            inputFile >> this->fontData.fontColor.b;
+            inputFile >> color;
+            this->fontData.fontColor.r = color;
+            inputFile >> color;
+            this->fontData.fontColor.g = color;
+            inputFile >> color;
+            this->fontData.fontColor.b = color;
             inputFile >> this->fontData.size;
 
         }
@@ -132,13 +135,23 @@ void Game::loadEntity(Entity<T>* entity, std::ifstream& inputFile, std::string n
     entity->setImgVelY(velY);
     entity->setImgAngle(angle);
 
-    // Cargar los valores del texto
+    // Calcular el centro de la imagen
+    int centerX = posX + width / 2;
+    int centerY = posY + height / 2;
+
+    // Calcular la posición del texto para que su centro coincida con el centro de la imagen
+    // Se supone el ancho y la altura igual al de la imagen
+    int txtPosX = centerX - (width / 2); 
+    int txtPosY = centerY - (height / 2); 
+
+    // Establecer los valores en la entidad
     entity->setMessage(name); 
-    entity->setTxtWidth(width);
-    entity->setTxtHeight(height);
-    entity->setTxtPosX(posX);
-    entity->setTxtPosY(posY);
+    entity->setTxtWidth(width+20); // se ajusta para que sea legible
+    entity->setTxtHeight(height-10); // se ajusta para que sea legible
+    entity->setTxtPosX(txtPosX);
+    entity->setTxtPosY(txtPosY);
     entity->setTxtAngle(angle);
+
 }
 
 void Game::processInput(){
@@ -220,14 +233,25 @@ void Game::updateEntity(Entity<T>* entity, double deltaTime) {
 
   
     entity->setImgPosX(newPosX);
-    entity->setTxtPosX(newPosX);
     entity->setImgPosY(newPosY);
-    entity->setTxtPosY(newPosY); 
+
+    // Calcular el centro de la imagen
+    int centerX = static_cast<int>(newPosX + width / 2);
+    int centerY = static_cast<int>(newPosY + height / 2);
+
+    // Calcular la posición del texto
+    int txtPosX = centerX - (entity->getTxtWidth() / 2);
+    int txtPosY = centerY - (entity->getTxtHeight() / 2);
+
+    // Actualizar la posición del texto
+    entity->setTxtPosX(txtPosX);
+    entity->setTxtPosY(txtPosY);
+  
     
 }
 
 
-void::Game::render(){
+void Game::render(){
     //Establece el color con el que se va a dibujar la ventana
     SDL_SetRenderDrawColor(this->renderer, this->windowData.r, 
     this->windowData.g, this->windowData.b, 255);
