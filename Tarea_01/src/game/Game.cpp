@@ -331,6 +331,8 @@ void Game::destroy(){
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
 
+    TTF_CloseFont(this->font);
+
     TTF_Quit();
     SDL_Quit();
  }
