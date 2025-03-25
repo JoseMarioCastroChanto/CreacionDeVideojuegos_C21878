@@ -48,8 +48,6 @@ Game:: ~Game(){
     for (auto& entity : this->entities) {
         this->initEntity(entity);
     }
-
-    TTF_CloseFont(this->font);
  }
 
 
@@ -83,7 +81,7 @@ void Game::getConfig(){
             this->loadWindow(inputFile);
         }
         else if(label.compare("font") == 0){
-            this->loadFont(inputFile);
+            this->loadFont(inputFile);    
         }
         else if(label.compare("entity") == 0){
             auto newEntity = std::make_unique<Entity>();
@@ -111,8 +109,8 @@ void Game::loadFont(std::ifstream& inputFile){
     inputFile >> color;
     this->fontData.fontColor.b = color;
     inputFile >> this->fontData.size;
-
 }
+
 
 void Game::loadEntity(std::unique_ptr<Entity>& entity, std::ifstream& inputFile) {
     std::string directory, name;
@@ -326,9 +324,11 @@ void Game::destroy(){
     for (auto& entity : this->entities) {  
         this->destroyEntity(entity);
     }
-   
+
+    //TTF_CloseFont(this->font);
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
+    TTF_CloseFont(this->font);
 
     TTF_Quit();
     SDL_Quit();
