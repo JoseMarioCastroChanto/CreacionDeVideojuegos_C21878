@@ -6,14 +6,8 @@
 #include <glm/glm.hpp>
 #include <string>
 
-class IENTITY {
-protected:
-    static int nextId;
 
-};
-
-template<typename TypeEntity>
-class Entity : public IENTITY {
+class Entity {
 
     std::string directory;
 
@@ -36,80 +30,51 @@ class Entity : public IENTITY {
 
 public:
     // Setters y Getters
-    void setDirectory(const std::string dir) { directory = dir; }
-    std::string getDirectory() const { return directory; }
+    void setDirectory(const std::string dir);
+    std::string getDirectory() const;
 
-    void setImgPosX(double pos) { imgPos.x = pos; }
-    void setImgPosY(double pos) { imgPos.y = pos; }
-    glm::vec2 getImgPos() const { return imgPos; }
+    void setImgPosX(double pos);
+    void setImgPosY(double pos);
+    glm::vec2 getImgPos() const;
 
-    void setTxtPosX(double pos) { txtPos.x = pos; }
-    void setTxtPosY(double pos) { txtPos.y = pos; }
-    glm::vec2 getTxtPos() const { return txtPos; }
+    void setTxtPosX(double pos);
+    void setTxtPosY(double pos);
+    glm::vec2 getTxtPos() const;
 
-    void setImgVelX(double vel) { imgVel.x = vel; }
-    void setImgVelY(double vel) { imgVel.y = vel; }
-    glm::vec2 getImgVel() const { return imgVel; }
+    void setImgVelX(double vel);
+    void setImgVelY(double vel);
+    glm::vec2 getImgVel() const;
 
-    void setImgWidth(int width) {imgWidth = width;}
-    int getImgWidth() const { return imgWidth; }
+    void setImgWidth(int width);
+    int getImgWidth() const;
 
-    void setImgHeight(int height) {imgHeight = height;}
-    int getImgHeight() const { return imgHeight; }
+    void setImgHeight(int height);
+    int getImgHeight() const;
 
-    void setTxtWidth(int width) {txtWidth = width;}
-    int getTxtWidth() const { return txtWidth; }
+    void setTxtWidth(int width);
+    int getTxtWidth() const;
 
-    void setTxtHeight(int height) {txtHeight = height;}
-    int getTxtHeight() const { return txtHeight; }
+    void setTxtHeight(int height);
+    int getTxtHeight() const;
 
-    void setImgTexture(SDL_Texture* texture) { imgTexture = texture; }
-    SDL_Texture* getImgTexture() const { return imgTexture; }
+    void setImgTexture(SDL_Texture* texture);
+    SDL_Texture* getImgTexture() const;
 
-    void setTxtTexture(SDL_Texture* texture) { txtTexture = texture; }
-    SDL_Texture* getTxtTexture() const { return txtTexture; }
+    void setTxtTexture(SDL_Texture* texture);
+    SDL_Texture* getTxtTexture() const;
 
-    void setMessage(const std::string& msg) { message = msg; }
-    std::string getMessage() const { return message; }
+    void setMessage(const std::string& msg);
+    std::string getMessage() const;
 
-    void setImgAngle(double angle) { imgAngle = angle; }
-    double getImgAngle() const { return imgAngle; }
+    void setImgAngle(double angle);
+    double getImgAngle() const;
 
-    void setTxtAngle(double angle) { txtAngle = angle; }
-    double getTxtAngle() const { return txtAngle; }
+    void setTxtAngle(double angle);
+    double getTxtAngle() const;
 
-    void setSrcRect(int x, int y, int w, int h) {
-    srcRect.x = x;
-    srcRect.y = y;
-    srcRect.w = w;
-    srcRect.h = h;
-    }
-
-    const SDL_Rect& getSrcRect() const {
-    return srcRect;
-    }
-
-    static int getId(){
-        static int id = nextId;
-        return id;
-    }
-
+    void setSrcRect(int x, int y, int w, int h);
+    const SDL_Rect& getSrcRect() const;
 };
 
-class Calavera{
-public:
-    Calavera() = default;
-};
-
-class Anillo{
-public:
-    Anillo() = default;
-};
-
-class Carta{
-public:
-    Carta() = default;
-
-};
 
 #endif

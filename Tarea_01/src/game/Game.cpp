@@ -2,11 +2,7 @@
 #include <iostream>
 #include <fstream>
 
-Game:: Game(){
-    this->calavera = new Entity<Calavera>();
-    this->anillo = new Entity<Anillo>();
-    this->carta = new Entity<Carta>();
- }
+Game:: Game(){}
 
 Game:: ~Game(){
 
@@ -49,14 +45,15 @@ Game:: ~Game(){
     this->font = TTF_OpenFont(fontData.directory.c_str(), this->fontData.size);
 
     this->isRunning = true;
-    this->initEntity(this->calavera);
-    this->initEntity(this->anillo);
-    this->initEntity(this->carta);
+    for (auto& entity : this->entities) {
+        this->initEntity(entity);
+    }
 
+    TTF_CloseFont(this->font);
  }
 
-template<typename T>
-void Game::initEntity(Entity<T>* entity){
+
+void Game::initEntity(std::unique_ptr<Entity>& entity){
      
      // Inicilaizar datos de la imagen
     SDL_Surface* imgSurface = IMG_Load(entity->getDirectory().c_str());
@@ -83,47 +80,46 @@ void Game::getConfig(){
     // Obtener datos del archivo de configuacion
     while(inputFile >> label){
         if(label.compare("window") == 0){
-            inputFile >> this->windowData.windowWidth;
-            inputFile >> this->windowData.windowHeight;
-            inputFile >> this->windowData.r;
-            inputFile >> this->windowData.g;
-            inputFile >> this->windowData.b;
+            this->loadWindow(inputFile);
         }
         else if(label.compare("font") == 0){
-            int color = 0;
-            inputFile >> this->fontData.directory;
-            inputFile >> color;
-            this->fontData.fontColor.r = color;
-            inputFile >> color;
-            this->fontData.fontColor.g = color;
-            inputFile >> color;
-            this->fontData.fontColor.b = color;
-            inputFile >> this->fontData.size;
-
+            this->loadFont(inputFile);
         }
         else if(label.compare("entity") == 0){
-            std::string name = "";
-            inputFile >> name;
-            if(name.compare("calavera") == 0){
-                this->loadEntity(this->calavera,inputFile,name);   
-            }
-            else if(name.compare("anillo") == 0){
-                this->loadEntity(this->anillo,inputFile,name);      
-            }
-            else if(name.compare("carta") == 0){
-                this->loadEntity(this->carta,inputFile,name);   
-            }
+            auto newEntity = std::make_unique<Entity>();
+            this->loadEntity(newEntity,inputFile);  
         }
     }
 
 }
-template<typename T>
-void Game::loadEntity(Entity<T>* entity, std::ifstream& inputFile, std::string name) {
-    std::string directory;
+
+void Game::loadWindow(std::ifstream& inputFile){
+    inputFile >> this->windowData.windowWidth;
+    inputFile >> this->windowData.windowHeight;
+    inputFile >> this->windowData.r;
+    inputFile >> this->windowData.g;
+    inputFile >> this->windowData.b;
+}
+
+void Game::loadFont(std::ifstream& inputFile){
+    int color = 0;
+    inputFile >> this->fontData.directory;
+    inputFile >> color;
+    this->fontData.fontColor.r = color;
+    inputFile >> color;
+    this->fontData.fontColor.g = color;
+    inputFile >> color;
+    this->fontData.fontColor.b = color;
+    inputFile >> this->fontData.size;
+
+}
+
+void Game::loadEntity(std::unique_ptr<Entity>& entity, std::ifstream& inputFile) {
+    std::string directory, name;
     int width, height, posX, posY, velX, velY;
     double angle;
 
-    inputFile >> directory >> width >> height >> posX >> posY >> velX >> velY >> angle;
+    inputFile >> name >> directory >> width >> height >> posX >> posY >> velX >> velY >> angle;
 
     //Cargar los valres de la imagen
     entity->setDirectory(directory);
@@ -147,10 +143,16 @@ void Game::loadEntity(Entity<T>* entity, std::ifstream& inputFile, std::string n
     // Establecer los valores en la entidad
     entity->setMessage(name); 
     entity->setTxtWidth(width+20); // se ajusta para que sea legible
-    entity->setTxtHeight(height-10); // se ajusta para que sea legible
+    int newHeight = height-10;
+    if(newHeight <= 0){
+        newHeight = height;
+    }
+    entity->setTxtHeight(newHeight); // se ajusta para que sea legible
     entity->setTxtPosX(txtPosX);
     entity->setTxtPosY(txtPosY);
     entity->setTxtAngle(angle);
+
+    this->entities.push_back(std::move(entity));  
 
 }
 
@@ -205,13 +207,14 @@ void Game::update() {
     double deltaTime = (SDL_GetTicks() - this->mPrvsFrame) / 1000.0;
     this->mPrvsFrame = SDL_GetTicks();
 
-    this->updateEntity(this->calavera, deltaTime);
-    this->updateEntity(this->anillo, deltaTime);
-    this->updateEntity(this->carta, deltaTime);
+    for (auto& entity : this->entities) {  
+        this->updateEntity(entity, deltaTime);  
+    }
+    
 }
 
-template<typename T>
-void Game::updateEntity(Entity<T>* entity, double deltaTime) {
+
+void Game::updateEntity(std::unique_ptr<Entity>& entity, double deltaTime) {
     // Nuevas posiciones
     double newPosX = entity->getImgPos().x;
     double newPosY = entity->getImgPos().y;
@@ -258,17 +261,17 @@ void Game::render(){
     //Limpiar ventana
     SDL_RenderClear(this->renderer);
 
-    this->renderEntity(this->calavera);
-    this->renderEntity(this->anillo);
-    this->renderEntity(this->carta);
+    for (auto& entity : this->entities) {  
+    this->renderEntity(entity);
+    }
 
     //Actualizar ventana
     SDL_RenderPresent(this->renderer);
 
 }
 
-template<typename T>
-void Game::renderEntity(Entity<T>* entity){
+
+void Game::renderEntity(std::unique_ptr<Entity>& entity){
 
 
     SDL_Rect imgDstRect = {
@@ -320,25 +323,19 @@ void Game::run(){
 
 void Game::destroy(){
     // Liberar recursos
-    this->destroyEntity(this->calavera);
-    this->destroyEntity(this->anillo);
-    this->destroyEntity(this->carta);
-    delete calavera;
-    delete anillo;
-    delete carta;
+    for (auto& entity : this->entities) {  
+        this->destroyEntity(entity);
+    }
    
-
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
-
-    TTF_CloseFont(this->font);
 
     TTF_Quit();
     SDL_Quit();
  }
 
-template<typename T>
-void Game::destroyEntity(Entity<T>* entity){
+
+void Game::destroyEntity(std::unique_ptr<Entity>& entity){
     SDL_DestroyTexture(entity->getImgTexture());
     SDL_DestroyTexture(entity->getTxtTexture());
 }

@@ -34,9 +34,7 @@ class Game{
     TTF_Font* font = nullptr;
     Font fontData;
 
-    Entity<Calavera>* calavera = nullptr;
-    Entity<Anillo>* anillo = nullptr;
-    Entity<Carta>* carta = nullptr;
+    std::vector<std::unique_ptr<Entity>> entities;
 
     bool isRunning = false;
     bool isPaused = false;
@@ -44,19 +42,16 @@ class Game{
     int mPrvsFrame = 0;
 
     void getConfig();
-    template<typename T>
-    void loadEntity(Entity<T>* , std::ifstream&,std::string);
-    template<typename T>
-    void initEntity(Entity<T>*);
+    void loadFont(std::ifstream&);
+    void loadWindow(std::ifstream&);
+    void loadEntity(std::unique_ptr<Entity>& , std::ifstream&);
+    void initEntity(std::unique_ptr<Entity>&);
     void processInput();
     void update();
-    template<typename T>
-    void updateEntity(Entity<T>*,double);
+    void updateEntity(std::unique_ptr<Entity>&,double);
     void render();
-    template<typename T>
-    void renderEntity(Entity<T>*);
-    template<typename T>
-    void destroyEntity(Entity<T>*);
+    void renderEntity(std::unique_ptr<Entity>&);
+    void destroyEntity(std::unique_ptr<Entity>&);
 
 public:
     Game();
