@@ -38,6 +38,8 @@ class Entity{
  public:
   Entity(int id): id(id){}
   int GetId() const;
+  void Kill();
+
   bool operator ==(const Entity& other) const {return id == other.id; }
   bool operator !=(const Entity& other) const {return id != other.id; }
   bool operator >(const Entity& other) const {return id > other.id; }
@@ -130,6 +132,9 @@ class Registry {
    // Add and remove entities to systems
    void AddEntityToSystems(Entity entity);
    void RemoveEntityFromSystems(Entity entity);
+
+   //Reset registry
+   void ClearAllEntities();
 
 
 };

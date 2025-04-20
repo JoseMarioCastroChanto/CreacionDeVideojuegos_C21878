@@ -8,6 +8,10 @@ int Entity::GetId() const {
     return id;
 }
 
+void Entity::Kill(){
+    registry->KillEntity(*this);
+}
+
 void System::AddEntityToSystem(Entity entity){
   entities.push_back(entity);
 }
@@ -98,4 +102,12 @@ void Registry::Update(){
         freeIds.push_back(entity.GetId());
     }
     entitiesToBeKilled.clear();
+}
+
+void Registry::ClearAllEntities(){
+    for(int i = 0; i < numEntity; i++){
+        RemoveEntityFromSystems(Entity(i));
+        entityComponentSignatures[i].reset();
+        freeIds.push_back(i);
+    }
 }
