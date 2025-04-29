@@ -25,10 +25,9 @@ void SetVelocity(Entity entity, float x, float y){
 }
 
 // TransformComponent
-void SetScale(Entity entity, float x, float y) {
+float GetScale(Entity entity) {
      auto& transform = entity.GetComponent<TransformComponent>();
-     transform.scale.x = x;
-     transform.scale.y = y;
+     return transform.scale.x;
 }
 
 void SetPosition(Entity entity, float x, float y) {

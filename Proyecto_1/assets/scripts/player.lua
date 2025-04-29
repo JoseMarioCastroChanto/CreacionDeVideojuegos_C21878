@@ -1,9 +1,5 @@
 player_velocity = 150
 fixed_player_velocity = math.sqrt((player_velocity * player_velocity)/ 2)
-base_scale = 10.0
-current_scale = base_scale
-scale_speed = 0.2
-min_scale, max_scale = 4.0, 10.0
 original_width = 32
 movementSprites = 4
 staticSprites = 2
@@ -22,23 +18,18 @@ local animations = {
 function update()
     local pos_x, pos_y = get_positionX(this), get_positionY(this)
     local vel_x, vel_y = 0, 0
-    local previous_scale = current_scale
-    local is_scaling = false
     local is_pressed = false
+    local current_scale = get_scale(this)
 
     -- Inputs y detección de dirección
     if is_action_activated("up") then
         vel_y = vel_y - 1
-        current_scale = math.max(min_scale, current_scale - scale_speed)
-        is_scaling = true
         is_pressed = true
         current_direction = "up"
     end
     
     if is_action_activated("down") then
         vel_y = vel_y + 1
-        current_scale = math.min(max_scale, current_scale + scale_speed)
-        is_scaling = true
         is_pressed = true
         current_direction = "down"
     end
@@ -54,13 +45,6 @@ function update()
         vel_x = vel_x + 1
         current_direction = "right"
         is_pressed = true
-    end
-
-    -- Ajuste de posición por escala (solo eje X)
-    if is_scaling then
-        local width_diff = original_width * (current_scale - previous_scale)
-        set_position(this, pos_x - (width_diff / 2), pos_y)
-        set_scale(this, current_scale, current_scale)
     end
 
     -- Corrección de velocidad
@@ -97,6 +81,5 @@ function update()
     elseif pos_x - player_half_width > screen_width then
         set_position(this, -player_half_width, pos_y)
     end
-  print(pos_x)
 
 end

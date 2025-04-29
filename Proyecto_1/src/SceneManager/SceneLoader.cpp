@@ -6,6 +6,7 @@
 
 #include "../Components/CircleColliderComponent.hpp"
 #include "../Components/PolygonColliderComponent.hpp"
+#include "../Components/DepthComponent.hpp"
 #include "../Components/AnimationComponent.hpp"
 #include "../Components/ClickableComponent.hpp"
 #include "../Components/RigidBodyComponent.hpp"
@@ -289,7 +290,18 @@ void  SceneLoader::LoadEntities(sol::state& lua, const sol::table& entities,
                 );
             }
 
-
+             //* Depth Component
+            sol::optional<sol::table>hasDepth = 
+            components["depth"];
+            if(hasDepth != sol::nullopt) {
+                newEntity.AddComponent<DepthComponent>(
+                    components["depth"]["min_scale"],
+                    components["depth"]["max_scale"],
+                    components["depth"]["original_width"],
+                    components["depth"]["scale_speed"], 
+                    components["depth"]["reference"]            
+                );
+            }
         }
 
         index++;

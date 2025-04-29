@@ -10,6 +10,7 @@
 #include "../Systems/WallCollisionSystem.hpp"
 #include "../Systems/RenderSystem.hpp"
 #include "../Systems/MovementSystem.hpp"
+#include "../Systems/DepthSystem.hpp"
 #include "../Systems/RenderTextSystem.hpp"
 #include "../Systems/ScriptSystem.hpp"
 #include "../Systems/UISystem.hpp"
@@ -81,6 +82,7 @@ void Game:: Setup(){
     registry->AddSystem<AnimationSystem>();
     registry->AddSystem<CollisionSystem>();
     registry->AddSystem<MovementSystem>();
+    registry->AddSystem<DepthSystem>();
     registry->AddSystem<RenderSystem>();
     registry->AddSystem<ScriptSystem>();
     registry->AddSystem<RenderTextSystem>();
@@ -159,6 +161,7 @@ void Game::Update(){
     registry->GetSystem<ScriptSystem>().Update(lua);
     registry->GetSystem<AnimationSystem>().Update();
     registry->GetSystem<MovementSystem>().Update(deltaTime);
+    registry->GetSystem<DepthSystem>().Update();
     registry->GetSystem<CollisionSystem>().Update(eventManager);
 }
 

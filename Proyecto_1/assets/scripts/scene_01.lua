@@ -281,6 +281,14 @@ buttons = {
                 rotation = 0.0
 
             },
+            depth = {
+                min_scale = 4.0,
+                max_scale = 10.0,
+                original_width = 32.0,
+                scale_speed = 0.2, 
+                reference = 580,
+                
+            },
         }
     },
 
