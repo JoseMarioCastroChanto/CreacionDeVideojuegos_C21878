@@ -8,6 +8,7 @@
 #include "../Components/TransformComponent.hpp"
 #include "../Components/AnimationComponent.hpp"
 #include "../Components/SpriteComponent.hpp"
+#include "../Systems/EntitySpawnerSystem.hpp"
 #include "../ECS/ECS.hpp"
 #include "../Game/Game.hpp"
 
@@ -22,6 +23,11 @@ void SetVelocity(Entity entity, float x, float y){
     auto& rigidbody = entity.GetComponent<RigidBodyComponent>();
     rigidbody.velocity.x = x;
     rigidbody.velocity.y = y;
+}
+
+int GetVelocity(Entity entity){
+    auto& rigidbody = entity.GetComponent<RigidBodyComponent>();
+    return rigidbody.velocity.x;
 }
 
 // TransformComponent
@@ -56,6 +62,21 @@ void SetSrcRect(Entity entity,int width = 0
 void SetNumFrames(Entity entity,int numFrames){
     auto& animation = entity.GetComponent<AnimationComponent>();
     animation.numFrames = numFrames;
+
+}
+
+//EntitySpawnerComponent
+void CreateBomb(Entity entity, int dir){
+    auto& transform = entity.GetComponent<TransformComponent>();
+    Entity newBomb = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(
+        Game::GetInstance().registry,0,Game::GetInstance().lua
+    );
+    auto& transformBomb = newBomb.GetComponent<TransformComponent>();
+    auto& rigidBodyBomb = newBomb.GetComponent<RigidBodyComponent>();
+    transformBomb.position = transform.position;
+    transformBomb.scale.x = transform.scale.x/2;
+    transformBomb.scale.y = transform.scale.y/2;
+    rigidBodyBomb.velocity.x = rigidBodyBomb.velocity.x*(transformBomb.scale.x/2)*dir;
 
 }
 

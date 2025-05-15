@@ -109,19 +109,19 @@ bool CheckCircleVsPolygon(Entity circleEntity, Entity polygonEntity, TransformCo
 
     glm::vec2 circleCenter = circleTransform.position;
 
-    // Modificar el centro del círculo según la escala
+  
     circleCenter.x += (circleCollider.width * circleTransform.scale.x) / 2.0f;
     circleCenter.y += (circleCollider.height * circleTransform.scale.y) / 2.0f;
 
-    // Ajuste del radio en función de la escala
+
     float radius = circleCollider.radius * circleTransform.scale.x;
 
-    // Verificar si el centro del círculo está dentro del polígono
+ 
     if (IsPointInPolygon(circleCenter,polygonCollider.vertices)) {
         return true;
     }
 
-    // Verificar si el círculo choca con los segmentos del polígono
+ 
     int count = polygonCollider.vertices.size();
     for (int i = 0, j = count - 1; i < count; j = i++) {
         if (DistancePointToSegment(circleCenter, polygonCollider.vertices[j], polygonCollider.vertices[i]) <= radius) {

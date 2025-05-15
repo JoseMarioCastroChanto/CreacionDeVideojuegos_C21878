@@ -4,6 +4,7 @@ original_width = 32
 movementSprites = 4
 staticSprites = 2
 screen_width = 1500  
+last_space_state = false
 
 
 local animations = {
@@ -38,7 +39,6 @@ function update()
         vel_x = vel_x - 1
         current_direction = "left"
         is_pressed = true
-        player_velocity = 150
     end
 
     if is_action_activated("right") then 
@@ -47,11 +47,25 @@ function update()
         is_pressed = true
     end
 
+    -- considerar detener al personaje
+    -- considerar orden inverso de teclas
+    local current_space_state = is_action_activated("space")
+    if current_space_state and not last_space_state and (is_action_activated("right") 
+    or is_action_activated("left") )then
+        if is_action_activated("right") then 
+            create_bomb(this,1)
+        elseif is_action_activated("left") then
+            create_bomb(this,-1)
+        end
+
+    end
+    last_space_state = current_space_state
+
     -- Corrección de velocidad
     if vel_y ~= 0 then
         vel_x, vel_y = vel_x * fixed_player_velocity, vel_y * fixed_player_velocity
     else
-        vel_x, vel_y = vel_x * player_velocity, vel_y * player_velocity
+        vel_x, vel_y = vel_x * player_velocity * (current_scale/4), vel_y * player_velocity
     end
 
     -- Aplicar animación según dirección

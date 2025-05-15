@@ -8,6 +8,7 @@
 #include "../Components/PolygonColliderComponent.hpp"
 #include "../Components/DepthComponent.hpp"
 #include "../Components/AnimationComponent.hpp"
+#include "../Components/EntitySpawnerComponent.hpp"
 #include "../Components/ClickableComponent.hpp"
 #include "../Components/RigidBodyComponent.hpp"
 #include "../Components/SpriteComponent.hpp"
@@ -15,6 +16,14 @@
 #include "../Components/TransformComponent.hpp"
 #include "../Components/TextComponent.hpp"
 #include "../Components/TagWallComponent.hpp"
+#include "../Components/TagObjectiveComponent.hpp"
+#include "../Components/TagEnemyComponent.hpp"
+#include "../Components/TagPlayerComponent.hpp"
+#include "../Components/TagProjectileComponent.hpp"
+#include "../Components/LifeComponent.hpp"
+#include "../Components/DamageComponent.hpp"
+
+
 
 SceneLoader::SceneLoader(){
      std::cout<< "[SceneLoader] Se ejecuta constructor" << std::endl;
@@ -203,6 +212,31 @@ void  SceneLoader::LoadEntities(sol::state& lua, const sol::table& entities,
             if(hasTagWall != sol::nullopt) {
                 newEntity.AddComponent<TagWallComponent>();
             }
+             //* TagEnemyComponent
+            sol::optional<sol::table>hasTagEnemy = 
+            components["tagenemy"];
+            if(hasTagEnemy != sol::nullopt) {
+                newEntity.AddComponent<TagEnemyComponent>();
+            }
+             //* TagObjectiveComponent
+            sol::optional<sol::table>hasTagObjective = 
+            components["tagobjective"];
+            if(hasTagObjective != sol::nullopt) {
+                newEntity.AddComponent<TagObjectiveComponent>();
+            }
+             //* TagPlayerComponent
+            sol::optional<sol::table>hasTagPlayer = 
+            components["tagplayer"];
+            if(hasTagPlayer != sol::nullopt) {
+                newEntity.AddComponent<TagPlayerComponent>();
+            }
+            //* TagProjectileComponent
+            sol::optional<sol::table>hasTagProjectile = 
+            components["tagprojectile"];
+            if(hasTagProjectile != sol::nullopt) {
+                newEntity.AddComponent<TagProjectileComponent>();
+            }
+
 
             //* ClickableComponent
             sol::optional<sol::table>hasClickable = 
@@ -300,6 +334,35 @@ void  SceneLoader::LoadEntities(sol::state& lua, const sol::table& entities,
                     components["depth"]["original_width"],
                     components["depth"]["scale_speed"], 
                     components["depth"]["reference"]            
+                );
+            }
+
+             //* EntitySpawnerComponent
+            sol::optional<sol::table>hasSpawner = 
+            components["entitySpawner"];
+            if(hasSpawner != sol::nullopt) {
+                newEntity.AddComponent<EntitySpawnerComponent>(
+                    components["entitySpawner"]["is_player"].get<bool>()
+                );
+            }
+
+              //* LifeComponent
+            sol::optional<sol::table>hasLife = 
+            components["life"];
+            if(hasLife != sol::nullopt) {
+                int args = components["life"]["life_count"];
+                newEntity.AddComponent<LifeComponent>(
+                    args
+                );
+            }
+
+              //* DamageComponent
+            sol::optional<sol::table>hasDamage = 
+            components["damage"];
+            if(hasDamage != sol::nullopt) {
+                int args = components["damage"]["damage_dealt"];
+                newEntity.AddComponent<DamageComponent>(
+                    args
                 );
             }
         }

@@ -4,7 +4,8 @@ scene = {
     [0]=
     {assetId = "trees", filePath = "./assets/images/Trees.png"},
     {assetId = "grass", filePath = "./assets/images/grass.png"},
-    {assetId = "grass1", filePath = "./assets/images/grass1.png"},
+    {assetId = "bomb", filePath = "./assets/images/Bomb.png"},
+    {assetId = "slime", filePath = "./assets/images/Slime.png"},
     {assetId = "background", filePath = "./assets/images/Background.png"},
     {assetId = "player", filePath = "./assets/images/playerAllDirections.png"}
  },
@@ -22,6 +23,7 @@ scene = {
     {name = "left", key = 97},
     {name = "down", key = 115},
     {name = "right", key = 100},
+    {name = "space", key = 32},
  },
 
  --Tabla de acciones y botones del raton
@@ -244,13 +246,32 @@ buttons = {
             },
         }
     },
+-- Monster Spawner A
+    {
+        components = {
+            transform = {
+                position = { x = 0.0, y = 480.0},
+                scale = { x = 10, y = 10},
+                rotation = 0.0
+
+            },
+            rigidbody ={
+                velocity = { x = 50, y = 0 },
+
+            }, 
+            entitySpawner = {
+                is_player = false
+  
+              },
+        }
+    },
     
     -- Player
     {
         components = {
             animation = {
                 numFrames = 2,
-                frameSpeedRate = 3,
+                frameSpeedRate = 5,
                 isLoop = true,
   
               },
@@ -289,9 +310,18 @@ buttons = {
                 reference = 580,
                 
             },
+            entitySpawner = {
+                is_player = true
+  
+              },
+            tagobjective = {},
+            tagplayer = {},
+            life = {
+                life_count = 2,
+
+            },
         }
     },
-
      -- Grass
      {
         components = {
@@ -358,6 +388,7 @@ buttons = {
         },
     }
 },
+  
  
   }
 }
