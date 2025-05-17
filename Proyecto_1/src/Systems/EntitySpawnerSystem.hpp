@@ -23,7 +23,6 @@
 class EntitySpawnerSystem : public System{
     private:
     sol::table entities;
-    int delay = 60;
     public:
      EntitySpawnerSystem(const std::string& scenePath, sol::state& lua){
         RequireComponent<TransformComponent>();
@@ -40,26 +39,6 @@ class EntitySpawnerSystem : public System{
         this->entities = lua["entities"];
 
      }
-
-    void Update(std::unique_ptr<Registry>& registry, sol::state& lua) {
-        for(auto entity : GetSystemEntities()){
-            //TODO:Crear una logica para la generacion de monstruos
-            int idEntity = 1;
-            auto& transform = entity.GetComponent<TransformComponent>();
-            auto& rigidbody = entity.GetComponent<RigidBodyComponent>();
-            auto& spawner = entity.GetComponent<EntitySpawnerComponent>();
-            if(!spawner.is_player && delay == 60){
-                Entity newEntity = GenerateEntity(registry, idEntity, lua);
-                 auto& newTransform = newEntity.GetComponent<TransformComponent>();
-                 auto& newRigidBody = newEntity.GetComponent<RigidBodyComponent>();
-                 newTransform = transform;
-                 newRigidBody = rigidbody;
-                
-            }
-            this->delay -= 1;
-
-        }
-    }
 
     Entity GenerateEntity(std::unique_ptr<Registry>& registry,int idEntity,
      sol::state& lua){
@@ -167,7 +146,7 @@ class EntitySpawnerSystem : public System{
                     components["depth"]["max_scale"],
                     components["depth"]["original_width"],
                     components["depth"]["scale_speed"], 
-                    components["depth"]["reference"]            
+                    components["depth"]["reference"]     
                 );
             }
 

@@ -5,6 +5,7 @@
 #include "../Components/PolygonColliderComponent.hpp"
 #include "../Components/RigidBodyComponent.hpp"
 #include "../Components/TransformComponent.hpp"
+#include "../Components/TagProjectileComponent.hpp"
 #include "../ECS/ECS.hpp"
 #include "../EventManager/EventManager.hpp"
 #include "../Events/CollisionEvent.hpp"
@@ -75,8 +76,18 @@ private:
 
         glm::vec2 dif = aCenterPos - bCenterPos;
         double length = glm::sqrt((dif.x * dif.x) + (dif.y * dif.y));
+
+        int aScale = glm::ceil(aTransform.scale.y);
+        if(a.HasComponent<TagProjectileComponent>()){
+            aScale=aScale*2;
+        }
+        int bScale = glm::ceil(bTransform.scale.y);
+         if(b.HasComponent<TagProjectileComponent>()){
+            bScale=bScale*2;
+
+        }
         
-        return (aRadius + bRadius) >= length;
+        return (aRadius + bRadius) >= length && aScale == bScale;
     }
 
     bool IsPointInPolygon(const glm::vec2& point, const std::vector<glm::vec2>& vertices) {

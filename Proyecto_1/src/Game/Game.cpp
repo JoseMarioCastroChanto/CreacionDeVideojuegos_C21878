@@ -14,7 +14,9 @@
 #include "../Systems/RenderTextSystem.hpp"
 #include "../Systems/ScriptSystem.hpp"
 #include "../Systems/UISystem.hpp"
+#include "../Systems/SceneTimeSystem.hpp"
 #include "../Systems/EntitySpawnerSystem.hpp"
+#include "../Systems/CleanSystem.hpp"
 
 Game::Game(){
     std::cout<< "[Game] Se ejecuta constructor" << std::endl;
@@ -90,6 +92,8 @@ void Game:: Setup(){
     registry->AddSystem<ScriptSystem>();
     registry->AddSystem<RenderTextSystem>();
     registry->AddSystem<UISystem>();
+    registry->AddSystem<SceneTimeSystem>();
+    registry->AddSystem<CleanSystem>();
 
     sceneManager->LoadSceneFromScript("./assets/scripts/scenes.lua", lua);
 
@@ -161,12 +165,13 @@ void Game::Update(){
     
     registry->Update();
 
+    registry->GetSystem<SceneTimeSystem>().Update();
     registry->GetSystem<ScriptSystem>().Update(lua);
     registry->GetSystem<AnimationSystem>().Update();
     registry->GetSystem<MovementSystem>().Update(deltaTime);
-    registry->GetSystem<EntitySpawnerSystem>().Update(registry,lua);
     registry->GetSystem<DepthSystem>().Update();
     registry->GetSystem<CollisionSystem>().Update(eventManager);
+    registry->GetSystem<CleanSystem>().Update();
 }
 
 void Game::Render(){

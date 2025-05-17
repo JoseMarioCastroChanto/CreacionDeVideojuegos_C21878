@@ -9,6 +9,7 @@
 #include "../Components/AnimationComponent.hpp"
 #include "../Components/SpriteComponent.hpp"
 #include "../Systems/EntitySpawnerSystem.hpp"
+#include "../Systems/SceneTimeSystem.hpp"
 #include "../ECS/ECS.hpp"
 #include "../Game/Game.hpp"
 
@@ -66,20 +67,26 @@ void SetNumFrames(Entity entity,int numFrames){
 }
 
 //EntitySpawnerComponent
-void CreateBomb(Entity entity, int dir){
+void CreateDynamicEntity(Entity entity, double dir, int num, double scale){
     auto& transform = entity.GetComponent<TransformComponent>();
-    Entity newBomb = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(
-        Game::GetInstance().registry,0,Game::GetInstance().lua
+    Entity newEntity = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(
+        Game::GetInstance().registry,num,Game::GetInstance().lua
     );
-    auto& transformBomb = newBomb.GetComponent<TransformComponent>();
-    auto& rigidBodyBomb = newBomb.GetComponent<RigidBodyComponent>();
-    transformBomb.position = transform.position;
-    transformBomb.scale.x = transform.scale.x/2;
-    transformBomb.scale.y = transform.scale.y/2;
-    rigidBodyBomb.velocity.x = rigidBodyBomb.velocity.x*(transformBomb.scale.x/2)*dir;
+    auto& transformNew = newEntity.GetComponent<TransformComponent>();
+    auto& rigidBodyNew= newEntity.GetComponent<RigidBodyComponent>();
+    transformNew.position = transform.position;
+    transformNew.scale.x = scale;
+    transformNew.scale.y = scale;
+    rigidBodyNew.velocity.x = rigidBodyNew.velocity.x*dir;
+  
 
 }
 
+//Time
+int GetDeltaTime(){
+    int time = Game::GetInstance().registry->GetSystem<SceneTimeSystem>().GetDeltaTime();
+    return time;
+}
 
 // Scenes
 void GoToScene(const std::string& sceneName){

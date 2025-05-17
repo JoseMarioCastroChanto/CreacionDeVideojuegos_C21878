@@ -46,6 +46,14 @@ entities = {
             damage_dealt = 1,
 
         },
+        depth = {
+            min_scale = 0,
+            max_scale = 0,
+            original_width = 0,
+            scale_speed = 0, 
+            reference = 0,
+            
+        },
     }
 },
   -- Slime_monster
@@ -67,7 +75,7 @@ entities = {
           },
 
         rigidbody ={
-            velocity = { x = 0, y = 0 },
+            velocity = { x = 50, y = 0 },
 
         },
         script = {
@@ -94,6 +102,15 @@ entities = {
         damage = {
             damage_dealt = 1,
 
+        },
+        depth = {
+            min_scale = 0,
+            max_scale = 0,
+            original_width = 0,
+            scale_speed = 0, 
+            reference = 0,
+
+            
         },
     }
 },

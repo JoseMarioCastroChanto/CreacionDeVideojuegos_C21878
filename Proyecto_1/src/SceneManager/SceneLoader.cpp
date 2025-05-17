@@ -333,7 +333,7 @@ void  SceneLoader::LoadEntities(sol::state& lua, const sol::table& entities,
                     components["depth"]["max_scale"],
                     components["depth"]["original_width"],
                     components["depth"]["scale_speed"], 
-                    components["depth"]["reference"]            
+                    components["depth"]["reference"]       
                 );
             }
 

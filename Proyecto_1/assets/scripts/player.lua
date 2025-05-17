@@ -52,10 +52,11 @@ function update()
     local current_space_state = is_action_activated("space")
     if current_space_state and not last_space_state and (is_action_activated("right") 
     or is_action_activated("left") )then
+        newScale = current_scale/2
         if is_action_activated("right") then 
-            create_bomb(this,1)
+            create_dynamic_entity(this,newScale/2,0,newScale)
         elseif is_action_activated("left") then
-            create_bomb(this,-1)
+            create_dynamic_entity(this,-newScale/2,0,newScale)
         end
 
     end

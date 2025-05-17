@@ -4,6 +4,8 @@
 #include "../AssetManager/AssetManager.hpp"
 #include "../Components/SpriteComponent.hpp"
 #include "../Components/TransformComponent.hpp"
+#include "../Components/DepthComponent.hpp"
+#include "../Components/TagProjectileComponent.hpp"
 #include "../ECS/ECS.hpp"
 
 class RenderSystem : public System {
@@ -13,9 +15,37 @@ class RenderSystem : public System {
     RequireComponent<TransformComponent>();
    }
 
-   void Update(SDL_Renderer* renderer
-   , const std::unique_ptr<AssetManager>& AssetManager){
-    for(auto entity : GetSystemEntities() ){
+ void Update(SDL_Renderer* renderer, const std::unique_ptr<AssetManager>& AssetManager) {
+    std::vector<Entity> sortedEntities;
+
+    for (auto entity : GetSystemEntities()) {
+        sortedEntities.push_back(entity);
+    }
+
+   std::sort(sortedEntities.begin(), sortedEntities.end(), [](const Entity& a, const Entity& b) {
+    bool aHasDepth = a.HasComponent<DepthComponent>();
+    bool bHasDepth = b.HasComponent<DepthComponent>();
+
+    if (aHasDepth != bHasDepth) {
+        return !aHasDepth; 
+    }
+
+    if (!aHasDepth && !bHasDepth) {
+        return a.GetId() < b.GetId(); 
+    }
+
+    auto aTransform = a.GetComponent<TransformComponent>();
+    if(a.HasComponent<TagProjectileComponent>()){
+      aTransform.scale.y = aTransform.scale.y*2;
+    }
+    auto bTransform = b.GetComponent<TransformComponent>();
+    if(b.HasComponent<TagProjectileComponent>()){
+      bTransform.scale.y = bTransform.scale.y*2;
+    }
+    return aTransform.scale.y < bTransform.scale.y;
+});
+
+    for (auto entity : sortedEntities) {
         const auto sprite = entity.GetComponent<SpriteComponent>();
         const auto transform = entity.GetComponent<TransformComponent>();
 
@@ -26,17 +56,18 @@ class RenderSystem : public System {
             static_cast<int>(sprite.width * transform.scale.x),
             static_cast<int>(sprite.height * transform.scale.y),
         };
+
         SDL_RenderCopyEx(
             renderer,
             AssetManager->GetTexture(sprite.textureId),
             &srcRect,
             &dstRect,
             transform.rotation,
-            NULL,
+            nullptr,
             SDL_FLIP_NONE
         );
-      }
-  }
+    }
+ }
 
 };
 

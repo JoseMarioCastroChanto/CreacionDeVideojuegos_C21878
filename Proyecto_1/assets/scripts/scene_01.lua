@@ -7,7 +7,8 @@ scene = {
     {assetId = "bomb", filePath = "./assets/images/Bomb.png"},
     {assetId = "slime", filePath = "./assets/images/Slime.png"},
     {assetId = "background", filePath = "./assets/images/Background.png"},
-    {assetId = "player", filePath = "./assets/images/playerAllDirections.png"}
+    {assetId = "player", filePath = "./assets/images/playerAllDirections.png"},
+    {assetId = "obelisk", filePath = "./assets/images/Obelisk.png"}
  },
 
  -- Tabla de fuentes
@@ -250,15 +251,14 @@ buttons = {
     {
         components = {
             transform = {
-                position = { x = 0.0, y = 480.0},
+                position = { x = -250.0, y = 480.0},
                 scale = { x = 10, y = 10},
                 rotation = 0.0
 
             },
-            rigidbody ={
-                velocity = { x = 50, y = 0 },
-
-            }, 
+            script = {
+                path = "./assets/scripts/scene_01_Spawners.lua",
+            },
             entitySpawner = {
                 is_player = false
   
@@ -318,6 +318,44 @@ buttons = {
             tagplayer = {},
             life = {
                 life_count = 2,
+
+            },
+        }
+    },
+
+     -- Obelisk
+     {
+        components = {
+            animation = {
+                numFrames = 14,
+                frameSpeedRate = 5,
+                isLoop = true,
+  
+              },
+            sprite = {
+                assetId = "obelisk",
+                width = 190,
+                height = 240,
+                src_rect = { x = 0, y = 0},
+
+            },
+            transform = {
+                position = { x = 650.0, y = 380.0},
+                scale = { x = 1.4, y = 1.4},
+                rotation = 0.0
+
+            },
+            depth = {
+                min_scale = 0,
+                max_scale = 0,
+                original_width = 0,
+                scale_speed = 0, 
+                reference = 0,
+                
+            },
+            tagobjective = {},
+            life = {
+                life_count = 8000,
 
             },
         }

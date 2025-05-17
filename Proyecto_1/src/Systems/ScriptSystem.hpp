@@ -27,8 +27,9 @@ class ScriptSystem : public System {
     lua.set_function("set_srcRect", SetSrcRect);
     lua.set_function("set_numFrames", SetNumFrames);
     lua.set_function("go_to_scene", GoToScene);
-    lua.set_function("create_bomb",CreateBomb);
+    lua.set_function("create_dynamic_entity",CreateDynamicEntity);
     lua.set_function("get_velocity", GetVelocity);
+    lua.set_function("get_delta_time", GetDeltaTime);
   }
 
   void Update(sol::state& lua){
