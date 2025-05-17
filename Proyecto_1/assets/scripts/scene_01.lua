@@ -347,7 +347,7 @@ buttons = {
             },
             depth = {
                 min_scale = 0,
-                max_scale = 0,
+                max_scale = 2,
                 original_width = 0,
                 scale_speed = 0, 
                 reference = 0,

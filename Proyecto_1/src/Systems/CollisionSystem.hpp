@@ -6,6 +6,7 @@
 #include "../Components/RigidBodyComponent.hpp"
 #include "../Components/TransformComponent.hpp"
 #include "../Components/TagProjectileComponent.hpp"
+#include "../Components/DepthComponent.hpp"
 #include "../ECS/ECS.hpp"
 #include "../EventManager/EventManager.hpp"
 #include "../Events/CollisionEvent.hpp"
@@ -60,6 +61,8 @@ private:
     bool CheckCircleVsCircle(Entity a, Entity b, TransformComponent aTransform, TransformComponent bTransform) {
         auto aCollider = a.GetComponent<CircleColliderComponent>();
         auto bCollider = b.GetComponent<CircleColliderComponent>();
+        auto aDepth = a.GetComponent<DepthComponent>();
+        auto bDepth = b.GetComponent<DepthComponent>();
 
         glm::vec2 aCenterPos = glm::vec2(
                 aTransform.position.x - (aCollider.width / 2)* aTransform.scale.x,
@@ -77,15 +80,8 @@ private:
         glm::vec2 dif = aCenterPos - bCenterPos;
         double length = glm::sqrt((dif.x * dif.x) + (dif.y * dif.y));
 
-        int aScale = glm::ceil(aTransform.scale.y);
-        if(a.HasComponent<TagProjectileComponent>()){
-            aScale=aScale*2;
-        }
-        int bScale = glm::ceil(bTransform.scale.y);
-         if(b.HasComponent<TagProjectileComponent>()){
-            bScale=bScale*2;
-
-        }
+        int aScale = glm::ceil(aTransform.scale.y*10/aDepth.max_scale);
+        int bScale = glm::ceil(bTransform.scale.y*10/bDepth.max_scale);
         
         return (aRadius + bRadius) >= length && aScale == bScale;
     }

@@ -48,7 +48,7 @@ entities = {
         },
         depth = {
             min_scale = 0,
-            max_scale = 0,
+            max_scale = 5,
             original_width = 0,
             scale_speed = 0, 
             reference = 0,
@@ -105,7 +105,7 @@ entities = {
         },
         depth = {
             min_scale = 0,
-            max_scale = 0,
+            max_scale = 10,
             original_width = 0,
             scale_speed = 0, 
             reference = 0,

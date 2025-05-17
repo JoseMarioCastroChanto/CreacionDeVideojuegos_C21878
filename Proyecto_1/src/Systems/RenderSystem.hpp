@@ -5,7 +5,6 @@
 #include "../Components/SpriteComponent.hpp"
 #include "../Components/TransformComponent.hpp"
 #include "../Components/DepthComponent.hpp"
-#include "../Components/TagProjectileComponent.hpp"
 #include "../ECS/ECS.hpp"
 
 class RenderSystem : public System {
@@ -33,15 +32,15 @@ class RenderSystem : public System {
     if (!aHasDepth && !bHasDepth) {
         return a.GetId() < b.GetId(); 
     }
-
+    // Regla de 3 para escalas comparables
+    auto aDepth = a.GetComponent<DepthComponent>();
     auto aTransform = a.GetComponent<TransformComponent>();
-    if(a.HasComponent<TagProjectileComponent>()){
-      aTransform.scale.y = aTransform.scale.y*2;
-    }
+    aTransform.scale.y = aTransform.scale.y*10/aDepth.max_scale;
+    
     auto bTransform = b.GetComponent<TransformComponent>();
-    if(b.HasComponent<TagProjectileComponent>()){
-      bTransform.scale.y = bTransform.scale.y*2;
-    }
+    auto bDepth = b.GetComponent<DepthComponent>();
+    bTransform.scale.y = bTransform.scale.y*10/bDepth.max_scale;
+    
     return aTransform.scale.y < bTransform.scale.y;
 });
 
