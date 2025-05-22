@@ -35,7 +35,7 @@ scene = {
    
                },
                text = {
-                   text = "Obelisk Defender",
+                   text = "YOU WIN",
                    fontId = "press_start_32",
                    r = 150,
                    g = 0,
@@ -56,10 +56,10 @@ scene = {
 
             },
             script = {
-                path = "./assets/scripts/menu_button_01.lua",
+                path = "./assets/scripts/menu_button_02.lua",
             },
             text = {
-                text = "Level 01",
+                text = "Next level",
                 fontId = "press_start_24",
                 r = 150,
                 g = 150,
@@ -80,10 +80,10 @@ scene = {
 
             },
             script = {
-                path = "./assets/scripts/menu_button_02.lua",
+                path = "./assets/scripts/menu_button.lua",
             },
             text = {
-                text = "Level 02",
+                text = "Menu",
                 fontId = "press_start_24",
                 r = 150,
                 g = 150,
@@ -92,30 +92,6 @@ scene = {
             },
             transform = {
                 position = { x = 50.0, y = 250.0},
-                scale = { x = 1.0, y = 1.0},
-                rotation = 0.0
-
-            }
-        }
-    },
-    {
-        components = {
-            clickable = {
-
-            },
-            script = {
-                path = "./assets/scripts/menu_button_03.lua",
-            },
-            text = {
-                text = "Level 03",
-                fontId = "press_start_24",
-                r = 150,
-                g = 150,
-                b = 0,
-                a = 255
-            },
-            transform = {
-                position = { x = 50.0, y = 350.0},
                 scale = { x = 1.0, y = 1.0},
                 rotation = 0.0
 

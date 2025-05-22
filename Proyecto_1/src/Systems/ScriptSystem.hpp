@@ -21,6 +21,7 @@ class ScriptSystem : public System {
     lua.set_function("is_action_activated", IsActionActivated);
     lua.set_function("set_velocity", SetVelocity);
     lua.set_function("get_scale", GetScale);
+    lua.set_function("set_scale", SetScale);
     lua.set_function("set_position", SetPosition);
     lua.set_function("get_positionX", GetPositionX);
     lua.set_function("get_positionY", GetPositionY);
@@ -30,6 +31,14 @@ class ScriptSystem : public System {
     lua.set_function("create_dynamic_entity",CreateDynamicEntity);
     lua.set_function("get_velocity", GetVelocity);
     lua.set_function("get_delta_time", GetDeltaTime);
+    lua.set_function("get_time", GetTime);
+    lua.set_function("get_defeat", GetDefeat);
+    lua.set_function("set_timer", SetTimer);
+    lua.set_function("set_text", SetText);
+    lua.set_function("search_objectiveX", SearchObjectiveX);
+    lua.set_function("search_objectiveY", SearchObjectiveY);
+    lua.set_function("search_objectiveScale", SearchObjectiveScale);
+    lua.set_function("search_objectiveDepth", SearchObjectiveDepth);
   }
 
   void Update(sol::state& lua){

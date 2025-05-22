@@ -4,7 +4,11 @@ original_width = 32
 movementSprites = 4
 staticSprites = 2
 screen_width = 1500  
-last_space_state = false
+last_k_state = false
+last_l_state = false
+local cooldownA = 0
+local cooldownB = 0
+local bigBomb = 0
 
 
 local animations = {
@@ -21,6 +25,8 @@ function update()
     local vel_x, vel_y = 0, 0
     local is_pressed = false
     local current_scale = get_scale(this)
+    cooldownA = cooldownA + get_delta_time()
+    cooldownB = cooldownB + get_delta_time()
 
     -- Inputs y detección de dirección
     if is_action_activated("up") then
@@ -49,8 +55,8 @@ function update()
 
     -- considerar detener al personaje
     -- considerar orden inverso de teclas
-    local current_space_state = is_action_activated("space")
-    if current_space_state and not last_space_state and (is_action_activated("right") 
+    local current_k_state = is_action_activated("k")
+    if cooldownA>= 500 and current_k_state and not last_k_state and (is_action_activated("right") 
     or is_action_activated("left") )then
         newScale = current_scale/2
         if is_action_activated("right") then 
@@ -58,9 +64,22 @@ function update()
         elseif is_action_activated("left") then
             create_dynamic_entity(this,-newScale/2,0,newScale)
         end
+        cooldownA = 0
 
     end
-    last_space_state = current_space_state
+    last_k_state = current_k_state
+
+    if cooldownB>= 10000 then
+        bigBomb = bigBomb + 1
+        cooldownB = 0
+    end
+    local current_l_state = is_action_activated("l")
+    if current_l_state and not last_l_state and bigBomb > 0 then
+        totem_scale = current_scale * 2.5 / 10
+        create_dynamic_entity(this,0,4,totem_scale)
+        bigBomb = bigBomb - 1
+    end
+    last_l_state = current_l_state
 
     -- Corrección de velocidad
     if vel_y ~= 0 then

@@ -1,7 +1,9 @@
 local animations = {
-    right = {x = 0, y = 0, width = 32, height = 32},
-    left  = {x = 0, y = 32, width = 32, height = 32}
+    right = {x = 0, y = 0, width = 60, height = 57},
+    left = {x = 0, y = 57, width = 60, height = 57} 
 }
+
+
 function update()
     if get_velocity(this) > 0 then
         current_direction = "right"

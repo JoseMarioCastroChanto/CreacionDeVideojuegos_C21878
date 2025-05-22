@@ -6,6 +6,7 @@
 
 #include "../Components/RigidBodyComponent.hpp"
 #include "../Components/TagWallComponent.hpp"
+#include "../Components/TagPlayerComponent.hpp"
 #include "../Components/PolygonColliderComponent.hpp"
 #include "../Components/CircleColliderComponent.hpp"
 #include "../ECS/ECS.hpp"
@@ -26,8 +27,10 @@ public:
     void OnCollision(CollisionEvent& e) {
         bool aIsWall = e.a.HasComponent<TagWallComponent>();
         bool bIsWall = e.b.HasComponent<TagWallComponent>();
+        bool aIsPlayer = e.a.HasComponent<TagPlayerComponent>();
+        bool bIsPlayer = e.b.HasComponent<TagPlayerComponent>();
 
-        if (aIsWall || bIsWall) {
+        if ((aIsWall || bIsWall) && (aIsPlayer||bIsPlayer)) {
             Entity move = aIsWall ? e.b : e.a;  // Determinamos cuál es la entidad que se mueve
 
             if (move.HasComponent<TransformComponent>() && move.HasComponent<RigidBodyComponent>()) {

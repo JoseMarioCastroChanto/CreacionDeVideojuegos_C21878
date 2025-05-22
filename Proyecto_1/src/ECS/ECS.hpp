@@ -92,6 +92,7 @@ class Registry {
   std::set<Entity> entitiesToBeKilled;
 
   std::deque<int> freeIds;
+  void RemoveAllComponentsOfEntity(Entity entity);
 
   public:
    Registry();

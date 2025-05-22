@@ -10,6 +10,8 @@
 #include "../Components/SpriteComponent.hpp"
 #include "../Systems/EntitySpawnerSystem.hpp"
 #include "../Systems/SceneTimeSystem.hpp"
+#include "../Systems/DefeatSystem.hpp"
+#include "../Systems/EnemyIASystem.hpp"
 #include "../ECS/ECS.hpp"
 #include "../Game/Game.hpp"
 
@@ -31,10 +33,17 @@ int GetVelocity(Entity entity){
     return rigidbody.velocity.x;
 }
 
+
 // TransformComponent
 float GetScale(Entity entity) {
      auto& transform = entity.GetComponent<TransformComponent>();
      return transform.scale.x;
+}
+
+void SetScale(Entity entity, float x, float y) {
+     auto& transform = entity.GetComponent<TransformComponent>();
+     transform.scale.x = x;
+     transform.scale.y = y;
 }
 
 void SetPosition(Entity entity, float x, float y) {
@@ -87,6 +96,26 @@ int GetDeltaTime(){
     int time = Game::GetInstance().registry->GetSystem<SceneTimeSystem>().GetDeltaTime();
     return time;
 }
+int GetTime(){
+    int time = Game::GetInstance().registry->GetSystem<SceneTimeSystem>().GetSceneTime();
+    return time;
+}
+void SetTimer(Entity entity, int newTime){
+    std::string timer = std::to_string(newTime / 1000);
+    entity.GetComponent<TextComponent>().text = timer;
+    
+}
+
+//Defeat 
+bool GetDefeat(){
+    return Game::GetInstance().registry->GetSystem<DefeatSystem>().Defeat;
+}
+
+//Text
+void SetText(Entity entity, int newText){
+    entity.GetComponent<TextComponent>().text = std::to_string(newText);
+    
+}
 
 // Scenes
 void GoToScene(const std::string& sceneName){
@@ -94,4 +123,24 @@ void GoToScene(const std::string& sceneName){
     Game::GetInstance().sceneManager->StopScene();
 }
 
+//EnemyIASystem
+double SearchObjectiveX(Entity entity, bool player){
+    TransformComponent transform = Game::GetInstance().registry->GetSystem<EnemyIASystem>().SearchClosestObjective(entity,player);
+    return transform.position.x;
+}
+
+double SearchObjectiveY(Entity entity, bool player){
+    TransformComponent transform = Game::GetInstance().registry->GetSystem<EnemyIASystem>().SearchClosestObjective(entity,player);
+    return transform.position.y;
+}
+
+double SearchObjectiveScale(Entity entity, bool player){
+    TransformComponent transform = Game::GetInstance().registry->GetSystem<EnemyIASystem>().SearchClosestObjective(entity,player);
+    return transform.scale.x;
+}
+
+double SearchObjectiveDepth(Entity entity, bool player){
+    DepthComponent depth = Game::GetInstance().registry->GetSystem<EnemyIASystem>().SearchClosestObjectiveDepth(entity,player);
+    return depth.max_scale;
+}
 #endif

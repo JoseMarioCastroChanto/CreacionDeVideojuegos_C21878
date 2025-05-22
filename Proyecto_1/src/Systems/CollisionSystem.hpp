@@ -66,7 +66,7 @@ private:
 
         glm::vec2 aCenterPos = glm::vec2(
                 aTransform.position.x - (aCollider.width / 2)* aTransform.scale.x,
-                aTransform.position.y - (aCollider.height / 2) * aTransform.scale.x
+                aTransform.position.y - (aCollider.height / 2) * aTransform.scale.y
             );
 
         glm::vec2 bCenterPos = glm::vec2(
@@ -80,26 +80,13 @@ private:
         glm::vec2 dif = aCenterPos - bCenterPos;
         double length = glm::sqrt((dif.x * dif.x) + (dif.y * dif.y));
 
-        int aScale = glm::ceil(aTransform.scale.y*10/aDepth.max_scale);
-        int bScale = glm::ceil(bTransform.scale.y*10/bDepth.max_scale);
+
+        int aScale = glm::floor(aTransform.scale.y*10/aDepth.max_scale);
+        int bScale = glm::floor(bTransform.scale.y*10/bDepth.max_scale);
         
         return (aRadius + bRadius) >= length && aScale == bScale;
     }
 
-    bool IsPointInPolygon(const glm::vec2& point, const std::vector<glm::vec2>& vertices) {
-        bool inside = false;
-        int count = vertices.size();
-        for (int i = 0, j = count - 1; i < count; j = i++) {
-            const glm::vec2& vi = vertices[i];
-            const glm::vec2& vj = vertices[j];
-
-            if (((vi.y > point.y) != (vj.y > point.y)) &&
-                (point.x < (vj.x - vi.x) * (point.y - vi.y) / (vj.y - vi.y) + vi.x)) {
-                inside = !inside;
-            }
-        }
-        return inside;
-    }
 
     float DistancePointToSegment(glm::vec2 p, glm::vec2 a, glm::vec2 b) {
         glm::vec2 ab = b - a;
@@ -122,12 +109,6 @@ bool CheckCircleVsPolygon(Entity circleEntity, Entity polygonEntity, TransformCo
 
 
     float radius = circleCollider.radius * circleTransform.scale.x;
-
- 
-    if (IsPointInPolygon(circleCenter,polygonCollider.vertices)) {
-        return true;
-    }
-
  
     int count = polygonCollider.vertices.size();
     for (int i = 0, j = count - 1; i < count; j = i++) {

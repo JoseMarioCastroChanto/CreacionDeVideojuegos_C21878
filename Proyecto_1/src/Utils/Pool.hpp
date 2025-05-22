@@ -51,6 +51,9 @@ class Pool : public IPool {
    TComponent& operator[](unsigned int index){
     return static_cast<TComponent&>(data[index]);
   }
+  
+
+  
 };
 
 #endif

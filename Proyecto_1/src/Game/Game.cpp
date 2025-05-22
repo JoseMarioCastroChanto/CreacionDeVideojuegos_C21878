@@ -17,6 +17,8 @@
 #include "../Systems/SceneTimeSystem.hpp"
 #include "../Systems/EntitySpawnerSystem.hpp"
 #include "../Systems/CleanSystem.hpp"
+#include "../Systems/DefeatSystem.hpp"
+#include "../Systems/EnemyIASystem.hpp"
 
 Game::Game(){
     std::cout<< "[Game] Se ejecuta constructor" << std::endl;
@@ -94,6 +96,8 @@ void Game:: Setup(){
     registry->AddSystem<UISystem>();
     registry->AddSystem<SceneTimeSystem>();
     registry->AddSystem<CleanSystem>();
+    registry->AddSystem<DefeatSystem>();
+    registry->AddSystem<EnemyIASystem>();
 
     sceneManager->LoadSceneFromScript("./assets/scripts/scenes.lua", lua);
 
@@ -172,6 +176,7 @@ void Game::Update(){
     registry->GetSystem<DepthSystem>().Update();
     registry->GetSystem<CollisionSystem>().Update(eventManager);
     registry->GetSystem<CleanSystem>().Update();
+    registry->GetSystem<DefeatSystem>().Update();
 }
 
 void Game::Render(){
@@ -192,7 +197,6 @@ void Game::RunScene(){
         Update();
         Render();
     }
-
     assetManager->ClearAssets();
     registry->ClearAllEntities();
 }
