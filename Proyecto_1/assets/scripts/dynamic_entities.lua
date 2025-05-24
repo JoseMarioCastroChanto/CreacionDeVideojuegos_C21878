@@ -22,7 +22,7 @@ entities = {
 
         },
         script = {
-            path = "./assets/scripts/bomb.lua",
+            path = "./assets/scripts/entities/bomb.lua",
         },
         sprite = {
             assetId = "bomb",
@@ -79,7 +79,7 @@ entities = {
 
         },
         script = {
-            path = "./assets/scripts/slime.lua",
+            path = "./assets/scripts/entities/slime.lua",
         },
         sprite = {
             assetId = "slime",
@@ -130,7 +130,7 @@ entities = {
           },
 
           script = {
-            path = "./assets/scripts/eye.lua",
+            path = "./assets/scripts/entities/eye.lua",
         },
 
         rigidbody ={
@@ -184,7 +184,7 @@ entities = {
   
               },
             script = {
-                path = "./assets/scripts/mushroom.lua",
+                path = "./assets/scripts/entities/mushroom.lua",
             },
             circle_collider = {
               radius = 16,
@@ -240,7 +240,7 @@ entities = {
     
               },
               script = {
-                path = "./assets/scripts/fireTotem.lua",
+                path = "./assets/scripts/entities/fireTotem.lua",
             },
            
             sprite = {
@@ -288,7 +288,7 @@ entities = {
 
         },
         script = {
-            path = "./assets/scripts/eyeProjectile.lua",
+            path = "./assets/scripts/entities/eyeProjectile.lua",
         },
         sprite = {
             assetId = "eyeProjectile",

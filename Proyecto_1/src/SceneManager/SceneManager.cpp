@@ -15,7 +15,6 @@ SceneManager::~SceneManager(){
 }
 
 void SceneManager::LoadSceneFromScript(const std::string& path, sol::state& lua){
-    //TODO: Verificar que el codigo sea correcto
     lua.script_file(path);
 
     sol::table scenes = lua["scenes"];

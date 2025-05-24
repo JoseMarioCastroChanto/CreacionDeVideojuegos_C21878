@@ -53,6 +53,17 @@ void Game::Init(){
         std::cout << "[GAME] Error al inciializar SDL_ttf" << std::endl;
         return;
     }
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
+        std::cout << "[GAME] Error al inicializar SDL_mixer: " 
+        << Mix_GetError() << std::endl;
+        return;
+    }
+    int flags = MIX_INIT_MP3;  
+    int initted = Mix_Init(flags);
+    if ((initted & flags) != flags) {
+        std::cout << "[GAME] No se pudo inicializar SDL_mixer con soporte MP3: " << Mix_GetError() << std::endl;
+        return;
+    }
 
     windowWidth = 1600;
     windowHeight = 900;
@@ -212,7 +223,9 @@ void Game::Run(){
 void Game::Destroy(){
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-
+    assetManager->ClearMusic();  
+    Mix_CloseAudio();
+    Mix_Quit();
     TTF_Quit();
     SDL_Quit();
 }

@@ -28,6 +28,8 @@ class SceneLoader {
   void LoadEntities(sol::state& lua, const sol::table& entites, 
   std::unique_ptr<Registry>& registry);
 
+  void LoadMusic(const sol::table& musicTable, std::unique_ptr<AssetManager>& assetManager);
+
   public:
   SceneLoader();
   ~SceneLoader();

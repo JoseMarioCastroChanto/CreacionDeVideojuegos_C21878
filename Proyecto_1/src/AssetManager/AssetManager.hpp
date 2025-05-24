@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-
+#include <SDL2/SDL_mixer.h>
 #include <map>
 #include <string>
 
@@ -11,6 +11,8 @@ class AssetManager{
  private:
   std::map<std::string, SDL_Texture*> textures;
   std::map<std::string, TTF_Font*> fonts;
+  std::map<std::string, Mix_Music*> musics;
+  Mix_Music* currentMusic = nullptr;
 
  public:
   AssetManager();
@@ -26,6 +28,10 @@ class AssetManager{
   void AddFont(const std::string& fontId, const std::string& filePath
   , int fontSize);
   TTF_Font* GetFont(const std::string& fontId);
+  void LoadMusic(const std::string& musicId, const std::string& filePath);
+  void PlayMusic(const std::string& musicId, int loops = -1);
+  void StopMusic();
+  void ClearMusic(); 
    
 };
 #endif

@@ -1,9 +1,9 @@
 scenes = {
     [0]=
-    {name = "main_menu", path = "./assets/scripts/scene_menu.lua"},
-    {name = "level_01", path = "./assets/scripts/scene_01.lua"},
-    {name = "level_01", path = "./assets/scripts/scene_02.lua"},
-    {name = "level_01", path = "./assets/scripts/scene_03.lua"},
+    {name = "main_menu", path = "./assets/scripts/scenes/scene_menu.lua"},
+    {name = "level_01", path = "./assets/scripts/scenes/scene_01.lua"},
+    {name = "level_01", path = "./assets/scripts/scenes/scene_02.lua"},
+    {name = "level_01", path = "./assets/scripts/scenes/scene_03.lua"},
     {name = "Defeat_1", path = "./assets/scripts/defeats/defeat_1.lua"},
     {name = "Win_1", path = "./assets/scripts/wins/win_1.lua"},
     {name = "Defeat_2", path = "./assets/scripts/defeats/defeat_2.lua"},

@@ -2,7 +2,7 @@ scene = {
     --Tabla de imagenes y sprites
     sprites = {
         [0]={assetId = "player", filePath = "./assets/images/playerAllDirections.png"},
-        {assetId = "background", filePath = "./assets/images/Background.png"},
+        {assetId = "hud", filePath = "./assets/images/HUDBox.png"},
     },
    
     -- Tabla de fuentes
@@ -10,6 +10,9 @@ scene = {
        [0] = 
        {fontId = "press_start_32", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 32},
        {fontId = "press_start_50", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 50},
+    },
+    music = {
+        [0] =  { musicId = "win", filePath = "./assets/audio/win.mp3" }
     },
    
     --Tabla de acciones y teclas
@@ -48,11 +51,47 @@ scene = {
             }
         }
     },
+        --HUD
+        {
+            components = {
+                sprite = {
+                    assetId = "hud",
+                    width = 699,
+                    height = 233,
+                    src_rect = { x = 0, y = 0},
+    
+                },
+                transform = {
+                    position = { x = 630, y = 250},
+                    scale = { x = 0.5, y = 0.5},
+                    rotation = 0.0
+    
+                },
+            }
+        },
+      --HUD
+      {
+        components = {
+            sprite = {
+                assetId = "hud",
+                width = 699,
+                height = 233,
+                src_rect = { x = 0, y = 0},
+
+            },
+            transform = {
+                position = { x = 630, y = 370},
+                scale = { x = 0.5, y = 0.5},
+                rotation = 0.0
+
+            },
+        }
+    },
     {
         components = {
             clickable = {},
             script = {
-                path = "./assets/scripts/menu_button_02.lua",
+                path = "./assets/scripts/buttons/menu_button_02.lua",
             },
             text = {
                 text = "Next Level",
@@ -73,7 +112,7 @@ scene = {
         components = {
             clickable = {},
             script = {
-                path = "./assets/scripts/menu_button.lua",
+                path = "./assets/scripts/buttons/menu_button.lua",
             },
             text = {
                 text = "Menu",
@@ -84,7 +123,7 @@ scene = {
                 a = 255
             },
             transform = {
-                position = { x = 730.0, y = 400.0 },
+                position = { x = 740.0, y = 410.0 },
                 scale = { x = 1.0, y = 1.0 },
                 rotation = 0.0
             }
@@ -94,7 +133,7 @@ scene = {
     {
         components = {
             animation = {
-                numFrames = 3,
+                numFrames = 2,
                 frameSpeedRate = 5,
                 isLoop = true,
   
@@ -103,7 +142,7 @@ scene = {
                 assetId = "player",
                 width = 32,
                 height = 32,
-                src_rect = { x = 0, y = 288},
+                src_rect = { x = 0, y = 192},
 
             },
             transform = {

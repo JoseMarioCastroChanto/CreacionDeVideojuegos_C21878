@@ -9,17 +9,19 @@
     std::cout<< "[AssetManager] Se ejecuta destructor" << std::endl;
   }
 
-  void AssetManager::ClearAssets(){
+ void AssetManager::ClearAssets(){
     for (auto texture : textures){
         SDL_DestroyTexture(texture.second);
     }
     textures.clear();
+
     for (auto font: fonts){
-      TTF_CloseFont(font.second);
+        TTF_CloseFont(font.second);
     }
     fonts.clear();
-  }
 
+    ClearMusic();
+}
   void AssetManager::AddTexture(SDL_Renderer* renderer, const std::string& textureId
     , const std::string& filePath){
         SDL_Surface* surface = IMG_Load(filePath.c_str());
@@ -46,5 +48,40 @@
 
 TTF_Font* AssetManager::GetFont(const std::string& fontId){
   return fonts[fontId];
+}
+
+void AssetManager::LoadMusic(const std::string& musicId, const std::string& filePath) {
+    Mix_Music* music = Mix_LoadMUS(filePath.c_str());
+    if (!music) {
+        SDL_Log("Error cargando música %s: %s", filePath.c_str(), Mix_GetError());
+        return;
+    }
+    musics[musicId] = music;
+}
+
+void AssetManager::PlayMusic(const std::string& musicId, int loops) {
+    auto it = musics.find(musicId);
+    if (it != musics.end()) {
+        if (Mix_PlayingMusic()) {
+            Mix_HaltMusic();
+        }
+        currentMusic = it->second;
+        Mix_PlayMusic(currentMusic, loops);
+    }
+}
+
+void AssetManager::StopMusic() {
+    if (Mix_PlayingMusic()) {
+        Mix_HaltMusic();
+    }
+}
+
+void AssetManager::ClearMusic() {
+    StopMusic();
+    for (auto& pair : musics) {
+        Mix_FreeMusic(pair.second);
+    }
+    musics.clear();
+    currentMusic = nullptr;
 }
    
