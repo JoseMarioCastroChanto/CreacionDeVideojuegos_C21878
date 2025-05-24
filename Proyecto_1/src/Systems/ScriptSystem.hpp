@@ -39,6 +39,10 @@ class ScriptSystem : public System {
     lua.set_function("search_objectiveY", SearchObjectiveY);
     lua.set_function("search_objectiveScale", SearchObjectiveScale);
     lua.set_function("search_objectiveDepth", SearchObjectiveDepth);
+    lua.set_function("get_depth", GetDepth);
+    lua.set_function("kill", Kill);
+    lua.set_function("destroy_all_enemies", DestroyAllEnemies);
+  
   }
 
   void Update(sol::state& lua){

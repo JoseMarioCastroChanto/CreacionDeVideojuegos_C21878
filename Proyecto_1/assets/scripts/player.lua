@@ -75,8 +75,7 @@ function update()
     end
     local current_l_state = is_action_activated("l")
     if current_l_state and not last_l_state and bigBomb > 0 then
-        totem_scale = current_scale * 2.5 / 10
-        create_dynamic_entity(this,0,4,totem_scale)
+        create_dynamic_entity(this,0,4,-1)
         bigBomb = bigBomb - 1
     end
     last_l_state = current_l_state
@@ -106,7 +105,6 @@ function update()
   
     pos_x, pos_y = get_positionX(this), get_positionY(this)
     local player_half_width = (original_width * current_scale) / 2
-
 
     if pos_x + player_half_width < 0 then
         set_position(this, screen_width + player_half_width, pos_y)

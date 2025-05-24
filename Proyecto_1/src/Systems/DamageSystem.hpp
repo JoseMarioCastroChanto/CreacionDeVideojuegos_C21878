@@ -34,8 +34,10 @@ void OnCollision(CollisionEvent& e){
       auto& alife = e.a.GetComponent<LifeComponent>().life_count;
       auto& blife = e.b.GetComponent<LifeComponent>().life_count;
 
-      if((e.a.HasComponent<TagEnemyComponent>() && e.b.HasComponent<TagProjectileComponent>()) 
-      || (e.b.HasComponent<TagEnemyComponent>() && e.a.HasComponent<TagProjectileComponent>()) ){
+      if((e.a.HasComponent<TagEnemyComponent>() && !e.b.HasComponent<TagEnemyComponent>() &&
+      e.b.HasComponent<TagProjectileComponent>() ) 
+      || (e.b.HasComponent<TagEnemyComponent>() && !e.a.HasComponent<TagEnemyComponent>()
+      && e.a.HasComponent<TagProjectileComponent>()) ){
           alife -= e.b.GetComponent<DamageComponent>().damage_dealt;
           blife -= e.a.GetComponent<DamageComponent>().damage_dealt;
       }
@@ -43,10 +45,16 @@ void OnCollision(CollisionEvent& e){
       if(e.a.HasComponent<TagEnemyComponent>() && e.b.HasComponent<TagObjectiveComponent>()
       && !e.b.HasComponent<TagProjectileComponent>()){
           blife -= e.a.GetComponent<DamageComponent>().damage_dealt;
+          if(e.a.HasComponent<TagEnemyComponent>()&& e.a.HasComponent<TagProjectileComponent>()){
+              alife -= 1;
+          }
       }
       if(e.b.HasComponent<TagEnemyComponent>() && e.a.HasComponent<TagObjectiveComponent>()
       && !e.a.HasComponent<TagProjectileComponent>()){
           alife -= e.b.GetComponent<DamageComponent>().damage_dealt;
+          if(e.b.HasComponent<TagEnemyComponent>()&& e.b.HasComponent<TagProjectileComponent>()){
+              blife -= 1;
+          }
       }
 
       if(alife <= 0){
@@ -60,6 +68,14 @@ void OnCollision(CollisionEvent& e){
 
     }
 
+}
+
+void DestroyAllEnemies (){
+       for(auto entity : GetSystemEntities()){
+            if(entity.HasComponent<TagEnemyComponent>()){
+                entity.Kill();
+            }
+        }
 }
 };
 #endif

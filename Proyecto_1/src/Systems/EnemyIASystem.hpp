@@ -30,7 +30,11 @@ TransformComponent SearchClosestObjective(Entity enemy, bool isPlayerIncl) {
         if (!isPlayerIncl && entity.HasComponent<TagPlayerComponent>()) {
             continue;
         }
-
+        if (isPlayerIncl && entity.HasComponent<TagPlayerComponent>()) {
+           const auto& targetTransform = entity.GetComponent<TransformComponent>();
+            closestTransform = targetTransform;
+            break; 
+        }
         const auto& targetTransform = entity.GetComponent<TransformComponent>();
         glm::vec2 targetPos = targetTransform.position;
 
@@ -57,6 +61,11 @@ DepthComponent SearchClosestObjectiveDepth(Entity enemy, bool isPlayerIncl) {
 
         if (!isPlayerIncl && entity.HasComponent<TagPlayerComponent>()) {
             continue;
+        }
+         if (isPlayerIncl && entity.HasComponent<TagPlayerComponent>()) {
+            const auto& targetDepth = entity.GetComponent<DepthComponent>();
+            closestDepth = targetDepth;
+            break; 
         }
 
         const auto& targetTransform = entity.GetComponent<TransformComponent>();

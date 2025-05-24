@@ -12,6 +12,7 @@
 #include "../Systems/SceneTimeSystem.hpp"
 #include "../Systems/DefeatSystem.hpp"
 #include "../Systems/EnemyIASystem.hpp"
+#include "../Systems/DamageSystem.hpp"
 #include "../ECS/ECS.hpp"
 #include "../Game/Game.hpp"
 
@@ -61,6 +62,12 @@ float GetPositionY(Entity entity) {
      return transform.position.y;
 }
 
+// DepthComponent
+double GetDepth(Entity entity){
+    auto& depth = entity.GetComponent<DepthComponent>();
+    return depth.max_scale;
+}
+
 // SpriteComponent
 void SetSrcRect(Entity entity,int width = 0
     , int height = 0, int srcRectX = 0, int srcRectY = 0){
@@ -81,12 +88,13 @@ void CreateDynamicEntity(Entity entity, double dir, int num, double scale){
     Entity newEntity = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(
         Game::GetInstance().registry,num,Game::GetInstance().lua
     );
-    auto& transformNew = newEntity.GetComponent<TransformComponent>();
-    auto& rigidBodyNew= newEntity.GetComponent<RigidBodyComponent>();
-    transformNew.position = transform.position;
-    transformNew.scale.x = scale;
-    transformNew.scale.y = scale;
-    rigidBodyNew.velocity.x = rigidBodyNew.velocity.x*dir;
+    if(scale > 0){
+        auto& transformNew = newEntity.GetComponent<TransformComponent>();
+        auto& rigidBodyNew= newEntity.GetComponent<RigidBodyComponent>();
+        transformNew.position = transform.position;
+        transformNew.scale.x = scale;
+        transformNew.scale.y = scale;
+        rigidBodyNew.velocity.x = rigidBodyNew.velocity.x*dir;}
   
 
 }
@@ -142,5 +150,15 @@ double SearchObjectiveScale(Entity entity, bool player){
 double SearchObjectiveDepth(Entity entity, bool player){
     DepthComponent depth = Game::GetInstance().registry->GetSystem<EnemyIASystem>().SearchClosestObjectiveDepth(entity,player);
     return depth.max_scale;
+}
+
+// Damage System
+void DestroyAllEnemies(){
+    Game::GetInstance().registry->GetSystem<DamageSystem>().DestroyAllEnemies();
+}
+
+//Kill entity
+void Kill(Entity entity){
+    entity.Kill();
 }
 #endif

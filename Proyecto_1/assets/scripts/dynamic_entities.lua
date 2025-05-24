@@ -119,7 +119,7 @@ entities = {
     components = {
         animation = {
             numFrames = 13,
-            frameSpeedRate = 5,
+            frameSpeedRate = 8,
             isLoop = true,
 
           },
@@ -168,46 +168,142 @@ entities = {
 
             
         },
+        entitySpawner = {
+            is_player = false
+
+          },
     }
 },
-     -- Night Borne
-  {
+     -- Mushroom
+     {
+        components = {
+            animation = {
+                numFrames = 8,
+                frameSpeedRate = 5,
+                isLoop = true,
+  
+              },
+            script = {
+                path = "./assets/scripts/mushroom.lua",
+            },
+            circle_collider = {
+              radius = 16,
+              width = 32,
+              height = 32,
+
+
+            },
+            rigidbody ={
+                velocity = { x = 100, y = 0 },
+
+            },
+            sprite = {
+                assetId = "mushroom",
+                width = 80,
+                height = 64,
+                src_rect = { x = 0, y = 0},
+
+            },
+            transform = {
+                position = { x = 650.0, y = 480.0},
+                scale = { x = 5.0, y = 5.0},
+                rotation = 0.0
+
+            },
+            tagenemy = {},
+            tagprojectile = {},
+            depth = {
+                min_scale = 2.0,
+                max_scale = 5.0,
+                original_width = 80.0,
+                scale_speed = 0.2, 
+                reference = 480,
+                
+            },
+            life = {
+                life_count = 1,
+    
+            },
+            damage = {
+                damage_dealt = 1,
+    
+            },
+        }
+    },
+    -- Fire Totem
+    {
+        components = {
+            animation = {
+                numFrames = 14,
+                frameSpeedRate = 8,
+                isLoop = false,
+    
+              },
+              script = {
+                path = "./assets/scripts/fireTotem.lua",
+            },
+           
+            sprite = {
+                assetId = "totem",
+                width = 64,
+                height = 96,
+                src_rect = { x = 0, y = 384},
+    
+            },
+            transform = {
+                position = { x = 450.0, y = -10.0},
+                scale = { x = 10, y = 10},
+                rotation = 0.0
+    
+            },
+            depth = {
+                min_scale = 0,
+                max_scale = 0,
+                original_width = 0,
+                scale_speed = 0, 
+                reference = 0,
+                
+            },
+        }
+    },
+ -- Eye Projectile
+ {
     components = {
         animation = {
-            numFrames = 6,
-            frameSpeedRate = 5,
-            isLoop = true,
+            numFrames = 1,
+            frameSpeedRate = 1,
+            isLoop = false,
 
           },
           circle_collider = {
-            radius = 1,
-            width = 2,
-            height = 2,
+            radius = 8,
+            width = 17,
+            height = 16,
 
 
           },
 
-          script = {
-            path = "./assets/scripts/nightborne.lua",
-        },
-
         rigidbody ={
-            velocity = { x = 50, y = 0 },
+            velocity = { x = 150, y = 0 },
 
+        },
+        script = {
+            path = "./assets/scripts/eyeProjectile.lua",
         },
         sprite = {
-            assetId = "nightborne",
-            width = 80,
-            height = 40,
-            src_rect = { x = 0, y = 40},
+            assetId = "eyeProjectile",
+            width = 34,
+            height = 32,
+            src_rect = { x = 0, y = 0},
 
         },
         transform = {
             position = { x = 0.0, y = 0.0},
-            scale = { x = 1.0, y = 1.0},
+            scale = { x = 10.0, y = 10.0},
             rotation = 0.0
 
         },
+        tagprojectile = {},
         tagenemy = {},
         life = {
             life_count = 1,
@@ -218,71 +314,14 @@ entities = {
 
         },
         depth = {
-            min_scale = 4.8,
-            max_scale = 12,
-            original_width = 80.0,
+            min_scale = 4.0,
+            max_scale = 10.0,
+            original_width = 32.0,
             scale_speed = 0.2, 
-            reference = 480,
+            reference = 580,
 
             
         },
     }
 },
- -- Fire Totem
- {
-    components = {
-        animation = {
-            numFrames = 14,
-            frameSpeedRate = 8,
-            isLoop = true,
-
-          },
-
-          circle_collider = {
-            radius = 16,
-            width = 32,
-            height = 32,
-
-
-          },
-
-        rigidbody ={
-            velocity = { x = 0, y = 0 },
-
-        },
-       
-        sprite = {
-            assetId = "totem",
-            width = 64,
-            height = 96,
-            src_rect = { x = 0, y = 192},
-
-        },
-        transform = {
-            position = { x = 650.0, y = 580.0},
-            scale = { x = 2.5, y = 2.5},
-            rotation = 0.0
-
-        },
-        tagprojectile = {},
-        tagobjective = {},
-        life = {
-            life_count = 3,
-
-        },
-        damage = {
-            damage_dealt = 3,
-
-        },
-        depth = {
-            min_scale = 1,
-            max_scale = 2.5,
-            original_width = 0,
-            scale_speed = 0, 
-            reference = 0,
-            
-        },
-    }
-},
-
 }

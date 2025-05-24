@@ -7,11 +7,12 @@ scene = {
     {assetId = "bomb", filePath = "./assets/images/Bomb.png"},
     {assetId = "slime", filePath = "./assets/images/Slime.png"},
     {assetId = "eye", filePath = "./assets/images/Eye.png"},
-    {assetId = "nightborne", filePath = "./assets/images/NightBorne.png"},
+    {assetId = "mushroom", filePath = "./assets/images/Mushroom.png"},
     {assetId = "background", filePath = "./assets/images/Background.png"},
     {assetId = "player", filePath = "./assets/images/playerAllDirections.png"},
     {assetId = "obelisk", filePath = "./assets/images/Obelisk.png"},
-    {assetId = "totem", filePath = "./assets/images/FireTotem.png"}
+    {assetId = "totem", filePath = "./assets/images/FireTotem.png"},
+    {assetId = "eyeProjectile", filePath = "./assets/images/EyeProjectile.png"},
  },
 
  -- Tabla de fuentes
@@ -251,7 +252,7 @@ buttons = {
             },
         }
     },
-
+--[[
     -- Monster Spawner A
     {
         components = {
@@ -362,6 +363,7 @@ buttons = {
           },
     }
 },
+]]
 -- Monster Spawner G
 {
     components = {
@@ -380,7 +382,7 @@ buttons = {
           },
     }
 },
-
+--[[
     -- Monster Spawner A1
     {
         components = {
@@ -492,7 +494,7 @@ buttons = {
           },
     }
 },
-
+]]
 -- Monster Spawner G1
 {
     components = {
@@ -563,7 +565,7 @@ buttons = {
             tagobjective = {},
             tagplayer = {},
             life = {
-                life_count = 2,
+                life_count = 5,
 
             },
         }
@@ -624,7 +626,7 @@ buttons = {
             },
             tagobjective = {},
             life = {
-                life_count = 80,
+                life_count = 500,
 
             },
         }
