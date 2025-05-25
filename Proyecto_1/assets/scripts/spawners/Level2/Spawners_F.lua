@@ -3,12 +3,11 @@ math.randomseed(456)
 function update()
     timer = timer + get_delta_time()
     prob = math.random(1, 100)
-    if timer >= 10000 then
-        if prob < 31 and prob > 15 then
+    if timer >= 6700 then
+        if prob < 51 and prob > 25 then
             create_dynamic_entity(this, 1, 1, 9)
-        end
-        if prob < 16 then 
-            create_dynamic_entity(this, 1, 2, 6.3)
+        elseif prob < 26 then
+            create_dynamic_entity(this, 1, 3, 4.5)
         end
         timer = 0
     end

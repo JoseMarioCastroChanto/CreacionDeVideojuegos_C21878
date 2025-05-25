@@ -670,8 +670,8 @@ scene = {
                },
                tagobjective = {},
                life = {
-                   life_count = 100000,
-                   life_max = 100000,
+                   life_count = 300,
+                   life_max = 300,
    
                },
            }

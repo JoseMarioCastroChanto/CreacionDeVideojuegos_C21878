@@ -670,8 +670,8 @@ buttons = {
             },
             tagobjective = {},
             life = {
-                life_count = 100000,
-                life_max = 100000,
+                life_count = 100,
+                life_max = 100,
 
             },
         }

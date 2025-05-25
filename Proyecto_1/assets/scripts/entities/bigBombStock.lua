@@ -4,7 +4,7 @@ local l_pressed_last_frame = false
 
 function update()
     cooldown = cooldown + get_delta_time()
-    if cooldown >= 10000 then
+    if cooldown >= 20000 then
         bigBomb = bigBomb + 1
         cooldown = 0
         set_text(this, bigBomb)

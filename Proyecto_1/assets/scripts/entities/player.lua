@@ -69,7 +69,7 @@ function update()
     end
     last_k_state = current_k_state
 
-    if cooldownB>= 10000 then
+    if cooldownB>= 20000 then
         bigBomb = bigBomb + 1
         cooldownB = 0
     end

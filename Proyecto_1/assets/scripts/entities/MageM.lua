@@ -29,7 +29,7 @@ function update()
                         create_dynamic_entity(this,-1,prob,scale)
                     end
                 end 
-                coolDown = 8000
+                coolDown = 5000
             end
             coolDown = coolDown - get_delta_time()
 
