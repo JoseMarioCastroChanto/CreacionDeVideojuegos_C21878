@@ -12,7 +12,7 @@
 #include "../Components/LifeComponent.hpp"
 #include "../Components/DamageComponent.hpp"
 #include "../Components/DepthComponent.hpp"
-#include "../Components/EntitySpawnerComponent.hpp"
+#include "../Systems/EntitySpawnerSystem.hpp"
 #include "../ECS/ECS.hpp"
 #include "../EventManager/EventManager.hpp"
 #include "../Events/CollisionEvent.hpp"
@@ -96,7 +96,14 @@ void DestroyAllEnemies (){
 }
 
 void CreateExplosion(Entity entity, int num, double scale){
-
+    auto& transform = entity.GetComponent<TransformComponent>();
+    Entity newEntity = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(
+        Game::GetInstance().registry,num,Game::GetInstance().lua
+    );
+        auto& transformNew = newEntity.GetComponent<TransformComponent>();
+        transformNew.position = transform.position;
+        transformNew.scale.x = scale;
+        transformNew.scale.y = scale;
 }
 };
 #endif
