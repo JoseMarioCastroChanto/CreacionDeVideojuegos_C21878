@@ -295,7 +295,7 @@ buttons = {
             },
         }
     },
---[[
+
     -- Monster Spawner A
     {
         components = {
@@ -306,7 +306,7 @@ buttons = {
 
             },
             script = {
-                path = "./assets/scripts/spawners/scene_01_Spawners_A.lua",
+                path = "./assets/scripts/spawners/Level1/Spawners_A.lua",
             },
             entitySpawner = {
                 is_player = false
@@ -324,7 +324,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_B.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_B.lua",
         },
         entitySpawner = {
             is_player = false
@@ -342,7 +342,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_C.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_C.lua",
         },
         entitySpawner = {
             is_player = false
@@ -361,7 +361,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_D.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_D.lua",
         },
         entitySpawner = {
             is_player = false
@@ -380,7 +380,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_E.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_E.lua",
         },
         entitySpawner = {
             is_player = false
@@ -398,7 +398,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_F.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_F.lua",
         },
         entitySpawner = {
             is_player = false
@@ -406,7 +406,7 @@ buttons = {
           },
     }
 },
-]]
+
 -- Monster Spawner G
 {
     components = {
@@ -417,7 +417,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_G.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_G.lua",
         },
         entitySpawner = {
             is_player = false
@@ -425,7 +425,7 @@ buttons = {
           },
     }
 },
---[[
+
     -- Monster Spawner A1
     {
         components = {
@@ -436,7 +436,7 @@ buttons = {
 
             },
             script = {
-                path = "./assets/scripts/spawners/scene_01_Spawners_A1.lua",
+                path = "./assets/scripts/spawners/Level1/Spawners_A1.lua",
             },
             entitySpawner = {
                 is_player = false
@@ -454,7 +454,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_B1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_B1.lua",
         },
         entitySpawner = {
             is_player = false
@@ -472,7 +472,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_C1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_C1.lua",
         },
         entitySpawner = {
             is_player = false
@@ -491,7 +491,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_D1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_D1.lua",
         },
         entitySpawner = {
             is_player = false
@@ -510,7 +510,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_E1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_E1.lua",
         },
         entitySpawner = {
             is_player = false
@@ -529,7 +529,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_F1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_F1.lua",
         },
         entitySpawner = {
             is_player = false
@@ -537,7 +537,7 @@ buttons = {
           },
     }
 },
-]]
+
 -- Monster Spawner G1
 {
     components = {
@@ -548,7 +548,7 @@ buttons = {
 
         },
         script = {
-            path = "./assets/scripts/spawners/scene_01_Spawners_G1.lua",
+            path = "./assets/scripts/spawners/Level1/Spawners_G1.lua",
         },
         entitySpawner = {
             is_player = false
