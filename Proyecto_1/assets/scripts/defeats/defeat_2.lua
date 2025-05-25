@@ -10,6 +10,7 @@ scene = {
        [0] = 
        {fontId = "press_start_32", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 32},
        {fontId = "press_start_50", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 50},
+       {fontId = "press_start_24", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 24},
     },
     music = {
         [0] =  { musicId = "defeat", filePath = "./assets/audio/defeat.mp3" }

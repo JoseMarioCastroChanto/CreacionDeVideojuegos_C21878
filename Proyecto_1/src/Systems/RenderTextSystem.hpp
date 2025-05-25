@@ -42,5 +42,31 @@ class RenderTextSystem : public System {
             SDL_DestroyTexture(texture);
         }
     }
+
+void RenderFixedText(SDL_Renderer* renderer, TTF_Font* font, const std::string& text, SDL_Color color, int x, int y, float scaleX = 1.0f, float scaleY = 1.0f) {
+ 
+    SDL_Surface* surface = TTF_RenderText_Blended(font, text.c_str(), color);
+    if (!surface) {
+        SDL_Log("Error creando surface para texto fijo: %s", TTF_GetError());
+        return;
+    }
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+    if (!texture) {
+        SDL_Log("Error creando textura para texto fijo: %s", SDL_GetError());
+        return;
+    }
+
+    SDL_Rect dstRect = {
+        x,
+        y,
+        static_cast<int>(surface->w * scaleX),
+        static_cast<int>(surface->h * scaleY)
+    };
+
+    SDL_RenderCopy(renderer, texture, nullptr, &dstRect);
+    SDL_DestroyTexture(texture);
+}
 };
+
 #endif

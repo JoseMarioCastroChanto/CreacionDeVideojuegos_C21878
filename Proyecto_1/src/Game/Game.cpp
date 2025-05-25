@@ -19,6 +19,7 @@
 #include "../Systems/CleanSystem.hpp"
 #include "../Systems/DefeatSystem.hpp"
 #include "../Systems/EnemyIASystem.hpp"
+#include "../Systems/HealthBarSystem.hpp"
 
 Game::Game(){
     std::cout<< "[Game] Se ejecuta constructor" << std::endl;
@@ -109,6 +110,7 @@ void Game:: Setup(){
     registry->AddSystem<CleanSystem>();
     registry->AddSystem<DefeatSystem>();
     registry->AddSystem<EnemyIASystem>();
+    registry->AddSystem<HealthBarSystem>();
 
     sceneManager->LoadSceneFromScript("./assets/scripts/scenes.lua", lua);
 
@@ -130,9 +132,23 @@ void Game::ProcessInput(){
                 sceneManager->StopScene();
                 isRunning = false;
                 break;
-              }
-              controllerManager-> KeyDown(sdlEvent.key.keysym.sym);
-              break;
+            } else if (sdlEvent.key.keysym.sym == SDLK_p) {
+                isPaused = !isPaused;
+                std::cout << "[GAME] Pausa: " << (isPaused ? "Activada" : "Desactivada") << std::endl;
+                 if (isPaused) {
+                        wasPaused = true;
+                    } 
+                if(isPaused){
+                    registry->GetSystem<SceneTimeSystem>().Pause();
+                    assetManager->PauseMusic();}
+                else{
+                    registry->GetSystem<SceneTimeSystem>().Resume();
+                    assetManager->ResumeMusic();
+                }
+                break;
+            }
+            controllerManager->KeyDown(sdlEvent.key.keysym.sym);
+            break;
             case SDL_KEYUP:
               controllerManager-> KeyUp(sdlEvent.key.keysym.sym);
               break;
@@ -162,13 +178,19 @@ void Game::ProcessInput(){
 }
 
 void Game::Update(){
+     if (isPaused) {
+        return;  
+    }
+    if (wasPaused) {
+        milisecsPreviousFrame = SDL_GetTicks(); 
+        wasPaused = false;  
+    }
     int timeToWait = MILISECS_PER_FRAME - (SDL_GetTicks() - milisecsPreviousFrame);
     if(0 < timeToWait && timeToWait <= MILISECS_PER_FRAME){
         SDL_Delay(timeToWait);
     }
 
     double deltaTime = (SDL_GetTicks()- milisecsPreviousFrame) / 1000.0;
-    // TODO: agregar esta variable al estado de LUA
 
     milisecsPreviousFrame = SDL_GetTicks();
 
@@ -196,7 +218,14 @@ void Game::Render(){
 
     registry->GetSystem<RenderSystem>().Update(renderer, assetManager);
     registry->GetSystem<RenderTextSystem>().Update(renderer, assetManager);
-
+    registry->GetSystem<HealthBarSystem>().Update(renderer);
+    if(isPaused){
+            registry->GetSystem<RenderTextSystem>().RenderFixedText(renderer,
+                                     assetManager->GetFont("press_start_24"),
+                                     "Press P to continue",
+                                     SDL_Color{255,255,255,255},
+                                     5, 5, 1.0f, 1.0f);
+    }
     SDL_RenderPresent(renderer);
 }
 
@@ -219,7 +248,6 @@ void Game::Run(){
         RunScene();
     }
 }
-
 void Game::Destroy(){
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

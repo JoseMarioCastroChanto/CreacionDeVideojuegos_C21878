@@ -13,6 +13,11 @@ scene = {
     {assetId = "obelisk", filePath = "./assets/images/Obelisk.png"},
     {assetId = "totem", filePath = "./assets/images/FireTotem.png"},
     {assetId = "eyeProjectile", filePath = "./assets/images/EyeProjectile.png"},
+    {assetId = "flyingBeast", filePath = "./assets/images/FlyingBeast.png"},
+    {assetId = "mageR", filePath = "./assets/images/MageR.png"},
+    {assetId = "mageM", filePath = "./assets/images/MageM.png"},
+    {assetId = "GolemOrange", filePath = "./assets/images/GolemOrange.png"},
+    {assetId = "explosion", filePath = "./assets/images/Explosion.png"},
  },
 
  -- Tabla de fuentes
@@ -58,6 +63,42 @@ buttons = {
             transform = {
                 position = { x = 0.0, y = 0.0},
                 scale = { x = 0.7, y = 0.7},
+                rotation = 0.0
+
+            },
+        }
+    },
+     -- Player Life
+     {
+        components = { 
+            sprite = {
+                assetId = "player",
+                width = 32,
+                height = 32,
+                src_rect = { x = 0, y = 0},
+
+            },
+            transform = {
+                position = { x = 40.0, y = 35.0},
+                scale = { x = 1.8, y = 1.8},
+                rotation = 0.0
+
+            },
+        }
+    },
+     -- Obelisk Life
+     {
+        components = {
+            sprite = {
+                assetId = "obelisk",
+                width = 190,
+                height = 240,
+                src_rect = { x = 0, y = 0},
+
+            },
+            transform = {
+                position = { x = 55.0, y = 70.0},
+                scale = { x = 0.15, y = 0.15},
                 rotation = 0.0
 
             },
@@ -568,6 +609,7 @@ buttons = {
             tagplayer = {},
             life = {
                 life_count = 5,
+                life_max = 5,
 
             },
         }
@@ -628,7 +670,8 @@ buttons = {
             },
             tagobjective = {},
             life = {
-                life_count = 500,
+                life_count = 100000,
+                life_max = 100000,
 
             },
         }

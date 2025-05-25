@@ -1,6 +1,6 @@
 entities = {
     [0] = 
-  -- Bomb
+  -- Bomb  0
   {
     components = {
         animation = {
@@ -40,6 +40,7 @@ entities = {
         tagprojectile = {},
         life = {
             life_count = 1,
+            life_max = 1,
 
         },
         damage = {
@@ -56,7 +57,7 @@ entities = {
         },
     }
 },
-  -- Slime_monster
+  -- Slime_monster  1
   {
     components = {
         animation = {
@@ -97,6 +98,7 @@ entities = {
         tagenemy = {},
         life = {
             life_count = 1,
+            life_max = 1,
 
         },
         damage = {
@@ -114,7 +116,7 @@ entities = {
         },
     }
 },
-  -- Eye_monster
+  -- Eye_monster  2
   {
     components = {
         animation = {
@@ -153,6 +155,7 @@ entities = {
         tagenemy = {},
         life = {
             life_count = 3,
+            life_max = 3,
 
         },
         damage = {
@@ -174,7 +177,7 @@ entities = {
           },
     }
 },
-     -- Mushroom
+     -- Mushroom  3
      {
         components = {
             animation = {
@@ -222,6 +225,7 @@ entities = {
             },
             life = {
                 life_count = 1,
+                life_max = 1,
     
             },
             damage = {
@@ -230,7 +234,7 @@ entities = {
             },
         }
     },
-    -- Fire Totem
+    -- Fire Totem  4
     {
         components = {
             animation = {
@@ -266,7 +270,7 @@ entities = {
             },
         }
     },
- -- Eye Projectile
+ -- Eye Projectile  5
  {
     components = {
         animation = {
@@ -307,6 +311,7 @@ entities = {
         tagenemy = {},
         life = {
             life_count = 1,
+            life_max = 3,
 
         },
         damage = {
@@ -324,4 +329,268 @@ entities = {
         },
     }
 },
+ -- FlyingBeast  6
+ {
+    components = {
+        animation = {
+            numFrames = 8,
+            frameSpeedRate = 5,
+            isLoop = true,
+
+          },
+        script = {
+            path = "./assets/scripts/entities/flyingBeast.lua",
+        },
+        circle_collider = {
+          radius = 16,
+          width = 32,
+          height = 32,
+
+
+        },
+        rigidbody ={
+            velocity = { x = 50, y = 0 },
+
+        },
+        sprite = {
+            assetId = "flyingBeast",
+            width = 64,
+            height = 64,
+            src_rect = { x = 0, y = 0},
+
+        },
+        transform = {
+            position = { x = 650.0, y = 480.0},
+            scale = { x = 5.0, y = 5.0},
+            rotation = 0.0
+
+        },
+        tagenemy = {},
+        tagprojectile = {},
+        depth = {
+            min_scale = 2.0,
+            max_scale = 5.0,
+            original_width = 64.0,
+            scale_speed = 0.009, 
+            reference = 480,
+            
+        },
+        life = {
+            life_count = 3,
+            life_max = 3,
+
+        },
+        damage = {
+            damage_dealt = 10,
+
+        },
+    }
+},
+ -- MageR  7
+  {
+    components = {
+        animation = {
+            numFrames = 14,
+            frameSpeedRate = 5,
+            isLoop = true,
+
+          },
+        script = {
+            path = "./assets/scripts/entities/MageR.lua",
+        },
+        circle_collider = {
+          radius = 16,
+          width = 32,
+          height = 32,
+
+
+        },
+        rigidbody ={
+            velocity = { x = 35, y = 0 },
+
+        },
+        sprite = {
+            assetId = "mageR",
+            width = 64,
+            height = 64,
+            src_rect = { x = 0, y = 0},
+
+        },
+        transform = {
+            position = { x = 650.0, y = 480.0},
+            scale = { x = 5.0, y = 5.0},
+            rotation = 0.0
+
+        },
+        tagenemy = {},
+        tagplayer = {},
+        depth = {
+            min_scale = 2.0,
+            max_scale = 5.0,
+            original_width = 64.0,
+            scale_speed = 0.009, 
+            reference = 480,
+            
+        },
+        life = {
+            life_count = 8,
+            life_max = 8,
+
+        },
+        damage = {
+            damage_dealt = 1,
+
+        },
+    }
+},
+ -- MageM  8
+  {
+    components = {
+        animation = {
+            numFrames = 14,
+            frameSpeedRate = 5,
+            isLoop = true,
+
+          },
+        script = {
+            path = "./assets/scripts/entities/MageM.lua",
+        },
+        circle_collider = {
+          radius = 16,
+          width = 32,
+          height = 32,
+
+
+        },
+        rigidbody ={
+            velocity = { x = 35, y = 0 },
+
+        },
+        sprite = {
+            assetId = "mageM",
+            width = 64,
+            height = 64,
+            src_rect = { x = 0, y = 0},
+
+        },
+        transform = {
+            position = { x = 650.0, y = 480.0},
+            scale = { x = 5.0, y = 5.0},
+            rotation = 0.0
+
+        },
+        tagenemy = {},
+        tagplayer = {},
+        depth = {
+            min_scale = 2.0,
+            max_scale = 5.0,
+            original_width = 64.0,
+            scale_speed = 0.009, 
+            reference = 480,
+            
+        },
+        life = {
+            life_count = 8,
+            life_max = 8,
+
+        },
+        damage = {
+            damage_dealt = 1,
+
+        },
+    }
+},
+-- GolemOrange  9
+{
+    components = {
+        animation = {
+            numFrames = 8,
+            frameSpeedRate = 5,
+            isLoop = true,
+
+          },
+        script = {
+            path = "./assets/scripts/entities/Golem.lua",
+        },
+        circle_collider = {
+          radius = 16,
+          width = 32,
+          height = 32,
+
+
+        },
+        rigidbody ={
+            velocity = { x = 20, y = 0 },
+
+        },
+        sprite = {
+            assetId = "GolemOrange",
+            width = 90,
+            height = 64,
+            src_rect = { x = 0, y = 0},
+
+        },
+        transform = {
+            position = { x = 650.0, y = 480.0},
+            scale = { x = 5.0, y = 5.0},
+            rotation = 0.0
+
+        },
+        tagenemy = {},
+        depth = {
+            min_scale = 2.0,
+            max_scale = 5.0,
+            original_width = 90.0,
+            scale_speed = 0.009, 
+            reference = 480,
+            
+        },
+        life = {
+            life_count = 10,
+            life_max = 10,
+
+        },
+        damage = {
+            damage_dealt = 10,
+
+        },
+    }
+},
+ -- Explosion  10
+ {
+    components = {
+        animation = {
+            numFrames = 18,
+            frameSpeedRate = 10,
+            isLoop = false,
+
+          },
+          script = {
+            path = "./assets/scripts/entities/explosion.lua",
+        },
+       
+        sprite = {
+            assetId = "explosion",
+            width = 48,
+            height = 48,
+            src_rect = { x = 0, y = 0},
+
+        },
+        transform = {
+            position = { x = 0, y = 0},
+            scale = { x = 6, y = 6},
+            rotation = 0.0
+
+        },
+        depth = {
+            min_scale = 2.4,
+            max_scale = 6,
+            original_width = 0,
+            scale_speed = 0, 
+            reference = 0,
+            
+        },
+    }
+},
+ 
 }

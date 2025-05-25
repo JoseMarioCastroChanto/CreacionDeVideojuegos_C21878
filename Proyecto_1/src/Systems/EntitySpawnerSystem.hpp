@@ -15,6 +15,7 @@
 #include "../Components/TagObjectiveComponent.hpp"
 #include "../Components/TagEnemyComponent.hpp"
 #include "../Components/TagProjectileComponent.hpp"
+#include "../Components/TagPlayerComponent.hpp"
 #include "../Components/LifeComponent.hpp"
 #include "../Components/DamageComponent.hpp"
 #include <sol/sol.hpp>
@@ -149,6 +150,12 @@ class EntitySpawnerSystem : public System{
                     components["depth"]["reference"]     
                 );
             }
+             //* TagPlayerComponent
+            sol::optional<sol::table>hasTagPlayer = 
+            components["tagplayer"];
+            if(hasTagPlayer != sol::nullopt) {
+                newEntity.AddComponent<TagPlayerComponent>();
+            }
 
                //* TagEnemyComponent
             sol::optional<sol::table>hasTagEnemy = 
@@ -174,11 +181,11 @@ class EntitySpawnerSystem : public System{
             components["life"];
             if(hasLife != sol::nullopt) {
                 int args = components["life"]["life_count"];
+                int args2 = components["life"]["life_max"];
                 newEntity.AddComponent<LifeComponent>(
-                    args
+                    args,args2
                 );
             }
-
               //* DamageComponent
             sol::optional<sol::table>hasDamage = 
             components["damage"];

@@ -84,4 +84,16 @@ void AssetManager::ClearMusic() {
     musics.clear();
     currentMusic = nullptr;
 }
+
+void AssetManager::PauseMusic() {
+    if (Mix_PlayingMusic()) {
+        Mix_PauseMusic();
+    }
+}
+
+void AssetManager::ResumeMusic() {
+    if (Mix_PausedMusic()) {
+      Mix_ResumeMusic();
+  }
+}
    

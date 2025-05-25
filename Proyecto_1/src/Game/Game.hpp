@@ -29,6 +29,9 @@ private:
     int milisecsPreviousFrame = 0;
 
     bool isRunning = false;
+    bool isPaused = false;
+    bool wasPaused = false;
+
 
 public:
     SDL_Renderer* renderer = nullptr;

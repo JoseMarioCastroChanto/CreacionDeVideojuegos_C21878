@@ -31,6 +31,8 @@ class AssetManager{
   void LoadMusic(const std::string& musicId, const std::string& filePath);
   void PlayMusic(const std::string& musicId, int loops = -1);
   void StopMusic();
+  void ResumeMusic();
+  void PauseMusic();
   void ClearMusic(); 
    
 };

@@ -375,8 +375,9 @@ void  SceneLoader::LoadEntities(sol::state& lua, const sol::table& entities,
             components["life"];
             if(hasLife != sol::nullopt) {
                 int args = components["life"]["life_count"];
+                int args2 = components["life"]["life_max"];
                 newEntity.AddComponent<LifeComponent>(
-                    args
+                    args,args2
                 );
             }
 
