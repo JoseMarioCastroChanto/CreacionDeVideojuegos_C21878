@@ -46,7 +46,7 @@ Puedes cerrar el juego dandole click a la X de al venatna en la esquina superior
 | S       | Acercarse al usuario                     |
 | A       | Moverse a la izquierda                   |
 | D       | Moverse a la derecha                     |
-| D + A   | Disparar bomba hacia la izquierda        |
+| A + K   | Disparar bomba hacia la izquierda        |
 | D + K   | Disparar bomba hacia la derecha          |
 | L       | Activar Big Bomb                         |
 | P       | Pausar / reanudar                        |
