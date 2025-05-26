@@ -4,7 +4,7 @@ Obelisk Defender es un Tower Defense 2.5D para un solo jugador. Hordas de monstr
 
 ## 🔧 Compilación y Ejecución
 
-Para compilar Obelisk Defender en Ubuntu:
+Para compilar Obelisk Defender en Ubuntu abre la terminal y dirigete a al carepta que contiene el juego (con cd), posteriormente ejecuta:
 
     make
 
@@ -12,7 +12,9 @@ Para ejecutar el juego:
 
     make run
 
-Si el ejecutable ya está creado, basta con hacer doble clic sobre él.
+Si el ejecutable ya está creado, basta con hacer doble clic sobre él o con:
+
+    ./game_engine
 
 
 ## 🎮 Gameplay
@@ -34,6 +36,7 @@ En pantalla:
     🗿 Vida del obelisco = 100 × número de nivel barra azul (esquina superior izquierda)
 
 Si pierdes, aparece la pantalla de derrota con opciones para reintentar o volver al menú.
+Puedes cerrar el juego dandole click a la X de al venatna en la esquina superior derecha, o bien presionando ESC. 
 
 ## ⌨️ Controles
 
@@ -47,6 +50,7 @@ Si pierdes, aparece la pantalla de derrota con opciones para reintentar o volver
 | D + K   | Disparar bomba hacia la derecha          |
 | L       | Activar Big Bomb                         |
 | P       | Pausar / reanudar                        |
+| ESC     |Salir                                     |
 
 
 ## 🧍‍♂️ Personajes
