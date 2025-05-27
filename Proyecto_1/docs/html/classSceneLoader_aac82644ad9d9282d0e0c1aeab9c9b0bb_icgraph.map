@@ -1,0 +1,5 @@
+<map id="SceneLoader::LoadKeys" name="SceneLoader::LoadKeys">
+<area shape="rect" id="Node000001" title="Loads key bindings from Lua table into the ControllerManager." alt="" coords="236,5,411,31"/>
+<area shape="rect" id="Node000002" href="$classSceneLoader.html#aea760503e4e9e888cdc98c269d2bcdf5" title="Loads a full scene from a Lua file path, setting up assets, controls, entities, and music." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,21,188,21,188,15,222,15"/>
+</map>

@@ -1,11 +1,11 @@
 scene = {
-    --Tabla de imagenes y sprites
+   
     sprites = {
         [0]={assetId = "player", filePath = "./assets/images/playerAllDirections.png"},
         {assetId = "hud", filePath = "./assets/images/HUDBox.png"},
     },
    
-    -- Tabla de fuentes
+ 
     fonts = {
        [0] = 
        {fontId = "press_start_32", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 32},
@@ -17,7 +17,7 @@ scene = {
     },
    
    
-    --Tabla de acciones y teclas
+    
     keys ={
        [0]=
        {name = "up", key = 119},
@@ -26,7 +26,7 @@ scene = {
        {name = "right", key = 100},
     },
    
-    --Tabla de acciones y botones del raton
+    
    buttons = {
        [0] =
        {name = "mouse_left_button", button = 1}
@@ -34,6 +34,7 @@ scene = {
    },
    
    entities = {
+    -- You Win Text
     [0] = {
         
         components = {
@@ -89,7 +90,7 @@ scene = {
             },
         }
     },
-    {
+    {   -- Next Level Button
         components = {
             clickable = {},
             script = {
@@ -110,7 +111,7 @@ scene = {
             }
         }
     },
-    {
+    {   -- Menu Button
         components = {
             clickable = {},
             script = {
@@ -131,7 +132,7 @@ scene = {
             }
         }
     },
-    -- Player
+    -- Player Animation
     {
         components = {
             animation = {

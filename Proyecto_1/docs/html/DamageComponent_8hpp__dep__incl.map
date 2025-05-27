@@ -1,0 +1,19 @@
+<map id="src/Components/DamageComponent.hpp" name="src/Components/DamageComponent.hpp">
+<area shape="rect" id="Node000001" title="Defines the DamageComponent which stores damage values." alt="" coords="239,5,528,31"/>
+<area shape="rect" id="Node000002" href="$SceneLoader_8cpp.html" title=" " alt="" coords="5,86,260,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,37,170,89,168,83,333,32"/>
+<area shape="rect" id="Node000003" href="$DamageSystem_8hpp.html" title=" " alt="" coords="415,167,653,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="433,33,467,51,497,77,513,99,524,124,535,166,530,167,519,126,508,102,493,80,464,56,430,38"/>
+<area shape="rect" id="Node000007" href="$EntitySpawnerSystem_8hpp.html" title=" " alt="" coords="284,79,483,119"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="386,44,386,79,381,79,381,44"/>
+<area shape="rect" id="Node000004" href="$LuaBinding_8hpp.html" title="Contains Lua bindings for interacting with ECS components and systems." alt="" coords="332,240,531,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="508,202,450,242,447,238,505,198"/>
+<area shape="rect" id="Node000006" href="$Game_8cpp.html" title=" " alt="" coords="354,387,509,412"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="548,203,559,233,567,268,567,305,563,323,555,340,541,357,523,371,484,389,481,384,520,366,537,353,550,337,558,321,562,304,561,268,554,234,543,205"/>
+<area shape="rect" id="Node000005" href="$ScriptSystem_8hpp.html" title=" " alt="" coords="322,313,541,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="434,279,434,313,429,313,429,279"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="434,352,434,387,429,387,429,352"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="433,122,513,164,511,169,430,127"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="391,132,406,191,427,239,423,241,401,193,386,133"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="362,131,333,174,308,227,300,256,298,284,301,311,312,337,326,353,343,366,381,384,379,389,340,371,322,357,308,340,296,313,292,284,295,255,303,226,329,171,357,128"/>
+</map>

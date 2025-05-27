@@ -1,0 +1,275 @@
+\doxysection{Scene\+Time\+System Class Reference}
+\hypertarget{classSceneTimeSystem}{}\label{classSceneTimeSystem}\index{SceneTimeSystem@{SceneTimeSystem}}
+
+
+Manages scene timing including pause, resume, delta time, and total elapsed time.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Time\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Scene\+Time\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classSceneTimeSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+Time\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classSceneTimeSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneTimeSystem_a00bf552c2ce0a1a9bd6a0c6696c020b2}{Scene\+Time\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classSceneTimeSystem}{Scene\+Time\+System} and initializes timing variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSceneTimeSystem_a450c7b3fb270b212410eccb0a43c494b}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the scene timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSceneTimeSystem_a9c0a8ed21bde935d43f71b436de3c63a}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em Resumes the scene timer after being paused. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSceneTimeSystem_a1b54a27a18d309214d8191c80cea9cac}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the delta time and current time if not paused. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_a1733dcaf2596ce453f39e1831ad793ae}{Get\+Scene\+Time}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the total elapsed scene time, excluding paused durations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_aea12badb97f468d09aa1c869bd74e561}{Get\+Delta\+Time}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the delta time between last two updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSceneTimeSystem_a478c2f518a551caa9457f368e02c5645}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the timer and all related variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{scene\+Start\+Time}}
+\begin{DoxyCompactList}\small\item\em Time when the scene started (in milliseconds). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{current\+Time}}
+\begin{DoxyCompactList}\small\item\em Current time (in milliseconds). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{delta\+Time}}
+\begin{DoxyCompactList}\small\item\em Time difference between last two updates (in milliseconds). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the timer is paused. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pause\+Start\+Time}}
+\begin{DoxyCompactList}\small\item\em Time when the pause started. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{total\+Paused\+Time}}
+\begin{DoxyCompactList}\small\item\em Total time spent paused. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages scene timing including pause, resume, delta time, and total elapsed time. 
+
+Keeps track of elapsed time since scene start, accounting for paused durations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSceneTimeSystem_a00bf552c2ce0a1a9bd6a0c6696c020b2}\label{classSceneTimeSystem_a00bf552c2ce0a1a9bd6a0c6696c020b2} 
+\index{SceneTimeSystem@{SceneTimeSystem}!SceneTimeSystem@{SceneTimeSystem}}
+\index{SceneTimeSystem@{SceneTimeSystem}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{SceneTimeSystem()}{SceneTimeSystem()}}
+{\footnotesize\ttfamily Scene\+Time\+System\+::\+Scene\+Time\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \doxylink{classSceneTimeSystem}{Scene\+Time\+System} and initializes timing variables. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneTimeSystem_a00bf552c2ce0a1a9bd6a0c6696c020b2_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSceneTimeSystem_aea12badb97f468d09aa1c869bd74e561}\label{classSceneTimeSystem_aea12badb97f468d09aa1c869bd74e561} 
+\index{SceneTimeSystem@{SceneTimeSystem}!GetDeltaTime@{GetDeltaTime}}
+\index{GetDeltaTime@{GetDeltaTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{GetDeltaTime()}{GetDeltaTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::\+Get\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the delta time between last two updates. 
+
+\begin{DoxyReturn}{Returns}
+The delta time in milliseconds. 
+\end{DoxyReturn}
+\Hypertarget{classSceneTimeSystem_a1733dcaf2596ce453f39e1831ad793ae}\label{classSceneTimeSystem_a1733dcaf2596ce453f39e1831ad793ae} 
+\index{SceneTimeSystem@{SceneTimeSystem}!GetSceneTime@{GetSceneTime}}
+\index{GetSceneTime@{GetSceneTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{GetSceneTime()}{GetSceneTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::\+Get\+Scene\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the total elapsed scene time, excluding paused durations. 
+
+\begin{DoxyReturn}{Returns}
+The elapsed time since scene start in milliseconds. 
+\end{DoxyReturn}
+\Hypertarget{classSceneTimeSystem_a450c7b3fb270b212410eccb0a43c494b}\label{classSceneTimeSystem_a450c7b3fb270b212410eccb0a43c494b} 
+\index{SceneTimeSystem@{SceneTimeSystem}!Pause@{Pause}}
+\index{Pause@{Pause}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Scene\+Time\+System\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pauses the scene timer. 
+
+Records the time when pause starts. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneTimeSystem_a450c7b3fb270b212410eccb0a43c494b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneTimeSystem_a478c2f518a551caa9457f368e02c5645}\label{classSceneTimeSystem_a478c2f518a551caa9457f368e02c5645} 
+\index{SceneTimeSystem@{SceneTimeSystem}!Reset@{Reset}}
+\index{Reset@{Reset}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Scene\+Time\+System\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the timer and all related variables. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneTimeSystem_a478c2f518a551caa9457f368e02c5645_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneTimeSystem_a9c0a8ed21bde935d43f71b436de3c63a}\label{classSceneTimeSystem_a9c0a8ed21bde935d43f71b436de3c63a} 
+\index{SceneTimeSystem@{SceneTimeSystem}!Resume@{Resume}}
+\index{Resume@{Resume}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Scene\+Time\+System\+::\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resumes the scene timer after being paused. 
+
+Updates total paused time and current time accordingly. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneTimeSystem_a9c0a8ed21bde935d43f71b436de3c63a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneTimeSystem_a1b54a27a18d309214d8191c80cea9cac}\label{classSceneTimeSystem_a1b54a27a18d309214d8191c80cea9cac} 
+\index{SceneTimeSystem@{SceneTimeSystem}!Update@{Update}}
+\index{Update@{Update}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Scene\+Time\+System\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the delta time and current time if not paused. 
+
+If paused, delta time is set to zero. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneTimeSystem_a1b54a27a18d309214d8191c80cea9cac_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}\label{classSceneTimeSystem_a830505759b72e51695f8155c4862de92} 
+\index{SceneTimeSystem@{SceneTimeSystem}!currentTime@{currentTime}}
+\index{currentTime@{currentTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{currentTime}{currentTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::current\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current time (in milliseconds). 
+
+\Hypertarget{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}\label{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1} 
+\index{SceneTimeSystem@{SceneTimeSystem}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{deltaTime}{deltaTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::delta\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time difference between last two updates (in milliseconds). 
+
+\Hypertarget{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}\label{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8} 
+\index{SceneTimeSystem@{SceneTimeSystem}!paused@{paused}}
+\index{paused@{paused}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{paused}{paused}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} Scene\+Time\+System\+::paused\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if the timer is paused. 
+
+\Hypertarget{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}\label{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877} 
+\index{SceneTimeSystem@{SceneTimeSystem}!pauseStartTime@{pauseStartTime}}
+\index{pauseStartTime@{pauseStartTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{pauseStartTime}{pauseStartTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::pause\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time when the pause started. 
+
+\Hypertarget{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}\label{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8} 
+\index{SceneTimeSystem@{SceneTimeSystem}!sceneStartTime@{sceneStartTime}}
+\index{sceneStartTime@{sceneStartTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{sceneStartTime}{sceneStartTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::scene\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time when the scene started (in milliseconds). 
+
+\Hypertarget{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}\label{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c} 
+\index{SceneTimeSystem@{SceneTimeSystem}!totalPausedTime@{totalPausedTime}}
+\index{totalPausedTime@{totalPausedTime}!SceneTimeSystem@{SceneTimeSystem}}
+\doxysubsubsection{\texorpdfstring{totalPausedTime}{totalPausedTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} Scene\+Time\+System\+::total\+Paused\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total time spent paused. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{SceneTimeSystem_8hpp}{Scene\+Time\+System.\+hpp}}\end{DoxyCompactItemize}

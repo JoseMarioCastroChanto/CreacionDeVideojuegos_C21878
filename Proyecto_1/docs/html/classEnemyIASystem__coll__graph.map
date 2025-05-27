@@ -1,0 +1,5 @@
+<map id="EnemyIASystem" name="EnemyIASystem">
+<area shape="rect" id="Node000001" title="System responsible for enemy AI logic, specifically searching for closest objectives." alt="" coords="5,259,237,364"/>
+<area shape="rect" id="Node000002" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="15,5,228,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,224,124,258,119,258,119,224"/>
+</map>

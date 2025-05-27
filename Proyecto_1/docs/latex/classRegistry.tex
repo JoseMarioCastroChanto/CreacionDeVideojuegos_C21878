@@ -1,0 +1,554 @@
+\doxysection{Registry Class Reference}
+\hypertarget{classRegistry}{}\label{classRegistry}\index{Registry@{Registry}}
+
+
+Manages entities, components, and systems in the ECS.  
+
+
+
+
+{\ttfamily \#include $<$ECS.\+hpp$>$}
+
+
+
+Collaboration diagram for Registry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classRegistry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRegistry_acb15d8aa051bf36ea92a86ee6c00bc3c}{Registry}} ()
+\item 
+\mbox{\hyperlink{classRegistry_ac28e339aef39d9d97f1975623c8d8314}{\texorpdfstring{$\sim$}{\string~}\+Registry}} ()
+\item 
+void \mbox{\hyperlink{classRegistry_a21eec592a9c1fee90f18796f07fd9ad8}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Processes entity addition and removal, updating systems accordingly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classRegistry_ae36c6bd54bef0eb69a0083b371a64d65}{Create\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a new entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistry_a037ed17399c2adc565abb9465fea5e0b}{Kill\+Entity}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Marks an entity for removal. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent , typename... TArgs$>$ }\\void \mbox{\hyperlink{classRegistry_af83a9dbdfa3690c9fa030a45f815a4ed}{Add\+Component}} (\mbox{\hyperlink{classEntity}{Entity}} entity, TArgs \&\&... args)
+\begin{DoxyCompactList}\small\item\em Adds a component of type TComponent to an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classRegistry_a983d52e579dde04607b487ed3dc800ee}{Remove\+Component}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Removes a component of type TComponent from an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\bool \mbox{\hyperlink{classRegistry_a546f2f77b638e76348213fb05ab0c125}{Has\+Component}} (\mbox{\hyperlink{classEntity}{Entity}} entity) const
+\begin{DoxyCompactList}\small\item\em Checks if an entity has a component of type TComponent. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\TComponent \& \mbox{\hyperlink{classRegistry_a97595f0490bb3f6439f66d89ae31a4a7}{Get\+Component}} (\mbox{\hyperlink{classEntity}{Entity}} entity) const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the component of type TComponent attached to an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TSystem , typename... TArgs$>$ }\\void \mbox{\hyperlink{classRegistry_a782e56e2f62766b38436ca408c6e2a9f}{Add\+System}} (TArgs \&\&... args)
+\begin{DoxyCompactList}\small\item\em Adds a system of type TSystem to the registry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TSystem $>$ }\\void \mbox{\hyperlink{classRegistry_a8dba180c0abfb4fde4dc0e8e02b92c98}{Remove\+System}} ()
+\begin{DoxyCompactList}\small\item\em Removes a system of type TSystem from the registry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TSystem $>$ }\\bool \mbox{\hyperlink{classRegistry_ad391a4b83ef897f5a702c3b642af9b48}{Has\+System}} () const
+\begin{DoxyCompactList}\small\item\em Checks if a system of type TSystem is registered. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TSystem $>$ }\\TSystem \& \mbox{\hyperlink{classRegistry_a3fc393f847176146d1cb0a8c2b683874}{Get\+System}} () const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the system of type TSystem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistry_adf23fc49a82ee4c382463d3d40626605}{Add\+Entity\+To\+Systems}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Adds an entity to all systems whose signatures match the entity\textquotesingle{}s components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistry_af148a233165c929304b3ac1b55a03b41}{Remove\+Entity\+From\+Systems}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from all systems. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistry_a8240ef787e32a6ceba79519758de5a34}{Clear\+All\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Removes all entities and clears the registry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRegistry_a3c5f9b5842a422cb3e4d52cfa5c9960e}{Remove\+All\+Components\+Of\+Entity}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Removes all components of a given entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classRegistry_a768efe268d4f5840abc004c076cc3301}{num\+Entity}} = 0
+\begin{DoxyCompactList}\small\item\em Number of entities currently created. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIPool}{IPool}} $>$ $>$ \mbox{\hyperlink{classRegistry_a963895463eb425243c10db88bab8755a}{components\+Pools}}
+\begin{DoxyCompactList}\small\item\em Pools storing components indexed by component ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} $>$ \mbox{\hyperlink{classRegistry_ae9cbfb52361f7756b01663c4a157c965}{entity\+Component\+Signatures}}
+\begin{DoxyCompactList}\small\item\em Signatures of each entity indicating which components they have. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classSystem}{System}} $>$ $>$ \mbox{\hyperlink{classRegistry_a55f181a77a46eb9a629488de118bbb0a}{systems}}
+\begin{DoxyCompactList}\small\item\em Systems managed by the registry indexed by type. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classRegistry_afd3cf027b37d28821d82303742798569}{entities\+To\+Be\+Added}}
+\begin{DoxyCompactList}\small\item\em Entities pending addition. \end{DoxyCompactList}\item 
+std\+::set$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classRegistry_a3a341140d337edb0472c778200d2c0a4}{entities\+To\+Be\+Killed}}
+\begin{DoxyCompactList}\small\item\em Entities pending removal. \end{DoxyCompactList}\item 
+std\+::deque$<$ int $>$ \mbox{\hyperlink{classRegistry_aec6d66cb800c4821664257d547840184}{free\+Ids}}
+\begin{DoxyCompactList}\small\item\em Queue of free entity IDs for reuse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages entities, components, and systems in the ECS. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRegistry_acb15d8aa051bf36ea92a86ee6c00bc3c}\label{classRegistry_acb15d8aa051bf36ea92a86ee6c00bc3c} 
+\index{Registry@{Registry}!Registry@{Registry}}
+\index{Registry@{Registry}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{Registry()}{Registry()}}
+{\footnotesize\ttfamily Registry\+::\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_ac28e339aef39d9d97f1975623c8d8314}\label{classRegistry_ac28e339aef39d9d97f1975623c8d8314} 
+\index{Registry@{Registry}!````~Registry@{\texorpdfstring{$\sim$}{\string~}Registry}}
+\index{````~Registry@{\texorpdfstring{$\sim$}{\string~}Registry}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Registry()}{\string~Registry()}}
+{\footnotesize\ttfamily Registry\+::\texorpdfstring{$\sim$}{\string~}\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRegistry_af83a9dbdfa3690c9fa030a45f815a4ed}\label{classRegistry_af83a9dbdfa3690c9fa030a45f815a4ed} 
+\index{Registry@{Registry}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily template$<$typename TComponent , typename... TArgs$>$ \\
+void Registry\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{TArgs \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Adds a component of type TComponent to an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type. \\
+\hline
+{\em TArgs} & Arguments to forward to the component\textquotesingle{}s constructor. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to add the component to. \\
+\hline
+{\em args} & Constructor arguments for the component. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_af83a9dbdfa3690c9fa030a45f815a4ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_af83a9dbdfa3690c9fa030a45f815a4ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_adf23fc49a82ee4c382463d3d40626605}\label{classRegistry_adf23fc49a82ee4c382463d3d40626605} 
+\index{Registry@{Registry}!AddEntityToSystems@{AddEntityToSystems}}
+\index{AddEntityToSystems@{AddEntityToSystems}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{AddEntityToSystems()}{AddEntityToSystems()}}
+{\footnotesize\ttfamily void Registry\+::\+Add\+Entity\+To\+Systems (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Adds an entity to all systems whose signatures match the entity\textquotesingle{}s components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to add. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_adf23fc49a82ee4c382463d3d40626605_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_adf23fc49a82ee4c382463d3d40626605_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_a782e56e2f62766b38436ca408c6e2a9f}\label{classRegistry_a782e56e2f62766b38436ca408c6e2a9f} 
+\index{Registry@{Registry}!AddSystem@{AddSystem}}
+\index{AddSystem@{AddSystem}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{AddSystem()}{AddSystem()}}
+{\footnotesize\ttfamily template$<$typename TSystem , typename... TArgs$>$ \\
+void Registry\+::\+Add\+System (\begin{DoxyParamCaption}\item[{TArgs \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Adds a system of type TSystem to the registry. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSystem} & The system type. \\
+\hline
+{\em TArgs} & Arguments to forward to the system\textquotesingle{}s constructor. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Constructor arguments for the system. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRegistry_a8240ef787e32a6ceba79519758de5a34}\label{classRegistry_a8240ef787e32a6ceba79519758de5a34} 
+\index{Registry@{Registry}!ClearAllEntities@{ClearAllEntities}}
+\index{ClearAllEntities@{ClearAllEntities}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{ClearAllEntities()}{ClearAllEntities()}}
+{\footnotesize\ttfamily void Registry\+::\+Clear\+All\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all entities and clears the registry. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a8240ef787e32a6ceba79519758de5a34_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_ae36c6bd54bef0eb69a0083b371a64d65}\label{classRegistry_ae36c6bd54bef0eb69a0083b371a64d65} 
+\index{Registry@{Registry}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} Registry\+::\+Create\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates and returns a new entity. 
+
+\begin{DoxyReturn}{Returns}
+The newly created entity. 
+\end{DoxyReturn}
+\Hypertarget{classRegistry_a97595f0490bb3f6439f66d89ae31a4a7}\label{classRegistry_a97595f0490bb3f6439f66d89ae31a4a7} 
+\index{Registry@{Registry}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$typename TComponent $>$ \\
+TComponent \& Registry\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption}) const}
+
+
+
+Returns a reference to the component of type TComponent attached to an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a97595f0490bb3f6439f66d89ae31a4a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a97595f0490bb3f6439f66d89ae31a4a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_a3fc393f847176146d1cb0a8c2b683874}\label{classRegistry_a3fc393f847176146d1cb0a8c2b683874} 
+\index{Registry@{Registry}!GetSystem@{GetSystem}}
+\index{GetSystem@{GetSystem}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{GetSystem()}{GetSystem()}}
+{\footnotesize\ttfamily template$<$typename TSystem $>$ \\
+TSystem \& Registry\+::\+Get\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a reference to the system of type TSystem. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSystem} & The system type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Reference to the system. 
+\end{DoxyReturn}
+\Hypertarget{classRegistry_a546f2f77b638e76348213fb05ab0c125}\label{classRegistry_a546f2f77b638e76348213fb05ab0c125} 
+\index{Registry@{Registry}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily template$<$typename TComponent $>$ \\
+bool Registry\+::\+Has\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption}) const}
+
+
+
+Checks if an entity has a component of type TComponent. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a546f2f77b638e76348213fb05ab0c125_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a546f2f77b638e76348213fb05ab0c125_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_ad391a4b83ef897f5a702c3b642af9b48}\label{classRegistry_ad391a4b83ef897f5a702c3b642af9b48} 
+\index{Registry@{Registry}!HasSystem@{HasSystem}}
+\index{HasSystem@{HasSystem}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{HasSystem()}{HasSystem()}}
+{\footnotesize\ttfamily template$<$typename TSystem $>$ \\
+bool Registry\+::\+Has\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if a system of type TSystem is registered. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSystem} & The system type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+True if the system is present, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classRegistry_a037ed17399c2adc565abb9465fea5e0b}\label{classRegistry_a037ed17399c2adc565abb9465fea5e0b} 
+\index{Registry@{Registry}!KillEntity@{KillEntity}}
+\index{KillEntity@{KillEntity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{KillEntity()}{KillEntity()}}
+{\footnotesize\ttfamily void Registry\+::\+Kill\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Marks an entity for removal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to kill. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a037ed17399c2adc565abb9465fea5e0b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_a3c5f9b5842a422cb3e4d52cfa5c9960e}\label{classRegistry_a3c5f9b5842a422cb3e4d52cfa5c9960e} 
+\index{Registry@{Registry}!RemoveAllComponentsOfEntity@{RemoveAllComponentsOfEntity}}
+\index{RemoveAllComponentsOfEntity@{RemoveAllComponentsOfEntity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{RemoveAllComponentsOfEntity()}{RemoveAllComponentsOfEntity()}}
+{\footnotesize\ttfamily void Registry\+::\+Remove\+All\+Components\+Of\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Removes all components of a given entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity whose components to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRegistry_a983d52e579dde04607b487ed3dc800ee}\label{classRegistry_a983d52e579dde04607b487ed3dc800ee} 
+\index{Registry@{Registry}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily template$<$typename TComponent $>$ \\
+void Registry\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Removes a component of type TComponent from an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to remove the component from. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a983d52e579dde04607b487ed3dc800ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a983d52e579dde04607b487ed3dc800ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_af148a233165c929304b3ac1b55a03b41}\label{classRegistry_af148a233165c929304b3ac1b55a03b41} 
+\index{Registry@{Registry}!RemoveEntityFromSystems@{RemoveEntityFromSystems}}
+\index{RemoveEntityFromSystems@{RemoveEntityFromSystems}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{RemoveEntityFromSystems()}{RemoveEntityFromSystems()}}
+{\footnotesize\ttfamily void Registry\+::\+Remove\+Entity\+From\+Systems (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Removes an entity from all systems. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to remove. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_af148a233165c929304b3ac1b55a03b41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_a8dba180c0abfb4fde4dc0e8e02b92c98}\label{classRegistry_a8dba180c0abfb4fde4dc0e8e02b92c98} 
+\index{Registry@{Registry}!RemoveSystem@{RemoveSystem}}
+\index{RemoveSystem@{RemoveSystem}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{RemoveSystem()}{RemoveSystem()}}
+{\footnotesize\ttfamily template$<$typename TSystem $>$ \\
+void Registry\+::\+Remove\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes a system of type TSystem from the registry. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSystem} & The system type. \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classRegistry_a21eec592a9c1fee90f18796f07fd9ad8}\label{classRegistry_a21eec592a9c1fee90f18796f07fd9ad8} 
+\index{Registry@{Registry}!Update@{Update}}
+\index{Update@{Update}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Registry\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Processes entity addition and removal, updating systems accordingly. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a21eec592a9c1fee90f18796f07fd9ad8_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRegistry_a963895463eb425243c10db88bab8755a}\label{classRegistry_a963895463eb425243c10db88bab8755a} 
+\index{Registry@{Registry}!componentsPools@{componentsPools}}
+\index{componentsPools@{componentsPools}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{componentsPools}{componentsPools}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIPool}{IPool}}$>$ $>$ Registry\+::components\+Pools\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pools storing components indexed by component ID. 
+
+\Hypertarget{classRegistry_afd3cf027b37d28821d82303742798569}\label{classRegistry_afd3cf027b37d28821d82303742798569} 
+\index{Registry@{Registry}!entitiesToBeAdded@{entitiesToBeAdded}}
+\index{entitiesToBeAdded@{entitiesToBeAdded}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{entitiesToBeAdded}{entitiesToBeAdded}}
+{\footnotesize\ttfamily std\+::set$<$\mbox{\hyperlink{classEntity}{Entity}}$>$ Registry\+::entities\+To\+Be\+Added\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Entities pending addition. 
+
+\Hypertarget{classRegistry_a3a341140d337edb0472c778200d2c0a4}\label{classRegistry_a3a341140d337edb0472c778200d2c0a4} 
+\index{Registry@{Registry}!entitiesToBeKilled@{entitiesToBeKilled}}
+\index{entitiesToBeKilled@{entitiesToBeKilled}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{entitiesToBeKilled}{entitiesToBeKilled}}
+{\footnotesize\ttfamily std\+::set$<$\mbox{\hyperlink{classEntity}{Entity}}$>$ Registry\+::entities\+To\+Be\+Killed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Entities pending removal. 
+
+\Hypertarget{classRegistry_ae9cbfb52361f7756b01663c4a157c965}\label{classRegistry_ae9cbfb52361f7756b01663c4a157c965} 
+\index{Registry@{Registry}!entityComponentSignatures@{entityComponentSignatures}}
+\index{entityComponentSignatures@{entityComponentSignatures}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{entityComponentSignatures}{entityComponentSignatures}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}}$>$ Registry\+::entity\+Component\+Signatures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Signatures of each entity indicating which components they have. 
+
+\Hypertarget{classRegistry_aec6d66cb800c4821664257d547840184}\label{classRegistry_aec6d66cb800c4821664257d547840184} 
+\index{Registry@{Registry}!freeIds@{freeIds}}
+\index{freeIds@{freeIds}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{freeIds}{freeIds}}
+{\footnotesize\ttfamily std\+::deque$<$int$>$ Registry\+::free\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Queue of free entity IDs for reuse. 
+
+\Hypertarget{classRegistry_a768efe268d4f5840abc004c076cc3301}\label{classRegistry_a768efe268d4f5840abc004c076cc3301} 
+\index{Registry@{Registry}!numEntity@{numEntity}}
+\index{numEntity@{numEntity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{numEntity}{numEntity}}
+{\footnotesize\ttfamily int Registry\+::num\+Entity = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of entities currently created. 
+
+\Hypertarget{classRegistry_a55f181a77a46eb9a629488de118bbb0a}\label{classRegistry_a55f181a77a46eb9a629488de118bbb0a} 
+\index{Registry@{Registry}!systems@{systems}}
+\index{systems@{systems}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{systems}{systems}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classSystem}{System}}$>$ $>$ Registry\+::systems\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Systems managed by the registry indexed by type. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ECS/\mbox{\hyperlink{ECS_8hpp}{ECS.\+hpp}}\item 
+src/\+ECS/\mbox{\hyperlink{ECS_8cpp}{ECS.\+cpp}}\end{DoxyCompactItemize}

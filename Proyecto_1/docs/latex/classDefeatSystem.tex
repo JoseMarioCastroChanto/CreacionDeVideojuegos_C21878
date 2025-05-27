@@ -1,0 +1,121 @@
+\doxysection{Defeat\+System Class Reference}
+\hypertarget{classDefeatSystem}{}\label{classDefeatSystem}\index{DefeatSystem@{DefeatSystem}}
+
+
+Checks if any objective entity is defeated (life \texorpdfstring{$<$}{<}= 0).  
+
+
+
+
+{\ttfamily \#include $<$Defeat\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Defeat\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classDefeatSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Defeat\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classDefeatSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDefeatSystem_ab5e1c29a237e038fe885ed870f44507e}{Defeat\+System}} ()
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classDefeatSystem_a79955dd240f0eeded06d5e8ad7e6c837}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the system, checking all objective entities for defeat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classDefeatSystem_a5f09aa4dd7fbb7ccf098841dc90ee863}{Defeat}} = \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{false}}
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classDefeatSystem}{Defeat\+System} requiring \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Checks if any objective entity is defeated (life \texorpdfstring{$<$}{<}= 0). 
+
+If any objective entity without the \doxylink{structTagProjectileComponent}{Tag\+Projectile\+Component} reaches zero or less life, the Defeat flag is set to true. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDefeatSystem_ab5e1c29a237e038fe885ed870f44507e}\label{classDefeatSystem_ab5e1c29a237e038fe885ed870f44507e} 
+\index{DefeatSystem@{DefeatSystem}!DefeatSystem@{DefeatSystem}}
+\index{DefeatSystem@{DefeatSystem}!DefeatSystem@{DefeatSystem}}
+\doxysubsubsection{\texorpdfstring{DefeatSystem()}{DefeatSystem()}}
+{\footnotesize\ttfamily Defeat\+System\+::\+Defeat\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDefeatSystem_ab5e1c29a237e038fe885ed870f44507e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDefeatSystem_a79955dd240f0eeded06d5e8ad7e6c837}\label{classDefeatSystem_a79955dd240f0eeded06d5e8ad7e6c837} 
+\index{DefeatSystem@{DefeatSystem}!Update@{Update}}
+\index{Update@{Update}!DefeatSystem@{DefeatSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Defeat\+System\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the system, checking all objective entities for defeat. 
+
+Sets Defeat to true if any objective entity without \doxylink{structTagProjectileComponent}{Tag\+Projectile\+Component} has life\+\_\+count \texorpdfstring{$<$}{<}= 0. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDefeatSystem_a79955dd240f0eeded06d5e8ad7e6c837_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDefeatSystem_a5f09aa4dd7fbb7ccf098841dc90ee863}\label{classDefeatSystem_a5f09aa4dd7fbb7ccf098841dc90ee863} 
+\index{DefeatSystem@{DefeatSystem}!Defeat@{Defeat}}
+\index{Defeat@{Defeat}!DefeatSystem@{DefeatSystem}}
+\doxysubsubsection{\texorpdfstring{Defeat}{Defeat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} Defeat\+System\+::\+Defeat = \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{false}}}
+
+
+
+Constructs the \doxylink{classDefeatSystem}{Defeat\+System} requiring \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{DefeatSystem_8hpp}{Defeat\+System.\+hpp}}\end{DoxyCompactItemize}

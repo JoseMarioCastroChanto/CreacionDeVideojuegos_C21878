@@ -1,0 +1,7 @@
+<map id="AssetManager::StopMusic" name="AssetManager::StopMusic">
+<area shape="rect" id="Node000001" title="Stops the currently playing music." alt="" coords="496,5,687,31"/>
+<area shape="rect" id="Node000002" href="$classAssetManager.html#a1e6962f173e3d8d307552d367303b5e2" title="Frees all loaded music assets." alt="" coords="253,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="483,21,448,21,448,15,483,15"/>
+<area shape="rect" id="Node000003" href="$classAssetManager.html#a069acc7f6b59d27b5d7cac6aed4e71f0" title="Frees all textures, fonts, and music." alt="" coords="5,5,205,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,21,206,21,206,15,239,15"/>
+</map>

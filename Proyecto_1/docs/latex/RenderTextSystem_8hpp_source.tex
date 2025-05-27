@@ -1,0 +1,77 @@
+\doxysection{Render\+Text\+System.\+hpp}
+\hypertarget{RenderTextSystem_8hpp_source}{}\label{RenderTextSystem_8hpp_source}\index{src/Systems/RenderTextSystem.hpp@{src/Systems/RenderTextSystem.hpp}}
+\mbox{\hyperlink{RenderTextSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RENDERTEXTSYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RENDERTEXTSYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../AssetManager/AssetManager.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Components/TextComponent.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRenderTextSystem}{RenderTextSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\ \{}
+\DoxyCodeLine{00022\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classRenderTextSystem_a2ae7b1c0766f9ed916503c8b0e647d5c}{RenderTextSystem}}()\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TextComponent>}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TransformComponent>}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderTextSystem_a2525ec527860e6cb69a91b4b4218d26a}{Update}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Renderer}}*\ renderer,\ \textcolor{keyword}{const}\ std::unique\_ptr<AssetManager>\&}
+\DoxyCodeLine{00044\ \ \ \ \ assetManager)\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ text\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTextComponent}{TextComponent}}>();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Surface}}*\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{TTF\_RenderText\_Blended}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assetManager-\/>GetFont(text.fontId),\ text.text.c\_str(),\ text.color);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ text.width\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}-\/>w;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ text.height\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}-\/>h;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Texture}}*\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_CreateTextureFromSurface}}(renderer,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_FreeSurface}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Rect}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{dstRect}}\ =\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.x),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.y),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.width\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.scale.x),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text.height\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.scale.y)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_RenderCopy}}(renderer,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}},\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{NULL}},\ \&\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{dstRect}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_DestroyTexture}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderTextSystem_a26943037c626e5537c796b4161e62d6d}{RenderFixedText}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Renderer}}*\ renderer,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{TTF\_Font}}*\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{font}},\ \textcolor{keyword}{const}\ std::string\&\ text,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Color}}\ color,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{y}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scaleX}}\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scaleY}}\ =\ 1.0f)\ \{}
+\DoxyCodeLine{00082\ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Surface}}*\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{TTF\_RenderText\_Blended}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{font}},\ text.c\_str(),\ color);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}})\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Log}}(\textcolor{stringliteral}{"{}Error\ creando\ surface\ para\ texto\ fijo:\ \%s"{}},\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{TTF\_GetError}}());}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Texture}}*\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_CreateTextureFromSurface}}(renderer,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}});}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_FreeSurface}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}});}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}})\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Log}}(\textcolor{stringliteral}{"{}Error\ creando\ textura\ para\ texto\ fijo:\ \%s"{}},\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetError}}());}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_Rect}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{dstRect}}\ =\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{x}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{y}},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}-\/>w\ *\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scaleX}}),}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{surface}}-\/>h\ *\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scaleY}})}
+\DoxyCodeLine{00100\ \ \ \ \ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_RenderCopy}}(renderer,\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}},\ \textcolor{keyword}{nullptr},\ \&\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{dstRect}});}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_DestroyTexture}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{texture}});}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

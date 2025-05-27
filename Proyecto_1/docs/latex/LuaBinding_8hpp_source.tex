@@ -1,0 +1,188 @@
+\doxysection{Lua\+Binding.\+hpp}
+\hypertarget{LuaBinding_8hpp_source}{}\label{LuaBinding_8hpp_source}\index{src/Binding/LuaBinding.hpp@{src/Binding/LuaBinding.hpp}}
+\mbox{\hyperlink{LuaBinding_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LUABINDING\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LUABINDING\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Components/RigidBodyComponent.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Components/AnimationComponent.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Components/SpriteComponent.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Systems/EntitySpawnerSystem.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Systems/SceneTimeSystem.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Systems/DefeatSystem.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../Systems/EnemyIASystem.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../Systems/DamageSystem.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../Game/Game.hpp"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//Controls}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c}{IsActionActivated}}(\textcolor{keyword}{const}\ std::string\&\ action)\{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_a12ed49dbe5d7b4140716679f9ba28f49}{controllerManager}}-\/>IsActionActivated(action);}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ RigidBodyComponent}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d}{SetVelocity}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{auto}\&\ rigidbody\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structRigidBodyComponent}{RigidBodyComponent}}>();}
+\DoxyCodeLine{00046\ \ \ \ \ rigidbody.\mbox{\hyperlink{structRigidBodyComponent_a82aff71832ac9f8a492f5c577ed2387a}{velocity}}.x\ =\ x;}
+\DoxyCodeLine{00047\ \ \ \ \ rigidbody.velocity.y\ =\ y;}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b}{GetVelocity}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{auto}\&\ rigidbody\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structRigidBodyComponent}{RigidBodyComponent}}>();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ rigidbody.\mbox{\hyperlink{structRigidBodyComponent_a82aff71832ac9f8a492f5c577ed2387a}{velocity}}.x;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ TransformComponent}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2}{GetScale}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a34212063e4e646cc39bca33e40891472}{scale}}.x;}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37}{SetScale}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00086\ \ \ \ \ \ transform.\mbox{\hyperlink{structTransformComponent_a34212063e4e646cc39bca33e40891472}{scale}}.x\ =\ x;}
+\DoxyCodeLine{00087\ \ \ \ \ \ transform.scale.y\ =\ y;}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060}{SetPosition}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00098\ \ \ \ \ \ transform.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}.x\ =\ x;}
+\DoxyCodeLine{00099\ \ \ \ \ \ transform.position.y\ =\ y;}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38}{GetPositionX}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}.x;}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330}{GetPositionY}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}.y;}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ DepthComponent}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2}{GetDepth}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{auto}\&\ depth\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ depth.\mbox{\hyperlink{structDepthComponent_ab2b541100a52009d9e2cdc82d231dcfa}{max\_scale}};}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ SpriteComponent}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0}{SetSrcRect}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\textcolor{keywordtype}{int}\ width\ =\ 0}
+\DoxyCodeLine{00145\ \ \ \ \ ,\ \textcolor{keywordtype}{int}\ height\ =\ 0,\ \textcolor{keywordtype}{int}\ srcRectX\ =\ 0,\ \textcolor{keywordtype}{int}\ srcRectY\ =\ 0)\{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{auto}\&\ sprite\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structSpriteComponent}{SpriteComponent}}>();}
+\DoxyCodeLine{00147\ \ \ \ \ sprite.\mbox{\hyperlink{structSpriteComponent_acd23cc7dacc7291e2412b5bb2937feff}{srcRect}}\ =\ \{srcRectX,\ srcRectY,\ width,\ height\};}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{comment}{//AnimationComponent}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29}{SetNumFrames}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\textcolor{keywordtype}{int}\ numFrames)\{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{auto}\&\ animation\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structAnimationComponent}{AnimationComponent}}>();}
+\DoxyCodeLine{00159\ \ \ \ \ animation.\mbox{\hyperlink{structAnimationComponent_a394dfc0c2357a82810b49dbae9c2b952}{numFrames}}\ =\ numFrames;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{//EntitySpawnerComponent}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408}{CreateDynamicEntity}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{double}\ dir,\ \textcolor{keywordtype}{int}\ num,\ \textcolor{keywordtype}{double}\ scale)\{}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{auto}\&\ transform\ =\ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ newEntity\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEntitySpawnerSystem}{EntitySpawnerSystem}}>().GenerateEntity(}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}},num,\mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_a62b0a47833567f7333f9e2ec95bf2d79}{lua}}}
+\DoxyCodeLine{00177\ \ \ \ \ );}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}(scale\ >\ 0)\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ transformNew\ =\ newEntity.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ rigidBodyNew=\ newEntity.GetComponent<\mbox{\hyperlink{structRigidBodyComponent}{RigidBodyComponent}}>();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ transformNew.position\ =\ transform.position;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ transformNew.scale.x\ =\ scale;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ transformNew.scale.y\ =\ scale;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ rigidBodyNew.velocity.x\ =\ rigidBodyNew.velocity.x*dir;\}}
+\DoxyCodeLine{00185\ \ \ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//Time}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2}{GetDeltaTime}}()\{}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{int}\ time\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classSceneTimeSystem}{SceneTimeSystem}}>().\mbox{\hyperlink{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2}{GetDeltaTime}}();}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ time;}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10}{GetTime}}()\{}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{int}\ time\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classSceneTimeSystem}{SceneTimeSystem}}>().GetSceneTime();}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{return}\ time;}
+\DoxyCodeLine{00208\ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e}{SetTimer}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{int}\ newTime)\{}
+\DoxyCodeLine{00216\ \ \ \ \ std::string\ timer\ =\ std::to\_string(newTime\ /\ 1000);}
+\DoxyCodeLine{00217\ \ \ \ \ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTextComponent}{TextComponent}}>().text\ =\ timer;}
+\DoxyCodeLine{00218\ \ \ \ \ }
+\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{comment}{//Defeat\ }}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00227\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27}{GetDefeat}}()\{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classDefeatSystem}{DefeatSystem}}>().Defeat;}
+\DoxyCodeLine{00229\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{comment}{//Text}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00238\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260}{SetText}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{int}\ newText)\{}
+\DoxyCodeLine{00239\ \ \ \ \ entity.\mbox{\hyperlink{classEntity_ac79960abe9d3005efc7ce39ebedc0776}{GetComponent}}<\mbox{\hyperlink{structTextComponent}{TextComponent}}>().text\ =\ std::to\_string(newText);}
+\DoxyCodeLine{00240\ \ \ \ \ }
+\DoxyCodeLine{00241\ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{comment}{//\ Scenes}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a}{GoToScene}}(\textcolor{keyword}{const}\ std::string\&\ sceneName)\{}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_a7a5fecf4173a685208f485e95eeda913}{sceneManager}}-\/>SetNextScene(sceneName);}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_a7a5fecf4173a685208f485e95eeda913}{sceneManager}}-\/>StopScene();}
+\DoxyCodeLine{00252\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{comment}{//EnemyIASystem}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00262\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062}{SearchObjectiveX}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{bool}\ player)\{}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ transform\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEnemyIASystem}{EnemyIASystem}}>().SearchClosestObjective(entity,player);}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}.x;}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00273\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a}{SearchObjectiveY}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{bool}\ player)\{}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ transform\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEnemyIASystem}{EnemyIASystem}}>().SearchClosestObjective(entity,player);}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}.y;}
+\DoxyCodeLine{00276\ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00284\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04}{SearchObjectiveScale}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{bool}\ player)\{}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ transform\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEnemyIASystem}{EnemyIASystem}}>().SearchClosestObjective(entity,player);}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{return}\ transform.\mbox{\hyperlink{structTransformComponent_a34212063e4e646cc39bca33e40891472}{scale}}.x;}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00295\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41}{SearchObjectiveDepth}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity,\ \textcolor{keywordtype}{bool}\ player)\{}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{structDepthComponent}{DepthComponent}}\ depth\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEnemyIASystem}{EnemyIASystem}}>().SearchClosestObjectiveDepth(entity,player);}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordflow}{return}\ depth.\mbox{\hyperlink{structDepthComponent_ab2b541100a52009d9e2cdc82d231dcfa}{max\_scale}};}
+\DoxyCodeLine{00298\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{comment}{//\ Damage\ System}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00305\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d}{DestroyAllEnemies}}()\{}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classDamageSystem}{DamageSystem}}>().\mbox{\hyperlink{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d}{DestroyAllEnemies}}();}
+\DoxyCodeLine{00307\ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{comment}{//Kill\ entity}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00315\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee}{Kill}}(\mbox{\hyperlink{classEntity}{Entity}}\ entity)\{}
+\DoxyCodeLine{00316\ \ \ \ \ entity.\mbox{\hyperlink{classEntity_ab0a890ba55c9bc5830c021ace6ac3908}{Kill}}();}
+\DoxyCodeLine{00317\ \}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

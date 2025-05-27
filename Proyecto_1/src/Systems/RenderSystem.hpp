@@ -7,13 +7,34 @@
 #include "../Components/DepthComponent.hpp"
 #include "../ECS/ECS.hpp"
 
+/**
+ * @class RenderSystem
+ * @brief System responsible for rendering entities with sprites on the screen.
+ * 
+ * This system requires entities to have SpriteComponent and TransformComponent.
+ * It sorts entities based on their DepthComponent (if present) to render in the correct order.
+ */
 class RenderSystem : public System {
   public:
+    /**
+     * @brief Constructs a RenderSystem and requires SpriteComponent and TransformComponent.
+     */
    RenderSystem(){
     RequireComponent<SpriteComponent>();
     RequireComponent<TransformComponent>();
    }
-
+    /**
+     * @brief Renders all entities with SpriteComponent and TransformComponent.
+     * 
+     * Entities are sorted by their DepthComponent (if any) to respect drawing order.
+     * 
+     * @param renderer Pointer to the SDL_Renderer used for rendering.
+     * @param AssetManager Shared pointer to the AssetManager for texture access.
+     * 
+     * For each entity:
+     * - Calculate destination rectangle using position, scale, and sprite size.
+     * - Render the sprite texture with rotation.
+     */
  void Update(SDL_Renderer* renderer, const std::unique_ptr<AssetManager>& AssetManager) {
     std::vector<Entity> sortedEntities;
 

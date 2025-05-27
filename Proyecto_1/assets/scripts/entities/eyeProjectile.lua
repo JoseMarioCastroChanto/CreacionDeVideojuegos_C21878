@@ -1,5 +1,5 @@
 local elapsed = 0
-local impulse_duration = 1000 -- duración del impulso en milisegundos
+local impulse_duration = 1000 
 local impulse_applied = false
 
 function update()

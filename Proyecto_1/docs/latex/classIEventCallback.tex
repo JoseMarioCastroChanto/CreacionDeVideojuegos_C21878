@@ -1,0 +1,117 @@
+\doxysection{IEvent\+Callback Class Reference}
+\hypertarget{classIEventCallback}{}\label{classIEventCallback}\index{IEventCallback@{IEventCallback}}
+
+
+Abstract interface for event callback handlers.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Manager.\+hpp$>$}
+
+
+
+Inheritance diagram for IEvent\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classIEventCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IEvent\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classIEventCallback__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIEventCallback_acddf3ef68be83a7624d7618ce5ea88ea}{\texorpdfstring{$\sim$}{\string~}\+IEvent\+Callback}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIEventCallback_a7f7d2dcfc7092cd3ef3a2928b4de547e}{Execute}} (\mbox{\hyperlink{classEvent}{Event}} \&e)
+\begin{DoxyCompactList}\small\item\em Executes the callback with the given event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIEventCallback_aad1e10bc8a902edc9317c8b3786fb84d}{Call}} (\mbox{\hyperlink{classEvent}{Event}} \&e)=0
+\begin{DoxyCompactList}\small\item\em Calls the stored callback with the given event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for event callback handlers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIEventCallback_acddf3ef68be83a7624d7618ce5ea88ea}\label{classIEventCallback_acddf3ef68be83a7624d7618ce5ea88ea} 
+\index{IEventCallback@{IEventCallback}!````~IEventCallback@{\texorpdfstring{$\sim$}{\string~}IEventCallback}}
+\index{````~IEventCallback@{\texorpdfstring{$\sim$}{\string~}IEventCallback}!IEventCallback@{IEventCallback}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IEventCallback()}{\string~IEventCallback()}}
+{\footnotesize\ttfamily virtual IEvent\+Callback\+::\texorpdfstring{$\sim$}{\string~}\+IEvent\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIEventCallback_aad1e10bc8a902edc9317c8b3786fb84d}\label{classIEventCallback_aad1e10bc8a902edc9317c8b3786fb84d} 
+\index{IEventCallback@{IEventCallback}!Call@{Call}}
+\index{Call@{Call}!IEventCallback@{IEventCallback}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}}
+{\footnotesize\ttfamily virtual void IEvent\+Callback\+::\+Call (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEvent}{Event}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}
+
+
+
+Calls the stored callback with the given event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Reference to the event to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEventCallback_af7e381f61bba41090acc091a433f5ba3}{Event\+Callback$<$ TOwner, TEvent $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIEventCallback_aad1e10bc8a902edc9317c8b3786fb84d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classIEventCallback_a7f7d2dcfc7092cd3ef3a2928b4de547e}\label{classIEventCallback_a7f7d2dcfc7092cd3ef3a2928b4de547e} 
+\index{IEventCallback@{IEventCallback}!Execute@{Execute}}
+\index{Execute@{Execute}!IEventCallback@{IEventCallback}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void IEvent\+Callback\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEvent}{Event}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executes the callback with the given event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Reference to the event to handle. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIEventCallback_a7f7d2dcfc7092cd3ef3a2928b4de547e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Event\+Manager/\mbox{\hyperlink{EventManager_8hpp}{Event\+Manager.\+hpp}}\end{DoxyCompactItemize}

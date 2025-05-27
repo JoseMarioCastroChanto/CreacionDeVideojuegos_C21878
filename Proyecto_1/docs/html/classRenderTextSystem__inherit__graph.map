@@ -1,0 +1,5 @@
+<map id="RenderTextSystem" name="RenderTextSystem">
+<area shape="rect" id="Node000001" title="System responsible for rendering text components in the ECS." alt="" coords="31,259,193,364"/>
+<area shape="rect" id="Node000002" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="5,5,219,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,224,115,258,109,258,109,224"/>
+</map>

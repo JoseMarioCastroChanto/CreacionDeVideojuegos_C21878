@@ -1,0 +1,463 @@
+\doxysection{Game Class Reference}
+\hypertarget{classGame}{}\label{classGame}\index{Game@{Game}}
+
+
+Core class that manages the entire game lifecycle.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+hpp$>$}
+
+
+
+Collaboration diagram for Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGame_a555a9e4719fd49971765a2ab8b090b5c}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the game (window, subsystems, resources). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a96341ca5b54d90adc3ecb3bf0bcd2312}{Run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the main game loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a0311a22e53ddb906aa1024efdced0e2f}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up and destroys all game resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGame}{Game}} \& \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Provides global access to the single \doxylink{classGame}{Game} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGame_ae5164c37c0dc74cfb56041174017bf57}{renderer}} = nullptr
+\begin{DoxyCompactList}\small\item\em SDL renderer pointer. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \mbox{\hyperlink{classGame_ae3a5f7864602c8de404ab19e1b667543}{asset\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages game assets. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classEventManager}{Event\+Manager}} $>$ \mbox{\hyperlink{classGame_a07c4f2f1c8795ba30ac68a5d05c56d6e}{event\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages events and event listeners. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \mbox{\hyperlink{classGame_a12ed49dbe5d7b4140716679f9ba28f49}{controller\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages input controllers. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}
+\begin{DoxyCompactList}\small\item\em ECS registry for entities and components. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classSceneManager}{Scene\+Manager}} $>$ \mbox{\hyperlink{classGame_a7a5fecf4173a685208f485e95eeda913}{scene\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages game scenes. \end{DoxyCompactList}\item 
+sol\+::state \mbox{\hyperlink{classGame_a62b0a47833567f7333f9e2ec95bf2d79}{lua}}
+\begin{DoxyCompactList}\small\item\em Lua scripting state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGame_a1eb887f92199aea5ecc615a90692a6f2}{Setup}} ()
+\begin{DoxyCompactList}\small\item\em Setup initial game state and resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a7d556f3d9c6f60667767de9c87ef0273}{Run\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Execute the current scene\textquotesingle{}s logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a770db4782ba58f6e8ae098fccf8ba571}{Process\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Handle input processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a1c5373c68261c54aff03e6abe40fee52}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a0897730fc9fed789f6c0f11d21a0c14a}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Render the current frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em Private constructor for singleton pattern. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{\texorpdfstring{$\sim$}{\string~}\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGame_adc376cc3011b5c8f1c3897626100174c}{window}} = nullptr
+\begin{DoxyCompactList}\small\item\em The SDL window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_a5cc348b64b628b0eadbbe11b7e3d716f}{window\+Width}} = 0
+\begin{DoxyCompactList}\small\item\em Window width in pixels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_aff5568dcc7298a46336e9fbc9af7339e}{window\+Height}} = 0
+\begin{DoxyCompactList}\small\item\em Window height in pixels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_a81e37058e22e203eadd5aec2b73a441a}{milisecs\+Previous\+Frame}} = 0
+\begin{DoxyCompactList}\small\item\em Timestamp of previous frame in milliseconds. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGame_adb424734b2454f9ed1e6d6bd44e6dfaf}{is\+Running}} = false
+\begin{DoxyCompactList}\small\item\em Flag to check if game loop is running. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGame_a75207cac8e7ef5a9c08985d3f9615faa}{is\+Paused}} = false
+\begin{DoxyCompactList}\small\item\em Flag to check if the game is currently paused. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGame_a3fd3a9f742344939e1806f951a66fd6f}{was\+Paused}} = false
+\begin{DoxyCompactList}\small\item\em Flag to check if the game was paused in the last frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core class that manages the entire game lifecycle. 
+
+This class handles initialization, the main game loop, input processing, scene management, updates, rendering, and resource cleanup. It follows the singleton pattern to ensure a single instance throughout the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGame_ad59df6562a58a614fda24622d3715b65}\label{classGame_ad59df6562a58a614fda24622d3715b65} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Private constructor for singleton pattern. 
+
+\Hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530} 
+\index{Game@{Game}!````~Game@{\texorpdfstring{$\sim$}{\string~}Game}}
+\index{````~Game@{\texorpdfstring{$\sim$}{\string~}Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Game()}{\string~Game()}}
+{\footnotesize\ttfamily Game\+::\texorpdfstring{$\sim$}{\string~}\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGame_a0311a22e53ddb906aa1024efdced0e2f}\label{classGame_a0311a22e53ddb906aa1024efdced0e2f} 
+\index{Game@{Game}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Game\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cleans up and destroys all game resources. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classGame_a0311a22e53ddb906aa1024efdced0e2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a689dc1143da4a51248eb9feeed5b2aba}\label{classGame_a689dc1143da4a51248eb9feeed5b2aba} 
+\index{Game@{Game}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGame}{Game}} \& Game\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Provides global access to the single \doxylink{classGame}{Game} instance. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classGame}{Game} instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a689dc1143da4a51248eb9feeed5b2aba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a555a9e4719fd49971765a2ab8b090b5c}\label{classGame_a555a9e4719fd49971765a2ab8b090b5c} 
+\index{Game@{Game}!Init@{Init}}
+\index{Init@{Init}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Game\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the game (window, subsystems, resources). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classGame_a555a9e4719fd49971765a2ab8b090b5c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a770db4782ba58f6e8ae098fccf8ba571}\label{classGame_a770db4782ba58f6e8ae098fccf8ba571} 
+\index{Game@{Game}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily void Game\+::\+Process\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle input processing. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a770db4782ba58f6e8ae098fccf8ba571_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a0897730fc9fed789f6c0f11d21a0c14a}\label{classGame_a0897730fc9fed789f6c0f11d21a0c14a} 
+\index{Game@{Game}!Render@{Render}}
+\index{Render@{Render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Game\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Render the current frame. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classGame_a0897730fc9fed789f6c0f11d21a0c14a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a0897730fc9fed789f6c0f11d21a0c14a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a96341ca5b54d90adc3ecb3bf0bcd2312}\label{classGame_a96341ca5b54d90adc3ecb3bf0bcd2312} 
+\index{Game@{Game}!Run@{Run}}
+\index{Run@{Run}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Game\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs the main game loop. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a96341ca5b54d90adc3ecb3bf0bcd2312_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classGame_a96341ca5b54d90adc3ecb3bf0bcd2312_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a7d556f3d9c6f60667767de9c87ef0273}\label{classGame_a7d556f3d9c6f60667767de9c87ef0273} 
+\index{Game@{Game}!RunScene@{RunScene}}
+\index{RunScene@{RunScene}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{RunScene()}{RunScene()}}
+{\footnotesize\ttfamily void Game\+::\+Run\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Execute the current scene\textquotesingle{}s logic. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a7d556f3d9c6f60667767de9c87ef0273_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a7d556f3d9c6f60667767de9c87ef0273_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a1eb887f92199aea5ecc615a90692a6f2}\label{classGame_a1eb887f92199aea5ecc615a90692a6f2} 
+\index{Game@{Game}!Setup@{Setup}}
+\index{Setup@{Setup}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily void Game\+::\+Setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Setup initial game state and resources. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classGame_a1eb887f92199aea5ecc615a90692a6f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGame_a1c5373c68261c54aff03e6abe40fee52}\label{classGame_a1c5373c68261c54aff03e6abe40fee52} 
+\index{Game@{Game}!Update@{Update}}
+\index{Update@{Update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update game logic. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classGame_a1c5373c68261c54aff03e6abe40fee52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGame_a1c5373c68261c54aff03e6abe40fee52_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGame_ae3a5f7864602c8de404ab19e1b667543}\label{classGame_ae3a5f7864602c8de404ab19e1b667543} 
+\index{Game@{Game}!assetManager@{assetManager}}
+\index{assetManager@{assetManager}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{assetManager}{assetManager}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classAssetManager}{Asset\+Manager}}$>$ Game\+::asset\+Manager}
+
+
+
+Manages game assets. 
+
+\Hypertarget{classGame_a12ed49dbe5d7b4140716679f9ba28f49}\label{classGame_a12ed49dbe5d7b4140716679f9ba28f49} 
+\index{Game@{Game}!controllerManager@{controllerManager}}
+\index{controllerManager@{controllerManager}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{controllerManager}{controllerManager}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classControllerManager}{Controller\+Manager}}$>$ Game\+::controller\+Manager}
+
+
+
+Manages input controllers. 
+
+\Hypertarget{classGame_a07c4f2f1c8795ba30ac68a5d05c56d6e}\label{classGame_a07c4f2f1c8795ba30ac68a5d05c56d6e} 
+\index{Game@{Game}!eventManager@{eventManager}}
+\index{eventManager@{eventManager}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{eventManager}{eventManager}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classEventManager}{Event\+Manager}}$>$ Game\+::event\+Manager}
+
+
+
+Manages events and event listeners. 
+
+\Hypertarget{classGame_a75207cac8e7ef5a9c08985d3f9615faa}\label{classGame_a75207cac8e7ef5a9c08985d3f9615faa} 
+\index{Game@{Game}!isPaused@{isPaused}}
+\index{isPaused@{isPaused}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{isPaused}{isPaused}}
+{\footnotesize\ttfamily bool Game\+::is\+Paused = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to check if the game is currently paused. 
+
+\Hypertarget{classGame_adb424734b2454f9ed1e6d6bd44e6dfaf}\label{classGame_adb424734b2454f9ed1e6d6bd44e6dfaf} 
+\index{Game@{Game}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{isRunning}{isRunning}}
+{\footnotesize\ttfamily bool Game\+::is\+Running = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to check if game loop is running. 
+
+\Hypertarget{classGame_a62b0a47833567f7333f9e2ec95bf2d79}\label{classGame_a62b0a47833567f7333f9e2ec95bf2d79} 
+\index{Game@{Game}!lua@{lua}}
+\index{lua@{lua}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{lua}{lua}}
+{\footnotesize\ttfamily sol\+::state Game\+::lua}
+
+
+
+Lua scripting state. 
+
+\Hypertarget{classGame_a81e37058e22e203eadd5aec2b73a441a}\label{classGame_a81e37058e22e203eadd5aec2b73a441a} 
+\index{Game@{Game}!milisecsPreviousFrame@{milisecsPreviousFrame}}
+\index{milisecsPreviousFrame@{milisecsPreviousFrame}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{milisecsPreviousFrame}{milisecsPreviousFrame}}
+{\footnotesize\ttfamily int Game\+::milisecs\+Previous\+Frame = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Timestamp of previous frame in milliseconds. 
+
+\Hypertarget{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}\label{classGame_ab9ec8204418df1ecb54b9522fc7fac0a} 
+\index{Game@{Game}!registry@{registry}}
+\index{registry@{registry}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{registry}{registry}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classRegistry}{Registry}}$>$ Game\+::registry}
+
+
+
+ECS registry for entities and components. 
+
+\Hypertarget{classGame_ae5164c37c0dc74cfb56041174017bf57}\label{classGame_ae5164c37c0dc74cfb56041174017bf57} 
+\index{Game@{Game}!renderer@{renderer}}
+\index{renderer@{renderer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*} Game\+::renderer = nullptr}
+
+
+
+SDL renderer pointer. 
+
+\Hypertarget{classGame_a7a5fecf4173a685208f485e95eeda913}\label{classGame_a7a5fecf4173a685208f485e95eeda913} 
+\index{Game@{Game}!sceneManager@{sceneManager}}
+\index{sceneManager@{sceneManager}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{sceneManager}{sceneManager}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classSceneManager}{Scene\+Manager}}$>$ Game\+::scene\+Manager}
+
+
+
+Manages game scenes. 
+
+\Hypertarget{classGame_a3fd3a9f742344939e1806f951a66fd6f}\label{classGame_a3fd3a9f742344939e1806f951a66fd6f} 
+\index{Game@{Game}!wasPaused@{wasPaused}}
+\index{wasPaused@{wasPaused}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{wasPaused}{wasPaused}}
+{\footnotesize\ttfamily bool Game\+::was\+Paused = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to check if the game was paused in the last frame. 
+
+\Hypertarget{classGame_adc376cc3011b5c8f1c3897626100174c}\label{classGame_adc376cc3011b5c8f1c3897626100174c} 
+\index{Game@{Game}!window@{window}}
+\index{window@{window}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*} Game\+::window = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The SDL window. 
+
+\Hypertarget{classGame_aff5568dcc7298a46336e9fbc9af7339e}\label{classGame_aff5568dcc7298a46336e9fbc9af7339e} 
+\index{Game@{Game}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily int Game\+::window\+Height = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Window height in pixels. 
+
+\Hypertarget{classGame_a5cc348b64b628b0eadbbe11b7e3d716f}\label{classGame_a5cc348b64b628b0eadbbe11b7e3d716f} 
+\index{Game@{Game}!windowWidth@{windowWidth}}
+\index{windowWidth@{windowWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{windowWidth}{windowWidth}}
+{\footnotesize\ttfamily int Game\+::window\+Width = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Window width in pixels. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Game/\mbox{\hyperlink{Game_8hpp}{Game.\+hpp}}\item 
+src/\+Game/\mbox{\hyperlink{Game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

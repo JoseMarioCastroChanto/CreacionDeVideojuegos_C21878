@@ -1,0 +1,12 @@
+<map id="DamageSystem::OnCollision" name="DamageSystem::OnCollision">
+<area shape="rect" id="Node000001" title="Called when a CollisionEvent is emitted. Processes damage between entities involved in the collision." alt="" coords="5,31,213,56"/>
+<area shape="rect" id="Node000002" href="$classDamageSystem.html#a3c1f1d25f58344bbeb75fde39c8ddb3a" title="Creates an explosion entity at the position of the given entity." alt="" coords="261,5,501,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,31,248,28,248,33,214,36"/>
+<area shape="rect" id="Node000004" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="549,55,753,80"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="213,45,535,60,535,65,213,51"/>
+<area shape="rect" id="Node000003" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="578,5,725,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,15,564,15,564,21,501,21"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="452,28,568,49,567,55,451,33"/>
+<area shape="rect" id="Node000005" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="801,55,941,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="754,65,787,65,787,70,754,70"/>
+</map>

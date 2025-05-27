@@ -1,0 +1,118 @@
+\doxysection{Health\+Bar\+System Class Reference}
+\hypertarget{classHealthBarSystem}{}\label{classHealthBarSystem}\index{HealthBarSystem@{HealthBarSystem}}
+
+
+\doxylink{classSystem}{System} responsible for rendering health bars for entities with \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}.  
+
+
+
+
+{\ttfamily \#include $<$Health\+Bar\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Health\+Bar\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classHealthBarSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Health\+Bar\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classHealthBarSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHealthBarSystem_a9d32bea643abb3ebd2a564e38ddb932d}{Health\+Bar\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classHealthBarSystem}{Health\+Bar\+System} and requires \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classHealthBarSystem_aa83997f4b3d0d3f6c1865166a3aa647a}{Update}} (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\+\_\+\+Renderer}} \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Updates and renders health bars for all entities in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSystem}{System} responsible for rendering health bars for entities with \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}. 
+
+This system draws the health bars differently depending on whether the entity has a \doxylink{structTagPlayerComponent}{Tag\+Player\+Component} or not. For player entities, the health bar is drawn at position (100, 50) with a green fill. For other objective entities (e.\+g., obelisks), the health bar is drawn at position (100, 80) with a blue fill. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHealthBarSystem_a9d32bea643abb3ebd2a564e38ddb932d}\label{classHealthBarSystem_a9d32bea643abb3ebd2a564e38ddb932d} 
+\index{HealthBarSystem@{HealthBarSystem}!HealthBarSystem@{HealthBarSystem}}
+\index{HealthBarSystem@{HealthBarSystem}!HealthBarSystem@{HealthBarSystem}}
+\doxysubsubsection{\texorpdfstring{HealthBarSystem()}{HealthBarSystem()}}
+{\footnotesize\ttfamily Health\+Bar\+System\+::\+Health\+Bar\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classHealthBarSystem}{Health\+Bar\+System} and requires \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHealthBarSystem_a9d32bea643abb3ebd2a564e38ddb932d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHealthBarSystem_aa83997f4b3d0d3f6c1865166a3aa647a}\label{classHealthBarSystem_aa83997f4b3d0d3f6c1865166a3aa647a} 
+\index{HealthBarSystem@{HealthBarSystem}!Update@{Update}}
+\index{Update@{Update}!HealthBarSystem@{HealthBarSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Health\+Bar\+System\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\+\_\+\+Renderer}} \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates and renders health bars for all entities in the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & Pointer to the SDL\+\_\+\+Renderer used for drawing the health bars.\\
+\hline
+\end{DoxyParams}
+For each entity\+:
+\begin{DoxyItemize}
+\item Retrieves the \doxylink{structLifeComponent}{Life\+Component} to get current and maximum life.
+\item Draws a white border rectangle.
+\item Fills the rectangle proportionally to the entity\textquotesingle{}s current life.
+\item Uses green color for player entities and blue for others. 
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHealthBarSystem_aa83997f4b3d0d3f6c1865166a3aa647a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{HealthBarSystem_8hpp}{Health\+Bar\+System.\+hpp}}\end{DoxyCompactItemize}

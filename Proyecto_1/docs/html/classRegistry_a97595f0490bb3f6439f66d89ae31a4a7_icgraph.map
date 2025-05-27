@@ -1,0 +1,56 @@
+<map id="Registry::GetComponent" name="Registry::GetComponent">
+<area shape="rect" id="Node000001" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="757,417,939,442"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="544,417,709,442"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="744,432,709,432,709,427,744,427"/>
+<area shape="rect" id="Node000003" href="$classCollisionSystem.html#a1bdf4b50a3d304ec4ff5e0af0546f43f" title="Checks collision between two circle&#45;collider entities." alt="" coords="284,5,496,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="621,404,612,337,591,247,575,198,554,150,527,106,494,66,468,48,471,43,498,62,531,103,558,148,580,196,596,245,617,336,626,403"/>
+<area shape="rect" id="Node000004" href="$classCollisionSystem.html#a037ec33be724e6a16c9c4d50bbb7912d" title="Updates the system by checking collisions among all entities and emitting events." alt="" coords="29,42,212,67"/>
+<area shape="poly" id="edge33_Node000002_Node000004" title=" " alt="" coords="621,404,612,342,591,261,574,219,553,178,527,141,494,110,474,99,446,89,374,74,291,65,212,60,212,55,291,60,375,69,448,84,477,94,498,106,531,138,558,176,579,217,596,260,617,341,626,403"/>
+<area shape="rect" id="Node000005" href="$LuaBinding_8hpp.html#aa544a1463e32213e5a296393c1de9408" title="Creates a new entity using the EntitySpawnerSystem and initializes its position and velocity." alt="" coords="309,121,471,146"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="618,404,605,352,582,285,546,217,522,186,494,159,470,146,472,141,498,155,526,182,550,214,587,283,611,350,623,403"/>
+<area shape="rect" id="Node000007" href="$LuaBinding_8hpp.html#a68c3e4bc01b60232a207a7550ded1ea2" title="Gets the max depth scale from an entity&#39;s DepthComponent." alt="" coords="348,170,432,195"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="615,404,600,361,575,308,540,254,519,230,495,209,464,194,432,187,433,182,466,189,497,204,522,226,544,251,579,305,605,359,620,403"/>
+<area shape="rect" id="Node000008" href="$LuaBinding_8hpp.html#a31f8b0573ff3de875f4b1ca36c95ae38" title="Gets the x position of an entity&#39;s TransformComponent." alt="" coords="337,219,443,245"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="611,405,593,371,567,331,534,291,495,258,470,246,443,239,444,234,472,241,497,254,538,288,571,328,598,369,616,403"/>
+<area shape="rect" id="Node000009" href="$LuaBinding_8hpp.html#aae3c8151b52e60815b490a4f63aa2330" title="Gets the y position of an entity&#39;s TransformComponent." alt="" coords="337,269,443,294"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="606,408,559,356,528,330,495,308,469,297,442,290,443,285,471,292,497,303,532,326,563,353,610,404"/>
+<area shape="rect" id="Node000010" href="$LuaBinding_8hpp.html#a743eda6ac3df272464e22a98c946c3e2" title="Gets the horizontal scale of an entity&#39;s TransformComponent." alt="" coords="350,318,430,343"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="595,411,549,383,495,357,430,339,431,334,497,352,551,379,597,407"/>
+<area shape="rect" id="Node000011" href="$LuaBinding_8hpp.html#ad01386ffa7404519ff255bab92c0aa5b" title="Gets the horizontal velocity (x) of an entity&#39;s RigidBodyComponent." alt="" coords="341,367,439,393"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="551,416,438,393,439,387,552,411"/>
+<area shape="rect" id="Node000012" href="$classWallCollisionSystem.html#a2ae9adc347fefc19e9a9560e125e97b9" title="Handles a collision event between entities, resolving collisions involving walls and players." alt="" coords="313,763,467,803"/>
+<area shape="poly" id="edge16_Node000002_Node000012" title=" " alt="" coords="625,457,614,517,592,597,575,639,554,680,529,719,498,753,469,770,466,766,494,749,525,715,550,677,570,637,587,595,609,516,620,456"/>
+<area shape="rect" id="Node000014" href="$LuaBinding_8hpp.html#a81e33a5d300c60baf6086cc639151c29" title="Sets the number of frames for the AnimationComponent of an entity." alt="" coords="329,417,451,442"/>
+<area shape="poly" id="edge18_Node000002_Node000014" title=" " alt="" coords="530,432,451,432,451,427,530,427"/>
+<area shape="rect" id="Node000015" href="$LuaBinding_8hpp.html#ad328bf319ed8ea68611bca61dc80a060" title="Sets the position of an entity&#39;s TransformComponent." alt="" coords="343,466,437,491"/>
+<area shape="poly" id="edge20_Node000002_Node000015" title=" " alt="" coords="552,447,438,472,437,466,551,442"/>
+<area shape="rect" id="Node000016" href="$LuaBinding_8hpp.html#aeec5f22c58a6d14a088756f21e509d37" title="Sets the scale of an entity&#39;s TransformComponent." alt="" coords="351,515,429,541"/>
+<area shape="poly" id="edge22_Node000002_Node000016" title=" " alt="" coords="597,452,551,479,497,505,430,524,429,519,495,500,548,475,594,447"/>
+<area shape="rect" id="Node000017" href="$LuaBinding_8hpp.html#a254ae1132dd98c7ba921ad136409cef0" title="Sets the source rectangle for the SpriteComponent of an entity." alt="" coords="344,565,436,590"/>
+<area shape="poly" id="edge24_Node000002_Node000017" title=" " alt="" coords="609,455,562,505,531,532,497,554,467,567,437,574,436,569,466,562,495,550,528,528,559,502,605,451"/>
+<area shape="rect" id="Node000018" href="$LuaBinding_8hpp.html#a81c7b35bff6bedb8118f6ef6be74f260" title="Sets the text of a TextComponent using an integer value." alt="" coords="355,614,425,639"/>
+<area shape="poly" id="edge26_Node000002_Node000018" title=" " alt="" coords="616,456,597,489,571,530,538,570,497,604,462,619,426,627,425,622,460,614,495,599,534,566,567,526,593,487,611,453"/>
+<area shape="rect" id="Node000019" href="$LuaBinding_8hpp.html#ada4c07e8e9f38e30d1400a3774085b9e" title="Sets a timer text value in a TextComponent from the given time." alt="" coords="349,663,431,689"/>
+<area shape="poly" id="edge28_Node000002_Node000019" title=" " alt="" coords="620,456,604,500,579,553,544,607,522,632,497,653,465,669,431,676,430,671,463,664,495,648,518,628,539,604,574,550,599,498,615,455"/>
+<area shape="rect" id="Node000020" href="$LuaBinding_8hpp.html#a73fdadfa2b2fc6ad1b14bda590c0116d" title="Sets the velocity of an entity&#39;s RigidBodyComponent." alt="" coords="343,713,437,738"/>
+<area shape="poly" id="edge30_Node000002_Node000020" title=" " alt="" coords="623,457,610,509,586,575,550,644,526,675,498,702,469,718,438,725,437,720,467,713,494,698,522,671,545,641,581,573,605,507,618,455"/>
+<area shape="rect" id="Node000021" href="$classRenderSystem.html#a784312b5a0386ba43e39c7894dc27025" title="Renders all entities with SpriteComponent and TransformComponent." alt="" coords="304,827,476,853"/>
+<area shape="poly" id="edge32_Node000002_Node000021" title=" " alt="" coords="627,456,621,528,602,625,586,677,563,728,534,775,498,817,478,830,475,825,494,813,530,772,559,726,581,675,597,624,616,527,622,456"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="271,41,213,47,212,42,270,36"/>
+<area shape="rect" id="Node000006" href="$classScriptSystem.html#a1ec14e2ffb2a02a04fd4e9dcc681502f" title="Creates the Lua binding for functions and classes accessible from Lua scripts." alt="" coords="5,417,236,442"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="298,152,286,159,252,189,223,223,197,260,176,298,145,368,128,417,123,416,140,366,171,296,193,257,218,220,248,185,282,155,295,147"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="335,190,309,197,285,209,256,232,228,259,183,319,150,376,130,417,125,415,145,374,178,316,224,256,252,228,283,204,307,192,334,185"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="324,243,285,258,234,296,189,342,155,385,132,418,128,415,150,382,185,338,230,292,283,254,322,238"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="325,294,285,308,239,334,197,365,136,419,133,415,194,360,236,329,283,303,323,289"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="337,343,285,357,208,388,147,419,144,414,206,384,283,352,336,338"/>
+<area shape="poly" id="edge15_Node000011_Node000006" title=" " alt="" coords="328,394,191,419,190,414,327,389"/>
+<area shape="rect" id="Node000013" href="$classWallCollisionSystem.html#a67f64145fed0777cd43ebe0bd57303f4" title="Subscribes this system to the CollisionEvent in the EventManager." alt="" coords="21,763,221,803"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="299,785,221,785,221,780,299,780"/>
+<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="315,432,236,432,236,427,315,427"/>
+<area shape="poly" id="edge21_Node000015_Node000006" title=" " alt="" coords="328,470,190,445,191,439,329,465"/>
+<area shape="poly" id="edge23_Node000016_Node000006" title=" " alt="" coords="336,520,283,505,207,474,146,445,148,440,209,470,285,500,338,515"/>
+<area shape="poly" id="edge25_Node000017_Node000006" title=" " alt="" coords="329,570,283,554,237,528,194,498,133,444,137,440,198,493,240,524,285,550,331,565"/>
+<area shape="poly" id="edge27_Node000018_Node000006" title=" " alt="" coords="340,624,311,616,283,604,230,565,186,520,151,476,128,444,132,441,155,473,190,516,234,561,285,599,313,611,341,618"/>
+<area shape="poly" id="edge29_Node000019_Node000006" title=" " alt="" coords="335,673,308,666,283,653,252,629,225,602,179,541,145,484,125,443,130,441,150,482,183,538,229,598,256,625,285,648,310,661,337,668"/>
+<area shape="poly" id="edge31_Node000020_Node000006" title=" " alt="" coords="329,722,305,714,282,702,249,673,219,638,194,601,172,563,140,493,123,443,128,442,145,491,177,560,198,598,223,635,252,669,286,698,307,710,330,717"/>
+</map>

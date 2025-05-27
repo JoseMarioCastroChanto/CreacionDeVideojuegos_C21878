@@ -1,0 +1,64 @@
+\doxysection{src/\+Game/\+Game.hpp File Reference}
+\hypertarget{Game_8hpp}{}\label{Game_8hpp}\index{src/Game/Game.hpp@{src/Game/Game.hpp}}
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+mixer.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$sol/sol.\+hpp$>$}\newline
+{\ttfamily \#include "{}../\+Asset\+Manager/\+Asset\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Controller\+Manager/\+Controller\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Event\+Manager/\+Event\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+ECS/\+ECS.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Scene\+Manager/\+Scene\+Manager.\+hpp"{}}\newline
+Include dependency graph for Game.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Game_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Game_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGame}{Game}}
+\begin{DoxyCompactList}\small\item\em Core class that manages the entire game lifecycle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{Game_8hpp_ac5090a6568797128b0a5545228bb8b75}{FPS}} = 30
+\begin{DoxyCompactList}\small\item\em Frames per second target. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{Game_8hpp_a55b3956571ea1b658b8c79e025ad04da}{MILISECS\+\_\+\+PER\+\_\+\+FRAME}} = 1000 / \mbox{\hyperlink{Game_8hpp_ac5090a6568797128b0a5545228bb8b75}{FPS}}
+\begin{DoxyCompactList}\small\item\em Milliseconds per frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Game_8hpp_ac5090a6568797128b0a5545228bb8b75}\label{Game_8hpp_ac5090a6568797128b0a5545228bb8b75} 
+\index{Game.hpp@{Game.hpp}!FPS@{FPS}}
+\index{FPS@{FPS}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{FPS}{FPS}}
+{\footnotesize\ttfamily const int FPS = 30}
+
+
+
+Frames per second target. 
+
+\Hypertarget{Game_8hpp_a55b3956571ea1b658b8c79e025ad04da}\label{Game_8hpp_a55b3956571ea1b658b8c79e025ad04da} 
+\index{Game.hpp@{Game.hpp}!MILISECS\_PER\_FRAME@{MILISECS\_PER\_FRAME}}
+\index{MILISECS\_PER\_FRAME@{MILISECS\_PER\_FRAME}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{MILISECS\_PER\_FRAME}{MILISECS\_PER\_FRAME}}
+{\footnotesize\ttfamily const int MILISECS\+\_\+\+PER\+\_\+\+FRAME = 1000 / \mbox{\hyperlink{Game_8hpp_ac5090a6568797128b0a5545228bb8b75}{FPS}}}
+
+
+
+Milliseconds per frame. 
+

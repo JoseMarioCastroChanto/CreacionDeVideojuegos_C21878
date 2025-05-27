@@ -1,0 +1,269 @@
+\doxysection{Scene\+Loader Class Reference}
+\hypertarget{classSceneLoader}{}\label{classSceneLoader}\index{SceneLoader@{SceneLoader}}
+
+
+Loads a game scene from a Lua script.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Loader.\+hpp$>$}
+
+
+
+Collaboration diagram for Scene\+Loader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classSceneLoader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneLoader_a3b259dbd31c787f0cd7a6b63bd3cd200}{Scene\+Loader}} ()
+\item 
+\mbox{\hyperlink{classSceneLoader_afc074d4a248b09c0795754af0d90d43c}{\texorpdfstring{$\sim$}{\string~}\+Scene\+Loader}} ()
+\item 
+void \mbox{\hyperlink{classSceneLoader_aea760503e4e9e888cdc98c269d2bcdf5}{Load\+Scene}} (const std\+::string \&scene\+Path, sol\+::state \&lua, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&asset\+Manager, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&controller\+Manager, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&registry, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Loads a full scene from a Lua file path, setting up assets, controls, entities, and music. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSceneLoader_aa0d95d6c0e3b970eaf40b12cebeae2de}{Load\+Sprites}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}render, const sol\+::table \&sprites, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&asset\+Manager)
+\begin{DoxyCompactList}\small\item\em Loads sprite assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneLoader_a0b0aa8e61f64cff33c33f18f60faa2e8}{Load\+Fonts}} (const sol\+::table \&fonts, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&asset\+Manager)
+\begin{DoxyCompactList}\small\item\em Loads font assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneLoader_aac82644ad9d9282d0e0c1aeab9c9b0bb}{Load\+Keys}} (const sol\+::table \&keys, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&controller\+Manager)
+\begin{DoxyCompactList}\small\item\em Loads key bindings from Lua table into the \doxylink{classControllerManager}{Controller\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneLoader_a3e0cb3caf5b8222dc5760f976cb4ac3a}{Load\+Buttons}} (const sol\+::table \&buttons, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&controller\+Manager)
+\begin{DoxyCompactList}\small\item\em Loads button bindings from Lua table into the \doxylink{classControllerManager}{Controller\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96}{Load\+Entities}} (sol\+::state \&lua, const sol\+::table \&entites, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&registry)
+\begin{DoxyCompactList}\small\item\em Loads entities from Lua table into the ECS \doxylink{classRegistry}{Registry}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneLoader_ac51ebe6fba9a6fde4cae950f6726ca44}{Load\+Music}} (const sol\+::table \&music\+Table, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&asset\+Manager)
+\begin{DoxyCompactList}\small\item\em Loads music assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads a game scene from a Lua script. 
+
+This class is responsible for parsing Lua scripts to load game assets, entities, key and button bindings, and music into the appropriate managers and systems (\doxylink{classAssetManager}{Asset\+Manager}, \doxylink{classControllerManager}{Controller\+Manager}, \doxylink{classRegistry}{Registry}, etc.). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSceneLoader_a3b259dbd31c787f0cd7a6b63bd3cd200}\label{classSceneLoader_a3b259dbd31c787f0cd7a6b63bd3cd200} 
+\index{SceneLoader@{SceneLoader}!SceneLoader@{SceneLoader}}
+\index{SceneLoader@{SceneLoader}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{SceneLoader()}{SceneLoader()}}
+{\footnotesize\ttfamily Scene\+Loader\+::\+Scene\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classSceneLoader_afc074d4a248b09c0795754af0d90d43c}\label{classSceneLoader_afc074d4a248b09c0795754af0d90d43c} 
+\index{SceneLoader@{SceneLoader}!````~SceneLoader@{\texorpdfstring{$\sim$}{\string~}SceneLoader}}
+\index{````~SceneLoader@{\texorpdfstring{$\sim$}{\string~}SceneLoader}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SceneLoader()}{\string~SceneLoader()}}
+{\footnotesize\ttfamily Scene\+Loader\+::\texorpdfstring{$\sim$}{\string~}\+Scene\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSceneLoader_a3e0cb3caf5b8222dc5760f976cb4ac3a}\label{classSceneLoader_a3e0cb3caf5b8222dc5760f976cb4ac3a} 
+\index{SceneLoader@{SceneLoader}!LoadButtons@{LoadButtons}}
+\index{LoadButtons@{LoadButtons}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadButtons()}{LoadButtons()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Buttons (\begin{DoxyParamCaption}\item[{const sol\+::table \&}]{buttons,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&}]{controller\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads button bindings from Lua table into the \doxylink{classControllerManager}{Controller\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buttons} & Lua table with button mappings. \\
+\hline
+{\em controller\+Manager} & Unique pointer to \doxylink{classControllerManager}{Controller\+Manager} instance. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_a3e0cb3caf5b8222dc5760f976cb4ac3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96}\label{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96} 
+\index{SceneLoader@{SceneLoader}!LoadEntities@{LoadEntities}}
+\index{LoadEntities@{LoadEntities}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadEntities()}{LoadEntities()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Entities (\begin{DoxyParamCaption}\item[{sol\+::state \&}]{lua,  }\item[{const sol\+::table \&}]{entites,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&}]{registry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads entities from Lua table into the ECS \doxylink{classRegistry}{Registry}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lua} & Reference to Lua state. \\
+\hline
+{\em entities} & Lua table containing entity definitions. \\
+\hline
+{\em registry} & Unique pointer to ECS \doxylink{classRegistry}{Registry}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_a0b0aa8e61f64cff33c33f18f60faa2e8}\label{classSceneLoader_a0b0aa8e61f64cff33c33f18f60faa2e8} 
+\index{SceneLoader@{SceneLoader}!LoadFonts@{LoadFonts}}
+\index{LoadFonts@{LoadFonts}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadFonts()}{LoadFonts()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Fonts (\begin{DoxyParamCaption}\item[{const sol\+::table \&}]{fonts,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&}]{asset\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads font assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fonts} & Lua table containing font definitions. \\
+\hline
+{\em asset\+Manager} & Unique pointer to the \doxylink{classAssetManager}{Asset\+Manager} instance. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_a0b0aa8e61f64cff33c33f18f60faa2e8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_aac82644ad9d9282d0e0c1aeab9c9b0bb}\label{classSceneLoader_aac82644ad9d9282d0e0c1aeab9c9b0bb} 
+\index{SceneLoader@{SceneLoader}!LoadKeys@{LoadKeys}}
+\index{LoadKeys@{LoadKeys}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadKeys()}{LoadKeys()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Keys (\begin{DoxyParamCaption}\item[{const sol\+::table \&}]{keys,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&}]{controller\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads key bindings from Lua table into the \doxylink{classControllerManager}{Controller\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & Lua table with key mappings. \\
+\hline
+{\em controller\+Manager} & Unique pointer to \doxylink{classControllerManager}{Controller\+Manager} instance. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_aac82644ad9d9282d0e0c1aeab9c9b0bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_ac51ebe6fba9a6fde4cae950f6726ca44}\label{classSceneLoader_ac51ebe6fba9a6fde4cae950f6726ca44} 
+\index{SceneLoader@{SceneLoader}!LoadMusic@{LoadMusic}}
+\index{LoadMusic@{LoadMusic}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadMusic()}{LoadMusic()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Music (\begin{DoxyParamCaption}\item[{const sol\+::table \&}]{music\+Table,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&}]{asset\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads music assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em music\+Table} & Lua table containing music definitions. \\
+\hline
+{\em asset\+Manager} & Unique pointer to the \doxylink{classAssetManager}{Asset\+Manager} instance. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_ac51ebe6fba9a6fde4cae950f6726ca44_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_aea760503e4e9e888cdc98c269d2bcdf5}\label{classSceneLoader_aea760503e4e9e888cdc98c269d2bcdf5} 
+\index{SceneLoader@{SceneLoader}!LoadScene@{LoadScene}}
+\index{LoadScene@{LoadScene}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadScene()}{LoadScene()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scene\+Path,  }\item[{sol\+::state \&}]{lua,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&}]{asset\+Manager,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classControllerManager}{Controller\+Manager}} $>$ \&}]{controller\+Manager,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&}]{registry,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Loads a full scene from a Lua file path, setting up assets, controls, entities, and music. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Path} & File path to the Lua scene script. \\
+\hline
+{\em lua} & Reference to the Lua scripting state. \\
+\hline
+{\em asset\+Manager} & Unique pointer to \doxylink{classAssetManager}{Asset\+Manager}. \\
+\hline
+{\em controller\+Manager} & Unique pointer to \doxylink{classControllerManager}{Controller\+Manager}. \\
+\hline
+{\em registry} & Unique pointer to ECS \doxylink{classRegistry}{Registry}. \\
+\hline
+{\em renderer} & SDL renderer pointer for texture creation. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_aea760503e4e9e888cdc98c269d2bcdf5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSceneLoader_aa0d95d6c0e3b970eaf40b12cebeae2de}\label{classSceneLoader_aa0d95d6c0e3b970eaf40b12cebeae2de} 
+\index{SceneLoader@{SceneLoader}!LoadSprites@{LoadSprites}}
+\index{LoadSprites@{LoadSprites}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadSprites()}{LoadSprites()}}
+{\footnotesize\ttfamily void Scene\+Loader\+::\+Load\+Sprites (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{render,  }\item[{const sol\+::table \&}]{sprites,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&}]{asset\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads sprite assets from Lua table into the \doxylink{classAssetManager}{Asset\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render} & SDL renderer used for texture creation. \\
+\hline
+{\em sprites} & Lua table containing sprite definitions. \\
+\hline
+{\em asset\+Manager} & Unique pointer to the \doxylink{classAssetManager}{Asset\+Manager} instance. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSceneLoader_aa0d95d6c0e3b970eaf40b12cebeae2de_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Scene\+Manager/\mbox{\hyperlink{SceneLoader_8hpp}{Scene\+Loader.\+hpp}}\item 
+src/\+Scene\+Manager/\mbox{\hyperlink{SceneLoader_8cpp}{Scene\+Loader.\+cpp}}\end{DoxyCompactItemize}

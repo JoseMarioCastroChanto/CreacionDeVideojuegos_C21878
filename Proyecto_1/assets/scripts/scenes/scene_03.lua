@@ -1,5 +1,5 @@
 scene = {
-    --Tabla de imagenes y sprites
+
     sprites = {
        [0]=
        {assetId = "trees", filePath = "./assets/images/Trees.png"},
@@ -20,7 +20,7 @@ scene = {
        {assetId = "explosion", filePath = "./assets/images/Explosion.png"},
     },
    
-    -- Tabla de fuentes
+
     fonts = {
        [0] = 
        {fontId = "press_start_24", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 24},
@@ -28,7 +28,7 @@ scene = {
     music = {
        [0] =  { musicId = "battle3", filePath = "./assets/audio/battle3.mp3" }
    },
-    --Tabla de acciones y teclas
+
     keys ={
        [0]=
        {name = "up", key = 119},
@@ -39,14 +39,14 @@ scene = {
        {name = "l", key = 108},
     },
    
-    --Tabla de acciones y botones del raton
+  
    buttons = {
        [0] =
        {name = "mouse_left_button", button = 1}
    
    },
    
-    --Tabla de entidades
+ 
     entities = {
        [0] = 
    

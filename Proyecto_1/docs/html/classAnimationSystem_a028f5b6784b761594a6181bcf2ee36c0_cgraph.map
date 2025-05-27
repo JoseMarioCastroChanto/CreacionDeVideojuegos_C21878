@@ -1,0 +1,9 @@
+<map id="AnimationSystem::Update" name="AnimationSystem::Update">
+<area shape="rect" id="Node000001" title="Updates all entities in the system by advancing their animation frames." alt="" coords="5,31,199,56"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="249,5,449,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,31,235,27,235,32,199,36"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="247,55,451,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,50,233,53,233,59,198,55"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="499,55,639,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,65,485,65,485,70,451,70"/>
+</map>

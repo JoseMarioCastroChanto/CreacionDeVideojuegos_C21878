@@ -1,0 +1,9 @@
+<map id="Entity::AddComponent" name="Entity::AddComponent">
+<area shape="rect" id="Node000001" title="Adds a component of type TComponent to the entity." alt="" coords="477,42,644,67"/>
+<area shape="rect" id="Node000002" href="$classEntitySpawnerSystem.html#a3bdb09019dd501ed6167836e1e1e6f92" title="Generates an entity from the Lua entity table at the given index." alt="" coords="250,5,415,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,45,415,39,416,33,464,40"/>
+<area shape="rect" id="Node000003" href="$classSceneLoader.html#a3363c8209377e4e84cd9d1255875ce96" title="Loads entities from Lua table into the ECS Registry." alt="" coords="236,70,429,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,69,430,73,429,68,463,64"/>
+<area shape="rect" id="Node000004" href="$classSceneLoader.html#aea760503e4e9e888cdc98c269d2bcdf5" title="Loads a full scene from a Lua file path, setting up assets, controls, entities, and music." alt="" coords="5,70,188,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,85,188,85,188,80,222,80"/>
+</map>

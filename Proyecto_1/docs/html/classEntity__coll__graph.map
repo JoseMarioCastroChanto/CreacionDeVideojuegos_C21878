@@ -1,0 +1,5 @@
+<map id="Entity" name="Entity">
+<area shape="rect" id="Node000001" title="Represents an entity in the ECS, identified by a unique ID." alt="" coords="44,473,212,739"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html" title="Manages entities, components, and systems in the ECS." alt="" coords="5,5,251,411"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,411,131,457,125,457,125,411"/>
+</map>

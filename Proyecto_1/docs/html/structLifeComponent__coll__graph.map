@@ -1,0 +1,3 @@
+<map id="LifeComponent" name="LifeComponent">
+<area shape="rect" id="Node000001" title="Represents the current and maximum life of an entity." alt="" coords="5,5,143,91"/>
+</map>

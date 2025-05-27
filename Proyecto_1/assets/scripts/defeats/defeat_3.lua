@@ -1,11 +1,11 @@
 scene = {
-    --Tabla de imagenes y sprites
+
     sprites = {
         [0]={assetId = "player", filePath = "./assets/images/playerAllDirections.png"},
         {assetId = "hud", filePath = "./assets/images/HUDBox.png"},
     },
    
-    -- Tabla de fuentes
+
     fonts = {
        [0] = 
        {fontId = "press_start_32", filePath="./assets/fonts/press_start_2p.ttf", fontSize = 32},
@@ -15,8 +15,7 @@ scene = {
     music = {
         [0] =  { musicId = "defeat", filePath = "./assets/audio/defeat.mp3" }
     },
-   
-    --Tabla de acciones y teclas
+
     keys ={
        [0]=
        {name = "up", key = 119},
@@ -33,8 +32,8 @@ scene = {
    },
    
    entities = {
+      -- You lose text   
     [0] = {
-        
         components = {
             clickable = {},
             text = {
@@ -88,6 +87,7 @@ scene = {
             },
         }
     },
+    -- Try Again text  
     {
         components = {
             clickable = {},
@@ -109,6 +109,7 @@ scene = {
             }
         }
     },
+    -- Menu text  
     {
         components = {
             clickable = {},
@@ -130,7 +131,7 @@ scene = {
             }
         }
     },
-    -- Player
+    -- Player Animation
     {
         components = {
             animation = {

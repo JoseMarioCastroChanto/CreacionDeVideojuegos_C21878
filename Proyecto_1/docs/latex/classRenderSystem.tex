@@ -1,0 +1,120 @@
+\doxysection{Render\+System Class Reference}
+\hypertarget{classRenderSystem}{}\label{classRenderSystem}\index{RenderSystem@{RenderSystem}}
+
+
+\doxylink{classSystem}{System} responsible for rendering entities with sprites on the screen.  
+
+
+
+
+{\ttfamily \#include $<$Render\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Render\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classRenderSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Render\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classRenderSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRenderSystem_a20496a8f52c4eb755d4bfcaba2e98e1c}{Render\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classRenderSystem}{Render\+System} and requires \doxylink{structSpriteComponent}{Sprite\+Component} and \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classRenderSystem_a784312b5a0386ba43e39c7894dc27025}{Update}} (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\+\_\+\+Renderer}} \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&\mbox{\hyperlink{classAssetManager}{Asset\+Manager}})
+\begin{DoxyCompactList}\small\item\em Renders all entities with \doxylink{structSpriteComponent}{Sprite\+Component} and \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSystem}{System} responsible for rendering entities with sprites on the screen. 
+
+This system requires entities to have \doxylink{structSpriteComponent}{Sprite\+Component} and \doxylink{structTransformComponent}{Transform\+Component}. It sorts entities based on their \doxylink{structDepthComponent}{Depth\+Component} (if present) to render in the correct order. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRenderSystem_a20496a8f52c4eb755d4bfcaba2e98e1c}\label{classRenderSystem_a20496a8f52c4eb755d4bfcaba2e98e1c} 
+\index{RenderSystem@{RenderSystem}!RenderSystem@{RenderSystem}}
+\index{RenderSystem@{RenderSystem}!RenderSystem@{RenderSystem}}
+\doxysubsubsection{\texorpdfstring{RenderSystem()}{RenderSystem()}}
+{\footnotesize\ttfamily Render\+System\+::\+Render\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classRenderSystem}{Render\+System} and requires \doxylink{structSpriteComponent}{Sprite\+Component} and \doxylink{structTransformComponent}{Transform\+Component}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRenderSystem_a20496a8f52c4eb755d4bfcaba2e98e1c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRenderSystem_a784312b5a0386ba43e39c7894dc27025}\label{classRenderSystem_a784312b5a0386ba43e39c7894dc27025} 
+\index{RenderSystem@{RenderSystem}!Update@{Update}}
+\index{Update@{Update}!RenderSystem@{RenderSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Render\+System\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\+\_\+\+Renderer}} \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classAssetManager}{Asset\+Manager}} $>$ \&}]{Asset\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders all entities with \doxylink{structSpriteComponent}{Sprite\+Component} and \doxylink{structTransformComponent}{Transform\+Component}. 
+
+Entities are sorted by their \doxylink{structDepthComponent}{Depth\+Component} (if any) to respect drawing order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & Pointer to the SDL\+\_\+\+Renderer used for rendering. \\
+\hline
+{\em \doxylink{classAssetManager}{Asset\+Manager}} & Shared pointer to the \doxylink{classAssetManager}{Asset\+Manager} for texture access.\\
+\hline
+\end{DoxyParams}
+For each entity\+:
+\begin{DoxyItemize}
+\item Calculate destination rectangle using position, scale, and sprite size.
+\item Render the sprite texture with rotation. 
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRenderSystem_a784312b5a0386ba43e39c7894dc27025_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{RenderSystem_8hpp}{Render\+System.\+hpp}}\end{DoxyCompactItemize}

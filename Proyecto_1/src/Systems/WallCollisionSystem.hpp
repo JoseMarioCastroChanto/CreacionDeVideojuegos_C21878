@@ -13,17 +13,37 @@
 #include "../EventManager/EventManager.hpp"
 #include "../Events/CollisionEvent.hpp"
 
+/**
+ * @class WallCollisionSystem
+ * @brief Handles collisions between wall entities and player entities.
+ * 
+ * This system requires entities with the TagWallComponent. It listens for collision events
+ * and when a player collides with a wall, it adjusts the player's position to prevent
+ * overlapping and stops their movement by zeroing velocity.
+ */
 class WallCollisionSystem : public System {
 public:
+    /**
+     * @brief Constructs WallCollisionSystem and requires TagWallComponent.
+     */
     WallCollisionSystem() {
         RequireComponent<TagWallComponent>();
     }
-
+    /**
+     * @brief Subscribes this system to the CollisionEvent in the EventManager.
+     * @param eventManager Unique pointer reference to the EventManager to subscribe to.
+     */
     void SubscribeToCollisionEvent(std::unique_ptr<EventManager>& eventManager) {
         eventManager->SubscribeToEvent<CollisionEvent, WallCollisionSystem>(this,
             &WallCollisionSystem::OnCollision);
     }
-
+    /**
+     * @brief Handles a collision event between entities, resolving collisions involving walls and players.
+     * 
+     * If one entity is a wall and the other a player, adjusts the player's position to avoid overlap
+     * and resets the player's velocity.
+     * @param e Reference to the CollisionEvent containing involved entities.
+     */
     void OnCollision(CollisionEvent& e) {
         bool aIsWall = e.a.HasComponent<TagWallComponent>();
         bool bIsWall = e.b.HasComponent<TagWallComponent>();

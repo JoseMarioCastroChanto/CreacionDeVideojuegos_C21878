@@ -1,0 +1,16 @@
+<map id="WallCollisionSystem::SubscribeToCollisionEvent" name="WallCollisionSystem::SubscribeToCollisionEvent">
+<area shape="rect" id="Node000001" title="Subscribes this system to the CollisionEvent in the EventManager." alt="" coords="5,23,205,63"/>
+<area shape="rect" id="Node000002" href="$classWallCollisionSystem.html#a2ae9adc347fefc19e9a9560e125e97b9" title="Handles a collision event between entities, resolving collisions involving walls and players." alt="" coords="253,23,408,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,41,240,41,240,46,206,46"/>
+<area shape="rect" id="Node000003" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="456,5,621,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,31,442,27,443,32,409,37"/>
+<area shape="rect" id="Node000007" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="669,56,873,81"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="408,45,655,59,655,65,408,50"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="681,7,862,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="622,16,667,16,667,21,622,21"/>
+<area shape="rect" id="Node000005" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="921,56,1061,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="829,29,921,50,920,56,828,35"/>
+<area shape="rect" id="Node000006" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="940,7,1043,32"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="862,17,926,17,926,22,862,22"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="874,66,907,66,907,71,874,71"/>
+</map>

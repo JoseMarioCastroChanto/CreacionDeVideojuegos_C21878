@@ -11,13 +11,35 @@
 #include "../Components/TransformComponent.hpp"
 #include "../ECS/ECS.hpp"
 
+
+/**
+ * @class RenderTextSystem
+ * @brief System responsible for rendering text components in the ECS.
+ * 
+ * Requires entities to have TextComponent and TransformComponent.
+ */
 class RenderTextSystem : public System {
  public:
+     /**
+     * @brief Constructs a RenderTextSystem and requires TextComponent and TransformComponent.
+     */
     RenderTextSystem(){
         RequireComponent<TextComponent>();
         RequireComponent<TransformComponent>();
     }
-
+    /**
+     * @brief Updates and renders all text entities.
+     * 
+     * For each entity:
+     * - Renders the text surface with the font and color specified in TextComponent.
+     * - Creates a texture from the surface.
+     * - Uses the TransformComponent for positioning and scaling.
+     * - Renders the texture on the screen.
+     * - Frees the texture and surface after rendering.
+     * 
+     * @param renderer Pointer to the SDL_Renderer used for rendering.
+     * @param assetManager Shared pointer to AssetManager to access fonts.
+     */
     void Update(SDL_Renderer* renderer, const std::unique_ptr<AssetManager>&
     assetManager){
         for(auto entity : GetSystemEntities()){
@@ -42,7 +64,20 @@ class RenderTextSystem : public System {
             SDL_DestroyTexture(texture);
         }
     }
-
+    /**
+     * @brief Renders fixed text at specified screen coordinates with optional scaling.
+     * 
+     * This function does not depend on ECS entities.
+     * 
+     * @param renderer Pointer to the SDL_Renderer.
+     * @param font Pointer to the TTF_Font to use.
+     * @param text The text string to render.
+     * @param color The SDL_Color to render the text with.
+     * @param x The x position on screen.
+     * @param y The y position on screen.
+     * @param scaleX Optional horizontal scale factor (default 1.0).
+     * @param scaleY Optional vertical scale factor (default 1.0).
+     */
 void RenderFixedText(SDL_Renderer* renderer, TTF_Font* font, const std::string& text, SDL_Color color, int x, int y, float scaleX = 1.0f, float scaleY = 1.0f) {
  
     SDL_Surface* surface = TTF_RenderText_Blended(font, text.c_str(), color);

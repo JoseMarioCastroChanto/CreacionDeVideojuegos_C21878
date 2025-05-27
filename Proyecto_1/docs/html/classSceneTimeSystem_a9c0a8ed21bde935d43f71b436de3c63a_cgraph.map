@@ -1,0 +1,7 @@
+<map id="SceneTimeSystem::Resume" name="SceneTimeSystem::Resume">
+<area shape="rect" id="Node000001" title="Resumes the scene timer after being paused." alt="" coords="5,5,209,31"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="257,5,461,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,15,244,15,244,21,209,21"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="509,5,649,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,15,495,15,495,21,462,21"/>
+</map>

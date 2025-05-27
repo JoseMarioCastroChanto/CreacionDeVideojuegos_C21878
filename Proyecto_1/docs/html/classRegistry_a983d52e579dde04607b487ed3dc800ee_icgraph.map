@@ -1,0 +1,5 @@
+<map id="Registry::RemoveComponent" name="Registry::RemoveComponent">
+<area shape="rect" id="Node000001" title="Removes a component of type TComponent from an entity." alt="" coords="249,5,461,31"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ae0a4dce2a3d4a1d8025b6ae037a6624f" title="Removes a component of type TComponent from the entity." alt="" coords="5,5,201,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,21,202,21,202,15,235,15"/>
+</map>

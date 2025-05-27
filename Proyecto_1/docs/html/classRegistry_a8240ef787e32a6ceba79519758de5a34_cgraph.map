@@ -1,0 +1,5 @@
+<map id="Registry::ClearAllEntities" name="Registry::ClearAllEntities">
+<area shape="rect" id="Node000001" title="Removes all entities and clears the registry." alt="" coords="5,13,188,38"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#af148a233165c929304b3ac1b55a03b41" title="Removes an entity from all systems." alt="" coords="236,5,444,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,23,222,23,222,28,188,28"/>
+</map>

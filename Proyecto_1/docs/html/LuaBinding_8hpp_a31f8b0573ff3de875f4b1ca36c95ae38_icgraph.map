@@ -1,0 +1,5 @@
+<map id="GetPositionX" name="GetPositionX">
+<area shape="rect" id="Node000001" title="Gets the x position of an entity&#39;s TransformComponent." alt="" coords="284,5,391,31"/>
+<area shape="rect" id="Node000002" href="$classScriptSystem.html#a1ec14e2ffb2a02a04fd4e9dcc681502f" title="Creates the Lua binding for functions and classes accessible from Lua scripts." alt="" coords="5,5,236,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Registry::GetComponent" name="Registry::GetComponent">
+<area shape="rect" id="Node000001" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="5,31,187,56"/>
+<area shape="rect" id="Node000002" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="235,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,30,221,25,221,31,187,35"/>
+<area shape="rect" id="Node000003" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="253,55,356,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,51,240,57,239,63,187,56"/>
+</map>

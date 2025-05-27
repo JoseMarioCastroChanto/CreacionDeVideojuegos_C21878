@@ -1,0 +1,5 @@
+<map id="SearchObjectiveDepth" name="SearchObjectiveDepth">
+<area shape="rect" id="Node000001" title="Searches for the nearest target entity and returns its depth." alt="" coords="284,5,451,31"/>
+<area shape="rect" id="Node000002" href="$classScriptSystem.html#a1ec14e2ffb2a02a04fd4e9dcc681502f" title="Creates the Lua binding for functions and classes accessible from Lua scripts." alt="" coords="5,5,236,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,21,236,21,236,15,270,15"/>
+</map>

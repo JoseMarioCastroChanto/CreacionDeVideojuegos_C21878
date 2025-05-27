@@ -1,0 +1,5 @@
+<map id="DefeatSystem" name="DefeatSystem">
+<area shape="rect" id="Node000001" title="Checks if any objective entity is defeated (life &lt;= 0)." alt="" coords="46,259,178,344"/>
+<area shape="rect" id="Node000002" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="5,5,219,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,224,115,259,109,259,109,224"/>
+</map>

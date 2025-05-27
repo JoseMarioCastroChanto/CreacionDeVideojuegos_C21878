@@ -1,0 +1,3 @@
+<map id="EntitySpawnerComponent" name="EntitySpawnerComponent">
+<area shape="rect" id="Node000001" title="Component that marks an entity as a player or non&#45;player spawner." alt="" coords="5,5,213,71"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SceneLoader::LoadMusic" name="SceneLoader::LoadMusic">
+<area shape="rect" id="Node000001" title="Loads music assets from Lua table into the AssetManager." alt="" coords="236,5,419,31"/>
+<area shape="rect" id="Node000002" href="$classSceneLoader.html#aea760503e4e9e888cdc98c269d2bcdf5" title="Loads a full scene from a Lua file path, setting up assets, controls, entities, and music." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,188,21,188,15,223,15"/>
+</map>

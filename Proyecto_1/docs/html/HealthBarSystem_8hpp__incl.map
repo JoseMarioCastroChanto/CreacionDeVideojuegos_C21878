@@ -1,0 +1,34 @@
+<map id="src/Systems/HealthBarSystem.hpp" name="src/Systems/HealthBarSystem.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="658,5,905,31"/>
+<area shape="rect" id="Node000002" href="$ECS_8hpp.html" title=" " alt="" coords="397,86,513,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="731,33,526,81,510,85,509,80,525,76,730,28"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="537,86,633,111"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="754,33,627,83,625,78,752,28"/>
+<area shape="rect" id="Node000014" href="$LifeComponent_8hpp.html" title="Component to manage an entity&#39;s life count and maximum life." alt="" coords="658,86,905,111"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="784,31,784,72,779,72,779,31"/>
+<area shape="rect" id="Node000015" href="$TagObjectiveComponent_8hpp.html" title="Empty component used to tag entities as objectives." alt="" coords="929,79,1133,119"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="818,28,958,72,957,77,817,33"/>
+<area shape="rect" id="Node000016" href="$TagPlayerComponent_8hpp.html" title="Empty component used to tag entities as players." alt="" coords="1157,86,1443,111"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="857,28,1211,81,1210,87,856,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,64,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,111,256,134,78,169,77,164,255,129,396,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="89,167,159,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="407,114,174,169,172,164,406,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="183,167,246,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="421,114,260,166,258,161,419,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="271,167,351,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="435,114,345,162,343,158,432,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="375,167,452,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="451,113,428,156,423,153,446,110"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="476,167,519,192"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="463,110,487,153,482,156,459,113"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="543,167,630,192"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="476,109,557,157,554,162,473,114"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="761,240,823,265"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="494,109,564,132,644,164,709,198,764,230,761,235,706,203,642,169,562,137,492,114"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="706,167,830,192"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="498,109,526,116,708,161,707,166,525,121,497,114"/>
+<area shape="rect" id="Node000012" href="$Pool_8hpp.html" title=" " alt="" coords="854,167,978,192"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="495,109,526,116,681,142,841,164,840,169,680,148,525,121,494,114"/>
+<area shape="poly" id="edge12_Node000012_Node000010" title=" " alt="" coords="897,194,825,235,823,231,895,190"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="EntitySpawnerSystem::GenerateEntity" name="EntitySpawnerSystem::GenerateEntity">
+<area shape="rect" id="Node000001" title="Generates an entity from the Lua entity table at the given index." alt="" coords="5,23,171,63"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#a125342c7309de6be6e518da6bffb7452" title="Adds a component of type TComponent to the entity." alt="" coords="219,5,385,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,31,205,27,206,32,171,36"/>
+<area shape="rect" id="Node000006" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="433,56,637,81"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="171,45,419,59,419,65,171,51"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#af83a9dbdfa3690c9fa030a45f815a4ed" title="Adds a component of type TComponent to an entity." alt="" coords="444,7,627,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,16,430,16,430,21,386,21"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="685,56,825,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="593,29,685,50,684,56,592,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="704,7,807,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="627,17,690,17,690,22,627,22"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="638,66,671,66,671,71,638,71"/>
+</map>

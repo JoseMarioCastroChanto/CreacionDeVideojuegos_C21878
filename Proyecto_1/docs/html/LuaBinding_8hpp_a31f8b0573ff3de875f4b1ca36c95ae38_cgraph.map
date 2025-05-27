@@ -1,0 +1,11 @@
+<map id="GetPositionX" name="GetPositionX">
+<area shape="rect" id="Node000001" title="Gets the x position of an entity&#39;s TransformComponent." alt="" coords="5,31,112,56"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="160,31,325,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,41,146,41,146,46,112,46"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="373,31,555,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,41,360,41,360,46,325,46"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="603,5,743,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="555,30,589,25,589,31,555,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="621,55,724,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="555,51,608,57,607,63,555,56"/>
+</map>

@@ -1,0 +1,84 @@
+\doxysection{Component\texorpdfstring{$<$}{<} TComponent \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classComponent}{}\label{classComponent}\index{Component$<$ TComponent $>$@{Component$<$ TComponent $>$}}
+
+
+Template to generate unique component IDs per component type.  
+
+
+
+
+{\ttfamily \#include $<$ECS.\+hpp$>$}
+
+
+
+Inheritance diagram for Component\texorpdfstring{$<$}{<} TComponent \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Component\texorpdfstring{$<$}{<} TComponent \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classComponent_a44ecd04a89b4c110f6915985eef6fe68}{Get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the unique ID associated with this component type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{structIComponent}{IComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{structIComponent_a91f6e53a91bbb5ae97b2fef28c686b05}{next\+Id}} = 0
+\begin{DoxyCompactList}\small\item\em Next available component ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TComponent$>$\newline
+class Component$<$ TComponent $>$}
+Template to generate unique component IDs per component type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classComponent_a44ecd04a89b4c110f6915985eef6fe68}\label{classComponent_a44ecd04a89b4c110f6915985eef6fe68} 
+\index{Component$<$ TComponent $>$@{Component$<$ TComponent $>$}!GetId@{GetId}}
+\index{GetId@{GetId}!Component$<$ TComponent $>$@{Component$<$ TComponent $>$}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily template$<$typename TComponent $>$ \\
+static int \mbox{\hyperlink{classComponent}{Component}}$<$ TComponent $>$\+::\+Get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the unique ID associated with this component type. 
+
+\begin{DoxyReturn}{Returns}
+Unique component ID. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classComponent_a44ecd04a89b4c110f6915985eef6fe68_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ECS/\mbox{\hyperlink{ECS_8hpp}{ECS.\+hpp}}\end{DoxyCompactItemize}

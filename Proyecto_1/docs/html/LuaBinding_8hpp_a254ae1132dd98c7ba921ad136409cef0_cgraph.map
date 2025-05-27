@@ -1,0 +1,11 @@
+<map id="SetSrcRect" name="SetSrcRect">
+<area shape="rect" id="Node000001" title="Sets the source rectangle for the SpriteComponent of an entity." alt="" coords="5,31,97,56"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="145,31,311,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,41,132,41,132,46,97,46"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="359,31,540,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,41,345,41,345,46,311,46"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="588,5,728,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,30,574,25,575,31,541,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="607,55,709,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="541,51,593,57,592,63,540,56"/>
+</map>

@@ -43,7 +43,6 @@ function update()
             current_direction = "leftAttack"
         end
     else
-        -- Todavía se mueve, actualizar dirección según velocidad X
         if vel_x > 0 then
             current_direction = "right"
             last_direction = "right"

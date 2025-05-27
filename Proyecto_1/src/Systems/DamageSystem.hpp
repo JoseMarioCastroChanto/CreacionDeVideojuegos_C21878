@@ -17,17 +17,36 @@
 #include "../EventManager/EventManager.hpp"
 #include "../Events/CollisionEvent.hpp"
 
+/**
+ * @class DamageSystem
+ * @brief Handles damage application between entities when collisions occur.
+ * 
+ * This system listens for collision events and processes damage interactions 
+ * between entities based on their components and tags (e.g., enemy, projectile, objective).
+ * It also manages entity destruction and explosion creation when life reaches zero.
+ */
 class DamageSystem : public System {
  public:
+  /**
+   * @brief Constructs the DamageSystem and requires entities to have CircleColliderComponent.
+   */
   DamageSystem(){
     RequireComponent<CircleColliderComponent>();
   }
-
+  /**
+   * @brief Subscribes the DamageSystem to CollisionEvent notifications from the EventManager.
+   * @param eventManager A unique pointer to the EventManager instance.
+   */
   void SubscribeToCollisionEvent(std::unique_ptr<EventManager>& eventManager){
     eventManager->SubscribeToEvent<CollisionEvent, DamageSystem>(this,
     &DamageSystem::OnCollision);
   }
-
+  /**
+   * @brief Called when a CollisionEvent is emitted.
+   * Processes damage between entities involved in the collision.
+   * 
+   * @param e Reference to the CollisionEvent containing the colliding entities.
+   */
 void OnCollision(CollisionEvent& e){
     std::cout<< "[DamageSystem] Colisión de la entidad " << e.a.GetId()
     << " y " << e.b.GetId() << std::endl;
@@ -83,6 +102,9 @@ void OnCollision(CollisionEvent& e){
 
 }
 
+  /**
+   * @brief Destroys all entities tagged as enemies (excluding players), triggering explosions.
+   */
 void DestroyAllEnemies (){
        for(auto entity : GetSystemEntities()){
             if(entity.HasComponent<TagEnemyComponent>() && !entity.HasComponent<TagPlayerComponent>()){
@@ -94,7 +116,13 @@ void DestroyAllEnemies (){
             }
         }
 }
-
+  /**
+   * @brief Creates an explosion entity at the position of the given entity.
+   * 
+   * @param entity The entity at whose position the explosion is spawned.
+   * @param num The number of entities or particles to spawn for the explosion.
+   * @param scale The scale factor for the explosion visual size.
+   */
 void CreateExplosion(Entity entity, int num, double scale){
     auto& transform = entity.GetComponent<TransformComponent>();
     Entity newEntity = Game::GetInstance().registry->GetSystem<EntitySpawnerSystem>().GenerateEntity(

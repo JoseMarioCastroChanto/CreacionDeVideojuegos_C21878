@@ -1,0 +1,5 @@
+<map id="Entity::HasComponent" name="Entity::HasComponent">
+<area shape="rect" id="Node000001" title="Checks if the entity has a component of type TComponent." alt="" coords="236,5,403,31"/>
+<area shape="rect" id="Node000002" href="$classCollisionSystem.html#a037ec33be724e6a16c9c4d50bbb7912d" title="Updates the system by checking collisions among all entities and emitting events." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,21,188,21,188,15,222,15"/>
+</map>

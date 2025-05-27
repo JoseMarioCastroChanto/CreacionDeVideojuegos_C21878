@@ -1,0 +1,140 @@
+\doxysection{Entity\+Spawner\+System Class Reference}
+\hypertarget{classEntitySpawnerSystem}{}\label{classEntitySpawnerSystem}\index{EntitySpawnerSystem@{EntitySpawnerSystem}}
+
+
+Handles the spawning of entities based on Lua scene configuration.  
+
+
+
+
+{\ttfamily \#include $<$Entity\+Spawner\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Entity\+Spawner\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classEntitySpawnerSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+Spawner\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classEntitySpawnerSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntitySpawnerSystem_a184df6bc8da4fbb7a4f87568ef310b95}{Entity\+Spawner\+System}} (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} std\+::string \&\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scene\+Path}}, sol\+::state \&lua)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classEntitySpawnerSystem}{Entity\+Spawner\+System}, loads the Lua scene file and entities table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classEntitySpawnerSystem_a3bdb09019dd501ed6167836e1e1e6f92}{Generate\+Entity}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&registry, \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{id\+Entity}}, sol\+::state \&lua)
+\begin{DoxyCompactList}\small\item\em Generates an entity from the Lua entity table at the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sol\+::table \mbox{\hyperlink{classEntitySpawnerSystem_ab1acc291ec4437f7366af97f41d582ca}{entities}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the spawning of entities based on Lua scene configuration. 
+
+This system loads entity definitions from a Lua script file and generates entities with the components defined in the Lua tables. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEntitySpawnerSystem_a184df6bc8da4fbb7a4f87568ef310b95}\label{classEntitySpawnerSystem_a184df6bc8da4fbb7a4f87568ef310b95} 
+\index{EntitySpawnerSystem@{EntitySpawnerSystem}!EntitySpawnerSystem@{EntitySpawnerSystem}}
+\index{EntitySpawnerSystem@{EntitySpawnerSystem}!EntitySpawnerSystem@{EntitySpawnerSystem}}
+\doxysubsubsection{\texorpdfstring{EntitySpawnerSystem()}{EntitySpawnerSystem()}}
+{\footnotesize\ttfamily Entity\+Spawner\+System\+::\+Entity\+Spawner\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} std\+::string \&}]{scene\+Path,  }\item[{sol\+::state \&}]{lua }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \doxylink{classEntitySpawnerSystem}{Entity\+Spawner\+System}, loads the Lua scene file and entities table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Path} & Path to the Lua scene file. \\
+\hline
+{\em lua} & Reference to the Lua state. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntitySpawnerSystem_a184df6bc8da4fbb7a4f87568ef310b95_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEntitySpawnerSystem_a3bdb09019dd501ed6167836e1e1e6f92}\label{classEntitySpawnerSystem_a3bdb09019dd501ed6167836e1e1e6f92} 
+\index{EntitySpawnerSystem@{EntitySpawnerSystem}!GenerateEntity@{GenerateEntity}}
+\index{GenerateEntity@{GenerateEntity}!EntitySpawnerSystem@{EntitySpawnerSystem}}
+\doxysubsubsection{\texorpdfstring{GenerateEntity()}{GenerateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} Entity\+Spawner\+System\+::\+Generate\+Entity (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRegistry}{Registry}} $>$ \&}]{registry,  }\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{int}}}]{id\+Entity,  }\item[{sol\+::state \&}]{lua }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates an entity from the Lua entity table at the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & Unique pointer to the \doxylink{classRegistry}{Registry} managing entities. \\
+\hline
+{\em id\+Entity} & The index of the entity in the Lua entities table. \\
+\hline
+{\em lua} & Reference to the Lua state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generated \doxylink{classEntity}{Entity} with components added as specified in Lua. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntitySpawnerSystem_a3bdb09019dd501ed6167836e1e1e6f92_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEntitySpawnerSystem_ab1acc291ec4437f7366af97f41d582ca}\label{classEntitySpawnerSystem_ab1acc291ec4437f7366af97f41d582ca} 
+\index{EntitySpawnerSystem@{EntitySpawnerSystem}!entities@{entities}}
+\index{entities@{entities}!EntitySpawnerSystem@{EntitySpawnerSystem}}
+\doxysubsubsection{\texorpdfstring{entities}{entities}}
+{\footnotesize\ttfamily sol\+::table Entity\+Spawner\+System\+::entities\hspace{0.3cm}{\ttfamily [private]}}
+
+Lua table holding the entities loaded from the scene script 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{EntitySpawnerSystem_8hpp}{Entity\+Spawner\+System.\+hpp}}\end{DoxyCompactItemize}

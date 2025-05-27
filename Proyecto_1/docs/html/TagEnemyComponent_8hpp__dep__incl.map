@@ -1,0 +1,23 @@
+<map id="src/Components/TagEnemyComponent.hpp" name="src/Components/TagEnemyComponent.hpp">
+<area shape="rect" id="Node000001" title="Empty component used to tag entities as enemies." alt="" coords="215,5,517,31"/>
+<area shape="rect" id="Node000002" href="$SceneLoader_8cpp.html" title=" " alt="" coords="5,86,260,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,37,167,89,166,83,319,32"/>
+<area shape="rect" id="Node000003" href="$DamageSystem_8hpp.html" title=" " alt="" coords="159,167,397,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="351,43,326,80,301,128,285,168,280,166,297,126,321,77,346,40"/>
+<area shape="rect" id="Node000007" href="$EnemyIASystem_8hpp.html" title=" " alt="" coords="522,167,762,192"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="437,32,493,50,547,76,576,98,601,122,636,165,632,168,597,126,572,102,545,81,491,54,436,37"/>
+<area shape="rect" id="Node000008" href="$EntitySpawnerSystem_8hpp.html" title=" " alt="" coords="335,79,533,119"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="387,39,420,77,416,80,383,43"/>
+<area shape="rect" id="Node000004" href="$LuaBinding_8hpp.html" title="Contains Lua bindings for interacting with ECS components and systems." alt="" coords="244,240,443,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,201,335,238,331,242,296,204"/>
+<area shape="rect" id="Node000006" href="$Game_8cpp.html" title=" " alt="" coords="334,387,489,412"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="259,204,237,232,217,267,211,286,208,304,211,321,219,337,242,360,271,376,302,387,334,393,333,398,301,392,268,381,239,364,215,340,206,323,203,304,206,284,212,265,232,229,255,200"/>
+<area shape="rect" id="Node000005" href="$ScriptSystem_8hpp.html" title=" " alt="" coords="229,313,447,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="344,279,342,313,336,313,339,279"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="362,346,401,385,398,388,358,350"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="581,198,392,242,391,237,580,193"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="627,205,576,269,505,341,468,368,434,389,431,384,465,364,502,337,572,265,623,202"/>
+<area shape="poly" id="edge13_Node000008_Node000003" title=" " alt="" coords="386,127,302,169,300,164,383,122"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="432,133,424,163,411,193,388,221,363,242,359,238,384,217,406,191,419,162,427,132"/>
+<area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="449,132,461,174,471,226,473,283,469,312,462,340,446,367,427,388,423,385,442,364,457,338,464,311,467,283,465,227,456,175,444,133"/>
+</map>

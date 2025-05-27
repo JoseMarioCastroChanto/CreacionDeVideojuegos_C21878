@@ -1,0 +1,17 @@
+<map id="RenderSystem::Update" name="RenderSystem::Update">
+<area shape="rect" id="Node000001" title="Renders all entities with SpriteComponent and TransformComponent." alt="" coords="5,63,177,88"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="243,37,408,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,63,229,58,229,63,178,69"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="744,19,847,44"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="117,60,166,39,225,22,294,12,365,6,506,4,632,10,730,20,730,25,632,16,506,9,366,11,295,17,226,27,168,44,119,65"/>
+<area shape="rect" id="Node000006" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="225,87,425,112"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="178,81,212,85,211,90,177,87"/>
+<area shape="rect" id="Node000007" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="473,105,677,131"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="119,86,168,106,226,122,285,130,346,133,460,129,460,134,346,138,285,135,225,127,166,111,117,90"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="485,37,666,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,47,471,47,471,53,408,53"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="725,81,865,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="640,60,719,76,718,81,639,65"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="666,40,730,34,731,39,667,45"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="677,104,711,100,712,106,678,109"/>
+</map>

@@ -1,0 +1,37 @@
+\doxysection{Defeat\+System.\+hpp}
+\hypertarget{DefeatSystem_8hpp_source}{}\label{DefeatSystem_8hpp_source}\index{src/Systems/DefeatSystem.hpp@{src/Systems/DefeatSystem.hpp}}
+\mbox{\hyperlink{DefeatSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DEFEATYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DEFEATYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Components/LifeComponent.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../Components/TagObjectiveComponent.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Components/TagProjectileComponent.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDefeatSystem}{DefeatSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDefeatSystem_a5f09aa4dd7fbb7ccf098841dc90ee863}{Defeat}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \mbox{\hyperlink{classDefeatSystem_ab5e1c29a237e038fe885ed870f44507e}{DefeatSystem}}()\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<LifeComponent>}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TagObjectiveComponent>}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDefeatSystem_a79955dd240f0eeded06d5e8ad7e6c837}{Update}}()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{life}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{life}}.life\_count\ <=\ 0)\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDefeatSystem_a5f09aa4dd7fbb7ccf098841dc90ee863}{Defeat}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,107 @@
+\doxysection{Depth\+System Class Reference}
+\hypertarget{classDepthSystem}{}\label{classDepthSystem}\index{DepthSystem@{DepthSystem}}
+
+
+\doxylink{classSystem}{System} to handle the scaling of entities based on their vertical velocity, simulating depth.  
+
+
+
+
+{\ttfamily \#include $<$Depth\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Depth\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classDepthSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Depth\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classDepthSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDepthSystem_aba276e0b7204d25677fc7d0471cfabe5}{Depth\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructor that requires necessary components for the system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classDepthSystem_a7d863fa168e71ab0a1fcbe074ed50b7f}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates all entities in the system, adjusting their scale and position based on velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSystem}{System} to handle the scaling of entities based on their vertical velocity, simulating depth. 
+
+This system adjusts the scale of entities with \doxylink{structDepthComponent}{Depth\+Component}, \doxylink{structTransformComponent}{Transform\+Component}, and \doxylink{structRigidBodyComponent}{Rigid\+Body\+Component} to simulate a 3D depth effect by scaling entities smaller when moving up and larger when moving down. It also repositions entities to keep their center stable during scaling. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDepthSystem_aba276e0b7204d25677fc7d0471cfabe5}\label{classDepthSystem_aba276e0b7204d25677fc7d0471cfabe5} 
+\index{DepthSystem@{DepthSystem}!DepthSystem@{DepthSystem}}
+\index{DepthSystem@{DepthSystem}!DepthSystem@{DepthSystem}}
+\doxysubsubsection{\texorpdfstring{DepthSystem()}{DepthSystem()}}
+{\footnotesize\ttfamily Depth\+System\+::\+Depth\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that requires necessary components for the system. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDepthSystem_aba276e0b7204d25677fc7d0471cfabe5_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDepthSystem_a7d863fa168e71ab0a1fcbe074ed50b7f}\label{classDepthSystem_a7d863fa168e71ab0a1fcbe074ed50b7f} 
+\index{DepthSystem@{DepthSystem}!Update@{Update}}
+\index{Update@{Update}!DepthSystem@{DepthSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Depth\+System\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates all entities in the system, adjusting their scale and position based on velocity. 
+
+If the entity moves upward (negative y velocity), its scale decreases down to a minimum. If it moves downward (positive y velocity), its scale increases up to a maximum. The position is adjusted to maintain the entity\textquotesingle{}s center point during scaling. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDepthSystem_a7d863fa168e71ab0a1fcbe074ed50b7f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{DepthSystem_8hpp}{Depth\+System.\+hpp}}\end{DoxyCompactItemize}

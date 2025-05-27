@@ -12,6 +12,3 @@ function update()
         timer = 0
     end
 end
--- 8.4
--- 4.9
--- 7

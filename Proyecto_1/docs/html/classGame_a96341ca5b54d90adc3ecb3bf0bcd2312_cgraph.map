@@ -1,0 +1,15 @@
+<map id="Game::Run" name="Game::Run">
+<area shape="rect" id="Node000001" title="Runs the main game loop." alt="" coords="5,80,100,105"/>
+<area shape="rect" id="Node000002" href="$classGame.html#a7d556f3d9c6f60667767de9c87ef0273" title="Execute the current scene&#39;s logic." alt="" coords="148,55,281,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,83,134,77,135,82,101,88"/>
+<area shape="rect" id="Node000006" href="$classGame.html#a1eb887f92199aea5ecc615a90692a6f2" title="Setup initial game state and resources." alt="" coords="161,104,268,129"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="100,97,148,104,148,109,100,102"/>
+<area shape="rect" id="Node000003" href="$classGame.html#a770db4782ba58f6e8ae098fccf8ba571" title="Handle input processing." alt="" coords="329,5,481,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,52,341,32,343,37,265,57"/>
+<area shape="rect" id="Node000004" href="$classGame.html#a0897730fc9fed789f6c0f11d21a0c14a" title="Render the current frame." alt="" coords="348,55,463,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="282,65,334,65,334,70,282,70"/>
+<area shape="rect" id="Node000005" href="$classGame.html#a1c5373c68261c54aff03e6abe40fee52" title="Update game logic." alt="" coords="529,80,645,105"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="266,77,330,89,427,94,516,93,516,99,427,100,329,94,265,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="463,73,516,80,516,85,463,78"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="557,81,551,72,554,62,567,56,587,53,612,57,623,66,619,70,610,62,587,59,568,61,558,65,556,71,562,78"/>
+</map>

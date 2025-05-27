@@ -1,0 +1,5 @@
+<map id="IEventCallback" name="IEventCallback">
+<area shape="rect" id="Node000001" title="Abstract interface for event callback handlers." alt="" coords="20,5,167,111"/>
+<area shape="rect" id="Node000002" href="$classEventCallback.html" title="Template event callback handler connecting an owner and event type." alt="" coords="5,159,181,279"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,124,96,158,91,158,91,124"/>
+</map>

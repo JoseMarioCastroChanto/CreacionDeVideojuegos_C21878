@@ -7,14 +7,36 @@
 #include "../Components/TagObjectiveComponent.hpp"
 #include "../Components/TagPlayerComponent.hpp"
 
+/**
+ * @class HealthBarSystem
+ * @brief System responsible for rendering health bars for entities with LifeComponent and TagObjectiveComponent.
+ * 
+ * This system draws the health bars differently depending on whether the entity has a TagPlayerComponent or not.
+ * For player entities, the health bar is drawn at position (100, 50) with a green fill.
+ * For other objective entities (e.g., obelisks), the health bar is drawn at position (100, 80) with a blue fill.
+ */
 class HealthBarSystem : public System {
 public:
+    /**
+     * @brief Constructs a HealthBarSystem and requires LifeComponent and TagObjectiveComponent.
+     */
     HealthBarSystem() {
         RequireComponent<LifeComponent>();
          RequireComponent<TagObjectiveComponent>();
         
     }
 
+    /**
+     * @brief Updates and renders health bars for all entities in the system.
+     * 
+     * @param renderer Pointer to the SDL_Renderer used for drawing the health bars.
+     * 
+     * For each entity:
+     * - Retrieves the LifeComponent to get current and maximum life.
+     * - Draws a white border rectangle.
+     * - Fills the rectangle proportionally to the entity's current life.
+     * - Uses green color for player entities and blue for others.
+     */
     void Update(SDL_Renderer* renderer) {
         for (auto entity : GetSystemEntities()) {
             const auto& life = entity.GetComponent<LifeComponent>();

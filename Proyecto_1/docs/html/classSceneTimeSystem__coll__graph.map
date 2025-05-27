@@ -1,0 +1,5 @@
+<map id="SceneTimeSystem" name="SceneTimeSystem">
+<area shape="rect" id="Node000001" title="Manages scene timing including pause, resume, delta time, and total elapsed time." alt="" coords="32,259,192,544"/>
+<area shape="rect" id="Node000002" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="5,5,219,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,225,115,259,109,259,109,225"/>
+</map>

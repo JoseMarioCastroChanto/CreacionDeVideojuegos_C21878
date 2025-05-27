@@ -1,0 +1,9 @@
+<map id="DamageSystem::CreateExplosion" name="DamageSystem::CreateExplosion">
+<area shape="rect" id="Node000001" title="Creates an explosion entity at the position of the given entity." alt="" coords="5,31,245,56"/>
+<area shape="rect" id="Node000002" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="322,5,469,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,29,308,23,309,29,246,35"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="293,55,497,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,51,280,54,279,60,245,57"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="545,55,685,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="498,65,531,65,531,70,498,70"/>
+</map>

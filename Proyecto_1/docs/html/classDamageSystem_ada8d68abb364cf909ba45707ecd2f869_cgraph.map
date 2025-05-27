@@ -1,0 +1,14 @@
+<map id="DamageSystem::DestroyAllEnemies" name="DamageSystem::DestroyAllEnemies">
+<area shape="rect" id="Node000001" title="Destroys all entities tagged as enemies (excluding players), triggering explosions." alt="" coords="5,49,208,89"/>
+<area shape="rect" id="Node000002" href="$classDamageSystem.html#a3c1f1d25f58344bbeb75fde39c8ddb3a" title="Creates an explosion entity at the position of the given entity." alt="" coords="256,5,496,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,47,294,31,295,36,209,52"/>
+<area shape="rect" id="Node000004" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="544,55,748,80"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="208,66,530,65,530,70,208,71"/>
+<area shape="rect" id="Node000006" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="276,107,476,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="209,85,295,101,294,107,208,90"/>
+<area shape="rect" id="Node000003" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="573,5,719,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="496,15,559,15,559,21,496,21"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="447,28,563,49,562,55,446,33"/>
+<area shape="rect" id="Node000005" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="796,55,936,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="748,65,782,65,782,70,748,70"/>
+</map>

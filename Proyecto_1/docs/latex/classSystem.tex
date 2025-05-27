@@ -1,0 +1,201 @@
+\doxysection{System Class Reference}
+\hypertarget{classSystem}{}\label{classSystem}\index{System@{System}}
+
+
+Base class for systems that operate on entities with specific components.  
+
+
+
+
+{\ttfamily \#include $<$ECS.\+hpp$>$}
+
+
+
+Inheritance diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \mbox{\hyperlink{classSystem_ab8d3ab2b0deae484601f86c01dd52b39}{component\+Signature}}
+\begin{DoxyCompactList}\small\item\em Signature representing the required components for this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_a8228aaca5879efd65c65f35036dd6f58}{entities}}
+\begin{DoxyCompactList}\small\item\em List of entities currently managed by this system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for systems that operate on entities with specific components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}\label{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a} 
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{System()}{System()}}
+{\footnotesize\ttfamily System\+::\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classSystem_abca337cbfb742e1abea5624d9b36f7e5}\label{classSystem_abca337cbfb742e1abea5624d9b36f7e5} 
+\index{System@{System}!````~System@{\texorpdfstring{$\sim$}{\string~}System}}
+\index{````~System@{\texorpdfstring{$\sim$}{\string~}System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}System()}{\string~System()}}
+{\footnotesize\ttfamily System\+::\texorpdfstring{$\sim$}{\string~}\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSystem_a36b3396cdb8fa107bd4515382fbb8847}\label{classSystem_a36b3396cdb8fa107bd4515382fbb8847} 
+\index{System@{System}!AddEntityToSystem@{AddEntityToSystem}}
+\index{AddEntityToSystem@{AddEntityToSystem}!System@{System}}
+\doxysubsubsection{\texorpdfstring{AddEntityToSystem()}{AddEntityToSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} System\+::\+Add\+Entity\+To\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Adds an entity to this system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}\label{classSystem_af97298c27dfe2231ab21bdb1a0316dc4} 
+\index{System@{System}!GetComponentSignature@{GetComponentSignature}}
+\index{GetComponentSignature@{GetComponentSignature}!System@{System}}
+\doxysubsubsection{\texorpdfstring{GetComponentSignature()}{GetComponentSignature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& System\+::\+Get\+Component\+Signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the component signature required by this system. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classComponent}{Component} signature bitset. 
+\end{DoxyReturn}
+\Hypertarget{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}\label{classSystem_aec0388b6db4900c4d4a9e1dea0f09205} 
+\index{System@{System}!GetSystemEntities@{GetSystemEntities}}
+\index{GetSystemEntities@{GetSystemEntities}!System@{System}}
+\doxysubsubsection{\texorpdfstring{GetSystemEntities()}{GetSystemEntities()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ System\+::\+Get\+System\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns all entities currently registered in this system. 
+
+\begin{DoxyReturn}{Returns}
+Vector of entities. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSystem_aec0388b6db4900c4d4a9e1dea0f09205_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}\label{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b} 
+\index{System@{System}!RemoveEntityFromSystem@{RemoveEntityFromSystem}}
+\index{RemoveEntityFromSystem@{RemoveEntityFromSystem}!System@{System}}
+\doxysubsubsection{\texorpdfstring{RemoveEntityFromSystem()}{RemoveEntityFromSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} System\+::\+Remove\+Entity\+From\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Removes an entity from this system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}\label{classSystem_ac15b3d09b3f3c485af1364255f21dbd5} 
+\index{System@{System}!RequireComponent@{RequireComponent}}
+\index{RequireComponent@{RequireComponent}!System@{System}}
+\doxysubsubsection{\texorpdfstring{RequireComponent()}{RequireComponent()}}
+{\footnotesize\ttfamily template$<$typename TComponent $>$ \\
+void System\+::\+Require\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Adds a required component type to the system\textquotesingle{}s signature. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TComponent} & The component type required. \\
+\hline
+\end{DoxyTemplParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSystem_ac15b3d09b3f3c485af1364255f21dbd5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSystem_ac15b3d09b3f3c485af1364255f21dbd5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSystem_ab8d3ab2b0deae484601f86c01dd52b39}\label{classSystem_ab8d3ab2b0deae484601f86c01dd52b39} 
+\index{System@{System}!componentSignature@{componentSignature}}
+\index{componentSignature@{componentSignature}!System@{System}}
+\doxysubsubsection{\texorpdfstring{componentSignature}{componentSignature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} System\+::component\+Signature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Signature representing the required components for this system. 
+
+\Hypertarget{classSystem_a8228aaca5879efd65c65f35036dd6f58}\label{classSystem_a8228aaca5879efd65c65f35036dd6f58} 
+\index{System@{System}!entities@{entities}}
+\index{entities@{entities}!System@{System}}
+\doxysubsubsection{\texorpdfstring{entities}{entities}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEntity}{Entity}}$>$ System\+::entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of entities currently managed by this system. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+ECS/\mbox{\hyperlink{ECS_8hpp}{ECS.\+hpp}}\item 
+src/\+ECS/\mbox{\hyperlink{ECS_8cpp}{ECS.\+cpp}}\end{DoxyCompactItemize}

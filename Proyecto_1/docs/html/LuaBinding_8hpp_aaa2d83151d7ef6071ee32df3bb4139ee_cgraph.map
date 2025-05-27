@@ -1,0 +1,7 @@
+<map id="Kill" name="Kill">
+<area shape="rect" id="Node000001" title="Marks an entity as killed." alt="" coords="5,5,48,31"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ab0a890ba55c9bc5830c021ace6ac3908" title="Marks this entity for removal." alt="" coords="96,5,184,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,15,82,15,82,21,48,21"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a037ed17399c2adc565abb9465fea5e0b" title="Marks an entity for removal." alt="" coords="232,5,375,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,15,218,15,218,21,184,21"/>
+</map>

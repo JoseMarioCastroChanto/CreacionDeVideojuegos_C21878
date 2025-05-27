@@ -1,0 +1,93 @@
+\doxysection{Enemy\+IASystem.\+hpp}
+\hypertarget{EnemyIASystem_8hpp_source}{}\label{EnemyIASystem_8hpp_source}\index{src/Systems/EnemyIASystem.hpp@{src/Systems/EnemyIASystem.hpp}}
+\mbox{\hyperlink{EnemyIASystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENEMYIASYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENEMYIASYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Components/RigidBodyComponent.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Components/DepthComponent.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Components/TagEnemyComponent.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Components/TagObjectiveComponent.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Components/TagPlayerComponent.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEnemyIASystem}{EnemyIASystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \mbox{\hyperlink{classEnemyIASystem_a02819233bdec21690311c60e34cf53b9}{EnemyIASystem}}()\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TransformComponent>}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ \mbox{\hyperlink{classEnemyIASystem_aab93eb6198490f15d9fcc2862457336c}{SearchClosestObjective}}(\mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00039\ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyPos}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyTransform}}.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}}\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestTransform}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagObjectiveComponent}{TagObjectiveComponent}}>())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}}\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>())\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}}\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>())\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetPos}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}}.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}}\ =\ glm::distance(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyPos}},\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetPos}});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}}\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}})\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestTransform}};\ }
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \mbox{\hyperlink{structDepthComponent}{DepthComponent}}\ \mbox{\hyperlink{classEnemyIASystem_a7d8c2bc40192137fede90facc0697c26}{SearchClosestObjectiveDepth}}(\mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}})\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00078\ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyPos}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyTransform}}.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}}\ =\ std::numeric\_limits<double>::max();}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structDepthComponent}{DepthComponent}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestDepth}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagObjectiveComponent}{TagObjectiveComponent}}>())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}}\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>())\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{isPlayerIncl}}\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>())\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetDepth}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestDepth}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetDepth}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetDepth}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetPos}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetTransform}}.position;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}}\ =\ glm::distance(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemyPos}},\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetPos}});}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}}\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{minDistance}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{distance}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestDepth}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{targetDepth}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{closestDepth}};\ }
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\doxysection{UISystem.\+hpp}
+\hypertarget{UISystem_8hpp_source}{}\label{UISystem_8hpp_source}\index{src/Systems/UISystem.hpp@{src/Systems/UISystem.hpp}}
+\mbox{\hyperlink{UISystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UISYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UISYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Components/ClickableComponent.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Components/ScriptComponent.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Components/TextComponent.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../EventManager/EventManager.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../Events/ClickEvent.hpp"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUISystem}{UISystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classUISystem_ac930744c42c305f09deacd176045392b}{UISystem}}()\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<ClickableComponent>}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TextComponent>}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TransformComponent>}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUISystem_a48a6998f346dafe48df1a4a028947098}{SubscribeToClickEvent}}(std::unique\_ptr<EventManager>\&\ eventManager)\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ eventManager-\/>SubscribeToEvent<\mbox{\hyperlink{classClickEvent}{ClickEvent}},\ \mbox{\hyperlink{classUISystem}{UISystem}}>(\textcolor{keyword}{this},\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{classUISystem_acb417d3dd7c5e3d27544dbb39eb41ac9}{UISystem::OnClickEvent}});}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUISystem_acb417d3dd7c5e3d27544dbb39eb41ac9}{OnClickEvent}}(\mbox{\hyperlink{classClickEvent}{ClickEvent}}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}})\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ text\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTextComponent}{TextComponent}}>();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.x\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.posX}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.posX\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.x\ +\ text.width}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.y\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.posY}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.posY\ <\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.y\ +\ text.height)\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structScriptComponent}{ScriptComponent}}>())\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structScriptComponent}{ScriptComponent}}>();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}.onClick\ !=\ sol::nil)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}.\mbox{\hyperlink{structScriptComponent_a784545648f6e4a0cdbb5902c0174c089}{onClick}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

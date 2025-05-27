@@ -7,12 +7,26 @@
 #include "../Binding/LuaBinding.hpp"
 #include "../Components/ScriptComponent.hpp"
 #include "../ECS/ECS.hpp"
+
+/**
+ * @class ScriptSystem
+ * @brief Manages entities with scripts and handles Lua binding and script updates.
+ * 
+ * This system requires entities to have a ScriptComponent. It binds C++ functions and classes
+ * to Lua scripts and updates the script logic each frame.
+ */
 class ScriptSystem : public System {
  public:
+   /**
+   * @brief Constructs the ScriptSystem and requires ScriptComponent.
+   */
   ScriptSystem(){
     RequireComponent<ScriptComponent>();
   }
-
+  /**
+   * @brief Creates the Lua binding for functions and classes accessible from Lua scripts.
+   * @param lua Reference to the Lua state to bind functions and classes.
+   */
   void CreateLuaBinding(sol::state& lua){
     // Classes
     lua.new_usertype<Entity>("entity");
@@ -44,7 +58,12 @@ class ScriptSystem : public System {
     lua.set_function("destroy_all_enemies", DestroyAllEnemies);
   
   }
-
+  /**
+   * @brief Updates all entities with scripts by calling their Lua update functions.
+   * 
+   * Sets the Lua global variable "this" to the current entity before calling the update function.
+   * @param lua Reference to the Lua state used to run scripts.
+   */
   void Update(sol::state& lua){
     for(auto entity : GetSystemEntities()){
         const auto& script = entity.GetComponent<ScriptComponent>();

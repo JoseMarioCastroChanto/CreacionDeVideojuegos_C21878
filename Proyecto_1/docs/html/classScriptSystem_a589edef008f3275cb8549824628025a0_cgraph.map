@@ -1,0 +1,7 @@
+<map id="ScriptSystem::ScriptSystem" name="ScriptSystem::ScriptSystem">
+<area shape="rect" id="Node000001" title="Constructs the ScriptSystem and requires ScriptComponent." alt="" coords="5,5,208,31"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="256,5,460,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,15,243,15,243,21,208,21"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="508,5,648,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="460,15,494,15,494,21,460,21"/>
+</map>

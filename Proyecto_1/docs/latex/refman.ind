@@ -1,0 +1,982 @@
+\begin{theindex}
+
+  \item {\texorpdfstring{$\sim$}{\string~}AssetManager}
+    \subitem {AssetManager}, \hyperpage{15}
+  \item {\texorpdfstring{$\sim$}{\string~}ControllerManager}
+    \subitem {ControllerManager}, \hyperpage{40}
+  \item {\texorpdfstring{$\sim$}{\string~}EventManager}
+    \subitem {EventManager}, \hyperpage{81}
+  \item {\texorpdfstring{$\sim$}{\string~}Game}
+    \subitem {Game}, \hyperpage{86}
+  \item {\texorpdfstring{$\sim$}{\string~}IEventCallback}
+    \subitem {IEventCallback}, \hyperpage{98}
+  \item {\texorpdfstring{$\sim$}{\string~}IPool}
+    \subitem {IPool}, \hyperpage{101}
+  \item {\texorpdfstring{$\sim$}{\string~}Pool}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{109}
+  \item {\texorpdfstring{$\sim$}{\string~}Registry}
+    \subitem {Registry}, \hyperpage{115}
+  \item {\texorpdfstring{$\sim$}{\string~}SceneLoader}
+    \subitem {SceneLoader}, \hyperpage{133}
+  \item {\texorpdfstring{$\sim$}{\string~}SceneManager}
+    \subitem {SceneManager}, \hyperpage{139}
+  \item {\texorpdfstring{$\sim$}{\string~}System}
+    \subitem {System}, \hyperpage{156}
+
+  \indexspace
+
+  \item {a}
+    \subitem {CollisionEvent}, \hyperpage{29}
+  \item {actionKeyName}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {Add}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{110}
+  \item {AddActionKey}
+    \subitem {ControllerManager}, \hyperpage{40}
+  \item {AddComponent}
+    \subitem {Entity}, \hyperpage{65}
+    \subitem {Registry}, \hyperpage{115}
+  \item {AddEntityToSystem}
+    \subitem {System}, \hyperpage{156}
+  \item {AddEntityToSystems}
+    \subitem {Registry}, \hyperpage{116}
+  \item {AddFont}
+    \subitem {AssetManager}, \hyperpage{15}
+  \item {AddMouseButton}
+    \subitem {ControllerManager}, \hyperpage{41}
+  \item {AddSystem}
+    \subitem {Registry}, \hyperpage{116}
+  \item {AddTexture}
+    \subitem {AssetManager}, \hyperpage{16}
+  \item {AnimationComponent}, \hyperpage{9}
+    \subitem {AnimationComponent}, \hyperpage{10}
+    \subitem {currentFrame}, \hyperpage{10}
+    \subitem {frameSpeedRate}, \hyperpage{10}
+    \subitem {isLoop}, \hyperpage{10}
+    \subitem {numFrames}, \hyperpage{10}
+    \subitem {startTime}, \hyperpage{10}
+  \item {AnimationSystem}, \hyperpage{11}
+    \subitem {AnimationSystem}, \hyperpage{13}
+    \subitem {Update}, \hyperpage{13}
+  \item {AssetManager}, \hyperpage{14}
+    \subitem {\texorpdfstring{$\sim$}{\string~}AssetManager}, 
+		\hyperpage{15}
+    \subitem {AddFont}, \hyperpage{15}
+    \subitem {AddTexture}, \hyperpage{16}
+    \subitem {AssetManager}, \hyperpage{15}
+    \subitem {ClearAssets}, \hyperpage{16}
+    \subitem {ClearMusic}, \hyperpage{16}
+    \subitem {currentMusic}, \hyperpage{19}
+    \subitem {fonts}, \hyperpage{19}
+    \subitem {GetFont}, \hyperpage{17}
+    \subitem {GetTexture}, \hyperpage{17}
+    \subitem {LoadMusic}, \hyperpage{17}
+    \subitem {musics}, \hyperpage{19}
+    \subitem {PauseMusic}, \hyperpage{18}
+    \subitem {PlayMusic}, \hyperpage{18}
+    \subitem {ResumeMusic}, \hyperpage{18}
+    \subitem {StopMusic}, \hyperpage{18}
+    \subitem {textures}, \hyperpage{19}
+  \item {assetManager}
+    \subitem {Game}, \hyperpage{91}
+
+  \indexspace
+
+  \item {b}
+    \subitem {CollisionEvent}, \hyperpage{29}
+  \item {buttonCode}
+    \subitem {ClickEvent}, \hyperpage{26}
+
+  \indexspace
+
+  \item {Call}
+    \subitem {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{80}
+    \subitem {IEventCallback}, \hyperpage{98}
+  \item {CallbackFunction}
+    \subitem {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{79}
+  \item {callbackFunction}
+    \subitem {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{80}
+  \item {CheckCircleVsCircle}
+    \subitem {CollisionSystem}, \hyperpage{32}
+  \item {CheckCircleVsPolygon}
+    \subitem {CollisionSystem}, \hyperpage{33}
+  \item {CircleColliderComponent}, \hyperpage{19}
+    \subitem {CircleColliderComponent}, \hyperpage{20}
+    \subitem {height}, \hyperpage{20}
+    \subitem {radius}, \hyperpage{20}
+    \subitem {width}, \hyperpage{20}
+  \item {CleanSystem}, \hyperpage{21}
+    \subitem {CleanSystem}, \hyperpage{23}
+    \subitem {Update}, \hyperpage{23}
+  \item {CleanSystem.hpp}
+    \subitem {CLEANTSYSTEM\_HPP}, \hyperpage{242}
+  \item {CLEANTSYSTEM\_HPP}
+    \subitem {CleanSystem.hpp}, \hyperpage{242}
+  \item {Clear}
+    \subitem {ControllerManager}, \hyperpage{41}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{110}
+  \item {ClearAllEntities}
+    \subitem {Registry}, \hyperpage{117}
+  \item {ClearAssets}
+    \subitem {AssetManager}, \hyperpage{16}
+  \item {ClearMusic}
+    \subitem {AssetManager}, \hyperpage{16}
+  \item {ClickableComponent}, \hyperpage{24}
+    \subitem {ClickableComponent}, \hyperpage{24}
+    \subitem {isClicked}, \hyperpage{24}
+  \item {ClickEvent}, \hyperpage{25}
+    \subitem {buttonCode}, \hyperpage{26}
+    \subitem {ClickEvent}, \hyperpage{26}
+    \subitem {posX}, \hyperpage{26}
+    \subitem {posY}, \hyperpage{27}
+  \item {CollisionEvent}, \hyperpage{27}
+    \subitem {a}, \hyperpage{29}
+    \subitem {b}, \hyperpage{29}
+    \subitem {CollisionEvent}, \hyperpage{29}
+  \item {CollisionSystem}, \hyperpage{30}
+    \subitem {CheckCircleVsCircle}, \hyperpage{32}
+    \subitem {CheckCircleVsPolygon}, \hyperpage{33}
+    \subitem {CollisionSystem}, \hyperpage{32}
+    \subitem {DistancePointToSegment}, \hyperpage{34}
+    \subitem {Update}, \hyperpage{35}
+  \item {CollisionSystem.hpp}
+    \subitem {COLLISIONSYSTEM\_HPP}, \hyperpage{243}
+  \item {COLLISIONSYSTEM\_HPP}
+    \subitem {CollisionSystem.hpp}, \hyperpage{243}
+  \item {color}
+    \subitem {TextComponent}, \hyperpage{163}
+  \item {Component$<$ TComponent $>$}, \hyperpage{35}
+    \subitem {GetId}, \hyperpage{37}
+  \item {componentSignature}
+    \subitem {System}, \hyperpage{159}
+  \item {componentsPools}
+    \subitem {Registry}, \hyperpage{123}
+  \item {ControllerManager}, \hyperpage{38}
+    \subitem {\texorpdfstring{$\sim$}{\string~}ControllerManager}, 
+		\hyperpage{40}
+    \subitem {actionKeyName}, \hyperpage{43}
+    \subitem {AddActionKey}, \hyperpage{40}
+    \subitem {AddMouseButton}, \hyperpage{41}
+    \subitem {Clear}, \hyperpage{41}
+    \subitem {ControllerManager}, \hyperpage{40}
+    \subitem {GetMousePosition}, \hyperpage{41}
+    \subitem {IsActionActivated}, \hyperpage{41}
+    \subitem {IsMouseButtonDown}, \hyperpage{42}
+    \subitem {KeyDown}, \hyperpage{42}
+    \subitem {keyDown}, \hyperpage{43}
+    \subitem {KeyUp}, \hyperpage{42}
+    \subitem {MouseButtonDown}, \hyperpage{42}
+    \subitem {mouseButtonDown}, \hyperpage{43}
+    \subitem {mouseButtonName}, \hyperpage{43}
+    \subitem {MouseButtonUp}, \hyperpage{43}
+    \subitem {mousePosX}, \hyperpage{44}
+    \subitem {mousePosY}, \hyperpage{44}
+    \subitem {SetMousePosition}, \hyperpage{43}
+  \item {controllerManager}
+    \subitem {Game}, \hyperpage{91}
+  \item {CreateDynamicEntity}
+    \subitem {LuaBinding.hpp}, \hyperpage{179}
+  \item {CreateEntity}
+    \subitem {Registry}, \hyperpage{117}
+  \item {CreateExplosion}
+    \subitem {DamageSystem}, \hyperpage{48}
+  \item {CreateLuaBinding}
+    \subitem {ScriptSystem}, \hyperpage{151}
+  \item {currentFrame}
+    \subitem {AnimationComponent}, \hyperpage{10}
+  \item {currentMusic}
+    \subitem {AssetManager}, \hyperpage{19}
+  \item {currentTime}
+    \subitem {SceneTimeSystem}, \hyperpage{146}
+
+  \indexspace
+
+  \item {damage\_dealt}
+    \subitem {DamageComponent}, \hyperpage{45}
+  \item {DamageComponent}, \hyperpage{44}
+    \subitem {damage\_dealt}, \hyperpage{45}
+    \subitem {DamageComponent}, \hyperpage{45}
+  \item {DamageSystem}, \hyperpage{45}
+    \subitem {CreateExplosion}, \hyperpage{48}
+    \subitem {DamageSystem}, \hyperpage{48}
+    \subitem {DestroyAllEnemies}, \hyperpage{49}
+    \subitem {OnCollision}, \hyperpage{49}
+    \subitem {SubscribeToCollisionEvent}, \hyperpage{50}
+  \item {data}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{112}
+  \item {Defeat}
+    \subitem {DefeatSystem}, \hyperpage{54}
+  \item {DefeatSystem}, \hyperpage{50}
+    \subitem {Defeat}, \hyperpage{54}
+    \subitem {DefeatSystem}, \hyperpage{53}
+    \subitem {Update}, \hyperpage{53}
+  \item {deltaTime}
+    \subitem {SceneTimeSystem}, \hyperpage{146}
+  \item {DepthComponent}, \hyperpage{54}
+    \subitem {DepthComponent}, \hyperpage{55}
+    \subitem {max\_scale}, \hyperpage{55}
+    \subitem {min\_scale}, \hyperpage{55}
+    \subitem {original\_width}, \hyperpage{55}
+    \subitem {reference\_point}, \hyperpage{55}
+    \subitem {scale\_speed}, \hyperpage{56}
+  \item {DepthSystem}, \hyperpage{56}
+    \subitem {DepthSystem}, \hyperpage{58}
+    \subitem {Update}, \hyperpage{58}
+  \item {DepthSystem.hpp}
+    \subitem {DEPTHTSYSTEM\_HPP}, \hyperpage{250}
+  \item {DEPTHTSYSTEM\_HPP}
+    \subitem {DepthSystem.hpp}, \hyperpage{250}
+  \item {Destroy}
+    \subitem {Game}, \hyperpage{86}
+  \item {DestroyAllEnemies}
+    \subitem {DamageSystem}, \hyperpage{49}
+    \subitem {LuaBinding.hpp}, \hyperpage{179}
+  \item {DistancePointToSegment}
+    \subitem {CollisionSystem}, \hyperpage{34}
+
+  \indexspace
+
+  \item {ECS.hpp}
+    \subitem {MAX\_COMPONENTS}, \hyperpage{224}
+    \subitem {Signature}, \hyperpage{224}
+  \item {EmitEvent}
+    \subitem {EventManager}, \hyperpage{82}
+  \item {EnemyIASystem}, \hyperpage{59}
+    \subitem {EnemyIASystem}, \hyperpage{61}
+    \subitem {SearchClosestObjective}, \hyperpage{61}
+    \subitem {SearchClosestObjectiveDepth}, \hyperpage{62}
+  \item {entities}
+    \subitem {EntitySpawnerSystem}, \hyperpage{75}
+    \subitem {System}, \hyperpage{159}
+  \item {entitiesToBeAdded}
+    \subitem {Registry}, \hyperpage{123}
+  \item {entitiesToBeKilled}
+    \subitem {Registry}, \hyperpage{123}
+  \item {Entity}, \hyperpage{63}
+    \subitem {AddComponent}, \hyperpage{65}
+    \subitem {Entity}, \hyperpage{64}
+    \subitem {GetComponent}, \hyperpage{65}
+    \subitem {GetId}, \hyperpage{67}
+    \subitem {HasComponent}, \hyperpage{68}
+    \subitem {id}, \hyperpage{70}
+    \subitem {Kill}, \hyperpage{69}
+    \subitem {operator!=}, \hyperpage{69}
+    \subitem {operator$<$}, \hyperpage{70}
+    \subitem {operator$>$}, \hyperpage{70}
+    \subitem {operator==}, \hyperpage{70}
+    \subitem {registry}, \hyperpage{70}
+    \subitem {RemoveComponent}, \hyperpage{70}
+  \item {entityComponentSignatures}
+    \subitem {Registry}, \hyperpage{123}
+  \item {EntitySpawnerComponent}, \hyperpage{71}
+    \subitem {EntitySpawnerComponent}, \hyperpage{71}
+    \subitem {is\_player}, \hyperpage{72}
+  \item {EntitySpawnerSystem}, \hyperpage{72}
+    \subitem {entities}, \hyperpage{75}
+    \subitem {EntitySpawnerSystem}, \hyperpage{74}
+    \subitem {GenerateEntity}, \hyperpage{74}
+  \item {Event}, \hyperpage{75}
+    \subitem {Event}, \hyperpage{76}
+  \item {EventCallback}
+    \subitem {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{79}
+  \item {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{77}
+    \subitem {Call}, \hyperpage{80}
+    \subitem {CallbackFunction}, \hyperpage{79}
+    \subitem {callbackFunction}, \hyperpage{80}
+    \subitem {EventCallback}, \hyperpage{79}
+    \subitem {ownerInstance}, \hyperpage{80}
+  \item {EventManager}, \hyperpage{80}
+    \subitem {\texorpdfstring{$\sim$}{\string~}EventManager}, 
+		\hyperpage{81}
+    \subitem {EmitEvent}, \hyperpage{82}
+    \subitem {EventManager}, \hyperpage{81}
+    \subitem {Reset}, \hyperpage{82}
+    \subitem {subscribers}, \hyperpage{83}
+    \subitem {SubscribeToEvent}, \hyperpage{82}
+  \item {eventManager}
+    \subitem {Game}, \hyperpage{91}
+  \item {EventManager.hpp}
+    \subitem {HandlerList}, \hyperpage{229}
+  \item {Execute}
+    \subitem {IEventCallback}, \hyperpage{99}
+
+  \indexspace
+
+  \item {fontId}
+    \subitem {TextComponent}, \hyperpage{164}
+  \item {fonts}
+    \subitem {AssetManager}, \hyperpage{19}
+  \item {FPS}
+    \subitem {Game.hpp}, \hyperpage{234}
+  \item {frameSpeedRate}
+    \subitem {AnimationComponent}, \hyperpage{10}
+  \item {freeIds}
+    \subitem {Registry}, \hyperpage{123}
+
+  \indexspace
+
+  \item {Game}, \hyperpage{83}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Game}, \hyperpage{86}
+    \subitem {assetManager}, \hyperpage{91}
+    \subitem {controllerManager}, \hyperpage{91}
+    \subitem {Destroy}, \hyperpage{86}
+    \subitem {eventManager}, \hyperpage{91}
+    \subitem {Game}, \hyperpage{86}
+    \subitem {GetInstance}, \hyperpage{86}
+    \subitem {Init}, \hyperpage{87}
+    \subitem {isPaused}, \hyperpage{91}
+    \subitem {isRunning}, \hyperpage{91}
+    \subitem {lua}, \hyperpage{91}
+    \subitem {milisecsPreviousFrame}, \hyperpage{91}
+    \subitem {ProcessInput}, \hyperpage{87}
+    \subitem {registry}, \hyperpage{91}
+    \subitem {Render}, \hyperpage{88}
+    \subitem {renderer}, \hyperpage{92}
+    \subitem {Run}, \hyperpage{88}
+    \subitem {RunScene}, \hyperpage{89}
+    \subitem {sceneManager}, \hyperpage{92}
+    \subitem {Setup}, \hyperpage{90}
+    \subitem {Update}, \hyperpage{90}
+    \subitem {wasPaused}, \hyperpage{92}
+    \subitem {window}, \hyperpage{92}
+    \subitem {windowHeight}, \hyperpage{92}
+    \subitem {windowWidth}, \hyperpage{92}
+  \item {Game.hpp}
+    \subitem {FPS}, \hyperpage{234}
+    \subitem {MILISECS\_PER\_FRAME}, \hyperpage{234}
+  \item {GenerateEntity}
+    \subitem {EntitySpawnerSystem}, \hyperpage{74}
+  \item {Get}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{110}
+  \item {GetComponent}
+    \subitem {Entity}, \hyperpage{65}
+    \subitem {Registry}, \hyperpage{117}
+  \item {GetComponentSignature}
+    \subitem {System}, \hyperpage{157}
+  \item {GetDefeat}
+    \subitem {LuaBinding.hpp}, \hyperpage{180}
+  \item {GetDeltaTime}
+    \subitem {LuaBinding.hpp}, \hyperpage{181}
+    \subitem {SceneTimeSystem}, \hyperpage{145}
+  \item {GetDepth}
+    \subitem {LuaBinding.hpp}, \hyperpage{181}
+  \item {GetFont}
+    \subitem {AssetManager}, \hyperpage{17}
+  \item {GetId}
+    \subitem {Component$<$ TComponent $>$}, \hyperpage{37}
+    \subitem {Entity}, \hyperpage{67}
+  \item {GetInstance}
+    \subitem {Game}, \hyperpage{86}
+  \item {GetMousePosition}
+    \subitem {ControllerManager}, \hyperpage{41}
+  \item {GetNextScene}
+    \subitem {SceneManager}, \hyperpage{139}
+  \item {GetPositionX}
+    \subitem {LuaBinding.hpp}, \hyperpage{182}
+  \item {GetPositionY}
+    \subitem {LuaBinding.hpp}, \hyperpage{183}
+  \item {GetScale}
+    \subitem {LuaBinding.hpp}, \hyperpage{184}
+  \item {GetSceneTime}
+    \subitem {SceneTimeSystem}, \hyperpage{145}
+  \item {GetSize}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{110}
+  \item {GetSystem}
+    \subitem {Registry}, \hyperpage{118}
+  \item {GetSystemEntities}
+    \subitem {System}, \hyperpage{157}
+  \item {GetTexture}
+    \subitem {AssetManager}, \hyperpage{17}
+  \item {GetTime}
+    \subitem {LuaBinding.hpp}, \hyperpage{185}
+  \item {GetVelocity}
+    \subitem {LuaBinding.hpp}, \hyperpage{185}
+  \item {GoToScene}
+    \subitem {LuaBinding.hpp}, \hyperpage{186}
+
+  \indexspace
+
+  \item {HandlerList}
+    \subitem {EventManager.hpp}, \hyperpage{229}
+  \item {HasComponent}
+    \subitem {Entity}, \hyperpage{68}
+    \subitem {Registry}, \hyperpage{119}
+  \item {HasSystem}
+    \subitem {Registry}, \hyperpage{120}
+  \item {HealthBarSystem}, \hyperpage{93}
+    \subitem {HealthBarSystem}, \hyperpage{95}
+    \subitem {Update}, \hyperpage{95}
+  \item {height}
+    \subitem {CircleColliderComponent}, \hyperpage{20}
+    \subitem {SpriteComponent}, \hyperpage{154}
+    \subitem {TextComponent}, \hyperpage{164}
+
+  \indexspace
+
+  \item {IComponent}, \hyperpage{96}
+    \subitem {nextId}, \hyperpage{97}
+  \item {id}
+    \subitem {Entity}, \hyperpage{70}
+  \item {IEventCallback}, \hyperpage{97}
+    \subitem {\texorpdfstring{$\sim$}{\string~}IEventCallback}, 
+		\hyperpage{98}
+    \subitem {Call}, \hyperpage{98}
+    \subitem {Execute}, \hyperpage{99}
+  \item {Init}
+    \subitem {Game}, \hyperpage{87}
+  \item {IPool}, \hyperpage{99}
+    \subitem {\texorpdfstring{$\sim$}{\string~}IPool}, \hyperpage{101}
+  \item {is\_player}
+    \subitem {EntitySpawnerComponent}, \hyperpage{72}
+  \item {IsActionActivated}
+    \subitem {ControllerManager}, \hyperpage{41}
+    \subitem {LuaBinding.hpp}, \hyperpage{187}
+  \item {isClicked}
+    \subitem {ClickableComponent}, \hyperpage{24}
+  \item {IsEmpty}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{110}
+  \item {isLoop}
+    \subitem {AnimationComponent}, \hyperpage{10}
+  \item {IsMouseButtonDown}
+    \subitem {ControllerManager}, \hyperpage{42}
+  \item {isPaused}
+    \subitem {Game}, \hyperpage{91}
+  \item {isRunning}
+    \subitem {Game}, \hyperpage{91}
+  \item {IsSceneRunning}
+    \subitem {SceneManager}, \hyperpage{139}
+  \item {isSceneRunning}
+    \subitem {SceneManager}, \hyperpage{141}
+
+  \indexspace
+
+  \item {KeyDown}
+    \subitem {ControllerManager}, \hyperpage{42}
+  \item {keyDown}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {KeyUp}
+    \subitem {ControllerManager}, \hyperpage{42}
+  \item {Kill}
+    \subitem {Entity}, \hyperpage{69}
+    \subitem {LuaBinding.hpp}, \hyperpage{188}
+  \item {KillEntity}
+    \subitem {Registry}, \hyperpage{120}
+
+  \indexspace
+
+  \item {life\_count}
+    \subitem {LifeComponent}, \hyperpage{102}
+  \item {life\_max}
+    \subitem {LifeComponent}, \hyperpage{102}
+  \item {LifeComponent}, \hyperpage{101}
+    \subitem {life\_count}, \hyperpage{102}
+    \subitem {life\_max}, \hyperpage{102}
+    \subitem {LifeComponent}, \hyperpage{102}
+  \item {LoadButtons}
+    \subitem {SceneLoader}, \hyperpage{133}
+  \item {LoadEntities}
+    \subitem {SceneLoader}, \hyperpage{134}
+  \item {LoadFonts}
+    \subitem {SceneLoader}, \hyperpage{134}
+  \item {LoadKeys}
+    \subitem {SceneLoader}, \hyperpage{135}
+  \item {LoadMusic}
+    \subitem {AssetManager}, \hyperpage{17}
+    \subitem {SceneLoader}, \hyperpage{135}
+  \item {LoadScene}
+    \subitem {SceneLoader}, \hyperpage{136}
+    \subitem {SceneManager}, \hyperpage{140}
+  \item {LoadSceneFromScript}
+    \subitem {SceneManager}, \hyperpage{140}
+  \item {LoadSprites}
+    \subitem {SceneLoader}, \hyperpage{136}
+  \item {lua}
+    \subitem {Game}, \hyperpage{91}
+  \item {LuaBinding.hpp}
+    \subitem {CreateDynamicEntity}, \hyperpage{179}
+    \subitem {DestroyAllEnemies}, \hyperpage{179}
+    \subitem {GetDefeat}, \hyperpage{180}
+    \subitem {GetDeltaTime}, \hyperpage{181}
+    \subitem {GetDepth}, \hyperpage{181}
+    \subitem {GetPositionX}, \hyperpage{182}
+    \subitem {GetPositionY}, \hyperpage{183}
+    \subitem {GetScale}, \hyperpage{184}
+    \subitem {GetTime}, \hyperpage{185}
+    \subitem {GetVelocity}, \hyperpage{185}
+    \subitem {GoToScene}, \hyperpage{186}
+    \subitem {IsActionActivated}, \hyperpage{187}
+    \subitem {Kill}, \hyperpage{188}
+    \subitem {SearchObjectiveDepth}, \hyperpage{188}
+    \subitem {SearchObjectiveScale}, \hyperpage{190}
+    \subitem {SearchObjectiveX}, \hyperpage{191}
+    \subitem {SearchObjectiveY}, \hyperpage{192}
+    \subitem {SetNumFrames}, \hyperpage{193}
+    \subitem {SetPosition}, \hyperpage{194}
+    \subitem {SetScale}, \hyperpage{194}
+    \subitem {SetSrcRect}, \hyperpage{195}
+    \subitem {SetText}, \hyperpage{196}
+    \subitem {SetTimer}, \hyperpage{197}
+    \subitem {SetVelocity}, \hyperpage{197}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Main.cpp}, \hyperpage{236}
+  \item {Main.cpp}
+    \subitem {main}, \hyperpage{236}
+  \item {MAX\_COMPONENTS}
+    \subitem {ECS.hpp}, \hyperpage{224}
+  \item {max\_scale}
+    \subitem {DepthComponent}, \hyperpage{55}
+  \item {MILISECS\_PER\_FRAME}
+    \subitem {Game.hpp}, \hyperpage{234}
+  \item {milisecsPreviousFrame}
+    \subitem {Game}, \hyperpage{91}
+  \item {min\_scale}
+    \subitem {DepthComponent}, \hyperpage{55}
+  \item {MouseButtonDown}
+    \subitem {ControllerManager}, \hyperpage{42}
+  \item {mouseButtonDown}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {mouseButtonName}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {MouseButtonUp}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {mousePosX}
+    \subitem {ControllerManager}, \hyperpage{44}
+  \item {mousePosY}
+    \subitem {ControllerManager}, \hyperpage{44}
+  \item {MovementSystem}, \hyperpage{102}
+    \subitem {MovementSystem}, \hyperpage{105}
+    \subitem {Update}, \hyperpage{105}
+  \item {musics}
+    \subitem {AssetManager}, \hyperpage{19}
+
+  \indexspace
+
+  \item {nextId}
+    \subitem {IComponent}, \hyperpage{97}
+  \item {nextScene}
+    \subitem {SceneManager}, \hyperpage{141}
+  \item {numEntity}
+    \subitem {Registry}, \hyperpage{123}
+  \item {numFrames}
+    \subitem {AnimationComponent}, \hyperpage{10}
+
+  \indexspace
+
+  \item {onClick}
+    \subitem {ScriptComponent}, \hyperpage{148}
+  \item {OnClickEvent}
+    \subitem {UISystem}, \hyperpage{168}
+  \item {OnCollision}
+    \subitem {DamageSystem}, \hyperpage{49}
+    \subitem {WallCollisionSystem}, \hyperpage{172}
+  \item {operator!=}
+    \subitem {Entity}, \hyperpage{69}
+  \item {operator$<$}
+    \subitem {Entity}, \hyperpage{70}
+  \item {operator$>$}
+    \subitem {Entity}, \hyperpage{70}
+  \item {operator==}
+    \subitem {Entity}, \hyperpage{70}
+  \item {operator[]}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{111}
+  \item {original\_width}
+    \subitem {DepthComponent}, \hyperpage{55}
+  \item {ownerInstance}
+    \subitem {EventCallback$<$ TOwner, TEvent $>$}, \hyperpage{80}
+
+  \indexspace
+
+  \item {Pause}
+    \subitem {SceneTimeSystem}, \hyperpage{145}
+  \item {paused}
+    \subitem {SceneTimeSystem}, \hyperpage{147}
+  \item {PauseMusic}
+    \subitem {AssetManager}, \hyperpage{18}
+  \item {pauseStartTime}
+    \subitem {SceneTimeSystem}, \hyperpage{147}
+  \item {PlayMusic}
+    \subitem {AssetManager}, \hyperpage{18}
+  \item {PolygonColliderComponent}, \hyperpage{106}
+    \subitem {PolygonColliderComponent}, \hyperpage{106}
+    \subitem {vertices}, \hyperpage{107}
+  \item {Pool}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{109}
+  \item {Pool$<$ TComponent $>$}, \hyperpage{107}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Pool}, \hyperpage{109}
+    \subitem {Add}, \hyperpage{110}
+    \subitem {Clear}, \hyperpage{110}
+    \subitem {data}, \hyperpage{112}
+    \subitem {Get}, \hyperpage{110}
+    \subitem {GetSize}, \hyperpage{110}
+    \subitem {IsEmpty}, \hyperpage{110}
+    \subitem {operator[]}, \hyperpage{111}
+    \subitem {Pool}, \hyperpage{109}
+    \subitem {Resize}, \hyperpage{111}
+    \subitem {Set}, \hyperpage{111}
+  \item {position}
+    \subitem {TransformComponent}, \hyperpage{165}
+  \item {posX}
+    \subitem {ClickEvent}, \hyperpage{26}
+  \item {posY}
+    \subitem {ClickEvent}, \hyperpage{27}
+  \item {ProcessInput}
+    \subitem {Game}, \hyperpage{87}
+
+  \indexspace
+
+  \item {radius}
+    \subitem {CircleColliderComponent}, \hyperpage{20}
+  \item {reference\_point}
+    \subitem {DepthComponent}, \hyperpage{55}
+  \item {Registry}, \hyperpage{112}
+    \subitem {\texorpdfstring{$\sim$}{\string~}Registry}, 
+		\hyperpage{115}
+    \subitem {AddComponent}, \hyperpage{115}
+    \subitem {AddEntityToSystems}, \hyperpage{116}
+    \subitem {AddSystem}, \hyperpage{116}
+    \subitem {ClearAllEntities}, \hyperpage{117}
+    \subitem {componentsPools}, \hyperpage{123}
+    \subitem {CreateEntity}, \hyperpage{117}
+    \subitem {entitiesToBeAdded}, \hyperpage{123}
+    \subitem {entitiesToBeKilled}, \hyperpage{123}
+    \subitem {entityComponentSignatures}, \hyperpage{123}
+    \subitem {freeIds}, \hyperpage{123}
+    \subitem {GetComponent}, \hyperpage{117}
+    \subitem {GetSystem}, \hyperpage{118}
+    \subitem {HasComponent}, \hyperpage{119}
+    \subitem {HasSystem}, \hyperpage{120}
+    \subitem {KillEntity}, \hyperpage{120}
+    \subitem {numEntity}, \hyperpage{123}
+    \subitem {Registry}, \hyperpage{115}
+    \subitem {RemoveAllComponentsOfEntity}, \hyperpage{120}
+    \subitem {RemoveComponent}, \hyperpage{121}
+    \subitem {RemoveEntityFromSystems}, \hyperpage{121}
+    \subitem {RemoveSystem}, \hyperpage{122}
+    \subitem {systems}, \hyperpage{123}
+    \subitem {Update}, \hyperpage{122}
+  \item {registry}
+    \subitem {Entity}, \hyperpage{70}
+    \subitem {Game}, \hyperpage{91}
+  \item {RemoveAllComponentsOfEntity}
+    \subitem {Registry}, \hyperpage{120}
+  \item {RemoveComponent}
+    \subitem {Entity}, \hyperpage{70}
+    \subitem {Registry}, \hyperpage{121}
+  \item {RemoveEntityFromSystem}
+    \subitem {System}, \hyperpage{157}
+  \item {RemoveEntityFromSystems}
+    \subitem {Registry}, \hyperpage{121}
+  \item {RemoveSystem}
+    \subitem {Registry}, \hyperpage{122}
+  \item {Render}
+    \subitem {Game}, \hyperpage{88}
+  \item {renderer}
+    \subitem {Game}, \hyperpage{92}
+  \item {RenderFixedText}
+    \subitem {RenderTextSystem}, \hyperpage{129}
+  \item {RenderSystem}, \hyperpage{124}
+    \subitem {RenderSystem}, \hyperpage{126}
+    \subitem {Update}, \hyperpage{126}
+  \item {RenderTextSystem}, \hyperpage{127}
+    \subitem {RenderFixedText}, \hyperpage{129}
+    \subitem {RenderTextSystem}, \hyperpage{129}
+    \subitem {Update}, \hyperpage{130}
+  \item {RequireComponent}
+    \subitem {System}, \hyperpage{158}
+  \item {Reset}
+    \subitem {EventManager}, \hyperpage{82}
+    \subitem {SceneTimeSystem}, \hyperpage{145}
+  \item {Resize}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{111}
+  \item {Resume}
+    \subitem {SceneTimeSystem}, \hyperpage{146}
+  \item {ResumeMusic}
+    \subitem {AssetManager}, \hyperpage{18}
+  \item {RigidBodyComponent}, \hyperpage{131}
+    \subitem {RigidBodyComponent}, \hyperpage{131}
+    \subitem {velocity}, \hyperpage{132}
+  \item {rotation}
+    \subitem {TransformComponent}, \hyperpage{165}
+  \item {Run}
+    \subitem {Game}, \hyperpage{88}
+  \item {RunScene}
+    \subitem {Game}, \hyperpage{89}
+
+  \indexspace
+
+  \item {scale}
+    \subitem {TransformComponent}, \hyperpage{166}
+  \item {scale\_speed}
+    \subitem {DepthComponent}, \hyperpage{56}
+  \item {SceneLoader}, \hyperpage{132}
+    \subitem {\texorpdfstring{$\sim$}{\string~}SceneLoader}, 
+		\hyperpage{133}
+    \subitem {LoadButtons}, \hyperpage{133}
+    \subitem {LoadEntities}, \hyperpage{134}
+    \subitem {LoadFonts}, \hyperpage{134}
+    \subitem {LoadKeys}, \hyperpage{135}
+    \subitem {LoadMusic}, \hyperpage{135}
+    \subitem {LoadScene}, \hyperpage{136}
+    \subitem {LoadSprites}, \hyperpage{136}
+    \subitem {SceneLoader}, \hyperpage{133}
+  \item {sceneLoader}
+    \subitem {SceneManager}, \hyperpage{141}
+  \item {SceneManager}, \hyperpage{137}
+    \subitem {\texorpdfstring{$\sim$}{\string~}SceneManager}, 
+		\hyperpage{139}
+    \subitem {GetNextScene}, \hyperpage{139}
+    \subitem {IsSceneRunning}, \hyperpage{139}
+    \subitem {isSceneRunning}, \hyperpage{141}
+    \subitem {LoadScene}, \hyperpage{140}
+    \subitem {LoadSceneFromScript}, \hyperpage{140}
+    \subitem {nextScene}, \hyperpage{141}
+    \subitem {sceneLoader}, \hyperpage{141}
+    \subitem {SceneManager}, \hyperpage{139}
+    \subitem {scenes}, \hyperpage{141}
+    \subitem {SetNextScene}, \hyperpage{140}
+    \subitem {StartScene}, \hyperpage{141}
+    \subitem {StopScene}, \hyperpage{141}
+  \item {sceneManager}
+    \subitem {Game}, \hyperpage{92}
+  \item {scenes}
+    \subitem {SceneManager}, \hyperpage{141}
+  \item {sceneStartTime}
+    \subitem {SceneTimeSystem}, \hyperpage{147}
+  \item {SceneTimeSystem}, \hyperpage{142}
+    \subitem {currentTime}, \hyperpage{146}
+    \subitem {deltaTime}, \hyperpage{146}
+    \subitem {GetDeltaTime}, \hyperpage{145}
+    \subitem {GetSceneTime}, \hyperpage{145}
+    \subitem {Pause}, \hyperpage{145}
+    \subitem {paused}, \hyperpage{147}
+    \subitem {pauseStartTime}, \hyperpage{147}
+    \subitem {Reset}, \hyperpage{145}
+    \subitem {Resume}, \hyperpage{146}
+    \subitem {sceneStartTime}, \hyperpage{147}
+    \subitem {SceneTimeSystem}, \hyperpage{145}
+    \subitem {totalPausedTime}, \hyperpage{147}
+    \subitem {Update}, \hyperpage{146}
+  \item {ScriptComponent}, \hyperpage{147}
+    \subitem {onClick}, \hyperpage{148}
+    \subitem {ScriptComponent}, \hyperpage{148}
+    \subitem {update}, \hyperpage{148}
+  \item {ScriptSystem}, \hyperpage{149}
+    \subitem {CreateLuaBinding}, \hyperpage{151}
+    \subitem {ScriptSystem}, \hyperpage{151}
+    \subitem {Update}, \hyperpage{152}
+  \item {SearchClosestObjective}
+    \subitem {EnemyIASystem}, \hyperpage{61}
+  \item {SearchClosestObjectiveDepth}
+    \subitem {EnemyIASystem}, \hyperpage{62}
+  \item {SearchObjectiveDepth}
+    \subitem {LuaBinding.hpp}, \hyperpage{188}
+  \item {SearchObjectiveScale}
+    \subitem {LuaBinding.hpp}, \hyperpage{190}
+  \item {SearchObjectiveX}
+    \subitem {LuaBinding.hpp}, \hyperpage{191}
+  \item {SearchObjectiveY}
+    \subitem {LuaBinding.hpp}, \hyperpage{192}
+  \item {Set}
+    \subitem {Pool$<$ TComponent $>$}, \hyperpage{111}
+  \item {SetMousePosition}
+    \subitem {ControllerManager}, \hyperpage{43}
+  \item {SetNextScene}
+    \subitem {SceneManager}, \hyperpage{140}
+  \item {SetNumFrames}
+    \subitem {LuaBinding.hpp}, \hyperpage{193}
+  \item {SetPosition}
+    \subitem {LuaBinding.hpp}, \hyperpage{194}
+  \item {SetScale}
+    \subitem {LuaBinding.hpp}, \hyperpage{194}
+  \item {SetSrcRect}
+    \subitem {LuaBinding.hpp}, \hyperpage{195}
+  \item {SetText}
+    \subitem {LuaBinding.hpp}, \hyperpage{196}
+  \item {SetTimer}
+    \subitem {LuaBinding.hpp}, \hyperpage{197}
+  \item {Setup}
+    \subitem {Game}, \hyperpage{90}
+  \item {SetVelocity}
+    \subitem {LuaBinding.hpp}, \hyperpage{197}
+  \item {Signature}
+    \subitem {ECS.hpp}, \hyperpage{224}
+  \item {SpriteComponent}, \hyperpage{153}
+    \subitem {height}, \hyperpage{154}
+    \subitem {SpriteComponent}, \hyperpage{154}
+    \subitem {srcRect}, \hyperpage{154}
+    \subitem {textureId}, \hyperpage{154}
+    \subitem {width}, \hyperpage{154}
+  \item {src/AssetManager/AssetManager.cpp}, \hyperpage{175}
+  \item {src/AssetManager/AssetManager.hpp}, \hyperpage{175, 176}
+  \item {src/Binding/LuaBinding.hpp}, \hyperpage{177}, \hyperpage{198}
+  \item {src/Components/AnimationComponent.hpp}, \hyperpage{200}, 
+		\hyperpage{202}
+  \item {src/Components/CircleColliderComponent.hpp}, 
+		\hyperpage{202, 203}
+  \item {src/Components/ClickableComponent.hpp}, \hyperpage{203, 204}
+  \item {src/Components/DamageComponent.hpp}, \hyperpage{204, 205}
+  \item {src/Components/DepthComponent.hpp}, \hyperpage{205, 206}
+  \item {src/Components/EntitySpawnerComponent.hpp}, 
+		\hyperpage{206, 207}
+  \item {src/Components/LifeComponent.hpp}, \hyperpage{207, 208}
+  \item {src/Components/PolygonColliderComponent.hpp}, 
+		\hyperpage{208, 209}
+  \item {src/Components/RigidBodyComponent.hpp}, \hyperpage{209, 210}
+  \item {src/Components/ScriptComponent.hpp}, \hyperpage{211, 212}
+  \item {src/Components/SpriteComponent.hpp}, \hyperpage{212, 213}
+  \item {src/Components/TagEnemyComponent.hpp}, \hyperpage{213, 214}
+  \item {src/Components/TagObjectiveComponent.hpp}, 
+		\hyperpage{214, 215}
+  \item {src/Components/TagPlayerComponent.hpp}, \hyperpage{215}
+  \item {src/Components/TagProjectileComponent.hpp}, \hyperpage{216}
+  \item {src/Components/TagWallComponent.hpp}, \hyperpage{217}
+  \item {src/Components/TextComponent.hpp}, \hyperpage{218}
+  \item {src/Components/TransformComponent.hpp}, \hyperpage{219, 220}
+  \item {src/ControllerManager/ControllerManager.cpp}, \hyperpage{220}
+  \item {src/ControllerManager/ControllerManager.hpp}, 
+		\hyperpage{220, 221}
+  \item {src/ECS/ECS.cpp}, \hyperpage{222}
+  \item {src/ECS/ECS.hpp}, \hyperpage{223, 224}
+  \item {src/EventManager/Event.hpp}, \hyperpage{227, 228}
+  \item {src/EventManager/EventManager.hpp}, \hyperpage{228, 229}
+  \item {src/Events/ClickEvent.hpp}, \hyperpage{230, 231}
+  \item {src/Events/CollisionEvent.hpp}, \hyperpage{231, 232}
+  \item {src/Game/Game.cpp}, \hyperpage{233}
+  \item {src/Game/Game.hpp}, \hyperpage{233}, \hyperpage{235}
+  \item {src/Main.cpp}, \hyperpage{235}
+  \item {src/SceneManager/SceneLoader.cpp}, \hyperpage{236}
+  \item {src/SceneManager/SceneLoader.hpp}, \hyperpage{237, 238}
+  \item {src/SceneManager/SceneManager.cpp}, \hyperpage{238}
+  \item {src/SceneManager/SceneManager.hpp}, \hyperpage{239}
+  \item {src/Systems/AnimationSystem.hpp}, \hyperpage{240, 241}
+  \item {src/Systems/CleanSystem.hpp}, \hyperpage{241, 242}
+  \item {src/Systems/CollisionSystem.hpp}, \hyperpage{242}, 
+		\hyperpage{244}
+  \item {src/Systems/DamageSystem.hpp}, \hyperpage{245, 246}
+  \item {src/Systems/DefeatSystem.hpp}, \hyperpage{247, 248}
+  \item {src/Systems/DepthSystem.hpp}, \hyperpage{249, 250}
+  \item {src/Systems/EnemyIASystem.hpp}, \hyperpage{250, 251}
+  \item {src/Systems/EntitySpawnerSystem.hpp}, \hyperpage{252}, 
+		\hyperpage{254}
+  \item {src/Systems/HealthBarSystem.hpp}, \hyperpage{256, 257}
+  \item {src/Systems/MovementSystem.hpp}, \hyperpage{258}
+  \item {src/Systems/RenderSystem.hpp}, \hyperpage{259, 260}
+  \item {src/Systems/RenderTextSystem.hpp}, \hyperpage{261}
+  \item {src/Systems/SceneTimeSystem.hpp}, \hyperpage{262, 263}
+  \item {src/Systems/ScriptSystem.hpp}, \hyperpage{264, 265}
+  \item {src/Systems/UISystem.hpp}, \hyperpage{266, 267}
+  \item {src/Systems/WallCollisionSystem.hpp}, \hyperpage{267, 268}
+  \item {src/Utils/Pool.hpp}, \hyperpage{269, 270}
+  \item {srcRect}
+    \subitem {SpriteComponent}, \hyperpage{154}
+  \item {StartScene}
+    \subitem {SceneManager}, \hyperpage{141}
+  \item {startTime}
+    \subitem {AnimationComponent}, \hyperpage{10}
+  \item {StopMusic}
+    \subitem {AssetManager}, \hyperpage{18}
+  \item {StopScene}
+    \subitem {SceneManager}, \hyperpage{141}
+  \item {subscribers}
+    \subitem {EventManager}, \hyperpage{83}
+  \item {SubscribeToClickEvent}
+    \subitem {UISystem}, \hyperpage{169}
+  \item {SubscribeToCollisionEvent}
+    \subitem {DamageSystem}, \hyperpage{50}
+    \subitem {WallCollisionSystem}, \hyperpage{173}
+  \item {SubscribeToEvent}
+    \subitem {EventManager}, \hyperpage{82}
+  \item {System}, \hyperpage{155}
+    \subitem {\texorpdfstring{$\sim$}{\string~}System}, \hyperpage{156}
+    \subitem {AddEntityToSystem}, \hyperpage{156}
+    \subitem {componentSignature}, \hyperpage{159}
+    \subitem {entities}, \hyperpage{159}
+    \subitem {GetComponentSignature}, \hyperpage{157}
+    \subitem {GetSystemEntities}, \hyperpage{157}
+    \subitem {RemoveEntityFromSystem}, \hyperpage{157}
+    \subitem {RequireComponent}, \hyperpage{158}
+    \subitem {System}, \hyperpage{156}
+  \item {systems}
+    \subitem {Registry}, \hyperpage{123}
+
+  \indexspace
+
+  \item {TagEnemyComponent}, \hyperpage{160}
+  \item {TagObjectiveComponent}, \hyperpage{160}
+  \item {TagPlayerComponent}, \hyperpage{161}
+  \item {TagProjectileComponent}, \hyperpage{161}
+  \item {TagWallComponent}, \hyperpage{162}
+  \item {text}
+    \subitem {TextComponent}, \hyperpage{164}
+  \item {TextComponent}, \hyperpage{162}
+    \subitem {color}, \hyperpage{163}
+    \subitem {fontId}, \hyperpage{164}
+    \subitem {height}, \hyperpage{164}
+    \subitem {text}, \hyperpage{164}
+    \subitem {TextComponent}, \hyperpage{163}
+    \subitem {width}, \hyperpage{164}
+  \item {textureId}
+    \subitem {SpriteComponent}, \hyperpage{154}
+  \item {textures}
+    \subitem {AssetManager}, \hyperpage{19}
+  \item {totalPausedTime}
+    \subitem {SceneTimeSystem}, \hyperpage{147}
+  \item {TransformComponent}, \hyperpage{164}
+    \subitem {position}, \hyperpage{165}
+    \subitem {rotation}, \hyperpage{165}
+    \subitem {scale}, \hyperpage{166}
+    \subitem {TransformComponent}, \hyperpage{165}
+
+  \indexspace
+
+  \item {UISystem}, \hyperpage{166}
+    \subitem {OnClickEvent}, \hyperpage{168}
+    \subitem {SubscribeToClickEvent}, \hyperpage{169}
+    \subitem {UISystem}, \hyperpage{168}
+  \item {Update}
+    \subitem {AnimationSystem}, \hyperpage{13}
+    \subitem {CleanSystem}, \hyperpage{23}
+    \subitem {CollisionSystem}, \hyperpage{35}
+    \subitem {DefeatSystem}, \hyperpage{53}
+    \subitem {DepthSystem}, \hyperpage{58}
+    \subitem {Game}, \hyperpage{90}
+    \subitem {HealthBarSystem}, \hyperpage{95}
+    \subitem {MovementSystem}, \hyperpage{105}
+    \subitem {Registry}, \hyperpage{122}
+    \subitem {RenderSystem}, \hyperpage{126}
+    \subitem {RenderTextSystem}, \hyperpage{130}
+    \subitem {SceneTimeSystem}, \hyperpage{146}
+    \subitem {ScriptSystem}, \hyperpage{152}
+  \item {update}
+    \subitem {ScriptComponent}, \hyperpage{148}
+
+  \indexspace
+
+  \item {velocity}
+    \subitem {RigidBodyComponent}, \hyperpage{132}
+  \item {vertices}
+    \subitem {PolygonColliderComponent}, \hyperpage{107}
+
+  \indexspace
+
+  \item {WallCollisionSystem}, \hyperpage{169}
+    \subitem {OnCollision}, \hyperpage{172}
+    \subitem {SubscribeToCollisionEvent}, \hyperpage{173}
+    \subitem {WallCollisionSystem}, \hyperpage{172}
+  \item {wasPaused}
+    \subitem {Game}, \hyperpage{92}
+  \item {width}
+    \subitem {CircleColliderComponent}, \hyperpage{20}
+    \subitem {SpriteComponent}, \hyperpage{154}
+    \subitem {TextComponent}, \hyperpage{164}
+  \item {window}
+    \subitem {Game}, \hyperpage{92}
+  \item {windowHeight}
+    \subitem {Game}, \hyperpage{92}
+  \item {windowWidth}
+    \subitem {Game}, \hyperpage{92}
+
+\end{theindex}

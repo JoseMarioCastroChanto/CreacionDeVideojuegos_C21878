@@ -1,0 +1,29 @@
+<map id="src/Components/TagPlayerComponent.hpp" name="src/Components/TagPlayerComponent.hpp">
+<area shape="rect" id="Node000001" title="Empty component used to tag entities as players." alt="" coords="415,5,610,45"/>
+<area shape="rect" id="Node000002" href="$SceneLoader_8cpp.html" title=" " alt="" coords="5,101,260,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="417,51,184,103,183,98,416,46"/>
+<area shape="rect" id="Node000003" href="$DamageSystem_8hpp.html" title=" " alt="" coords="109,181,346,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="421,52,371,71,323,96,296,117,272,141,237,183,233,179,268,137,293,113,321,91,369,66,419,47"/>
+<area shape="rect" id="Node000007" href="$EnemyIASystem_8hpp.html" title=" " alt="" coords="471,181,711,207"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="530,57,547,92,588,180,583,182,542,94,525,59"/>
+<area shape="rect" id="Node000008" href="$EntitySpawnerSystem_8hpp.html" title=" " alt="" coords="335,93,533,133"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="488,57,453,95,449,91,484,54"/>
+<area shape="rect" id="Node000009" href="$HealthBarSystem_8hpp.html" title=" " alt="" coords="521,255,768,280"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="573,49,614,71,656,100,696,137,726,180,729,192,728,205,715,226,694,243,671,257,668,252,691,239,711,222,723,203,724,193,721,182,691,140,653,104,611,76,571,54"/>
+<area shape="rect" id="Node000010" href="$WallCollisionSystem_8hpp.html" title=" " alt="" coords="669,328,858,368"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="606,47,649,66,689,91,728,127,753,162,769,202,782,254,784,274,782,294,773,329,768,327,777,293,779,274,777,255,764,204,748,165,724,131,686,95,647,70,604,52"/>
+<area shape="rect" id="Node000004" href="$LuaBinding_8hpp.html" title="Contains Lua bindings for interacting with ECS components and systems." alt="" coords="193,255,392,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="249,215,284,253,280,256,245,219"/>
+<area shape="rect" id="Node000006" href="$Game_8cpp.html" title=" " alt="" coords="382,416,537,441"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="210,218,186,250,164,289,157,310,155,330,158,349,168,366,181,377,201,387,256,402,320,413,382,420,382,425,319,418,254,408,199,392,178,382,164,370,153,351,150,330,152,309,159,287,181,247,206,215"/>
+<area shape="rect" id="Node000005" href="$ScriptSystem_8hpp.html" title=" " alt="" coords="178,335,397,361"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="294,294,291,335,285,335,288,294"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="326,364,435,414,433,418,324,369"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="531,212,342,257,340,252,529,207"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="557,216,532,234,511,256,488,299,474,344,463,416,457,415,469,343,483,297,506,253,529,230,554,211"/>
+<area shape="poly" id="edge13_Node000008_Node000003" title=" " alt="" coords="373,141,259,184,257,179,371,136"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="413,146,360,209,309,256,305,252,356,205,409,143"/>
+<area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="439,147,461,415,456,416,434,148"/>
+<area shape="poly" id="edge15_Node000009_Node000006" title=" " alt="" coords="623,291,475,418,471,414,619,287"/>
+<area shape="poly" id="edge17_Node000010_Node000006" title=" " alt="" coords="678,374,504,419,503,413,677,369"/>
+</map>

@@ -21,10 +21,23 @@
 #include <sol/sol.hpp>
 #include <memory>
 
+/**
+ * @class EntitySpawnerSystem
+ * @brief Handles the spawning of entities based on Lua scene configuration.
+ * 
+ * This system loads entity definitions from a Lua script file and generates entities
+ * with the components defined in the Lua tables.
+ */
 class EntitySpawnerSystem : public System{
     private:
-    sol::table entities;
+    sol::table entities;/**< Lua table holding the entities loaded from the scene script */
     public:
+    /**
+     * @brief Constructs the EntitySpawnerSystem, loads the Lua scene file and entities table.
+     * 
+     * @param scenePath Path to the Lua scene file.
+     * @param lua Reference to the Lua state.
+     */
      EntitySpawnerSystem(const std::string& scenePath, sol::state& lua){
         RequireComponent<TransformComponent>();
         RequireComponent<EntitySpawnerComponent>();
@@ -40,7 +53,14 @@ class EntitySpawnerSystem : public System{
         this->entities = lua["entities"];
 
      }
-
+    /**
+     * @brief Generates an entity from the Lua entity table at the given index.
+     * 
+     * @param registry Unique pointer to the Registry managing entities.
+     * @param idEntity The index of the entity in the Lua entities table.
+     * @param lua Reference to the Lua state.
+     * @return The generated Entity with components added as specified in Lua.
+     */
     Entity GenerateEntity(std::unique_ptr<Registry>& registry,int idEntity,
      sol::state& lua){
         sol::table entity = entities[idEntity];

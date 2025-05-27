@@ -1,0 +1,5 @@
+<map id="Registry::AddEntityToSystems" name="Registry::AddEntityToSystems">
+<area shape="rect" id="Node000001" title="Adds an entity to all systems whose signatures match the entity&#39;s components." alt="" coords="5,5,221,31"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="269,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,15,255,15,255,21,222,21"/>
+</map>

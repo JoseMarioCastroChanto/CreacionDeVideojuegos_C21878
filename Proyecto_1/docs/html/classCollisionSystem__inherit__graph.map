@@ -1,0 +1,5 @@
+<map id="CollisionSystem" name="CollisionSystem">
+<area shape="rect" id="Node000001" title="System responsible for detecting collisions between entities and emitting collision events." alt="" coords="11,259,213,404"/>
+<area shape="rect" id="Node000002" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="5,5,219,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,225,115,258,109,258,109,225"/>
+</map>

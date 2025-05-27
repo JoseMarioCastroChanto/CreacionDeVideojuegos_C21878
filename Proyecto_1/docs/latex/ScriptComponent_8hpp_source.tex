@@ -1,0 +1,22 @@
+\doxysection{Script\+Component.\+hpp}
+\hypertarget{ScriptComponent_8hpp_source}{}\label{ScriptComponent_8hpp_source}\index{src/Components/ScriptComponent.hpp@{src/Components/ScriptComponent.hpp}}
+\mbox{\hyperlink{ScriptComponent_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCRIPTCOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCRIPTCOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sol/sol.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structScriptComponent}{ScriptComponent}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ sol::function\ \mbox{\hyperlink{structScriptComponent_a58f093616a61d9c23e4d5cf7d58a1cb8}{update}};\ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ sol::function\ \mbox{\hyperlink{structScriptComponent_a784545648f6e4a0cdbb5902c0174c089}{onClick}};\ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structScriptComponent_a23111ade2de71657e55946034fdacd80}{ScriptComponent}}(sol::function\ \mbox{\hyperlink{structScriptComponent_a58f093616a61d9c23e4d5cf7d58a1cb8}{update}}\ =\ sol::lua\_nil,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::function\ \mbox{\hyperlink{structScriptComponent_a784545648f6e4a0cdbb5902c0174c089}{onClick}}\ =\ sol::lua\_nil)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>update\ =\ \mbox{\hyperlink{structScriptComponent_a58f093616a61d9c23e4d5cf7d58a1cb8}{update}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>onClick\ =\ \mbox{\hyperlink{structScriptComponent_a784545648f6e4a0cdbb5902c0174c089}{onClick}};}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

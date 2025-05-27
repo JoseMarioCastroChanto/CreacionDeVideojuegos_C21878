@@ -1,0 +1,11 @@
+<map id="GetDepth" name="GetDepth">
+<area shape="rect" id="Node000001" title="Gets the max depth scale from an entity&#39;s DepthComponent." alt="" coords="5,31,89,56"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="137,31,303,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,41,124,41,124,46,89,46"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="351,31,532,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,41,337,41,337,46,303,46"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="580,5,720,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="532,30,566,25,567,31,533,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="599,55,701,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="533,51,585,57,584,63,532,56"/>
+</map>

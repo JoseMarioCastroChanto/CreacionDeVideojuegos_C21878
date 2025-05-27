@@ -1,0 +1,9 @@
+<map id="CollisionEvent" name="CollisionEvent">
+<area shape="rect" id="Node000001" title="Event triggered when two entities collide." alt="" coords="5,816,137,881"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for events in the system." alt="" coords="12,573,88,639"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,652,71,816,66,816,51,652"/>
+<area shape="rect" id="Node000003" href="$classEntity.html" title="Represents an entity in the ECS, identified by a unique ID." alt="" coords="113,473,281,739"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,740,98,803,93,800,126,738"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages entities, components, and systems in the ECS." alt="" coords="74,5,319,411"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="199,411,199,457,194,457,194,411"/>
+</map>

@@ -1,0 +1,35 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classSystem.html" title="Base class for systems that operate on entities with specific components." alt="" coords="5,376,76,401"/>
+<area shape="rect" id="Node000001" href="$classAnimationSystem.html" title="System responsible for updating the animation frames of entities." alt="" coords="137,5,276,31"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="42,362,52,288,68,192,92,101,106,65,122,40,137,29,140,33,126,44,111,67,97,102,73,193,57,289,47,363"/>
+<area shape="rect" id="Node000002" href="$classCleanSystem.html" title="System responsible for removing entities that move outside defined bounds." alt="" coords="153,55,261,80"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="39,362,41,306,52,233,62,195,77,157,97,121,122,89,136,79,151,72,154,77,139,84,126,93,101,124,82,159,67,196,57,234,46,307,44,363"/>
+<area shape="rect" id="Node000003" href="$classCollisionSystem.html" title="System responsible for detecting collisions between entities and emitting collision events." alt="" coords="143,104,270,129"/>
+<area shape="poly" id="edge8_Node000000_Node000003" title=" " alt="" coords="40,362,46,314,59,255,83,193,100,164,122,139,142,126,145,130,126,143,105,167,88,195,64,256,51,315,46,362"/>
+<area shape="rect" id="Node000004" href="$classDamageSystem.html" title="Handles damage application between entities when collisions occur." alt="" coords="143,153,270,179"/>
+<area shape="poly" id="edge9_Node000000_Node000004" title=" " alt="" coords="43,362,51,323,66,276,89,229,122,188,142,176,145,180,126,192,93,232,71,278,56,324,48,363"/>
+<area shape="rect" id="Node000005" href="$classDefeatSystem.html" title="Checks if any objective entity is defeated (life &lt;= 0)." alt="" coords="149,203,264,228"/>
+<area shape="poly" id="edge10_Node000000_Node000005" title=" " alt="" coords="47,362,73,299,95,266,122,237,148,223,150,228,126,241,99,269,78,302,52,364"/>
+<area shape="rect" id="Node000006" href="$classDepthSystem.html" title="System to handle the scaling of entities based on their vertical velocity, simulating depth." alt="" coords="151,252,262,277"/>
+<area shape="poly" id="edge11_Node000000_Node000006" title=" " alt="" coords="54,362,83,323,101,303,123,286,150,273,152,278,125,291,105,307,87,327,58,365"/>
+<area shape="rect" id="Node000007" href="$classEnemyIASystem.html" title="System responsible for enemy AI logic, specifically searching for closest objectives." alt="" coords="142,301,271,327"/>
+<area shape="poly" id="edge12_Node000000_Node000007" title=" " alt="" coords="69,366,123,336,154,324,156,329,125,340,72,371"/>
+<area shape="rect" id="Node000008" href="$classEntitySpawnerSystem.html" title="Handles the spawning of entities based on Lua scene configuration." alt="" coords="124,351,289,376"/>
+<area shape="poly" id="edge13_Node000000_Node000008" title=" " alt="" coords="89,379,123,373,124,379,90,384"/>
+<area shape="rect" id="Node000009" href="$classHealthBarSystem.html" title="System responsible for rendering health bars for entities with LifeComponent and TagObjectiveComponen..." alt="" coords="139,400,275,425"/>
+<area shape="poly" id="edge14_Node000000_Node000009" title=" " alt="" coords="90,393,139,400,138,405,89,398"/>
+<area shape="rect" id="Node000010" href="$classMovementSystem.html" title="System responsible for updating entity positions based on their velocity." alt="" coords="136,449,277,475"/>
+<area shape="poly" id="edge15_Node000000_Node000010" title=" " alt="" coords="74,406,125,434,159,447,157,452,123,439,71,411"/>
+<area shape="rect" id="Node000011" href="$classRenderSystem.html" title="System responsible for rendering entities with sprites on the screen." alt="" coords="148,499,265,524"/>
+<area shape="poly" id="edge16_Node000000_Node000011" title=" " alt="" coords="59,412,87,449,126,484,151,496,148,501,122,488,83,452,55,415"/>
+<area shape="rect" id="Node000012" href="$classRenderTextSystem.html" title="System responsible for rendering text components in the ECS." alt="" coords="135,548,279,573"/>
+<area shape="poly" id="edge17_Node000000_Node000012" title=" " alt="" coords="52,413,79,474,99,506,126,533,147,546,144,550,122,537,95,509,74,476,47,415"/>
+<area shape="rect" id="Node000013" href="$classSceneTimeSystem.html" title="Manages scene timing including pause, resume, delta time, and total elapsed time." alt="" coords="135,597,278,623"/>
+<area shape="poly" id="edge18_Node000000_Node000013" title=" " alt="" coords="48,415,57,452,71,498,94,543,126,583,145,595,142,599,122,587,89,546,66,500,52,454,43,416"/>
+<area shape="rect" id="Node000014" href="$classScriptSystem.html" title="Manages entities with scripts and handles Lua binding and script updates." alt="" coords="153,647,261,672"/>
+<area shape="poly" id="edge19_Node000000_Node000014" title=" " alt="" coords="46,415,51,461,64,520,88,580,105,608,126,632,154,648,151,653,122,636,101,611,83,582,59,521,46,462,41,415"/>
+<area shape="rect" id="Node000015" href="$classUISystem.html" title="Handles UI elements that can be clicked and processes click events." alt="" coords="164,696,249,721"/>
+<area shape="poly" id="edge20_Node000000_Node000015" title=" " alt="" coords="44,415,47,470,58,541,68,579,83,616,102,651,126,681,144,694,165,701,163,706,141,699,122,685,97,654,78,619,63,581,53,543,41,470,39,415"/>
+<area shape="rect" id="Node000016" href="$classWallCollisionSystem.html" title="Handles collisions between wall entities and player entities." alt="" coords="129,745,284,771"/>
+<area shape="poly" id="edge21_Node000000_Node000016" title=" " alt="" coords="48,414,57,488,74,583,97,673,111,707,126,731,143,743,140,747,122,734,106,710,92,674,69,584,52,489,42,415"/>
+</map>

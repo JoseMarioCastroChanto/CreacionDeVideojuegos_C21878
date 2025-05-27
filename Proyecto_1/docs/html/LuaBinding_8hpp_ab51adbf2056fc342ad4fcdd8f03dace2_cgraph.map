@@ -1,0 +1,6 @@
+<map id="GetDeltaTime" name="GetDeltaTime">
+<area shape="rect" id="Node000001" title="Gets the delta time of the current scene from SceneTimeSystem." alt="" coords="5,29,119,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="33,31,27,21,30,11,42,5,62,3,86,6,96,15,93,19,84,11,62,8,43,10,34,15,32,20,37,28"/>
+<area shape="rect" id="Node000002" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="167,29,313,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="119,39,153,39,153,45,119,45"/>
+</map>

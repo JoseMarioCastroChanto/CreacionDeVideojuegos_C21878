@@ -1,0 +1,7 @@
+<map id="Event" name="Event">
+<area shape="rect" id="Node000001" title="Base class for events in the system." alt="" coords="93,5,169,71"/>
+<area shape="rect" id="Node000002" href="$classClickEvent.html" title="Represents a mouse click event." alt="" coords="5,119,113,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,84,90,120,85,117,105,82"/>
+<area shape="rect" id="Node000003" href="$classCollisionEvent.html" title="Event triggered when two entities collide." alt="" coords="137,129,269,214"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,82,183,127,178,130,153,84"/>
+</map>

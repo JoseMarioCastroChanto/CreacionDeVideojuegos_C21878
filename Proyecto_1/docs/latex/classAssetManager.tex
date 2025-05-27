@@ -1,0 +1,331 @@
+\doxysection{Asset\+Manager Class Reference}
+\hypertarget{classAssetManager}{}\label{classAssetManager}\index{AssetManager@{AssetManager}}
+
+
+Manages textures, fonts, and music assets using SDL2.  
+
+
+
+
+{\ttfamily \#include $<$Asset\+Manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Asset\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classAssetManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAssetManager_a750ae7b39b633fbb6594443aa3ca704b}{Asset\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classAssetManager}{Asset\+Manager} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAssetManager_a9c89817cbf3516f1451c116e89f47d30}{\texorpdfstring{$\sim$}{\string~}\+Asset\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classAssetManager}{Asset\+Manager} and releases all loaded assets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_a069acc7f6b59d27b5d7cac6aed4e71f0}{Clear\+Assets}} ()
+\begin{DoxyCompactList}\small\item\em Frees all textures, fonts, and music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_ad909ea7e8e389bfb69f1fc9878810555}{Add\+Texture}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const std\+::string \&texture\+Id, const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Loads and stores a texture from file. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classAssetManager_a0a9408d3736292bdac9fa462e050f345}{Get\+Texture}} (const std\+::string \&texture\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a previously loaded texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_ae694ffbdab1886410889911610c2270e}{Add\+Font}} (const std\+::string \&font\+Id, const std\+::string \&file\+Path, int font\+Size)
+\begin{DoxyCompactList}\small\item\em Loads and stores a font from file. \end{DoxyCompactList}\item 
+TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classAssetManager_ac881286653fbb7dcf7b521ebdbb61e16}{Get\+Font}} (const std\+::string \&font\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a previously loaded font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_ad3592bb023ff78a22b8cd23c52db80cf}{Load\+Music}} (const std\+::string \&music\+Id, const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Loads a music track from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_aa0932ba731b05b14cabdd86656c78d77}{Play\+Music}} (const std\+::string \&music\+Id, int loops=-\/1)
+\begin{DoxyCompactList}\small\item\em Plays a loaded music track. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_af8d88ba25ada573069522a7bb3adbf66}{Stop\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Stops the currently playing music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_a26b13538e0015190a70ad1917736031c}{Resume\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Resumes paused music playback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_a0b99c9163c1500dd8d141728fef25604}{Pause\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the currently playing music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAssetManager_a1e6962f173e3d8d307552d367303b5e2}{Clear\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Frees all loaded music assets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classAssetManager_a038f67ee6f0710a7f01fa701bb6227d3}{textures}}
+\begin{DoxyCompactList}\small\item\em Map of texture IDs to SDL\+\_\+\+Texture pointers. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classAssetManager_a3c00dca1b383c4ffcc732748b2712176}{fonts}}
+\begin{DoxyCompactList}\small\item\em Map of font IDs to TTF\+\_\+\+Font pointers. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, Mix\+\_\+\+Music \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classAssetManager_ab06d49aa43788b805e6f946e5faa0de2}{musics}}
+\begin{DoxyCompactList}\small\item\em Map of music IDs to Mix\+\_\+\+Music pointers. \end{DoxyCompactList}\item 
+Mix\+\_\+\+Music \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classAssetManager_a880112a7d6c1f932c50aa27fdf84e38c}{current\+Music}} = nullptr
+\begin{DoxyCompactList}\small\item\em Currently playing music. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages textures, fonts, and music assets using SDL2. 
+
+This class handles loading, storing, retrieving, and clearing of SDL\+\_\+\+Texture, TTF\+\_\+\+Font, and Mix\+\_\+\+Music assets. It centralizes asset management to avoid redundant loads and ensures proper cleanup. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAssetManager_a750ae7b39b633fbb6594443aa3ca704b}\label{classAssetManager_a750ae7b39b633fbb6594443aa3ca704b} 
+\index{AssetManager@{AssetManager}!AssetManager@{AssetManager}}
+\index{AssetManager@{AssetManager}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{AssetManager()}{AssetManager()}}
+{\footnotesize\ttfamily Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classAssetManager}{Asset\+Manager} instance. 
+
+\Hypertarget{classAssetManager_a9c89817cbf3516f1451c116e89f47d30}\label{classAssetManager_a9c89817cbf3516f1451c116e89f47d30} 
+\index{AssetManager@{AssetManager}!````~AssetManager@{\texorpdfstring{$\sim$}{\string~}AssetManager}}
+\index{````~AssetManager@{\texorpdfstring{$\sim$}{\string~}AssetManager}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AssetManager()}{\string~AssetManager()}}
+{\footnotesize\ttfamily Asset\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the \doxylink{classAssetManager}{Asset\+Manager} and releases all loaded assets. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAssetManager_ae694ffbdab1886410889911610c2270e}\label{classAssetManager_ae694ffbdab1886410889911610c2270e} 
+\index{AssetManager@{AssetManager}!AddFont@{AddFont}}
+\index{AddFont@{AddFont}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{AddFont()}{AddFont()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Add\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+Id,  }\item[{const std\+::string \&}]{file\+Path,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})}
+
+
+
+Loads and stores a font from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font\+Id} & The unique ID to associate with the font. \\
+\hline
+{\em file\+Path} & The path to the font file. \\
+\hline
+{\em font\+Size} & The font size to use. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAssetManager_ad909ea7e8e389bfb69f1fc9878810555}\label{classAssetManager_ad909ea7e8e389bfb69f1fc9878810555} 
+\index{AssetManager@{AssetManager}!AddTexture@{AddTexture}}
+\index{AddTexture@{AddTexture}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{AddTexture()}{AddTexture()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Add\+Texture (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{const std\+::string \&}]{texture\+Id,  }\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Loads and stores a texture from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The SDL\+\_\+\+Renderer used to create the texture. \\
+\hline
+{\em texture\+Id} & The unique ID to associate with the texture. \\
+\hline
+{\em file\+Path} & The path to the texture file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAssetManager_a069acc7f6b59d27b5d7cac6aed4e71f0}\label{classAssetManager_a069acc7f6b59d27b5d7cac6aed4e71f0} 
+\index{AssetManager@{AssetManager}!ClearAssets@{ClearAssets}}
+\index{ClearAssets@{ClearAssets}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{ClearAssets()}{ClearAssets()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Clear\+Assets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Frees all textures, fonts, and music. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAssetManager_a069acc7f6b59d27b5d7cac6aed4e71f0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAssetManager_a1e6962f173e3d8d307552d367303b5e2}\label{classAssetManager_a1e6962f173e3d8d307552d367303b5e2} 
+\index{AssetManager@{AssetManager}!ClearMusic@{ClearMusic}}
+\index{ClearMusic@{ClearMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{ClearMusic()}{ClearMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Clear\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Frees all loaded music assets. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAssetManager_a1e6962f173e3d8d307552d367303b5e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAssetManager_a1e6962f173e3d8d307552d367303b5e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAssetManager_ac881286653fbb7dcf7b521ebdbb61e16}\label{classAssetManager_ac881286653fbb7dcf7b521ebdbb61e16} 
+\index{AssetManager@{AssetManager}!GetFont@{GetFont}}
+\index{GetFont@{GetFont}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{GetFont()}{GetFont()}}
+{\footnotesize\ttfamily TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} Asset\+Manager\+::\+Get\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+Id }\end{DoxyParamCaption})}
+
+
+
+Retrieves a previously loaded font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font\+Id} & The ID of the font to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TTF\+\_\+\+Font\texorpdfstring{$\ast$}{*} Pointer to the font, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classAssetManager_a0a9408d3736292bdac9fa462e050f345}\label{classAssetManager_a0a9408d3736292bdac9fa462e050f345} 
+\index{AssetManager@{AssetManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Asset\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+Id }\end{DoxyParamCaption})}
+
+
+
+Retrieves a previously loaded texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Id} & The ID of the texture to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} Pointer to the texture, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classAssetManager_ad3592bb023ff78a22b8cd23c52db80cf}\label{classAssetManager_ad3592bb023ff78a22b8cd23c52db80cf} 
+\index{AssetManager@{AssetManager}!LoadMusic@{LoadMusic}}
+\index{LoadMusic@{LoadMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{LoadMusic()}{LoadMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Load\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{music\+Id,  }\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Loads a music track from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em music\+Id} & The unique ID to associate with the music. \\
+\hline
+{\em file\+Path} & The path to the music file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAssetManager_a0b99c9163c1500dd8d141728fef25604}\label{classAssetManager_a0b99c9163c1500dd8d141728fef25604} 
+\index{AssetManager@{AssetManager}!PauseMusic@{PauseMusic}}
+\index{PauseMusic@{PauseMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{PauseMusic()}{PauseMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Pause\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pauses the currently playing music. 
+
+\Hypertarget{classAssetManager_aa0932ba731b05b14cabdd86656c78d77}\label{classAssetManager_aa0932ba731b05b14cabdd86656c78d77} 
+\index{AssetManager@{AssetManager}!PlayMusic@{PlayMusic}}
+\index{PlayMusic@{PlayMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{PlayMusic()}{PlayMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Play\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{music\+Id,  }\item[{int}]{loops = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Plays a loaded music track. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em music\+Id} & The ID of the music to play. \\
+\hline
+{\em loops} & Number of times the music should loop. Default is -\/1 (infinite). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAssetManager_a26b13538e0015190a70ad1917736031c}\label{classAssetManager_a26b13538e0015190a70ad1917736031c} 
+\index{AssetManager@{AssetManager}!ResumeMusic@{ResumeMusic}}
+\index{ResumeMusic@{ResumeMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{ResumeMusic()}{ResumeMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Resume\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resumes paused music playback. 
+
+\Hypertarget{classAssetManager_af8d88ba25ada573069522a7bb3adbf66}\label{classAssetManager_af8d88ba25ada573069522a7bb3adbf66} 
+\index{AssetManager@{AssetManager}!StopMusic@{StopMusic}}
+\index{StopMusic@{StopMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{StopMusic()}{StopMusic()}}
+{\footnotesize\ttfamily void Asset\+Manager\+::\+Stop\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the currently playing music. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAssetManager_af8d88ba25ada573069522a7bb3adbf66_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classAssetManager_a880112a7d6c1f932c50aa27fdf84e38c}\label{classAssetManager_a880112a7d6c1f932c50aa27fdf84e38c} 
+\index{AssetManager@{AssetManager}!currentMusic@{currentMusic}}
+\index{currentMusic@{currentMusic}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{currentMusic}{currentMusic}}
+{\footnotesize\ttfamily Mix\+\_\+\+Music\texorpdfstring{$\ast$}{*} Asset\+Manager\+::current\+Music = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Currently playing music. 
+
+\Hypertarget{classAssetManager_a3c00dca1b383c4ffcc732748b2712176}\label{classAssetManager_a3c00dca1b383c4ffcc732748b2712176} 
+\index{AssetManager@{AssetManager}!fonts@{fonts}}
+\index{fonts@{fonts}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{fonts}{fonts}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, TTF\+\_\+\+Font\texorpdfstring{$\ast$}{*}$>$ Asset\+Manager\+::fonts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of font IDs to TTF\+\_\+\+Font pointers. 
+
+\Hypertarget{classAssetManager_ab06d49aa43788b805e6f946e5faa0de2}\label{classAssetManager_ab06d49aa43788b805e6f946e5faa0de2} 
+\index{AssetManager@{AssetManager}!musics@{musics}}
+\index{musics@{musics}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{musics}{musics}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, Mix\+\_\+\+Music\texorpdfstring{$\ast$}{*}$>$ Asset\+Manager\+::musics\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of music IDs to Mix\+\_\+\+Music pointers. 
+
+\Hypertarget{classAssetManager_a038f67ee6f0710a7f01fa701bb6227d3}\label{classAssetManager_a038f67ee6f0710a7f01fa701bb6227d3} 
+\index{AssetManager@{AssetManager}!textures@{textures}}
+\index{textures@{textures}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}$>$ Asset\+Manager\+::textures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of texture IDs to SDL\+\_\+\+Texture pointers. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Asset\+Manager/\mbox{\hyperlink{AssetManager_8hpp}{Asset\+Manager.\+hpp}}\item 
+src/\+Asset\+Manager/\mbox{\hyperlink{AssetManager_8cpp}{Asset\+Manager.\+cpp}}\end{DoxyCompactItemize}

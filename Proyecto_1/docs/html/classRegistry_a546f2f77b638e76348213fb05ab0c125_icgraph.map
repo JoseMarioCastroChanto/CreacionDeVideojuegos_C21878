@@ -1,0 +1,7 @@
+<map id="Registry::HasComponent" name="Registry::HasComponent">
+<area shape="rect" id="Node000001" title="Checks if an entity has a component of type TComponent." alt="" coords="451,5,633,31"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#a21a5c382bca76fadf22668d51439f3a6" title="Checks if the entity has a component of type TComponent." alt="" coords="236,5,403,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="437,21,403,21,403,15,437,15"/>
+<area shape="rect" id="Node000003" href="$classCollisionSystem.html#a037ec33be724e6a16c9c4d50bbb7912d" title="Updates the system by checking collisions among all entities and emitting events." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,21,188,21,188,15,222,15"/>
+</map>

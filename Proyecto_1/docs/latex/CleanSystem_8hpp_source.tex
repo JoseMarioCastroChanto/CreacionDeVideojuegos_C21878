@@ -1,0 +1,33 @@
+\doxysection{Clean\+System.\+hpp}
+\hypertarget{CleanSystem_8hpp_source}{}\label{CleanSystem_8hpp_source}\index{src/Systems/CleanSystem.hpp@{src/Systems/CleanSystem.hpp}}
+\mbox{\hyperlink{CleanSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLEANSYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLEANTSYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Components/RigidBodyComponent.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCleanSystem}{CleanSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \mbox{\hyperlink{classCleanSystem_aab7261d8e3b43257837e97fe2470421e}{CleanSystem}}()\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<RigidBodyComponent>}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TransformComponent>}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCleanSystem_aba1f4cae8274811dd0dce274aa486f71}{Update}}()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.x\ >\ 2000\ ||\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position.x\ <\ -\/400)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.Kill();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}[CleanSystem]\ Se\ elimina\ entidad\ "{}}<<\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetId()}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<std::endl;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

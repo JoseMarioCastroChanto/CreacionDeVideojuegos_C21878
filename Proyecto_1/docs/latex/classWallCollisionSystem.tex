@@ -1,0 +1,145 @@
+\doxysection{Wall\+Collision\+System Class Reference}
+\hypertarget{classWallCollisionSystem}{}\label{classWallCollisionSystem}\index{WallCollisionSystem@{WallCollisionSystem}}
+
+
+Handles collisions between wall entities and player entities.  
+
+
+
+
+{\ttfamily \#include $<$Wall\+Collision\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Wall\+Collision\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classWallCollisionSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Wall\+Collision\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classWallCollisionSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWallCollisionSystem_adb78f66962283cb4b7501549213a0741}{Wall\+Collision\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs \doxylink{classWallCollisionSystem}{Wall\+Collision\+System} and requires \doxylink{structTagWallComponent}{Tag\+Wall\+Component}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classWallCollisionSystem_a67f64145fed0777cd43ebe0bd57303f4}{Subscribe\+To\+Collision\+Event}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classEventManager}{Event\+Manager}} $>$ \&event\+Manager)
+\begin{DoxyCompactList}\small\item\em Subscribes this system to the \doxylink{classCollisionEvent}{Collision\+Event} in the \doxylink{classEventManager}{Event\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classWallCollisionSystem_a2ae9adc347fefc19e9a9560e125e97b9}{On\+Collision}} (\mbox{\hyperlink{classCollisionEvent}{Collision\+Event}} \&\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}})
+\begin{DoxyCompactList}\small\item\em Handles a collision event between entities, resolving collisions involving walls and players. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles collisions between wall entities and player entities. 
+
+This system requires entities with the \doxylink{structTagWallComponent}{Tag\+Wall\+Component}. It listens for collision events and when a player collides with a wall, it adjusts the player\textquotesingle{}s position to prevent overlapping and stops their movement by zeroing velocity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWallCollisionSystem_adb78f66962283cb4b7501549213a0741}\label{classWallCollisionSystem_adb78f66962283cb4b7501549213a0741} 
+\index{WallCollisionSystem@{WallCollisionSystem}!WallCollisionSystem@{WallCollisionSystem}}
+\index{WallCollisionSystem@{WallCollisionSystem}!WallCollisionSystem@{WallCollisionSystem}}
+\doxysubsubsection{\texorpdfstring{WallCollisionSystem()}{WallCollisionSystem()}}
+{\footnotesize\ttfamily Wall\+Collision\+System\+::\+Wall\+Collision\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs \doxylink{classWallCollisionSystem}{Wall\+Collision\+System} and requires \doxylink{structTagWallComponent}{Tag\+Wall\+Component}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWallCollisionSystem_adb78f66962283cb4b7501549213a0741_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWallCollisionSystem_a2ae9adc347fefc19e9a9560e125e97b9}\label{classWallCollisionSystem_a2ae9adc347fefc19e9a9560e125e97b9} 
+\index{WallCollisionSystem@{WallCollisionSystem}!OnCollision@{OnCollision}}
+\index{OnCollision@{OnCollision}!WallCollisionSystem@{WallCollisionSystem}}
+\doxysubsubsection{\texorpdfstring{OnCollision()}{OnCollision()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Wall\+Collision\+System\+::\+On\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCollisionEvent}{Collision\+Event}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handles a collision event between entities, resolving collisions involving walls and players. 
+
+If one entity is a wall and the other a player, adjusts the player\textquotesingle{}s position to avoid overlap and resets the player\textquotesingle{}s velocity. 
+\begin{DoxyParams}{Parameters}
+{\em e} & Reference to the \doxylink{classCollisionEvent}{Collision\+Event} containing involved entities. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWallCollisionSystem_a2ae9adc347fefc19e9a9560e125e97b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWallCollisionSystem_a2ae9adc347fefc19e9a9560e125e97b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWallCollisionSystem_a67f64145fed0777cd43ebe0bd57303f4}\label{classWallCollisionSystem_a67f64145fed0777cd43ebe0bd57303f4} 
+\index{WallCollisionSystem@{WallCollisionSystem}!SubscribeToCollisionEvent@{SubscribeToCollisionEvent}}
+\index{SubscribeToCollisionEvent@{SubscribeToCollisionEvent}!WallCollisionSystem@{WallCollisionSystem}}
+\doxysubsubsection{\texorpdfstring{SubscribeToCollisionEvent()}{SubscribeToCollisionEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Wall\+Collision\+System\+::\+Subscribe\+To\+Collision\+Event (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classEventManager}{Event\+Manager}} $>$ \&}]{event\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subscribes this system to the \doxylink{classCollisionEvent}{Collision\+Event} in the \doxylink{classEventManager}{Event\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Manager} & Unique pointer reference to the \doxylink{classEventManager}{Event\+Manager} to subscribe to. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWallCollisionSystem_a67f64145fed0777cd43ebe0bd57303f4_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{WallCollisionSystem_8hpp}{Wall\+Collision\+System.\+hpp}}\end{DoxyCompactItemize}

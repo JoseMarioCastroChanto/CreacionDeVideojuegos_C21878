@@ -1,0 +1,6 @@
+<map id="DestroyAllEnemies" name="DestroyAllEnemies">
+<area shape="rect" id="Node000001" title="Destroys all enemy entities via the DamageSystem." alt="" coords="5,29,152,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="47,31,40,21,43,11,57,5,79,3,105,6,117,15,113,19,103,11,79,8,58,10,47,15,45,20,51,28"/>
+<area shape="rect" id="Node000002" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="200,29,347,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="152,39,186,39,186,45,152,45"/>
+</map>

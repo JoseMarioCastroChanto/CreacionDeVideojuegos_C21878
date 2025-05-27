@@ -1,0 +1,23 @@
+<map id="SceneLoader::LoadScene" name="SceneLoader::LoadScene">
+<area shape="rect" id="Node000001" title="Loads a full scene from a Lua file path, setting up assets, controls, entities, and music." alt="" coords="5,129,188,155"/>
+<area shape="rect" id="Node000002" href="$classSceneLoader.html#a3e0cb3caf5b8222dc5760f976cb4ac3a" title="Loads button bindings from Lua table into the ControllerManager." alt="" coords="236,5,431,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,127,162,84,197,60,235,40,253,32,255,37,237,44,200,65,166,89,113,131"/>
+<area shape="rect" id="Node000003" href="$classSceneLoader.html#a3363c8209377e4e84cd9d1255875ce96" title="Loads entities from Lua table into the ECS Registry." alt="" coords="237,55,430,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,127,235,89,263,81,264,86,237,94,131,132"/>
+<area shape="rect" id="Node000008" href="$classSceneLoader.html#a0b0aa8e61f64cff33c33f18f60faa2e8" title="Loads font assets from Lua table into the AssetManager." alt="" coords="244,104,423,129"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="188,130,230,125,231,130,188,135"/>
+<area shape="rect" id="Node000009" href="$classSceneLoader.html#aac82644ad9d9282d0e0c1aeab9c9b0bb" title="Loads key bindings from Lua table into the ControllerManager." alt="" coords="246,153,421,179"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="188,149,233,153,232,158,188,154"/>
+<area shape="rect" id="Node000010" href="$classSceneLoader.html#ac51ebe6fba9a6fde4cae950f6726ca44" title="Loads music assets from Lua table into the AssetManager." alt="" coords="242,203,425,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="133,152,237,187,269,197,267,202,235,193,131,157"/>
+<area shape="rect" id="Node000011" href="$classSceneLoader.html#aa0d95d6c0e3b970eaf40b12cebeae2de" title="Loads sprite assets from Lua table into the AssetManager." alt="" coords="239,252,428,277"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="114,153,166,194,201,217,237,237,258,245,256,250,235,242,198,222,163,198,111,157"/>
+<area shape="rect" id="Node000004" href="$classEntity.html#a125342c7309de6be6e518da6bffb7452" title="Adds a component of type TComponent to the entity." alt="" coords="479,55,645,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,65,465,65,465,70,431,70"/>
+<area shape="rect" id="Node000005" href="$classRegistry.html#af83a9dbdfa3690c9fa030a45f815a4ed" title="Adds a component of type TComponent to an entity." alt="" coords="693,55,876,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="646,65,680,65,680,70,646,70"/>
+<area shape="rect" id="Node000006" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="924,29,1064,55"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="876,54,910,49,910,55,876,59"/>
+<area shape="rect" id="Node000007" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="943,79,1045,104"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="876,75,929,81,929,87,876,80"/>
+</map>

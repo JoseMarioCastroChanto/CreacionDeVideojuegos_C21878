@@ -1,0 +1,112 @@
+\doxysection{Damage\+System.\+hpp}
+\hypertarget{DamageSystem_8hpp_source}{}\label{DamageSystem_8hpp_source}\index{src/Systems/DamageSystem.hpp@{src/Systems/DamageSystem.hpp}}
+\mbox{\hyperlink{DamageSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DAMAGESYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DAMAGESYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Components/TagWallComponent.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Components/TagObjectiveComponent.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Components/TagEnemyComponent.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Components/TagProjectileComponent.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Components/TagPlayerComponent.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Components/LifeComponent.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Components/DamageComponent.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../Components/DepthComponent.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../Systems/EntitySpawnerSystem.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../EventManager/EventManager.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../Events/CollisionEvent.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDamageSystem}{DamageSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\ \{}
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classDamageSystem_aa7beb30dc530f19dd3dcef56c2941a3b}{DamageSystem}}()\{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<CircleColliderComponent>}}();}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDamageSystem_a791a630be7d9ec4a6d1d38509460a5ce}{SubscribeToCollisionEvent}}(std::unique\_ptr<EventManager>\&\ eventManager)\{}
+\DoxyCodeLine{00041\ \ \ \ \ eventManager-\/>SubscribeToEvent<\mbox{\hyperlink{classCollisionEvent}{CollisionEvent}},\ \mbox{\hyperlink{classDamageSystem}{DamageSystem}}>(\textcolor{keyword}{this},}
+\DoxyCodeLine{00042\ \ \ \ \ \&\mbox{\hyperlink{classDamageSystem_a5ca0f5cd89b13034d19702ae11d4c323}{DamageSystem::OnCollision}});}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDamageSystem_a5ca0f5cd89b13034d19702ae11d4c323}{OnCollision}}(\mbox{\hyperlink{classCollisionEvent}{CollisionEvent}}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}})\{}
+\DoxyCodeLine{00051\ \ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{}[DamageSystem]\ Colisión\ de\ la\ entidad\ "{}}\ <<\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetId()}
+\DoxyCodeLine{00052\ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ y\ "{}}\ <<\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetId()\ <<\ std::endl;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>()\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>())\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{alife}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>().life\_count;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{blife}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>().life\_count;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{aScale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>().scale.x;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bScale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>().scale.x;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{aMaxScale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>().max\_scale;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bMaxScale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>().max\_scale;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&\ !\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>()\ )\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ ||\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&\ !\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\ )\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{alife}}\ -\/=\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetComponent<\mbox{\hyperlink{structDamageComponent}{DamageComponent}}>().damage\_dealt;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{blife}}\ -\/=\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetComponent<\mbox{\hyperlink{structDamageComponent}{DamageComponent}}>().damage\_dealt;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagObjectiveComponent}{TagObjectiveComponent}}>()}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \&\&\ !\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{blife}}\ -\/=\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.GetComponent<\mbox{\hyperlink{structDamageComponent}{DamageComponent}}>().damage\_dealt;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{alife}}\ -\/=\ 1;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagObjectiveComponent}{TagObjectiveComponent}}>()}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \&\&\ !\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{alife}}\ -\/=\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.GetComponent<\mbox{\hyperlink{structDamageComponent}{DamageComponent}}>().damage\_dealt;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\&\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.HasComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>())\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{blife}}\ -\/=\ 1;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{oneExplosion}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{alife}}\ <=\ 0)\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ scale\ =\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{aScale}}*6)/\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{aMaxScale}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDamageSystem_a3c1f1d25f58344bbeb75fde39c8ddb3a}{CreateExplosion}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a,10,scale);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.a.Kill();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{oneExplosion}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{blife}}\ <=\ 0)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{oneExplosion}})\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ scale\ =\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bScale}}*6)/\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bMaxScale}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDamageSystem_a3c1f1d25f58344bbeb75fde39c8ddb3a}{CreateExplosion}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b,10,scale);\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{e}}.b.Kill();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \}\ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDamageSystem_ada8d68abb364cf909ba45707ecd2f869}{DestroyAllEnemies}}\ ()\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>()\ \&\&\ !\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.HasComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>())\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Scale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>().scale.x;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{MaxScale}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>().max\_scale;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ scale\ =\ (\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Scale}}*6)/\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{MaxScale}};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDamageSystem_a3c1f1d25f58344bbeb75fde39c8ddb3a}{CreateExplosion}}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}},10,scale);\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.Kill();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDamageSystem_a3c1f1d25f58344bbeb75fde39c8ddb3a}{CreateExplosion}}(\mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{num}},\ \textcolor{keywordtype}{double}\ scale)\{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}\ =\ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}}-\/>GetSystem<\mbox{\hyperlink{classEntitySpawnerSystem}{EntitySpawnerSystem}}>().GenerateEntity(}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_ab9ec8204418df1ecb54b9522fc7fac0a}{registry}},\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{num}},\mbox{\hyperlink{classGame_a689dc1143da4a51248eb9feeed5b2aba}{Game::GetInstance}}().\mbox{\hyperlink{classGame_a62b0a47833567f7333f9e2ec95bf2d79}{lua}}}
+\DoxyCodeLine{00130\ \ \ \ \ );}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transformNew}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.GetComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transformNew}}.\mbox{\hyperlink{structTransformComponent_a28bd72ac14736930eb3357a78037a555}{position}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transform}}.position;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transformNew}}.scale.x\ =\ scale;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{transformNew}}.scale.y\ =\ scale;}
+\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

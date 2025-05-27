@@ -1,0 +1,11 @@
+<map id="UISystem::SubscribeToClickEvent" name="UISystem::SubscribeToClickEvent">
+<area shape="rect" id="Node000001" title="Subscribes this system to the ClickEvent in the EventManager." alt="" coords="5,23,208,63"/>
+<area shape="rect" id="Node000002" href="$classUISystem.html#acb417d3dd7c5e3d27544dbb39eb41ac9" title="Handles a ClickEvent by checking if the click position intersects with any UI element." alt="" coords="256,31,436,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,41,242,41,242,46,208,46"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="486,5,686,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,31,472,27,472,33,436,37"/>
+<area shape="rect" id="Node000004" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="484,55,688,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="436,50,471,53,470,58,436,55"/>
+<area shape="rect" id="Node000005" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="736,55,876,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="688,65,722,65,722,70,688,70"/>
+</map>

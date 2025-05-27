@@ -1,0 +1,137 @@
+\doxysection{Script\+System Class Reference}
+\hypertarget{classScriptSystem}{}\label{classScriptSystem}\index{ScriptSystem@{ScriptSystem}}
+
+
+Manages entities with scripts and handles Lua binding and script updates.  
+
+
+
+
+{\ttfamily \#include $<$Script\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Script\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classScriptSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Script\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classScriptSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScriptSystem_a589edef008f3275cb8549824628025a0}{Script\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classScriptSystem}{Script\+System} and requires \doxylink{structScriptComponent}{Script\+Component}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classScriptSystem_a1ec14e2ffb2a02a04fd4e9dcc681502f}{Create\+Lua\+Binding}} (sol\+::state \&lua)
+\begin{DoxyCompactList}\small\item\em Creates the Lua binding for functions and classes accessible from Lua scripts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classScriptSystem_a8be209535e6748a164efe36ac6354489}{Update}} (sol\+::state \&lua)
+\begin{DoxyCompactList}\small\item\em Updates all entities with scripts by calling their Lua update functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages entities with scripts and handles Lua binding and script updates. 
+
+This system requires entities to have a \doxylink{structScriptComponent}{Script\+Component}. It binds C++ functions and classes to Lua scripts and updates the script logic each frame. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classScriptSystem_a589edef008f3275cb8549824628025a0}\label{classScriptSystem_a589edef008f3275cb8549824628025a0} 
+\index{ScriptSystem@{ScriptSystem}!ScriptSystem@{ScriptSystem}}
+\index{ScriptSystem@{ScriptSystem}!ScriptSystem@{ScriptSystem}}
+\doxysubsubsection{\texorpdfstring{ScriptSystem()}{ScriptSystem()}}
+{\footnotesize\ttfamily Script\+System\+::\+Script\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \doxylink{classScriptSystem}{Script\+System} and requires \doxylink{structScriptComponent}{Script\+Component}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScriptSystem_a589edef008f3275cb8549824628025a0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classScriptSystem_a1ec14e2ffb2a02a04fd4e9dcc681502f}\label{classScriptSystem_a1ec14e2ffb2a02a04fd4e9dcc681502f} 
+\index{ScriptSystem@{ScriptSystem}!CreateLuaBinding@{CreateLuaBinding}}
+\index{CreateLuaBinding@{CreateLuaBinding}!ScriptSystem@{ScriptSystem}}
+\doxysubsubsection{\texorpdfstring{CreateLuaBinding()}{CreateLuaBinding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Script\+System\+::\+Create\+Lua\+Binding (\begin{DoxyParamCaption}\item[{sol\+::state \&}]{lua }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates the Lua binding for functions and classes accessible from Lua scripts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lua} & Reference to the Lua state to bind functions and classes. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScriptSystem_a1ec14e2ffb2a02a04fd4e9dcc681502f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classScriptSystem_a8be209535e6748a164efe36ac6354489}\label{classScriptSystem_a8be209535e6748a164efe36ac6354489} 
+\index{ScriptSystem@{ScriptSystem}!Update@{Update}}
+\index{Update@{Update}!ScriptSystem@{ScriptSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Script\+System\+::\+Update (\begin{DoxyParamCaption}\item[{sol\+::state \&}]{lua }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates all entities with scripts by calling their Lua update functions. 
+
+Sets the Lua global variable "{}this"{} to the current entity before calling the update function. 
+\begin{DoxyParams}{Parameters}
+{\em lua} & Reference to the Lua state used to run scripts. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScriptSystem_a8be209535e6748a164efe36ac6354489_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{ScriptSystem_8hpp}{Script\+System.\+hpp}}\end{DoxyCompactItemize}

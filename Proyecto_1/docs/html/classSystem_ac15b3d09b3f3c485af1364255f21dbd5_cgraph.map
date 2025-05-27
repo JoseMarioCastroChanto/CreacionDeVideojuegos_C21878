@@ -1,0 +1,5 @@
+<map id="System::RequireComponent" name="System::RequireComponent">
+<area shape="rect" id="Node000001" title="Adds a required component type to the system&#39;s signature." alt="" coords="5,5,209,31"/>
+<area shape="rect" id="Node000002" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="257,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,15,243,15,243,21,210,21"/>
+</map>

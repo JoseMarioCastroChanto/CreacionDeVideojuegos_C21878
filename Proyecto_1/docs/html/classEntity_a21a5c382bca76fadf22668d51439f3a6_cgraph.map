@@ -1,0 +1,9 @@
+<map id="Entity::HasComponent" name="Entity::HasComponent">
+<area shape="rect" id="Node000001" title="Checks if the entity has a component of type TComponent." alt="" coords="5,31,172,56"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#a546f2f77b638e76348213fb05ab0c125" title="Checks if an entity has a component of type TComponent." alt="" coords="220,31,403,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,41,207,41,207,46,173,46"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="451,5,591,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,30,436,25,437,31,403,35"/>
+<area shape="rect" id="Node000004" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="469,55,572,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="403,51,456,57,455,63,402,56"/>
+</map>

@@ -1,0 +1,35 @@
+\doxysection{Animation\+System.\+hpp}
+\hypertarget{AnimationSystem_8hpp_source}{}\label{AnimationSystem_8hpp_source}\index{src/Systems/AnimationSystem.hpp@{src/Systems/AnimationSystem.hpp}}
+\mbox{\hyperlink{AnimationSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANIMATIONSYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANIMATIONSYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Components/AnimationComponent.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Components/SpriteComponent.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAnimationSystem}{AnimationSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \mbox{\hyperlink{classAnimationSystem_a4571e901f8aa557b1435aa2ebd9ecf48}{AnimationSystem}}()\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<AnimationComponent>}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<SpriteComponent>}}();}
+\DoxyCodeLine{00026\ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAnimationSystem_a028f5b6784b761594a6181bcf2ee36c0}{Update}}()\{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structAnimationComponent}{AnimationComponent}}>();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{sprite}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structSpriteComponent}{SpriteComponent}}>();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}.currentFrame\ =\ ((\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}()\ -\/\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}.startTime)\ *\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}.frameSpeedRate/1000)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \%\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}.numFrames;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{sprite}}.\mbox{\hyperlink{structSpriteComponent_acd23cc7dacc7291e2412b5bb2937feff}{srcRect}}.x\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{animation}}.currentFrame\ *\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{sprite}}.width;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \}}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

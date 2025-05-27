@@ -1,0 +1,5 @@
+<map id="DamageSystem::OnCollision" name="DamageSystem::OnCollision">
+<area shape="rect" id="Node000001" title="Called when a CollisionEvent is emitted. Processes damage between entities involved in the collision." alt="" coords="264,13,472,38"/>
+<area shape="rect" id="Node000002" href="$classDamageSystem.html#a791a630be7d9ec4a6d1d38509460a5ce" title="Subscribes the DamageSystem to CollisionEvent notifications from the EventManager." alt="" coords="5,5,216,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,28,216,28,216,23,250,23"/>
+</map>

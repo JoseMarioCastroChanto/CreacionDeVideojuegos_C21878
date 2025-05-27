@@ -1,0 +1,64 @@
+\doxysection{Script\+System.\+hpp}
+\hypertarget{ScriptSystem_8hpp_source}{}\label{ScriptSystem_8hpp_source}\index{src/Systems/ScriptSystem.hpp@{src/Systems/ScriptSystem.hpp}}
+\mbox{\hyperlink{ScriptSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCRIPTSYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCRIPTSYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sol/sol.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Binding/LuaBinding.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Components/ScriptComponent.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScriptSystem}{ScriptSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{classScriptSystem_a589edef008f3275cb8549824628025a0}{ScriptSystem}}()\{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<ScriptComponent>}}();}
+\DoxyCodeLine{00025\ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScriptSystem_a1ec14e2ffb2a02a04fd4e9dcc681502f}{CreateLuaBinding}}(sol::state\&\ lua)\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Classes}}
+\DoxyCodeLine{00032\ \ \ \ \ lua.new\_usertype<\mbox{\hyperlink{classEntity}{Entity}}>(\textcolor{stringliteral}{"{}entity"{}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Functions}}
+\DoxyCodeLine{00035\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}is\_action\_activated"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c}{IsActionActivated}});}
+\DoxyCodeLine{00036\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_velocity"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d}{SetVelocity}});}
+\DoxyCodeLine{00037\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_scale"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2}{GetScale}});}
+\DoxyCodeLine{00038\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_scale"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37}{SetScale}});}
+\DoxyCodeLine{00039\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_position"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060}{SetPosition}});}
+\DoxyCodeLine{00040\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_positionX"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38}{GetPositionX}});}
+\DoxyCodeLine{00041\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_positionY"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330}{GetPositionY}});}
+\DoxyCodeLine{00042\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_srcRect"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0}{SetSrcRect}});}
+\DoxyCodeLine{00043\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_numFrames"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29}{SetNumFrames}});}
+\DoxyCodeLine{00044\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}go\_to\_scene"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a}{GoToScene}});}
+\DoxyCodeLine{00045\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}create\_dynamic\_entity"{}},\mbox{\hyperlink{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408}{CreateDynamicEntity}});}
+\DoxyCodeLine{00046\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_velocity"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b}{GetVelocity}});}
+\DoxyCodeLine{00047\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_delta\_time"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2}{GetDeltaTime}});}
+\DoxyCodeLine{00048\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_time"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10}{GetTime}});}
+\DoxyCodeLine{00049\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_defeat"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27}{GetDefeat}});}
+\DoxyCodeLine{00050\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_timer"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e}{SetTimer}});}
+\DoxyCodeLine{00051\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}set\_text"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260}{SetText}});}
+\DoxyCodeLine{00052\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}search\_objectiveX"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062}{SearchObjectiveX}});}
+\DoxyCodeLine{00053\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}search\_objectiveY"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a}{SearchObjectiveY}});}
+\DoxyCodeLine{00054\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}search\_objectiveScale"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04}{SearchObjectiveScale}});}
+\DoxyCodeLine{00055\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}search\_objectiveDepth"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41}{SearchObjectiveDepth}});}
+\DoxyCodeLine{00056\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}get\_depth"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2}{GetDepth}});}
+\DoxyCodeLine{00057\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}kill"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee}{Kill}});}
+\DoxyCodeLine{00058\ \ \ \ \ lua.set\_function(\textcolor{stringliteral}{"{}destroy\_all\_enemies"{}},\ \mbox{\hyperlink{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d}{DestroyAllEnemies}});}
+\DoxyCodeLine{00059\ \ \ }
+\DoxyCodeLine{00060\ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScriptSystem_a8be209535e6748a164efe36ac6354489}{Update}}(sol::state\&\ lua)\{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ :\ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{GetSystemEntities}}())\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}.GetComponent<\mbox{\hyperlink{structScriptComponent}{ScriptComponent}}>();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}.update\ !=\ sol::lua\_nil)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ lua[\textcolor{stringliteral}{"{}this"{}}]\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script}}.\mbox{\hyperlink{structScriptComponent_a58f093616a61d9c23e4d5cf7d58a1cb8}{update}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

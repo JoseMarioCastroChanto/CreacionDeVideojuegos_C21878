@@ -1,0 +1,5 @@
+<map id="SearchObjectiveDepth" name="SearchObjectiveDepth">
+<area shape="rect" id="Node000001" title="Searches for the nearest target entity and returns its depth." alt="" coords="5,5,172,31"/>
+<area shape="rect" id="Node000002" href="$classGame.html#a689dc1143da4a51248eb9feeed5b2aba" title="Provides global access to the single Game instance." alt="" coords="220,5,367,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,15,206,15,206,21,172,21"/>
+</map>

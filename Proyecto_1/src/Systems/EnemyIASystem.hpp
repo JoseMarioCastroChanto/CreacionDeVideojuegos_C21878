@@ -10,13 +10,30 @@
 #include "../ECS/ECS.hpp"
 #include <glm/glm.hpp>
 
+/**
+ * @class EnemyIASystem
+ * @brief System responsible for enemy AI logic, specifically searching for closest objectives.
+ *
+ * This system provides functionality to find the closest objective to an enemy entity,
+ * optionally including or excluding player entities.
+ */
 class EnemyIASystem : public System{
     public:
+    /**
+     * @brief Constructor requiring the TransformComponent.
+     */
      EnemyIASystem(){
         RequireComponent<TransformComponent>();
 
      }
 
+    /**
+     * @brief Finds the closest objective's TransformComponent relative to the enemy.
+     * 
+     * @param enemy The enemy entity performing the search.
+     * @param isPlayerIncl Whether to include player entities as objectives.
+     * @return TransformComponent of the closest objective found.
+     */
 TransformComponent SearchClosestObjective(Entity enemy, bool isPlayerIncl) {
     const auto& enemyTransform = enemy.GetComponent<TransformComponent>();
     glm::vec2 enemyPos = enemyTransform.position;
@@ -49,6 +66,13 @@ TransformComponent SearchClosestObjective(Entity enemy, bool isPlayerIncl) {
     return closestTransform; 
 }
 
+    /**
+     * @brief Finds the closest objective's DepthComponent relative to the enemy.
+     * 
+     * @param enemy The enemy entity performing the search.
+     * @param isPlayerIncl Whether to include player entities as objectives.
+     * @return DepthComponent of the closest objective found.
+     */
 DepthComponent SearchClosestObjectiveDepth(Entity enemy, bool isPlayerIncl) {
     const auto& enemyTransform = enemy.GetComponent<TransformComponent>();
     glm::vec2 enemyPos = enemyTransform.position;

@@ -1,0 +1,147 @@
+\doxysection{Enemy\+IASystem Class Reference}
+\hypertarget{classEnemyIASystem}{}\label{classEnemyIASystem}\index{EnemyIASystem@{EnemyIASystem}}
+
+
+\doxylink{classSystem}{System} responsible for enemy AI logic, specifically searching for closest objectives.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+IASystem.\+hpp$>$}
+
+
+
+Inheritance diagram for Enemy\+IASystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classEnemyIASystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy\+IASystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classEnemyIASystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnemyIASystem_a02819233bdec21690311c60e34cf53b9}{Enemy\+IASystem}} ()
+\begin{DoxyCompactList}\small\item\em Constructor requiring the \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \mbox{\hyperlink{classEnemyIASystem_aab93eb6198490f15d9fcc2862457336c}{Search\+Closest\+Objective}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}}, \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{is\+Player\+Incl}})
+\begin{DoxyCompactList}\small\item\em Finds the closest objective\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component} relative to the enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structDepthComponent}{Depth\+Component}} \mbox{\hyperlink{classEnemyIASystem_a7d8c2bc40192137fede90facc0697c26}{Search\+Closest\+Objective\+Depth}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{enemy}}, \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{is\+Player\+Incl}})
+\begin{DoxyCompactList}\small\item\em Finds the closest objective\textquotesingle{}s \doxylink{structDepthComponent}{Depth\+Component} relative to the enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSystem}{System} responsible for enemy AI logic, specifically searching for closest objectives. 
+
+This system provides functionality to find the closest objective to an enemy entity, optionally including or excluding player entities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEnemyIASystem_a02819233bdec21690311c60e34cf53b9}\label{classEnemyIASystem_a02819233bdec21690311c60e34cf53b9} 
+\index{EnemyIASystem@{EnemyIASystem}!EnemyIASystem@{EnemyIASystem}}
+\index{EnemyIASystem@{EnemyIASystem}!EnemyIASystem@{EnemyIASystem}}
+\doxysubsubsection{\texorpdfstring{EnemyIASystem()}{EnemyIASystem()}}
+{\footnotesize\ttfamily Enemy\+IASystem\+::\+Enemy\+IASystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor requiring the \doxylink{structTransformComponent}{Transform\+Component}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEnemyIASystem_a02819233bdec21690311c60e34cf53b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEnemyIASystem_aab93eb6198490f15d9fcc2862457336c}\label{classEnemyIASystem_aab93eb6198490f15d9fcc2862457336c} 
+\index{EnemyIASystem@{EnemyIASystem}!SearchClosestObjective@{SearchClosestObjective}}
+\index{SearchClosestObjective@{SearchClosestObjective}!EnemyIASystem@{EnemyIASystem}}
+\doxysubsubsection{\texorpdfstring{SearchClosestObjective()}{SearchClosestObjective()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTransformComponent}{Transform\+Component}} Enemy\+IASystem\+::\+Search\+Closest\+Objective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{enemy,  }\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}}}]{is\+Player\+Incl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the closest objective\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component} relative to the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The enemy entity performing the search. \\
+\hline
+{\em is\+Player\+Incl} & Whether to include player entities as objectives. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structTransformComponent}{Transform\+Component} of the closest objective found. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEnemyIASystem_aab93eb6198490f15d9fcc2862457336c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEnemyIASystem_a7d8c2bc40192137fede90facc0697c26}\label{classEnemyIASystem_a7d8c2bc40192137fede90facc0697c26} 
+\index{EnemyIASystem@{EnemyIASystem}!SearchClosestObjectiveDepth@{SearchClosestObjectiveDepth}}
+\index{SearchClosestObjectiveDepth@{SearchClosestObjectiveDepth}!EnemyIASystem@{EnemyIASystem}}
+\doxysubsubsection{\texorpdfstring{SearchClosestObjectiveDepth()}{SearchClosestObjectiveDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structDepthComponent}{Depth\+Component}} Enemy\+IASystem\+::\+Search\+Closest\+Objective\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{enemy,  }\item[{\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}}}]{is\+Player\+Incl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the closest objective\textquotesingle{}s \doxylink{structDepthComponent}{Depth\+Component} relative to the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The enemy entity performing the search. \\
+\hline
+{\em is\+Player\+Incl} & Whether to include player entities as objectives. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structDepthComponent}{Depth\+Component} of the closest objective found. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEnemyIASystem_a7d8c2bc40192137fede90facc0697c26_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{EnemyIASystem_8hpp}{Enemy\+IASystem.\+hpp}}\end{DoxyCompactItemize}

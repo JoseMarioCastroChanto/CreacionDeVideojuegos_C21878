@@ -1,0 +1,55 @@
+\doxysection{Class List}
+Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
+\item\contentsline{section}{\mbox{\hyperlink{structAnimationComponent}{Animation\+Component}} \\*Holds data for sprite-\/based animations, including frame count, speed, looping, and timing }{\pageref{structAnimationComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAnimationSystem}{Animation\+System}} \\*\doxylink{classSystem}{System} responsible for updating the animation frames of entities }{\pageref{classAnimationSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAssetManager}{Asset\+Manager}} \\*Manages textures, fonts, and music assets using SDL2 }{\pageref{classAssetManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structCircleColliderComponent}{Circle\+Collider\+Component}} \\*\doxylink{classComponent}{Component} that defines the properties of a circular collider }{\pageref{structCircleColliderComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCleanSystem}{Clean\+System}} \\*\doxylink{classSystem}{System} responsible for removing entities that move outside defined bounds }{\pageref{classCleanSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structClickableComponent}{Clickable\+Component}} \\*\doxylink{classComponent}{Component} that indicates if an entity has been clicked }{\pageref{structClickableComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classClickEvent}{Click\+Event}} \\*Represents a mouse click event }{\pageref{classClickEvent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCollisionEvent}{Collision\+Event}} \\*\doxylink{classEvent}{Event} triggered when two entities collide }{\pageref{classCollisionEvent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCollisionSystem}{Collision\+System}} \\*\doxylink{classSystem}{System} responsible for detecting collisions between entities and emitting collision events }{\pageref{classCollisionSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classComponent}{Component$<$ TComponent $>$}} \\*Template to generate unique component IDs per component type }{\pageref{classComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classControllerManager}{Controller\+Manager}} \\*Handles keyboard and mouse input mapping and state tracking }{\pageref{classControllerManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDamageComponent}{Damage\+Component}} \\*\doxylink{classComponent}{Component} that holds the amount of damage dealt }{\pageref{structDamageComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDamageSystem}{Damage\+System}} \\*Handles damage application between entities when collisions occur }{\pageref{classDamageSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDefeatSystem}{Defeat\+System}} \\*Checks if any objective entity is defeated (life \texorpdfstring{$<$}{<}= 0) }{\pageref{classDefeatSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDepthComponent}{Depth\+Component}} \\*\doxylink{classComponent}{Component} that manages depth-\/related scaling parameters for an entity }{\pageref{structDepthComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDepthSystem}{Depth\+System}} \\*\doxylink{classSystem}{System} to handle the scaling of entities based on their vertical velocity, simulating depth }{\pageref{classDepthSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEnemyIASystem}{Enemy\+IASystem}} \\*\doxylink{classSystem}{System} responsible for enemy AI logic, specifically searching for closest objectives }{\pageref{classEnemyIASystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEntity}{Entity}} \\*Represents an entity in the ECS, identified by a unique ID }{\pageref{classEntity}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structEntitySpawnerComponent}{Entity\+Spawner\+Component}} \\*\doxylink{classComponent}{Component} that marks an entity as a player or non-\/player spawner }{\pageref{structEntitySpawnerComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEntitySpawnerSystem}{Entity\+Spawner\+System}} \\*Handles the spawning of entities based on Lua scene configuration }{\pageref{classEntitySpawnerSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEvent}{Event}} \\*Base class for events in the system }{\pageref{classEvent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEventCallback}{Event\+Callback$<$ TOwner, TEvent $>$}} \\*Template event callback handler connecting an owner and event type }{\pageref{classEventCallback}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEventManager}{Event\+Manager}} \\*Manages event subscription and emission }{\pageref{classEventManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGame}{Game}} \\*Core class that manages the entire game lifecycle }{\pageref{classGame}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHealthBarSystem}{Health\+Bar\+System}} \\*\doxylink{classSystem}{System} responsible for rendering health bars for entities with \doxylink{structLifeComponent}{Life\+Component} and \doxylink{structTagObjectiveComponent}{Tag\+Objective\+Component} }{\pageref{classHealthBarSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structIComponent}{IComponent}} \\*Base class for all components to generate unique IDs }{\pageref{structIComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIEventCallback}{IEvent\+Callback}} \\*Abstract interface for event callback handlers }{\pageref{classIEventCallback}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIPool}{IPool}} \\*Interface for component pools }{\pageref{classIPool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structLifeComponent}{Life\+Component}} \\*Represents the current and maximum life of an entity }{\pageref{structLifeComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMovementSystem}{Movement\+System}} \\*\doxylink{classSystem}{System} responsible for updating entity positions based on their velocity }{\pageref{classMovementSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPolygonColliderComponent}{Polygon\+Collider\+Component}} \\*Stores the vertices that define a polygon collider shape }{\pageref{structPolygonColliderComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPool}{Pool$<$ TComponent $>$}} \\*Template class managing a pool of components of type TComponent }{\pageref{classPool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRegistry}{Registry}} \\*Manages entities, components, and systems in the ECS }{\pageref{classRegistry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRenderSystem}{Render\+System}} \\*\doxylink{classSystem}{System} responsible for rendering entities with sprites on the screen }{\pageref{classRenderSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRenderTextSystem}{Render\+Text\+System}} \\*\doxylink{classSystem}{System} responsible for rendering text components in the ECS }{\pageref{classRenderTextSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structRigidBodyComponent}{Rigid\+Body\+Component}} \\*Stores the velocity vector of an entity\textquotesingle{}s rigid body }{\pageref{structRigidBodyComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSceneLoader}{Scene\+Loader}} \\*Loads a game scene from a Lua script }{\pageref{classSceneLoader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \\*Manages scenes and handles scene transitions }{\pageref{classSceneManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSceneTimeSystem}{Scene\+Time\+System}} \\*Manages scene timing including pause, resume, delta time, and total elapsed time }{\pageref{classSceneTimeSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structScriptComponent}{Script\+Component}} \\*Holds Lua functions for updating and click handling scripts }{\pageref{structScriptComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScriptSystem}{Script\+System}} \\*Manages entities with scripts and handles Lua binding and script updates }{\pageref{classScriptSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSpriteComponent}{Sprite\+Component}} \\*Holds data for rendering a sprite, including texture ID and source rectangle }{\pageref{structSpriteComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSystem}{System}} \\*Base class for systems that operate on entities with specific components }{\pageref{classSystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTagEnemyComponent}{Tag\+Enemy\+Component}} }{\pageref{structTagEnemyComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTagObjectiveComponent}{Tag\+Objective\+Component}} }{\pageref{structTagObjectiveComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTagPlayerComponent}{Tag\+Player\+Component}} }{\pageref{structTagPlayerComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTagProjectileComponent}{Tag\+Projectile\+Component}} }{\pageref{structTagProjectileComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTagWallComponent}{Tag\+Wall\+Component}} }{\pageref{structTagWallComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTextComponent}{Text\+Component}} \\*\doxylink{classComponent}{Component} to handle text rendering attributes }{\pageref{structTextComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \\*\doxylink{classComponent}{Component} to represent the transform of an entity }{\pageref{structTransformComponent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUISystem}{UISystem}} \\*Handles UI elements that can be clicked and processes click events }{\pageref{classUISystem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWallCollisionSystem}{Wall\+Collision\+System}} \\*Handles collisions between wall entities and player entities }{\pageref{classWallCollisionSystem}}{}
+\end{DoxyCompactList}

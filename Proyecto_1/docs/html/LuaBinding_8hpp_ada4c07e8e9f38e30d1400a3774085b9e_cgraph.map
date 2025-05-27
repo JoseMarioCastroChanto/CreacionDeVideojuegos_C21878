@@ -1,0 +1,11 @@
+<map id="SetTimer" name="SetTimer">
+<area shape="rect" id="Node000001" title="Sets a timer text value in a TextComponent from the given time." alt="" coords="5,31,87,56"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="135,31,300,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,41,121,41,121,46,87,46"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="348,31,529,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,41,334,41,334,46,300,46"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="577,5,717,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,30,563,25,564,31,530,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="596,55,699,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="530,51,582,57,582,63,529,56"/>
+</map>

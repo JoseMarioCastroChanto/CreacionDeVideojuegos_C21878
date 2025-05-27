@@ -1,7 +1,3 @@
-
-
-
-
 local tolerance = 700
 local lastDir = "right"
 local coolDown = 0

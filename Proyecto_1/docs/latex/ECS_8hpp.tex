@@ -1,0 +1,77 @@
+\doxysection{src/\+ECS/\+ECS.hpp File Reference}
+\hypertarget{ECS_8hpp}{}\label{ECS_8hpp}\index{src/ECS/ECS.hpp@{src/ECS/ECS.hpp}}
+{\ttfamily \#include $<$bitset$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$typeindex$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include "{}../\+Utils/\+Pool.\+hpp"{}}\newline
+Include dependency graph for ECS.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ECS_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ECS_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIComponent}{IComponent}}
+\begin{DoxyCompactList}\small\item\em Base class for all components to generate unique IDs. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classComponent}{Component$<$ TComponent $>$}}
+\begin{DoxyCompactList}\small\item\em Template to generate unique component IDs per component type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEntity}{Entity}}
+\begin{DoxyCompactList}\small\item\em Represents an entity in the ECS, identified by a unique ID. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSystem}{System}}
+\begin{DoxyCompactList}\small\item\em Base class for systems that operate on entities with specific components. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRegistry}{Registry}}
+\begin{DoxyCompactList}\small\item\em Manages entities, components, and systems in the ECS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::bitset$<$ \mbox{\hyperlink{ECS_8hpp_a4dbe45db6b096c339774f9d77206224c}{MAX\+\_\+\+COMPONENTS}} $>$ \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}}
+\begin{DoxyCompactList}\small\item\em Signature type used to represent the set of components an entity has. Uses a bitset of MAX\+\_\+\+COMPONENTS size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{ECS_8hpp_a4dbe45db6b096c339774f9d77206224c}{MAX\+\_\+\+COMPONENTS}} = 64
+\begin{DoxyCompactList}\small\item\em Maximum number of components supported by the ECS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}\label{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7} 
+\index{ECS.hpp@{ECS.hpp}!Signature@{Signature}}
+\index{Signature@{Signature}!ECS.hpp@{ECS.hpp}}
+\doxysubsubsection{\texorpdfstring{Signature}{Signature}}
+{\footnotesize\ttfamily typedef std\+::bitset$<$\mbox{\hyperlink{ECS_8hpp_a4dbe45db6b096c339774f9d77206224c}{MAX\+\_\+\+COMPONENTS}}$>$ \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}}}
+
+
+
+Signature type used to represent the set of components an entity has. Uses a bitset of MAX\+\_\+\+COMPONENTS size. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ECS_8hpp_a4dbe45db6b096c339774f9d77206224c}\label{ECS_8hpp_a4dbe45db6b096c339774f9d77206224c} 
+\index{ECS.hpp@{ECS.hpp}!MAX\_COMPONENTS@{MAX\_COMPONENTS}}
+\index{MAX\_COMPONENTS@{MAX\_COMPONENTS}!ECS.hpp@{ECS.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_COMPONENTS}{MAX\_COMPONENTS}}
+{\footnotesize\ttfamily const unsigned int MAX\+\_\+\+COMPONENTS = 64}
+
+
+
+Maximum number of components supported by the ECS. 
+

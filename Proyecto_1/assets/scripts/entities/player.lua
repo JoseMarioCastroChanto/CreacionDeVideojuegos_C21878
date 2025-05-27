@@ -28,7 +28,7 @@ function update()
     cooldownA = cooldownA + get_delta_time()
     cooldownB = cooldownB + get_delta_time()
 
-    -- Inputs y detección de dirección
+   
     if is_action_activated("up") then
         vel_y = vel_y - 1
         is_pressed = true
@@ -53,8 +53,6 @@ function update()
         is_pressed = true
     end
 
-    -- considerar detener al personaje
-    -- considerar orden inverso de teclas
     local current_k_state = is_action_activated("k")
     if cooldownA>= 500 and current_k_state and not last_k_state and (is_action_activated("right") 
     or is_action_activated("left") )then
@@ -80,14 +78,12 @@ function update()
     end
     last_l_state = current_l_state
 
-    -- Corrección de velocidad
     if vel_y ~= 0 then
         vel_x, vel_y = vel_x * fixed_player_velocity, vel_y * fixed_player_velocity
     else
         vel_x, vel_y = vel_x * player_velocity * (current_scale/4), vel_y * player_velocity
     end
 
-    -- Aplicar animación según dirección
     if is_pressed then
         local anim = animations[current_direction]
         set_srcRect(this, anim.width, anim.height, anim.x, anim.y)

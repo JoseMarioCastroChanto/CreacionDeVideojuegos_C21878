@@ -1,0 +1,906 @@
+\doxysection{src/\+Binding/\+Lua\+Binding.hpp File Reference}
+\hypertarget{LuaBinding_8hpp}{}\label{LuaBinding_8hpp}\index{src/Binding/LuaBinding.hpp@{src/Binding/LuaBinding.hpp}}
+
+
+Contains Lua bindings for interacting with ECS components and systems.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include "{}../\+Components/\+Rigid\+Body\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Components/\+Transform\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Components/\+Animation\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Components/\+Sprite\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Systems/\+Entity\+Spawner\+System.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Systems/\+Scene\+Time\+System.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Systems/\+Defeat\+System.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Systems/\+Enemy\+IASystem.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Systems/\+Damage\+System.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+ECS/\+ECS.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Game/\+Game.\+hpp"{}}\newline
+Include dependency graph for Lua\+Binding.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{LuaBinding_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c}{Is\+Action\+Activated}} (const std\+::string \&action)
+\begin{DoxyCompactList}\small\item\em Checks if a specific action is currently activated in the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d}{Set\+Velocity}} (\mbox{\hyperlink{classEntity}{Entity}} entity, float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the velocity of an entity\textquotesingle{}s \doxylink{structRigidBodyComponent}{Rigid\+Body\+Component}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b}{Get\+Velocity}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Gets the horizontal velocity (x) of an entity\textquotesingle{}s \doxylink{structRigidBodyComponent}{Rigid\+Body\+Component}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2}{Get\+Scale}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Gets the horizontal scale of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37}{Set\+Scale}} (\mbox{\hyperlink{classEntity}{Entity}} entity, float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the scale of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060}{Set\+Position}} (\mbox{\hyperlink{classEntity}{Entity}} entity, float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38}{Get\+PositionX}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Gets the x position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330}{Get\+PositionY}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Gets the y position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2}{Get\+Depth}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Gets the max depth scale from an entity\textquotesingle{}s \doxylink{structDepthComponent}{Depth\+Component}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0}{Set\+Src\+Rect}} (\mbox{\hyperlink{classEntity}{Entity}} entity, int width=0, int height=0, int src\+RectX=0, int src\+RectY=0)
+\begin{DoxyCompactList}\small\item\em Sets the source rectangle for the \doxylink{structSpriteComponent}{Sprite\+Component} of an entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29}{Set\+Num\+Frames}} (\mbox{\hyperlink{classEntity}{Entity}} entity, int num\+Frames)
+\begin{DoxyCompactList}\small\item\em Sets the number of frames for the \doxylink{structAnimationComponent}{Animation\+Component} of an entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408}{Create\+Dynamic\+Entity}} (\mbox{\hyperlink{classEntity}{Entity}} entity, double dir, int num, double scale)
+\begin{DoxyCompactList}\small\item\em Creates a new entity using the \doxylink{classEntitySpawnerSystem}{Entity\+Spawner\+System} and initializes its position and velocity. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2}{Get\+Delta\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the delta time of the current scene from \doxylink{classSceneTimeSystem}{Scene\+Time\+System}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10}{Get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total scene time from \doxylink{classSceneTimeSystem}{Scene\+Time\+System}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e}{Set\+Timer}} (\mbox{\hyperlink{classEntity}{Entity}} entity, int new\+Time)
+\begin{DoxyCompactList}\small\item\em Sets a timer text value in a \doxylink{structTextComponent}{Text\+Component} from the given time. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27}{Get\+Defeat}} ()
+\begin{DoxyCompactList}\small\item\em Checks whether the defeat condition has been triggered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260}{Set\+Text}} (\mbox{\hyperlink{classEntity}{Entity}} entity, int new\+Text)
+\begin{DoxyCompactList}\small\item\em Sets the text of a \doxylink{structTextComponent}{Text\+Component} using an integer value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a}{Go\+To\+Scene}} (const std\+::string \&scene\+Name)
+\begin{DoxyCompactList}\small\item\em Switches to a different scene by name. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062}{Search\+ObjectiveX}} (\mbox{\hyperlink{classEntity}{Entity}} entity, bool player)
+\begin{DoxyCompactList}\small\item\em Searches for the nearest target entity and returns its X position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a}{Search\+ObjectiveY}} (\mbox{\hyperlink{classEntity}{Entity}} entity, bool player)
+\begin{DoxyCompactList}\small\item\em Searches for the nearest target entity and returns its Y position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04}{Search\+Objective\+Scale}} (\mbox{\hyperlink{classEntity}{Entity}} entity, bool player)
+\begin{DoxyCompactList}\small\item\em Searches for the nearest target entity and returns its scale. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41}{Search\+Objective\+Depth}} (\mbox{\hyperlink{classEntity}{Entity}} entity, bool player)
+\begin{DoxyCompactList}\small\item\em Searches for the nearest target entity and returns its depth. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d}{Destroy\+All\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em Destroys all enemy entities via the \doxylink{classDamageSystem}{Damage\+System}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee}{Kill}} (\mbox{\hyperlink{classEntity}{Entity}} entity)
+\begin{DoxyCompactList}\small\item\em Marks an entity as killed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains Lua bindings for interacting with ECS components and systems. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408}\label{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!CreateDynamicEntity@{CreateDynamicEntity}}
+\index{CreateDynamicEntity@{CreateDynamicEntity}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{CreateDynamicEntity()}{CreateDynamicEntity()}}
+{\footnotesize\ttfamily void Create\+Dynamic\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{double}]{dir,  }\item[{int}]{num,  }\item[{double}]{scale }\end{DoxyParamCaption})}
+
+
+
+Creates a new entity using the \doxylink{classEntitySpawnerSystem}{Entity\+Spawner\+System} and initializes its position and velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The source entity. \\
+\hline
+{\em dir} & Direction multiplier for velocity. \\
+\hline
+{\em num} & Identifier for the entity type. \\
+\hline
+{\em scale} & Scale to apply to the new entity. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aa544a1463e32213e5a296393c1de9408_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d}\label{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!DestroyAllEnemies@{DestroyAllEnemies}}
+\index{DestroyAllEnemies@{DestroyAllEnemies}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{DestroyAllEnemies()}{DestroyAllEnemies()}}
+{\footnotesize\ttfamily void Destroy\+All\+Enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys all enemy entities via the \doxylink{classDamageSystem}{Damage\+System}. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a851d237493cab911c07cdb287fb2b00d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27}\label{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetDefeat@{GetDefeat}}
+\index{GetDefeat@{GetDefeat}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetDefeat()}{GetDefeat()}}
+{\footnotesize\ttfamily bool Get\+Defeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks whether the defeat condition has been triggered. 
+
+\begin{DoxyReturn}{Returns}
+True if defeat is active, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ae5bfae521a3e593330580756f78aaf27_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2}\label{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetDeltaTime@{GetDeltaTime}}
+\index{GetDeltaTime@{GetDeltaTime}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetDeltaTime()}{GetDeltaTime()}}
+{\footnotesize\ttfamily int Get\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the delta time of the current scene from \doxylink{classSceneTimeSystem}{Scene\+Time\+System}. 
+
+\begin{DoxyReturn}{Returns}
+Delta time in milliseconds. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ab51adbf2056fc342ad4fcdd8f03dace2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2}\label{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetDepth@{GetDepth}}
+\index{GetDepth@{GetDepth}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetDepth()}{GetDepth()}}
+{\footnotesize\ttfamily double Get\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Gets the max depth scale from an entity\textquotesingle{}s \doxylink{structDepthComponent}{Depth\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The max depth scale. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a68c3e4bc01b60232a207a7550ded1ea2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38}\label{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetPositionX@{GetPositionX}}
+\index{GetPositionX@{GetPositionX}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetPositionX()}{GetPositionX()}}
+{\footnotesize\ttfamily float Get\+PositionX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Gets the x position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The x position. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a31f8b0573ff3de875f4b1ca36c95ae38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330}\label{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetPositionY@{GetPositionY}}
+\index{GetPositionY@{GetPositionY}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetPositionY()}{GetPositionY()}}
+{\footnotesize\ttfamily float Get\+PositionY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Gets the y position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The y position. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aae3c8151b52e60815b490a4f63aa2330_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2}\label{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily float Get\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Gets the horizontal scale of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scale on the x-\/axis.
+\end{DoxyReturn}
+Gets the horizontal scale of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scale on the x-\/axis. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{LuaBinding_8hpp_a743eda6ac3df272464e22a98c946c3e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10}\label{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily int Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the total scene time from \doxylink{classSceneTimeSystem}{Scene\+Time\+System}. 
+
+\begin{DoxyReturn}{Returns}
+Scene time in milliseconds. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{LuaBinding_8hpp_aebb7f514af84caef6991998b2f95dc10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b}\label{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GetVelocity()}{GetVelocity()}}
+{\footnotesize\ttfamily int Get\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Gets the horizontal velocity (x) of an entity\textquotesingle{}s \doxylink{structRigidBodyComponent}{Rigid\+Body\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The x velocity. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ad01386ffa7404519ff255bab92c0aa5b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a}\label{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!GoToScene@{GoToScene}}
+\index{GoToScene@{GoToScene}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{GoToScene()}{GoToScene()}}
+{\footnotesize\ttfamily void Go\+To\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scene\+Name }\end{DoxyParamCaption})}
+
+
+
+Switches to a different scene by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the next scene. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_af130241c8cda51a8423544807f5b871a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c}\label{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!IsActionActivated@{IsActionActivated}}
+\index{IsActionActivated@{IsActionActivated}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{IsActionActivated()}{IsActionActivated()}}
+{\footnotesize\ttfamily bool Is\+Action\+Activated (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action }\end{DoxyParamCaption})}
+
+
+
+Checks if a specific action is currently activated in the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the action is activated, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a7cf2dbae811bc561406092ede766e73c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee}\label{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!Kill@{Kill}}
+\index{Kill@{Kill}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily void Kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity }\end{DoxyParamCaption})}
+
+
+
+Marks an entity as killed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to kill. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{LuaBinding_8hpp_aaa2d83151d7ef6071ee32df3bb4139ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41}\label{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SearchObjectiveDepth@{SearchObjectiveDepth}}
+\index{SearchObjectiveDepth@{SearchObjectiveDepth}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SearchObjectiveDepth()}{SearchObjectiveDepth()}}
+{\footnotesize\ttfamily double Search\+Objective\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{bool}]{player }\end{DoxyParamCaption})}
+
+
+
+Searches for the nearest target entity and returns its depth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The querying entity. \\
+\hline
+{\em player} & Whether to search for a player (true) or enemy (false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The depth of the closest objective. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aa2bb84b2bcde5eebaa6e31079448ae41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04}\label{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SearchObjectiveScale@{SearchObjectiveScale}}
+\index{SearchObjectiveScale@{SearchObjectiveScale}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SearchObjectiveScale()}{SearchObjectiveScale()}}
+{\footnotesize\ttfamily double Search\+Objective\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{bool}]{player }\end{DoxyParamCaption})}
+
+
+
+Searches for the nearest target entity and returns its scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The querying entity. \\
+\hline
+{\em player} & Whether to search for a player (true) or enemy (false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scale of the closest objective. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ab3d6f250923bafc2735fdcd0f6f31c04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062}\label{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SearchObjectiveX@{SearchObjectiveX}}
+\index{SearchObjectiveX@{SearchObjectiveX}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SearchObjectiveX()}{SearchObjectiveX()}}
+{\footnotesize\ttfamily double Search\+ObjectiveX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{bool}]{player }\end{DoxyParamCaption})}
+
+
+
+Searches for the nearest target entity and returns its X position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The querying entity. \\
+\hline
+{\em player} & Whether to search for a player (true) or enemy (false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The X position of the closest objective. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a9c5c7e991a94d3e72483b9cc23b17062_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a}\label{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SearchObjectiveY@{SearchObjectiveY}}
+\index{SearchObjectiveY@{SearchObjectiveY}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SearchObjectiveY()}{SearchObjectiveY()}}
+{\footnotesize\ttfamily double Search\+ObjectiveY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{bool}]{player }\end{DoxyParamCaption})}
+
+
+
+Searches for the nearest target entity and returns its Y position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The querying entity. \\
+\hline
+{\em player} & Whether to search for a player (true) or enemy (false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Y position of the closest objective. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a3ca1f0aeb8552648630f87add892062a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29}\label{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetNumFrames@{SetNumFrames}}
+\index{SetNumFrames@{SetNumFrames}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetNumFrames()}{SetNumFrames()}}
+{\footnotesize\ttfamily void Set\+Num\+Frames (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})}
+
+
+
+Sets the number of frames for the \doxylink{structAnimationComponent}{Animation\+Component} of an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em num\+Frames} & Number of animation frames. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a81e33a5d300c60baf6086cc639151c29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060}\label{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the position of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em x} & Position on the x-\/axis. \\
+\hline
+{\em y} & Position on the y-\/axis. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ad328bf319ed8ea68611bca61dc80a060_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37}\label{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void Set\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the scale of an entity\textquotesingle{}s \doxylink{structTransformComponent}{Transform\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em x} & Scale on the x-\/axis. \\
+\hline
+{\em y} & Scale on the y-\/axis. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{LuaBinding_8hpp_aeec5f22c58a6d14a088756f21e509d37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0}\label{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetSrcRect@{SetSrcRect}}
+\index{SetSrcRect@{SetSrcRect}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetSrcRect()}{SetSrcRect()}}
+{\footnotesize\ttfamily void Set\+Src\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0},  }\item[{int}]{src\+RectX = {\ttfamily 0},  }\item[{int}]{src\+RectY = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Sets the source rectangle for the \doxylink{structSpriteComponent}{Sprite\+Component} of an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em width} & Width of the source rect. \\
+\hline
+{\em height} & Height of the source rect. \\
+\hline
+{\em src\+RectX} & X offset of the source rect. \\
+\hline
+{\em src\+RectY} & Y offset of the source rect. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a254ae1132dd98c7ba921ad136409cef0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260}\label{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetText@{SetText}}
+\index{SetText@{SetText}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void Set\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{int}]{new\+Text }\end{DoxyParamCaption})}
+
+
+
+Sets the text of a \doxylink{structTextComponent}{Text\+Component} using an integer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em new\+Text} & Integer value to set as text. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{LuaBinding_8hpp_a81c7b35bff6bedb8118f6ef6be74f260_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e}\label{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetTimer@{SetTimer}}
+\index{SetTimer@{SetTimer}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetTimer()}{SetTimer()}}
+{\footnotesize\ttfamily void Set\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
+
+
+
+Sets a timer text value in a \doxylink{structTextComponent}{Text\+Component} from the given time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em new\+Time} & New time value in milliseconds. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_ada4c07e8e9f38e30d1400a3774085b9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d}\label{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d} 
+\index{LuaBinding.hpp@{LuaBinding.hpp}!SetVelocity@{SetVelocity}}
+\index{SetVelocity@{SetVelocity}!LuaBinding.hpp@{LuaBinding.hpp}}
+\doxysubsubsection{\texorpdfstring{SetVelocity()}{SetVelocity()}}
+{\footnotesize\ttfamily void Set\+Velocity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{entity,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the velocity of an entity\textquotesingle{}s \doxylink{structRigidBodyComponent}{Rigid\+Body\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The target entity. \\
+\hline
+{\em x} & Velocity in x-\/axis. \\
+\hline
+{\em y} & Velocity in y-\/axis. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LuaBinding_8hpp_a73fdadfa2b2fc6ad1b14bda590c0116d_icgraph}
+\end{center}
+\end{figure}

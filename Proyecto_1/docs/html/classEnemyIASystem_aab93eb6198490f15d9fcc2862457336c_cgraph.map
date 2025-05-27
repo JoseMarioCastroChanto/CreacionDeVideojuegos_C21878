@@ -1,0 +1,9 @@
+<map id="EnemyIASystem::SearchClosestObjective" name="EnemyIASystem::SearchClosestObjective">
+<area shape="rect" id="Node000001" title="Finds the closest objective&#39;s TransformComponent relative to the enemy." alt="" coords="5,23,235,63"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="285,5,485,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,30,271,26,271,32,235,35"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="283,55,487,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,51,269,54,269,60,234,56"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="535,55,675,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="487,65,521,65,521,70,487,70"/>
+</map>

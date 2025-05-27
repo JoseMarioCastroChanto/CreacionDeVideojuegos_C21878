@@ -1,0 +1,9 @@
+<map id="ScriptSystem::Update" name="ScriptSystem::Update">
+<area shape="rect" id="Node000001" title="Updates all entities with scripts by calling their Lua update functions." alt="" coords="5,31,168,56"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="218,5,418,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,32,204,28,205,33,169,37"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="216,55,420,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,49,203,53,202,58,168,54"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="468,55,608,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="420,65,454,65,454,70,420,70"/>
+</map>

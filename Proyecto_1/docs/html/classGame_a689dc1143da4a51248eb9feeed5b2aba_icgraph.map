@@ -1,0 +1,53 @@
+<map id="Game::GetInstance" name="Game::GetInstance">
+<area shape="rect" id="Node000001" title="Provides global access to the single Game instance." alt="" coords="831,434,977,459"/>
+<area shape="rect" id="Node000002" href="$LuaBinding_8hpp.html#aa544a1463e32213e5a296393c1de9408" title="Creates a new entity using the EntitySpawnerSystem and initializes its position and velocity." alt="" coords="582,90,743,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="898,421,890,360,871,281,856,240,836,199,811,162,781,130,763,118,743,111,745,106,766,114,784,126,816,159,841,197,861,238,876,280,896,359,904,420"/>
+<area shape="rect" id="Node000004" href="$classDamageSystem.html#a3c1f1d25f58344bbeb75fde39c8ddb3a" title="Creates an explosion entity at the position of the given entity." alt="" coords="543,41,783,66"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="900,421,895,351,878,259,863,209,843,162,815,117,781,79,765,68,768,64,784,75,820,114,847,159,868,208,883,257,900,351,905,420"/>
+<area shape="rect" id="Node000008" href="$LuaBinding_8hpp.html#a851d237493cab911c07cdb287fb2b00d" title="Destroys all enemy entities via the DamageSystem." alt="" coords="589,163,736,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="895,421,883,373,861,314,827,254,806,227,781,203,760,191,735,183,737,178,762,186,784,199,810,223,832,251,866,312,888,372,900,420"/>
+<area shape="rect" id="Node000009" href="$LuaBinding_8hpp.html#ae5bfae521a3e593330580756f78aaf27" title="Checks whether the defeat condition has been triggered." alt="" coords="618,213,707,238"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="892,422,877,384,853,337,822,291,781,253,745,236,707,229,708,224,747,231,784,248,826,288,858,335,882,381,897,420"/>
+<area shape="rect" id="Node000010" href="$LuaBinding_8hpp.html#ab51adbf2056fc342ad4fcdd8f03dace2" title="Gets the delta time of the current scene from SceneTimeSystem." alt="" coords="606,286,719,311"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="884,424,841,374,813,348,781,326,751,314,719,306,720,301,753,309,784,322,816,344,845,370,888,421"/>
+<area shape="rect" id="Node000011" href="$LuaBinding_8hpp.html#aebb7f514af84caef6991998b2f95dc10" title="Gets the total scene time from SceneTimeSystem." alt="" coords="623,335,702,361"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="873,428,831,401,782,376,741,363,702,355,703,350,742,358,784,371,834,396,876,423"/>
+<area shape="rect" id="Node000012" href="$LuaBinding_8hpp.html#af130241c8cda51a8423544807f5b871a" title="Switches to a different scene by name." alt="" coords="616,385,709,410"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="827,434,709,409,710,404,828,429"/>
+<area shape="rect" id="Node000013" href="$LuaBinding_8hpp.html#a7cf2dbae811bc561406092ede766e73c" title="Checks if a specific action is currently activated in the controller." alt="" coords="595,434,731,459"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="817,449,731,449,731,444,817,444"/>
+<area shape="rect" id="Node000014" href="$classSceneManager.html#a504bbba1f30f04ae26dd929b673019c7" title="Loads the next scene based on internal state." alt="" coords="565,483,761,509"/>
+<area shape="poly" id="edge21_Node000001_Node000014" title=" " alt="" coords="830,465,783,475,728,486,727,481,782,469,829,460"/>
+<area shape="rect" id="Node000015" href="$Main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="635,533,690,558"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="877,470,834,498,784,524,735,538,691,545,690,540,734,533,782,519,832,494,874,466"/>
+<area shape="rect" id="Node000016" href="$LuaBinding_8hpp.html#aa2bb84b2bcde5eebaa6e31079448ae41" title="Searches for the nearest target entity and returns its depth." alt="" coords="579,582,746,607"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="889,472,846,524,817,551,784,573,747,587,745,582,781,568,813,547,842,520,884,469"/>
+<area shape="rect" id="Node000017" href="$LuaBinding_8hpp.html#ab3d6f250923bafc2735fdcd0f6f31c04" title="Searches for the nearest target entity and returns its scale." alt="" coords="581,631,744,657"/>
+<area shape="poly" id="edge25_Node000001_Node000017" title=" " alt="" coords="895,473,878,508,854,548,823,589,784,622,746,639,743,634,781,618,819,585,850,545,874,505,890,471"/>
+<area shape="rect" id="Node000018" href="$LuaBinding_8hpp.html#a9c5c7e991a94d3e72483b9cc23b17062" title="Searches for the nearest target entity and returns its X position." alt="" coords="594,681,731,706"/>
+<area shape="poly" id="edge27_Node000001_Node000018" title=" " alt="" coords="899,474,885,518,862,572,829,626,808,650,784,672,759,685,732,693,731,687,757,680,781,667,804,647,825,623,857,569,880,516,894,472"/>
+<area shape="rect" id="Node000019" href="$LuaBinding_8hpp.html#a3ca1f0aeb8552648630f87add892062a" title="Searches for the nearest target entity and returns its Y position." alt="" coords="595,730,731,755"/>
+<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="902,473,891,526,870,593,854,628,835,662,812,694,784,721,759,735,732,743,730,738,757,730,781,717,808,690,831,660,850,626,865,591,886,525,897,472"/>
+<area shape="rect" id="Node000020" href="$classSceneManager.html#a20bad87a1ddbbc7cb3709f71417fb02c" title="Sets the name of the next scene to be loaded." alt="" coords="554,779,771,805"/>
+<area shape="poly" id="edge31_Node000001_Node000020" title=" " alt="" coords="904,474,896,535,877,615,861,658,841,699,816,737,784,770,767,781,764,777,781,766,812,734,837,696,857,656,872,614,891,534,898,473"/>
+<area shape="rect" id="Node000003" href="$classScriptSystem.html#a1ec14e2ffb2a02a04fd4e9dcc681502f" title="Creates the Lua binding for functions and classes accessible from Lua scripts." alt="" coords="264,385,495,410"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="570,117,544,130,511,159,482,192,456,229,435,266,404,336,387,385,382,383,399,334,430,264,452,226,477,189,507,155,541,126,568,112"/>
+<area shape="rect" id="Node000005" href="$classDamageSystem.html#ada8d68abb364cf909ba45707ecd2f869" title="Destroys all entities tagged as enemies (excluding players), triggering explosions." alt="" coords="278,5,481,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="529,43,481,38,481,33,529,37"/>
+<area shape="rect" id="Node000006" href="$classDamageSystem.html#a5ca0f5cd89b13034d19702ae11d4c323" title="Called when a CollisionEvent is emitted. Processes damage between entities involved in the collision." alt="" coords="275,70,483,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="529,70,484,75,483,69,529,65"/>
+<area shape="rect" id="Node000007" href="$classDamageSystem.html#a791a630be7d9ec4a6d1d38509460a5ce" title="Subscribes the DamageSystem to CollisionEvent notifications from the EventManager." alt="" coords="5,63,216,103"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="261,85,216,85,216,80,261,80"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="577,189,544,204,516,223,490,247,445,299,411,349,390,386,385,383,406,346,441,296,486,243,513,219,541,199,575,185"/>
+<area shape="poly" id="edge9_Node000008_Node000008" title=" " alt="" coords="706,154,694,145,663,142,637,144,623,149,621,154,628,161,624,165,615,155,620,145,636,139,663,137,696,141,709,150"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="605,234,574,241,544,253,495,284,452,321,393,386,389,383,448,318,492,280,541,248,572,236,604,229"/>
+<area shape="poly" id="edge13_Node000010_Node000003" title=" " alt="" coords="593,313,544,327,467,357,406,387,404,382,465,352,542,321,592,308"/>
+<area shape="poly" id="edge14_Node000010_Node000010" title=" " alt="" coords="706,277,694,268,663,265,637,267,623,272,621,277,628,284,624,288,615,278,620,268,636,262,663,259,696,263,709,273"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="610,360,454,387,453,382,609,355"/>
+<area shape="poly" id="edge18_Node000012_Node000003" title=" " alt="" coords="602,400,495,400,495,395,602,395"/>
+<area shape="poly" id="edge20_Node000013_Node000003" title=" " alt="" coords="581,435,452,413,453,407,582,430"/>
+<area shape="poly" id="edge24_Node000016_Node000003" title=" " alt="" coords="565,583,541,573,489,535,444,489,409,445,386,412,391,409,413,442,448,486,492,531,544,568,567,579"/>
+<area shape="poly" id="edge26_Node000017_Node000003" title=" " alt="" coords="567,634,541,622,511,599,483,572,437,511,403,453,384,412,388,409,408,451,441,508,487,568,514,595,544,618,569,630"/>
+<area shape="poly" id="edge28_Node000018_Node000003" title=" " alt="" coords="580,689,560,682,541,672,507,642,477,608,451,570,430,532,398,461,382,411,387,409,403,459,434,529,456,567,481,604,510,638,544,667,562,677,582,684"/>
+<area shape="poly" id="edge30_Node000019_Node000003" title=" " alt="" coords="580,739,560,732,541,721,503,685,471,644,445,599,423,553,394,468,380,411,386,410,399,467,428,551,449,596,475,641,507,682,544,717,562,727,582,734"/>
+</map>

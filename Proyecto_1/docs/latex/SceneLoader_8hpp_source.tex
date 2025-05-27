@@ -1,0 +1,49 @@
+\doxysection{Scene\+Loader.\+hpp}
+\hypertarget{SceneLoader_8hpp_source}{}\label{SceneLoader_8hpp_source}\index{src/SceneManager/SceneLoader.hpp@{src/SceneManager/SceneLoader.hpp}}
+\mbox{\hyperlink{SceneLoader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENELOADER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENELOADER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sol/sol.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../AssetManager/AssetManager.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../ControllerManager/ControllerManager.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSceneLoader}{SceneLoader}}\ \{}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_aa0d95d6c0e3b970eaf40b12cebeae2de}{LoadSprites}}(SDL\_Renderer*\ render,\ \textcolor{keyword}{const}\ sol::table\&\ sprites}
+\DoxyCodeLine{00030\ \ \ ,\ std::unique\_ptr<AssetManager>\&\ assetManager);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_a0b0aa8e61f64cff33c33f18f60faa2e8}{LoadFonts}}(\textcolor{keyword}{const}\ sol::table\&\ fonts}
+\DoxyCodeLine{00038\ \ \ ,\ std::unique\_ptr<AssetManager>\&\ assetManager);}
+\DoxyCodeLine{00039\ \ \ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_aac82644ad9d9282d0e0c1aeab9c9b0bb}{LoadKeys}}(\textcolor{keyword}{const}\ sol::table\&\ keys,\ std::unique\_ptr<ControllerManager>\&\ }
+\DoxyCodeLine{00046\ \ \ controllerManager);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_a3e0cb3caf5b8222dc5760f976cb4ac3a}{LoadButtons}}(\textcolor{keyword}{const}\ sol::table\&\ buttons,\ std::unique\_ptr<ControllerManager>\&\ }
+\DoxyCodeLine{00054\ \ \ controllerManager);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_a3363c8209377e4e84cd9d1255875ce96}{LoadEntities}}(sol::state\&\ lua,\ \textcolor{keyword}{const}\ sol::table\&\ entites,\ }
+\DoxyCodeLine{00063\ \ \ std::unique\_ptr<Registry>\&\ registry);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_ac51ebe6fba9a6fde4cae950f6726ca44}{LoadMusic}}(\textcolor{keyword}{const}\ sol::table\&\ musicTable,\ std::unique\_ptr<AssetManager>\&\ assetManager);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classSceneLoader_a3b259dbd31c787f0cd7a6b63bd3cd200}{SceneLoader}}();}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{classSceneLoader_afc074d4a248b09c0795754af0d90d43c}{\string~SceneLoader}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneLoader_aea760503e4e9e888cdc98c269d2bcdf5}{LoadScene}}(\textcolor{keyword}{const}\ std::string\&\ scenePath,\ sol::state\&\ lua}
+\DoxyCodeLine{00086\ \ \ ,\ std::unique\_ptr<AssetManager>\&\ assetManager}
+\DoxyCodeLine{00087\ \ \ ,\ std::unique\_ptr<ControllerManager>\&\ controllerManager}
+\DoxyCodeLine{00088\ \ \ ,\ std::unique\_ptr<Registry>\&\ registry,\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

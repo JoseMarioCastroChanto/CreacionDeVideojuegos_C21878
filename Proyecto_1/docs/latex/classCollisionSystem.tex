@@ -1,0 +1,239 @@
+\doxysection{Collision\+System Class Reference}
+\hypertarget{classCollisionSystem}{}\label{classCollisionSystem}\index{CollisionSystem@{CollisionSystem}}
+
+
+\doxylink{classSystem}{System} responsible for detecting collisions between entities and emitting collision events.  
+
+
+
+
+{\ttfamily \#include $<$Collision\+System.\+hpp$>$}
+
+
+
+Inheritance diagram for Collision\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCollisionSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Collision\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCollisionSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCollisionSystem_ac8b1ff32bb9c9ff3e765c2b334713454}{Collision\+System}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{classCollisionSystem}{Collision\+System} and sets required components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classCollisionSystem_a037ec33be724e6a16c9c4d50bbb7912d}{Update}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classEventManager}{Event\+Manager}} $>$ \&event\+Manager)
+\begin{DoxyCompactList}\small\item\em Updates the system by checking collisions among all entities and emitting events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSystem}{System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_a7ffb94a5a2db03014de0a8440f0cee3a}{System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_abca337cbfb742e1abea5624d9b36f7e5}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{default}}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a36b3396cdb8fa107bd4515382fbb8847}{Add\+Entity\+To\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Adds an entity to this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} \mbox{\hyperlink{classSystem_a05a2e9d96800e05c3d4c8d7ebfd9903b}{Remove\+Entity\+From\+System}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}})
+\begin{DoxyCompactList}\small\item\em Removes an entity from this system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ \mbox{\hyperlink{classSystem_aec0388b6db4900c4d4a9e1dea0f09205}{Get\+System\+Entities}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns all entities currently registered in this system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}} \mbox{\hyperlink{ECS_8hpp_a9e171c7763cf19fc9f0a3200aeebacb7}{Signature}} \& \mbox{\hyperlink{classSystem_af97298c27dfe2231ab21bdb1a0316dc4}{Get\+Component\+Signature}} () \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the component signature required by this system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TComponent $>$ }\\void \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{Require\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds a required component type to the system\textquotesingle{}s signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classCollisionSystem_a1bdf4b50a3d304ec4ff5e0af0546f43f}{Check\+Circle\+Vs\+Circle}} (\mbox{\hyperlink{classEntity}{Entity}} a, \mbox{\hyperlink{classEntity}{Entity}} b, \mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{a\+Transform}}, \mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{b\+Transform}})
+\begin{DoxyCompactList}\small\item\em Checks collision between two circle-\/collider entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{float}} \mbox{\hyperlink{classCollisionSystem_a89b25d3d3ec8d089763d2f70e89e1061}{Distance\+Point\+To\+Segment}} (glm\+::vec2 \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{p}}, glm\+::vec2 a, glm\+::vec2 b)
+\begin{DoxyCompactList}\small\item\em Calculates the shortest distance between point p and line segment ab. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} \mbox{\hyperlink{classCollisionSystem_ac88e97a0c8c4e20cc75e395f569a9bd3}{Check\+Circle\+Vs\+Polygon}} (\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{circle\+Entity}}, \mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{polygon\+Entity}}, \mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{circle\+Transform}})
+\begin{DoxyCompactList}\small\item\em Checks collision between a circle entity and a polygon entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSystem}{System} responsible for detecting collisions between entities and emitting collision events. 
+
+This system requires entities to have a \doxylink{structTransformComponent}{Transform\+Component}. It supports collision detection between entities with \doxylink{structCircleColliderComponent}{Circle\+Collider\+Component} and \doxylink{structPolygonColliderComponent}{Polygon\+Collider\+Component}.
+
+The system detects collisions using circle-\/vs-\/circle and circle-\/vs-\/polygon algorithms. Upon detecting a collision, it emits a \doxylink{classCollisionEvent}{Collision\+Event} through the \doxylink{classEventManager}{Event\+Manager}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCollisionSystem_ac8b1ff32bb9c9ff3e765c2b334713454}\label{classCollisionSystem_ac8b1ff32bb9c9ff3e765c2b334713454} 
+\index{CollisionSystem@{CollisionSystem}!CollisionSystem@{CollisionSystem}}
+\index{CollisionSystem@{CollisionSystem}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{CollisionSystem()}{CollisionSystem()}}
+{\footnotesize\ttfamily Collision\+System\+::\+Collision\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \doxylink{classCollisionSystem}{Collision\+System} and sets required components. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_ac8b1ff32bb9c9ff3e765c2b334713454_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCollisionSystem_a1bdf4b50a3d304ec4ff5e0af0546f43f}\label{classCollisionSystem_a1bdf4b50a3d304ec4ff5e0af0546f43f} 
+\index{CollisionSystem@{CollisionSystem}!CheckCircleVsCircle@{CheckCircleVsCircle}}
+\index{CheckCircleVsCircle@{CheckCircleVsCircle}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{CheckCircleVsCircle()}{CheckCircleVsCircle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} Collision\+System\+::\+Check\+Circle\+Vs\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{a,  }\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{b,  }\item[{\mbox{\hyperlink{structTransformComponent}{Transform\+Component}}}]{a\+Transform,  }\item[{\mbox{\hyperlink{structTransformComponent}{Transform\+Component}}}]{b\+Transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Checks collision between two circle-\/collider entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First entity. \\
+\hline
+{\em b} & Second entity. \\
+\hline
+{\em a\+Transform} & Transform component of first entity. \\
+\hline
+{\em b\+Transform} & Transform component of second entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the two circles collide, false otherwise.
+\end{DoxyReturn}
+Collision is determined by comparing the distance between circle centers with the sum of their radii, and additionally comparing their scale levels. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_a1bdf4b50a3d304ec4ff5e0af0546f43f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_a1bdf4b50a3d304ec4ff5e0af0546f43f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCollisionSystem_ac88e97a0c8c4e20cc75e395f569a9bd3}\label{classCollisionSystem_ac88e97a0c8c4e20cc75e395f569a9bd3} 
+\index{CollisionSystem@{CollisionSystem}!CheckCircleVsPolygon@{CheckCircleVsPolygon}}
+\index{CheckCircleVsPolygon@{CheckCircleVsPolygon}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{CheckCircleVsPolygon()}{CheckCircleVsPolygon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{bool}} Collision\+System\+::\+Check\+Circle\+Vs\+Polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{circle\+Entity,  }\item[{\mbox{\hyperlink{classEntity}{Entity}}}]{polygon\+Entity,  }\item[{\mbox{\hyperlink{structTransformComponent}{Transform\+Component}}}]{circle\+Transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Checks collision between a circle entity and a polygon entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em circle\+Entity} & \doxylink{classEntity}{Entity} with a circle collider. \\
+\hline
+{\em polygon\+Entity} & \doxylink{classEntity}{Entity} with a polygon collider. \\
+\hline
+{\em circle\+Transform} & Transform component of the circle entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the circle collides with the polygon, false otherwise.
+\end{DoxyReturn}
+The collision is determined by checking if the distance from the circle center to any polygon edge is less than or equal to the circle radius. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_ac88e97a0c8c4e20cc75e395f569a9bd3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_ac88e97a0c8c4e20cc75e395f569a9bd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCollisionSystem_a89b25d3d3ec8d089763d2f70e89e1061}\label{classCollisionSystem_a89b25d3d3ec8d089763d2f70e89e1061} 
+\index{CollisionSystem@{CollisionSystem}!DistancePointToSegment@{DistancePointToSegment}}
+\index{DistancePointToSegment@{DistancePointToSegment}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{DistancePointToSegment()}{DistancePointToSegment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{float}} Collision\+System\+::\+Distance\+Point\+To\+Segment (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{p,  }\item[{glm\+::vec2}]{a,  }\item[{glm\+::vec2}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calculates the shortest distance between point p and line segment ab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The point. \\
+\hline
+{\em a} & Start point of the line segment. \\
+\hline
+{\em b} & End point of the line segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shortest distance from point p to the segment ab. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_a89b25d3d3ec8d089763d2f70e89e1061_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_a89b25d3d3ec8d089763d2f70e89e1061_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCollisionSystem_a037ec33be724e6a16c9c4d50bbb7912d}\label{classCollisionSystem_a037ec33be724e6a16c9c4d50bbb7912d} 
+\index{CollisionSystem@{CollisionSystem}!Update@{Update}}
+\index{Update@{Update}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{void}} Collision\+System\+::\+Update (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classEventManager}{Event\+Manager}} $>$ \&}]{event\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the system by checking collisions among all entities and emitting events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Manager} & A unique pointer reference to the \doxylink{classEventManager}{Event\+Manager} used to emit events.\\
+\hline
+\end{DoxyParams}
+Iterates through all pairs of entities, checks collision conditions (circle vs circle, circle vs polygon), and emits a \doxylink{classCollisionEvent}{Collision\+Event} if a collision is detected. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCollisionSystem_a037ec33be724e6a16c9c4d50bbb7912d_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Systems/\mbox{\hyperlink{CollisionSystem_8hpp}{Collision\+System.\+hpp}}\end{DoxyCompactItemize}

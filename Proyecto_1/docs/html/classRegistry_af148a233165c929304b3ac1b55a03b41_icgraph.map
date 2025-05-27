@@ -1,0 +1,7 @@
+<map id="Registry::RemoveEntityFromSystems" name="Registry::RemoveEntityFromSystems">
+<area shape="rect" id="Node000001" title="Removes an entity from all systems." alt="" coords="236,23,444,63"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#a8240ef787e32a6ceba79519758de5a34" title="Removes all entities and clears the registry." alt="" coords="5,5,188,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,34,188,30,189,25,223,28"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a21eec592a9c1fee90f18796f07fd9ad8" title="Processes entity addition and removal, updating systems accordingly." alt="" coords="31,55,162,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,58,162,64,162,58,222,52"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="DestroyAllEnemies" name="DestroyAllEnemies">
+<area shape="rect" id="Node000001" title="Destroys all enemy entities via the DamageSystem." alt="" coords="284,29,431,55"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="400,20,388,11,357,8,332,10,319,15,316,20,323,27,319,31,311,21,315,11,331,5,357,3,390,7,403,16"/>
+<area shape="rect" id="Node000002" href="$classScriptSystem.html#a1ec14e2ffb2a02a04fd4e9dcc681502f" title="Creates the Lua binding for functions and classes accessible from Lua scripts." alt="" coords="5,29,236,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,45,236,45,236,39,270,39"/>
+</map>

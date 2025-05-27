@@ -1,0 +1,32 @@
+<map id="CollisionSystem::Update" name="CollisionSystem::Update">
+<area shape="rect" id="Node000001" title="Updates the system by checking collisions among all entities and emitting events." alt="" coords="5,207,188,233"/>
+<area shape="rect" id="Node000002" href="$classCollisionSystem.html#a1bdf4b50a3d304ec4ff5e0af0546f43f" title="Checks collision between two circle&#45;collider entities." alt="" coords="236,171,448,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,206,222,202,223,208,188,212"/>
+<area shape="rect" id="Node000003" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="509,226,675,251"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="188,221,495,232,495,238,188,226"/>
+<area shape="rect" id="Node000007" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="736,121,940,146"/>
+<area shape="poly" id="edge18_Node000001_Node000007" title=" " alt="" coords="118,205,170,179,235,156,364,134,495,123,618,120,722,123,722,128,618,126,496,128,365,139,237,161,172,184,121,210"/>
+<area shape="rect" id="Node000008" href="$classCollisionSystem.html#ac88e97a0c8c4e20cc75e395f569a9bd3" title="Checks collision between a circle entity and a polygon entity." alt="" coords="236,56,448,96"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="110,205,163,161,235,112,263,99,265,104,237,117,166,165,114,209"/>
+<area shape="rect" id="Node000010" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="242,335,442,361"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="113,231,164,276,199,300,237,322,255,329,253,334,235,326,197,305,161,280,109,235"/>
+<area shape="rect" id="Node000011" href="$classEntity.html#a21a5c382bca76fadf22668d51439f3a6" title="Checks if the entity has a component of type TComponent." alt="" coords="259,286,425,311"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="136,230,237,264,286,279,284,284,235,269,134,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,208,512,221,511,226,446,213"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="448,177,688,149,723,145,724,150,688,155,449,182"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="747,226,929,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="675,236,734,236,734,241,675,241"/>
+<area shape="rect" id="Node000005" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="988,226,1128,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="929,236,974,236,974,241,929,241"/>
+<area shape="rect" id="Node000006" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="1007,275,1109,301"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="896,249,994,271,993,276,895,254"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="867,144,1019,218,1017,222,864,148"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="449,85,688,112,724,116,723,122,688,117,448,90"/>
+<area shape="rect" id="Node000009" href="$classCollisionSystem.html#a89b25d3d3ec8d089763d2f70e89e1061" title="Calculates the shortest distance between point p and line segment ab." alt="" coords="496,5,688,45"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="441,53,482,45,483,50,442,59"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="645,43,689,62,799,112,796,117,687,66,643,48"/>
+<area shape="rect" id="Node000012" href="$classRegistry.html#a546f2f77b638e76348213fb05ab0c125" title="Checks if an entity has a component of type TComponent." alt="" coords="747,275,929,301"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="425,294,733,288,733,293,425,300"/>
+<area shape="poly" id="edge16_Node000012_Node000005" title=" " alt="" coords="895,273,987,252,988,257,896,278"/>
+<area shape="poly" id="edge17_Node000012_Node000006" title=" " alt="" coords="930,285,992,285,992,291,930,291"/>
+</map>

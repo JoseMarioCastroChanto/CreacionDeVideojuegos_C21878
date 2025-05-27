@@ -1,0 +1,7 @@
+<map id="AnimationSystem::AnimationSystem" name="AnimationSystem::AnimationSystem">
+<area shape="rect" id="Node000001" title="Constructs the AnimationSystem and sets required components." alt="" coords="5,5,219,45"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="267,13,471,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,23,253,23,253,28,219,28"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="519,13,659,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,23,505,23,505,28,471,28"/>
+</map>

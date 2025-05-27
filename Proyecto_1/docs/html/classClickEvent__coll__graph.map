@@ -1,0 +1,5 @@
+<map id="ClickEvent" name="ClickEvent">
+<area shape="rect" id="Node000001" title="Represents a mouse click event." alt="" coords="5,119,113,224"/>
+<area shape="rect" id="Node000002" href="$classEvent.html" title="Base class for events in the system." alt="" coords="21,5,97,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,85,62,118,57,118,57,85"/>
+</map>

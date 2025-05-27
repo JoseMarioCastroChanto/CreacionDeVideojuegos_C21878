@@ -1,0 +1,14 @@
+<map id="WallCollisionSystem::OnCollision" name="WallCollisionSystem::OnCollision">
+<area shape="rect" id="Node000001" title="Handles a collision event between entities, resolving collisions involving walls and players." alt="" coords="5,23,160,63"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="208,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,31,194,27,195,32,161,37"/>
+<area shape="rect" id="Node000006" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="421,56,625,81"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="160,45,407,59,407,65,160,50"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="433,7,614,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,16,419,16,419,21,374,21"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="673,56,813,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="581,29,673,50,672,56,580,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="692,7,795,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="614,17,678,17,678,22,614,22"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="626,66,659,66,659,71,626,71"/>
+</map>

@@ -1,0 +1,48 @@
+\doxysection{src/\+Event\+Manager/\+Event\+Manager.hpp File Reference}
+\hypertarget{EventManager_8hpp}{}\label{EventManager_8hpp}\index{src/EventManager/EventManager.hpp@{src/EventManager/EventManager.hpp}}
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$typeindex$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Event.\+hpp"{}}\newline
+Include dependency graph for Event\+Manager.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EventManager_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EventManager_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classIEventCallback}{IEvent\+Callback}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for event callback handlers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEventCallback}{Event\+Callback$<$ TOwner, TEvent $>$}}
+\begin{DoxyCompactList}\small\item\em Template event callback handler connecting an owner and event type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEventManager}{Event\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages event subscription and emission. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIEventCallback}{IEvent\+Callback}} $>$ $>$ \mbox{\hyperlink{EventManager_8hpp_a72776e49464a6e0e946d19e1fdb93469}{Handler\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{EventManager_8hpp_a72776e49464a6e0e946d19e1fdb93469}\label{EventManager_8hpp_a72776e49464a6e0e946d19e1fdb93469} 
+\index{EventManager.hpp@{EventManager.hpp}!HandlerList@{HandlerList}}
+\index{HandlerList@{HandlerList}!EventManager.hpp@{EventManager.hpp}}
+\doxysubsubsection{\texorpdfstring{HandlerList}{HandlerList}}
+{\footnotesize\ttfamily typedef std\+::list$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classIEventCallback}{IEvent\+Callback}}$>$ $>$ \mbox{\hyperlink{EventManager_8hpp_a72776e49464a6e0e946d19e1fdb93469}{Handler\+List}}}
+

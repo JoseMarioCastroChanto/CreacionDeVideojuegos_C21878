@@ -8,14 +8,32 @@
 #include <glm/glm.hpp>
 #include "../ECS/ECS.hpp"
 
+/**
+ * @class DepthSystem
+ * @brief System to handle the scaling of entities based on their vertical velocity, simulating depth.
+ *
+ * This system adjusts the scale of entities with DepthComponent, TransformComponent,
+ * and RigidBodyComponent to simulate a 3D depth effect by scaling entities smaller when moving up
+ * and larger when moving down. It also repositions entities to keep their center stable during scaling.
+ */
 class DepthSystem : public System{
     public:
+    /**
+     * @brief Constructor that requires necessary components for the system.
+     */
      DepthSystem(){
         RequireComponent<DepthComponent>();
         RequireComponent<TransformComponent>();
          RequireComponent<RigidBodyComponent>();
 
      }
+    /**
+     * @brief Updates all entities in the system, adjusting their scale and position based on velocity.
+     *
+     * If the entity moves upward (negative y velocity), its scale decreases down to a minimum.
+     * If it moves downward (positive y velocity), its scale increases up to a maximum.
+     * The position is adjusted to maintain the entity's center point during scaling.
+     */
 void Update() {
     for(auto entity : GetSystemEntities()){
         auto& depth = entity.GetComponent<DepthComponent>();

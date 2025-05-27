@@ -1,0 +1,5 @@
+<map id="Entity::Kill" name="Entity::Kill">
+<area shape="rect" id="Node000001" title="Marks this entity for removal." alt="" coords="5,5,93,31"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#a037ed17399c2adc565abb9465fea5e0b" title="Marks an entity for removal." alt="" coords="141,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,15,127,15,127,21,94,21"/>
+</map>

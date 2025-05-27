@@ -1,0 +1,9 @@
+<map id="DefeatSystem::Update" name="DefeatSystem::Update">
+<area shape="rect" id="Node000001" title="Updates the system, checking all objective entities for defeat." alt="" coords="5,31,176,56"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#aec0388b6db4900c4d4a9e1dea0f09205" title="Returns all entities currently registered in this system." alt="" coords="226,5,426,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,31,212,28,213,33,177,37"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="224,55,428,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,49,211,53,210,58,176,55"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="476,55,616,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,65,462,65,462,70,428,70"/>
+</map>

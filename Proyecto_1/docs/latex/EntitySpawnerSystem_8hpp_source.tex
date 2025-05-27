@@ -1,0 +1,210 @@
+\doxysection{Entity\+Spawner\+System.\+hpp}
+\hypertarget{EntitySpawnerSystem_8hpp_source}{}\label{EntitySpawnerSystem_8hpp_source}\index{src/Systems/EntitySpawnerSystem.hpp@{src/Systems/EntitySpawnerSystem.hpp}}
+\mbox{\hyperlink{EntitySpawnerSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITYSPAWNERSYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \ ENTITYSPAWNERSYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../ECS/ECS.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../Components/CircleColliderComponent.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Components/PolygonColliderComponent.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Components/DepthComponent.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Components/AnimationComponent.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Components/EntitySpawnerComponent.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Components/RigidBodyComponent.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Components/SpriteComponent.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Components/ScriptComponent.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Components/TransformComponent.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../Components/TagWallComponent.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../Components/TagObjectiveComponent.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../Components/TagEnemyComponent.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../Components/TagProjectileComponent.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../Components/TagPlayerComponent.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../Components/LifeComponent.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../Components/DamageComponent.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <sol/sol.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEntitySpawnerSystem}{EntitySpawnerSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ sol::table\ \mbox{\hyperlink{classEntitySpawnerSystem_ab1acc291ec4437f7366af97f41d582ca}{entities}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \mbox{\hyperlink{classEntitySpawnerSystem_a184df6bc8da4fbb7a4f87568ef310b95}{EntitySpawnerSystem}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scenePath}},\ sol::state\&\ lua)\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<TransformComponent>}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{RequireComponent<EntitySpawnerComponent>}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ sol::load\_result\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script\_result}}\ =\ lua.load\_file(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scenePath}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script\_result}}.valid())\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::error\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{err}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{script\_result}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{errMessage}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{err}}.what();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr<<\ \textcolor{stringliteral}{"{}[EntitySpawnerSystem]"{}}<<\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{errMessage}}\ <<\ std::endl;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ lua.script\_file(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{scenePath}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ this-\/>entities\ =\ lua[\textcolor{stringliteral}{"{}entities"{}}];}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classEntitySpawnerSystem_a3bdb09019dd501ed6167836e1e1e6f92}{GenerateEntity}}(std::unique\_ptr<Registry>\&\ registry,\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{idEntity}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ sol::state\&\ lua)\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ sol::table\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}\ =\ \mbox{\hyperlink{classEntitySpawnerSystem_ab1acc291ec4437f7366af97f41d582ca}{entities}}[\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{idEntity}}];}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}\ =\ registry-\/>CreateEntity();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ sol::optional<sol::table>\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasComponents}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}[\textcolor{stringliteral}{"{}components"{}}];}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasComponents}}\ !=\ sol::nullopt)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ sol::table\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{entity}}[\textcolor{stringliteral}{"{}components"{}}];}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ AnimationComponent}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasAnimation}}\ =\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}animation"{}}];}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasAnimation}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.\mbox{\hyperlink{classEntity_a125342c7309de6be6e518da6bffb7452}{AddComponent}}<\mbox{\hyperlink{structAnimationComponent}{AnimationComponent}}>(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}animation"{}}][\textcolor{stringliteral}{"{}numFrames"{}}],}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}animation"{}}][\textcolor{stringliteral}{"{}frameSpeedRate"{}}],}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}animation"{}}][\textcolor{stringliteral}{"{}isLoop"{}}]}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ CircleColiderComponent}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasCircleCollider}}\ =\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}circle\_collider"{}}];}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasCircleCollider}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structCircleColliderComponent}{CircleColliderComponent}}>(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}circle\_collider"{}}][\textcolor{stringliteral}{"{}radius"{}}],}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}circle\_collider"{}}][\textcolor{stringliteral}{"{}width"{}}],}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}circle\_collider"{}}][\textcolor{stringliteral}{"{}height"{}}]}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ RigidbodyComponent}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasRigidbody}}\ =\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}rigidbody"{}}];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasRigidbody}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structRigidBodyComponent}{RigidBodyComponent}}>(}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2(}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}rigidbody"{}}][\textcolor{stringliteral}{"{}velocity"{}}][\textcolor{stringliteral}{"{}x"{}}],}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}rigidbody"{}}][\textcolor{stringliteral}{"{}velocity"{}}][\textcolor{stringliteral}{"{}y"{}}]}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ ScriptComponent}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasScript}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}script"{}}];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasScript}}\ !=\ sol::nullopt)\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lua[\textcolor{stringliteral}{"{}update"{}}]\ =\ sol::nil;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lua[\textcolor{stringliteral}{"{}on\_click"{}}]\ =\ sol::nil;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{path}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}script"{}}][\textcolor{stringliteral}{"{}path"{}}];}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lua.script\_file(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{path}});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::function>\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasOnClick}}\ =\ lua[\textcolor{stringliteral}{"{}on\_click"{}}];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::function\ onClick\ =\ sol::nil;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasOnClick}}\ !=\ sol::nullopt)\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onClick\ =\ lua[\textcolor{stringliteral}{"{}on\_click"{}}];}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::function>\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasUpdate}}\ =\ lua[\textcolor{stringliteral}{"{}update"{}}];}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sol::function\ update\ =\ sol::nil;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasUpdate}}\ !=\ sol::nullopt)\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\ =\ lua[\textcolor{stringliteral}{"{}update"{}}];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structScriptComponent}{ScriptComponent}}>(update,\ onClick);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ Sprite\ Component}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasSprite}}\ =\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}];}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasSprite}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structSpriteComponent}{SpriteComponent}}>(}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}][\textcolor{stringliteral}{"{}assetId"{}}],}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}][\textcolor{stringliteral}{"{}width"{}}],}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}][\textcolor{stringliteral}{"{}height"{}}],}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}][\textcolor{stringliteral}{"{}src\_rect"{}}][\textcolor{stringliteral}{"{}x"{}}],}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}sprite"{}}][\textcolor{stringliteral}{"{}src\_rect"{}}][\textcolor{stringliteral}{"{}y"{}}]}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ Transform\ Component}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTransform}}\ =\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}];}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTransform}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structTransformComponent}{TransformComponent}}>(}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2(}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}][\textcolor{stringliteral}{"{}position"{}}][\textcolor{stringliteral}{"{}x"{}}],}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}][\textcolor{stringliteral}{"{}position"{}}][\textcolor{stringliteral}{"{}y"{}}]}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2(}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}][\textcolor{stringliteral}{"{}scale"{}}][\textcolor{stringliteral}{"{}x"{}}],}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}][\textcolor{stringliteral}{"{}scale"{}}][\textcolor{stringliteral}{"{}y"{}}]}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}transform"{}}][\textcolor{stringliteral}{"{}rotation"{}}]}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ Depth\ Component}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasDepth}}\ =\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}];}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasDepth}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structDepthComponent}{DepthComponent}}>(}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}][\textcolor{stringliteral}{"{}min\_scale"{}}],}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}][\textcolor{stringliteral}{"{}max\_scale"{}}],}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}][\textcolor{stringliteral}{"{}original\_width"{}}],}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}][\textcolor{stringliteral}{"{}scale\_speed"{}}],\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}depth"{}}][\textcolor{stringliteral}{"{}reference"{}}]\ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ TagPlayerComponent}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagPlayer}}\ =\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}tagplayer"{}}];}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagPlayer}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structTagPlayerComponent}{TagPlayerComponent}}>();}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ TagEnemyComponent}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagEnemy}}\ =\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}tagenemy"{}}];}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagEnemy}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structTagEnemyComponent}{TagEnemyComponent}}>();}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ TagObjectiveComponent}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagObjective}}\ =\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}tagobjective"{}}];}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagObjective}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structTagObjectiveComponent}{TagObjectiveComponent}}>();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ TagProjectileComponent}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagProjectile}}\ =\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}tagprojectile"{}}];}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasTagProjectile}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structTagProjectileComponent}{TagProjectileComponent}}>();}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ LifeComponent}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasLife}}\ =\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}life"{}}];}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasLife}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}life"{}}][\textcolor{stringliteral}{"{}life\_count"{}}];}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args2}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}life"{}}][\textcolor{stringliteral}{"{}life\_max"{}}];}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structLifeComponent}{LifeComponent}}>(}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args}},\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args2}}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//*\ DamageComponent}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ sol::optional<sol::table>\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasDamage}}\ =\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}damage"{}}];}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{hasDamage}}\ !=\ sol::nullopt)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{components}}[\textcolor{stringliteral}{"{}damage"{}}][\textcolor{stringliteral}{"{}damage\_dealt"{}}];}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}}.AddComponent<\mbox{\hyperlink{structDamageComponent}{DamageComponent}}>(}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{args}}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{newEntity}};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

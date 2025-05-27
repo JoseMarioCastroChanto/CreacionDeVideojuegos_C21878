@@ -1,0 +1,632 @@
+@startuml UML
+skinparam backgroundColor white
+skinparam classAttributeIconSize 0
+skinparam classMethodIconSize 0
+
+class LuaBinding {
+  + bool IsActionActivated(string action)
+  + void SetVelocity(Entity entity, float x, float y)
+  + int GetVelocity(Entity entity)
+  + float GetScale(Entity entity)
+  + void SetScale(Entity entity, float x, float y)
+  + void SetPosition(Entity entity, float x, float y)
+  + float GetPositionX(Entity entity)
+  + float GetPositionY(Entity entity)
+  + double GetDepth(Entity entity)
+  + void SetSrcRect(Entity entity, int width, int height, int srcRectX, int srcRectY)
+  + void SetNumFrames(Entity entity, int numFrames)
+  + void CreateDynamicEntity(Entity entity, double dir, int num, double scale)
+  + int GetDeltaTime()
+  + int GetTime()
+  + void SetTimer(Entity entity, int newTime)
+  + bool GetDefeat()
+  + void SetText(Entity entity, int newText)
+  + void GoToScene(string sceneName)
+  + double SearchObjectiveX(Entity entity, bool player)
+  + double SearchObjectiveY(Entity entity, bool player)
+  + double SearchObjectiveScale(Entity entity, bool player)
+  + double SearchObjectiveDepth(Entity entity, bool player)
+  + void DestroyAllEnemies()
+  + void Kill(Entity entity)
+}
+
+class AssetManager {
+    - textures : Map
+    - fonts : Map
+    - musics : Map
+    - currentMusic : Music
+    + AssetManager()
+    + ~AssetManager()
+    + ClearAssets() : void
+    + AddTexture(renderer, textureId, filePath) : void
+    + GetTexture(textureId) : Texture
+    + AddFont(fontId, filePath, fontSize) : void
+    + GetFont(fontId) : Font
+    + LoadMusic(musicId, filePath) : void
+    + PlayMusic(musicId, loops = -1) : void
+    + StopMusic() : void
+    + ResumeMusic() : void
+    + PauseMusic() : void
+    + ClearMusic() : void
+}
+
+class AnimationComponent {
+  - numFrames: int
+  - currentFrame: int
+  - frameSpeedRate: int
+  - isLoop: bool
+  - startTime: int
+  + AnimationComponent(numFrames = 1, frameSpeedRate = 1, isLoop = true)
+}
+
+class CircleColliderComponent {
+    - radius: double
+    - width: double
+    - height: double
+    + CircleColliderComponent(radius = 0, width = 0, height = 0)
+}
+
+class ClickableComponent {
+  - isClicked: bool
+  + ClickableComponent()
+}
+
+class DamageComponent {
+  - damage_dealt: int
+  + DamageComponent(damage_dealt = 0)
+}
+
+class DepthComponent {
+  - min_scale: float
+  - max_scale: float
+  - original_width: float
+  - scale_speed: float
+  - reference_point: float
+  + DepthComponent(min_scale = 0, max_scale = 0, original_width = 0, scale_speed = 0, reference_point = 0)
+}
+
+class EntitySpawnerComponent {
+  - is_player: bool
+  + EntitySpawnerComponent(is_player = false)
+}
+
+class LifeComponent {
+  - life_count: int
+  - life_max: int
+  + LifeComponent(life_count = 0, life_max = 0)
+}
+
+class PolygonColliderComponent {
+  - vertices: Vector2[]
+  + PolygonColliderComponent(vertices = {})
+}
+
+class RigidBodyComponent {
+  - velocity: Vector2
+  + RigidBodyComponent(velocity = (0,0))
+}
+
+class ScriptComponent {
+  - update: function
+  - onClick: function
+  + ScriptComponent(update = null, onClick = null)
+}
+
+class SpriteComponent {
+  - textureId: string
+  - width: int
+  - height: int
+  - srcRectX: int
+  - srcRectY: int
+  + SpriteComponent(textureId = "none", width = 0, height = 0, srcRectX = 0, srcRectY = 0)
+}
+
+class TagEnemyComponent {
+}
+
+class TagObjectiveComponent {
+}
+
+class TagPlayerComponent {
+}
+
+class TagProjectileComponent {
+}
+
+class TagWallComponent {
+}
+
+class TextComponent {
+  - text: string
+  - fontId: string
+  - color: Color
+  - width: int
+  - height: int
+  + TextComponent(text = "", fontId = "", color = (0,0,0,0))
+}
+
+class TransformComponent {
+  - position: Vector2
+  - scale: Vector2
+  - rotation: double
+  + TransformComponent(position = (0,0), scale = (1,1), rotation = 0.0)
+}
+
+class ControllerManager {
+  - actionKeyName: Map
+  - keyDown: Map
+  - mouseButtonName: Map
+  - mouseButtonDown: Map
+  - mousePosX: int
+  - mousePosY: int
+  + ControllerManager()
+  + ~ControllerManager()
+  + Clear(): void
+  + AddActionKey(action, keyCode): void
+  + KeyDown(keyCode): void
+  + KeyUp(keyCode): void
+  + IsActionActivated(action): bool
+  + AddMouseButton(name, buttonCode): void
+  + MouseButtonDown(buttonCode): void
+  + MouseButtonUp(buttonCode): void
+  + IsMouseButtonDown(name): bool
+  + SetMousePosition(x, y): void
+  + GetMousePosition(): (int, int)
+}
+
+interface IComponent {
+  - static int nextId
+}
+
+class Component_TComponent {
+  + static int GetId() : int
+}
+
+class Entity {
+  - int id
+  - Registry registry
+  + Entity(int id)
+  + GetId() : int
+  + Kill() : void
+  + AddComponent(args) : void
+  + RemoveComponent() : void
+  + HasComponent() : bool
+  + GetComponent() : Object
+}
+
+class System {
+  - componentSignature: Signature
+  - entities: Entity[]
+  + AddEntityToSystem(Entity) : void
+  + RemoveEntityFromSystem(Entity) : void
+  + GetSystemEntities() : Entity[]
+  + GetComponentSignature() : Signature
+  + RequireComponent() : void
+}
+
+class Registry {
+  - numEntity: int
+  - componentsPools: Object[]
+  - entityComponentSignatures: Signature[]
+  - systems: Map
+  - entitiesToBeAdded: Set
+  - entitiesToBeKilled: Set
+  - freeIds: Queue
+  + Update() : void
+  + CreateEntity() : Entity
+  + KillEntity(Entity) : void
+  + AddComponent(Entity, args) : void
+  + RemoveComponent(Entity) : void
+  + HasComponent(Entity) : bool
+  + GetComponent(Entity) : Object
+  + AddSystem(args) : void
+  + RemoveSystem() : void
+  + HasSystem() : bool
+  + GetSystem() : Object
+  + AddEntityToSystems(Entity) : void
+  + RemoveEntityFromSystems(Entity) : void
+  + ClearAllEntities() : void
+}
+
+class Signature {
+  ' bitset representation'
+}
+
+IComponent <|-- Component_TComponent
+Entity --> Registry : registry
+Registry "1" *-- "many" System : systems
+Registry "1" *-- "many" Entity : entities
+Registry "1" *-- "many" Object : component pools
+System --> Entity : contains
+System --> Signature : uses
+
+Registry --> Signature : stores signatures
+
+' Interfaces and templates simplified
+interface IEventCallback {
+  + Execute(e: Event)
+}
+
+class EventCallback_TOwner_TEvent {
+  - ownerInstance: Object
+  - callbackFunction: function
+  + Call(e: Event)
+  + EventCallback_TOwner_TEvent(ownerInstance, callbackFunction)
+}
+
+class EventManager {
+  - subscribers: Map
+  + EventManager()
+  + ~EventManager()
+  + Reset()
+  + SubscribeToEvent(ownerInstance, callbackFunction)
+  + EmitEvent(args)
+}
+
+class Event {
+  + Event()
+}
+
+IEventCallback <|.. EventCallback_TOwner_TEvent
+EventManager "1" *-- "many" IEventCallback : manages
+Event <|-- EventCallback_TOwner_TEvent
+
+class ClickEvent {
+  + buttonCode: int
+  + posX: int
+  + posY: int
+  + ClickEvent(buttonCode = 0, posX = 0, posY = 0)
+}
+
+ClickEvent --|> Event
+
+class CollisionEvent {
+  + a: Entity
+  + b: Entity
+  + CollisionEvent(a, b)
+}
+
+CollisionEvent --|> Event
+
+class Game {
+    - SDL_Window* window
+    - int windowWidth
+    - int windowHeight
+    - int milisecsPreviousFrame
+    - bool isRunning
+    - bool isPaused
+    - bool wasPaused
+
+    + SDL_Renderer* renderer
+    + std::unique_ptr<AssetManager> assetManager
+    + std::unique_ptr<EventManager> eventManager
+    + std::unique_ptr<ControllerManager> controllerManager
+    + std::unique_ptr<Registry> registry
+    + std::unique_ptr<SceneManager> sceneManager
+    + sol::state lua
+
+    - Game()
+    - ~Game()
+    - void Setup()
+    - void RunScene()
+    - void ProcessInput()
+    - void Update()
+    - void Render()
+
+    + static Game& GetInstance()
+    + void Init()
+    + void Run()
+    + void Destroy()
+}
+
+class AssetManager
+class EventManager
+class ControllerManager
+class Registry
+class SceneManager
+class sol::state
+
+Game --> AssetManager : "owns"
+Game --> EventManager : "owns"
+Game --> ControllerManager : "owns"
+Game --> Registry : "owns"
+Game --> SceneManager : "owns"
+Game --> "sol::state" : "has"
+
+
+class SceneLoader {
+    - void LoadSprites(SDL_Renderer* render, const sol::table& sprites, std::unique_ptr<AssetManager>& assetManager)
+    - void LoadFonts(const sol::table& fonts, std::unique_ptr<AssetManager>& assetManager)
+    - void LoadKeys(const sol::table& keys, std::unique_ptr<ControllerManager>& controllerManager)
+    - void LoadButtons(const sol::table& buttons, std::unique_ptr<ControllerManager>& controllerManager)
+    - void LoadEntities(sol::state& lua, const sol::table& entities, std::unique_ptr<Registry>& registry)
+    - void LoadMusic(const sol::table& musicTable, std::unique_ptr<AssetManager>& assetManager)
+
+    + SceneLoader()
+    + ~SceneLoader()
+    + void LoadScene(const std::string& scenePath, sol::state& lua,
+                     std::unique_ptr<AssetManager>& assetManager,
+                     std::unique_ptr<ControllerManager>& controllerManager,
+                     std::unique_ptr<Registry>& registry, SDL_Renderer* renderer)
+}
+
+class AssetManager
+class ControllerManager
+class Registry
+class sol::state
+class SDL_Renderer
+class sol::table
+
+SceneLoader ..> AssetManager : uses (unique_ptr&)
+SceneLoader ..> ControllerManager : uses (unique_ptr&)
+SceneLoader ..> Registry : uses (unique_ptr&)
+SceneLoader ..> sol::state : uses (reference)
+SceneLoader ..> SDL_Renderer : uses (pointer)
+SceneLoader ..> sol::table : uses (const reference)
+
+
+class SceneManager {
+    - std::map<std::string, std::string> scenes
+    - std::string nextScene
+    - bool isSceneRunning
+    - std::unique_ptr<SceneLoader> sceneLoader
+
+    + SceneManager()
+    + ~SceneManager()
+
+    + void LoadSceneFromScript(const std::string& path, sol::state& lua)
+    + void LoadScene()
+    + std::string GetNextScene() const
+    + void SetNextScene(const std::string& nextScene)
+    + bool IsSceneRunning() const
+    + void StartScene()
+    + void StopScene()
+}
+
+class SceneLoader
+class sol::state
+
+SceneManager --> SceneLoader : owns (unique_ptr)
+SceneManager ..> sol::state : uses (reference)
+
+class AnimationSystem {
+  +AnimationSystem()
+  +void Update()
+}
+
+AnimationSystem ..|> System
+
+AnimationSystem --> AnimationComponent : uses
+AnimationSystem --> SpriteComponent : uses
+AnimationSystem --> Entity : uses (via GetSystemEntities())
+
+class CleanSystem {
+  +CleanSystem()
+  +void Update()
+}
+
+CleanSystem ..|> System
+
+CleanSystem --> RigidBodyComponent : uses
+CleanSystem --> TransformComponent : uses
+CleanSystem --> Entity : uses (via GetSystemEntities())
+
+class CollisionSystem {
+  +CollisionSystem()
+  +void Update(std::unique_ptr<EventManager>&)
+  -bool CheckCircleVsCircle(Entity, Entity, TransformComponent, TransformComponent)
+  -bool CheckCircleVsPolygon(Entity, Entity, TransformComponent)
+  -float DistancePointToSegment(glm::vec2, glm::vec2, glm::vec2)
+}
+
+CollisionSystem ..|> System
+
+CollisionSystem --> TransformComponent : uses
+CollisionSystem --> CircleColliderComponent : uses
+CollisionSystem --> PolygonColliderComponent : uses
+CollisionSystem --> DepthComponent : uses
+CollisionSystem --> EventManager : emits
+CollisionSystem --> CollisionEvent : emits
+CollisionSystem --> Entity : inspects
+CollisionSystem --> glm::vec2 : uses
+
+class DamageSystem {
+    +DamageSystem()
+    +SubscribeToCollisionEvent(eventManager)
+    +OnCollision(e: CollisionEvent)
+    +DestroyAllEnemies()
+    +CreateExplosion(entity, num, scale)
+}
+System <|-- DamageSystem
+DamageSystem --> CollisionEvent : utiliza
+DamageSystem --> EventManager : suscribe
+DamageSystem --> EntitySpawnerSystem : crea entidades
+DamageSystem --> Game : accede instancia
+DamageSystem --> Entity : manipula
+
+class DefeatSystem {
+    +Defeat : bool
+    +DefeatSystem()
+    +Update()
+}
+System <|-- DefeatSystem
+DefeatSystem --> LifeComponent : requiere
+DefeatSystem --> TagObjectiveComponent : requiere
+DefeatSystem --> TagProjectileComponent : verifica
+
+class DepthSystem {
+    +DepthSystem()
+    +Update()
+}
+System <|-- DepthSystem
+DepthSystem --> DepthComponent : requiere
+DepthSystem --> TransformComponent : requiere
+DepthSystem --> RigidBodyComponent : requiere
+
+class EnemyIASystem {
+    +EnemyIASystem()
+    +SearchClosestObjective(enemy: Entity, isPlayerIncl: bool): TransformComponent
+    +SearchClosestObjectiveDepth(enemy: Entity, isPlayerIncl: bool): DepthComponent
+}
+System <|-- EnemyIASystem
+EnemyIASystem --> TransformComponent : requiere
+EnemyIASystem --> TagObjectiveComponent : usa
+EnemyIASystem --> TagPlayerComponent : usa
+EnemyIASystem --> DepthComponent : usa
+
+class EntitySpawnerSystem {
+    +EntitySpawnerSystem(scenePath: string, lua: sol::state&)
+    +GenerateEntity(registry: unique_ptr<Registry>&, idEntity: int, lua: sol::state&): Entity
+}
+System <|-- EntitySpawnerSystem
+EntitySpawnerSystem --> EntitySpawnerComponent : requiere
+EntitySpawnerSystem --> TransformComponent : requiere
+EntitySpawnerSystem --> AnimationComponent : agrega
+EntitySpawnerSystem --> CircleColliderComponent : agrega
+EntitySpawnerSystem --> RigidBodyComponent : agrega
+EntitySpawnerSystem --> ScriptComponent : agrega
+EntitySpawnerSystem --> SpriteComponent : agrega
+EntitySpawnerSystem --> DepthComponent : agrega
+EntitySpawnerSystem --> TagPlayerComponent : agrega
+EntitySpawnerSystem --> TagEnemyComponent : agrega
+EntitySpawnerSystem --> TagObjectiveComponent : agrega
+EntitySpawnerSystem --> TagProjectileComponent : agrega
+EntitySpawnerSystem --> LifeComponent : agrega
+EntitySpawnerSystem --> DamageComponent : agrega
+EntitySpawnerSystem --> sol::state : usa
+
+class HealthBarSystem {
+    +HealthBarSystem()
+    +Update(renderer: SDL_Renderer*)
+}
+System <|-- HealthBarSystem
+HealthBarSystem --> LifeComponent : requiere
+HealthBarSystem --> TagObjectiveComponent : requiere
+HealthBarSystem --> TagPlayerComponent : consulta
+HealthBarSystem --> SDL_Renderer : usa
+
+class MovementSystem {
+    +MovementSystem()
+    +Update(dt: double)
+}
+System <|-- MovementSystem
+MovementSystem --> RigidBodyComponent : requiere
+MovementSystem --> TransformComponent : requiere
+
+class RenderSystem {
+    +RenderSystem()
+    +Update(renderer: SDL_Renderer*, AssetManager: unique_ptr<AssetManager> const&)
+}
+System <|-- RenderSystem
+RenderSystem --> SpriteComponent : requiere
+RenderSystem --> TransformComponent : requiere
+RenderSystem --> DepthComponent : usa opcionalmente
+RenderSystem --> AssetManager : usa para texturas
+
+class RenderTextSystem {
+    +RenderTextSystem()
+    +Update(renderer: SDL_Renderer*, assetManager: unique_ptr<AssetManager> const&)
+    +RenderFixedText(renderer: SDL_Renderer*, font: TTF_Font*, text: string, color: SDL_Color, x: int, y: int, scaleX: float = 1.0, scaleY: float = 1.0)
+}
+System <|-- RenderTextSystem
+RenderTextSystem --> TextComponent : requiere
+RenderTextSystem --> TransformComponent : requiere
+RenderTextSystem --> AssetManager : usa para fuentes
+
+class SceneTimeSystem {
+    - int sceneStartTime
+    - int currentTime
+    - int deltaTime
+    - bool paused
+    - int pauseStartTime
+    - int totalPausedTime
+    + SceneTimeSystem()
+    + Pause()
+    + Resume()
+    + Update()
+    + GetSceneTime() : int
+    + GetDeltaTime() : int
+    + Reset()
+}
+System <|-- SceneTimeSystem
+
+class ScriptSystem {
+  + ScriptSystem()
+  + CreateLuaBinding(lua : sol::state&)
+  + Update(lua : sol::state&)
+}
+
+System <|-- ScriptSystem
+ScriptSystem ..> ScriptComponent : usa
+ScriptSystem ..> "sol::state" : usa como parámetro
+
+
+
+class UISystem {
+    +UISystem()
+    +SubscribeToClickEvent(eventManager : std::unique_ptr<EventManager>&)
+    +OnClickEvent(e : ClickEvent&)
+}
+
+UISystem --|> System
+
+UISystem ..> ClickableComponent : requires
+UISystem ..> TextComponent : requires
+UISystem ..> TransformComponent : requires
+UISystem ..> ScriptComponent : uses
+
+UISystem ..> EventManager : subscribes to
+UISystem ..> ClickEvent : handles
+
+class WallCollisionSystem {
+    +WallCollisionSystem()
+    +SubscribeToCollisionEvent(eventManager : std::unique_ptr<EventManager>&)
+    +OnCollision(e : CollisionEvent&)
+}
+
+WallCollisionSystem --|> System
+
+WallCollisionSystem ..> TagWallComponent : requires
+WallCollisionSystem ..> TagPlayerComponent : uses
+WallCollisionSystem ..> TransformComponent : uses
+WallCollisionSystem ..> RigidBodyComponent : uses
+WallCollisionSystem ..> CircleColliderComponent : uses
+
+WallCollisionSystem ..> EventManager : subscribes to
+WallCollisionSystem ..> CollisionEvent : handles
+
+class IPool {
+    +~IPool()
+}
+
+class Pool<TComponent> {
+    - std::vector<TComponent> data
+    +Pool(size: int = 1000)
+    +~Pool()
+    +IsEmpty(): bool
+    +GetSize(): int
+    +Resize(n: int): void
+    +Clear(): void
+    +Add(object: TComponent): void
+    +Set(index: int, object: TComponent): void
+    +Get(index: unsigned int): TComponent&
+    +operator[](index: unsigned int): TComponent&
+}
+Registry "1" -- "*" IPool : "has >"
+Pool --|> IPool
+
+
+LuaBinding --> Game : uses singleton
+LuaBinding --> RigidBodyComponent : accesses
+LuaBinding --> TransformComponent : accesses
+LuaBinding --> AnimationComponent : accesses
+LuaBinding --> SpriteComponent : accesses
+LuaBinding --> DepthComponent : accesses
+LuaBinding --> TextComponent : accesses
+
+LuaBinding --> EntitySpawnerSystem : calls methods
+LuaBinding --> SceneTimeSystem : calls methods
+LuaBinding --> DefeatSystem : calls methods
+LuaBinding --> EnemyIASystem : calls methods
+LuaBinding --> DamageSystem : calls methods
+@enduml

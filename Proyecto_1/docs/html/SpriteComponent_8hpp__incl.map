@@ -1,0 +1,7 @@
+<map id="src/Components/SpriteComponent.hpp" name="src/Components/SpriteComponent.hpp">
+<area shape="rect" id="Node000001" title="Component for rendering a sprite with a texture and source rectangle." alt="" coords="5,5,277,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="43,79,139,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,33,109,69,105,66,131,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="163,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,29,178,66,174,69,148,33"/>
+</map>

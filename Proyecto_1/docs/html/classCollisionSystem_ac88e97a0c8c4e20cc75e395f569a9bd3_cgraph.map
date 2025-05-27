@@ -1,0 +1,10 @@
+<map id="CollisionSystem::CheckCircleVsPolygon" name="CollisionSystem::CheckCircleVsPolygon">
+<area shape="rect" id="Node000001" title="Checks collision between a circle entity and a polygon entity." alt="" coords="5,35,217,75"/>
+<area shape="rect" id="Node000002" href="$classCollisionSystem.html#a89b25d3d3ec8d089763d2f70e89e1061" title="Calculates the shortest distance between point p and line segment ab." alt="" coords="265,5,457,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,40,252,36,252,41,218,45"/>
+<area shape="rect" id="Node000003" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="505,42,709,67"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="217,54,265,55,457,55,492,54,492,60,457,60,265,60,217,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,34,492,38,491,44,457,39"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="757,42,897,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="710,52,743,52,743,57,710,57"/>
+</map>

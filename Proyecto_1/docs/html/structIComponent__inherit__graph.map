@@ -1,0 +1,5 @@
+<map id="IComponent" name="IComponent">
+<area shape="rect" id="Node000001" title="Base class for all components to generate unique IDs." alt="" coords="59,5,153,71"/>
+<area shape="rect" id="Node000002" href="$classComponent.html" title="Template to generate unique component IDs per component type." alt="" coords="5,119,207,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,84,109,119,103,119,103,84"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="DamageSystem::DamageSystem" name="DamageSystem::DamageSystem">
+<area shape="rect" id="Node000001" title="Constructs the DamageSystem and requires entities to have CircleColliderComponent." alt="" coords="5,5,244,31"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="292,5,496,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,15,278,15,278,21,244,21"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="544,5,684,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="496,15,530,15,530,21,496,21"/>
+</map>

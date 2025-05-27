@@ -1,0 +1,33 @@
+<map id="System::GetSystemEntities" name="System::GetSystemEntities">
+<area shape="rect" id="Node000001" title="Returns all entities currently registered in this system." alt="" coords="533,373,733,398"/>
+<area shape="rect" id="Node000002" href="$classDamageSystem.html#ada8d68abb364cf909ba45707ecd2f869" title="Destroys all entities tagged as enemies (excluding players), triggering explosions." alt="" coords="269,5,472,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="625,360,612,298,586,217,567,174,544,132,516,93,484,59,467,48,470,43,487,55,520,90,549,129,572,171,591,215,617,297,631,358"/>
+<area shape="rect" id="Node000003" href="$classUISystem.html#acb417d3dd7c5e3d27544dbb39eb41ac9" title="Handles a ClickEvent by checking if the click position intersects with any UI element." alt="" coords="281,70,461,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="624,360,608,307,580,239,562,203,539,169,514,137,484,110,460,97,462,92,487,106,517,134,544,166,566,200,585,236,613,305,629,359"/>
+<area shape="rect" id="Node000005" href="$classEnemyIASystem.html#aab93eb6198490f15d9fcc2862457336c" title="Finds the closest objective&#39;s TransformComponent relative to the enemy." alt="" coords="256,120,485,160"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="619,361,599,320,570,269,531,218,484,174,464,163,466,158,487,170,535,214,574,266,604,317,624,359"/>
+<area shape="rect" id="Node000006" href="$classEnemyIASystem.html#a7d8c2bc40192137fede90facc0697c26" title="Finds the closest objective&#39;s DepthComponent relative to the enemy." alt="" coords="256,184,485,224"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="613,363,560,301,524,267,484,238,459,226,462,222,487,234,527,263,564,297,617,360"/>
+<area shape="rect" id="Node000007" href="$classAnimationSystem.html#a028f5b6784b761594a6181bcf2ee36c0" title="Updates all entities in the system by advancing their animation frames." alt="" coords="274,249,467,274"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="605,366,552,326,519,305,484,288,451,277,453,272,486,283,521,300,555,321,609,362"/>
+<area shape="rect" id="Node000008" href="$classCleanSystem.html#aba1f4cae8274811dd0dce274aa486f71" title="Updates all entities by removing those outside the horizontal bounds." alt="" coords="289,298,452,323"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="585,370,485,337,438,326,439,321,486,332,587,365"/>
+<area shape="rect" id="Node000009" href="$classDefeatSystem.html#a79955dd240f0eeded06d5e8ad7e6c837" title="Updates the system, checking all objective entities for defeat." alt="" coords="285,347,456,373"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="519,377,456,371,457,366,519,372"/>
+<area shape="rect" id="Node000010" href="$classDepthSystem.html#a7d863fa168e71ab0a1fcbe074ed50b7f" title="Updates all entities in the system, adjusting their scale and position based on velocity." alt="" coords="288,397,453,422"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="520,398,454,404,453,399,519,393"/>
+<area shape="rect" id="Node000011" href="$classMovementSystem.html#abce99ee04a69caecc85823fd16790de6" title="Updates the position of each entity based on its velocity and the delta time." alt="" coords="273,446,469,471"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="584,405,486,436,435,449,433,443,485,431,583,400"/>
+<area shape="rect" id="Node000012" href="$classHealthBarSystem.html#aa83997f4b3d0d3f6c1865166a3aa647a" title="Updates and renders health bars for all entities in the system." alt="" coords="275,495,466,521"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="608,409,554,448,486,485,448,498,446,493,484,480,551,443,605,404"/>
+<area shape="rect" id="Node000013" href="$classRenderSystem.html#a784312b5a0386ba43e39c7894dc27025" title="Renders all entities with SpriteComponent and TransformComponent." alt="" coords="285,545,457,570"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="617,411,564,473,528,507,487,534,456,547,454,542,484,530,524,502,560,470,613,407"/>
+<area shape="rect" id="Node000014" href="$classRenderTextSystem.html#a2525ec527860e6cb69a91b4b4218d26a" title="Updates and renders all text entities." alt="" coords="271,594,470,619"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="623,412,602,450,572,497,534,544,487,584,461,596,458,591,484,579,530,540,568,494,598,448,618,409"/>
+<area shape="rect" id="Node000015" href="$classScriptSystem.html#a8be209535e6748a164efe36ac6354489" title="Updates all entities with scripts by calling their Lua update functions." alt="" coords="289,643,452,669"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="627,413,609,461,580,520,540,581,515,609,487,633,453,649,451,644,484,628,511,605,535,578,575,518,604,458,622,411"/>
+<area shape="rect" id="Node000016" href="$classCollisionSystem.html#a037ec33be724e6a16c9c4d50bbb7912d" title="Updates the system by checking collisions among all entities and emitting events." alt="" coords="279,693,462,718"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="629,412,615,469,587,542,569,581,546,618,519,652,487,682,463,696,461,691,484,678,515,649,541,615,564,578,583,540,609,467,624,411"/>
+<area shape="rect" id="Node000004" href="$classUISystem.html#a48a6998f346dafe48df1a4a028947098" title="Subscribes this system to the ClickEvent in the EventManager." alt="" coords="5,63,208,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="267,85,208,85,208,80,267,80"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classIEventCallback.html" title="Abstract interface for event callback handlers." alt="" coords="5,13,124,38"/>
+<area shape="rect" id="Node000001" href="$classEventCallback.html" title="Template event callback handler connecting an owner and event type." alt="" coords="172,5,356,45"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="138,23,172,23,172,28,138,28"/>
+</map>

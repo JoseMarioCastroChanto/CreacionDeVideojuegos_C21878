@@ -1,0 +1,9 @@
+<map id="Entity::RemoveComponent" name="Entity::RemoveComponent">
+<area shape="rect" id="Node000001" title="Removes a component of type TComponent from the entity." alt="" coords="5,31,201,56"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#a983d52e579dde04607b487ed3dc800ee" title="Removes a component of type TComponent from an entity." alt="" coords="249,31,461,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,41,236,41,236,46,201,46"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="509,5,649,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="461,29,495,25,496,30,462,34"/>
+<area shape="rect" id="Node000004" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="528,55,631,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="462,52,514,58,514,63,461,57"/>
+</map>

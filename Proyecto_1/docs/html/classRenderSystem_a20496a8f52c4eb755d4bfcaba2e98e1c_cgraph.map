@@ -1,0 +1,7 @@
+<map id="RenderSystem::RenderSystem" name="RenderSystem::RenderSystem">
+<area shape="rect" id="Node000001" title="Constructs a RenderSystem and requires SpriteComponent and TransformComponent." alt="" coords="5,5,225,31"/>
+<area shape="rect" id="Node000002" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="273,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,15,259,15,259,21,225,21"/>
+<area shape="rect" id="Node000003" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="525,5,665,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,15,511,15,511,21,478,21"/>
+</map>

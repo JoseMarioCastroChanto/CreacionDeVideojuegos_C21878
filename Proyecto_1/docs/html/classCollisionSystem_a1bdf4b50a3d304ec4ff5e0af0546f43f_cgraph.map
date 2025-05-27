@@ -1,0 +1,14 @@
+<map id="CollisionSystem::CheckCircleVsCircle" name="CollisionSystem::CheckCircleVsCircle">
+<area shape="rect" id="Node000001" title="Checks collision between two circle&#45;collider entities." alt="" coords="5,23,217,63"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac79960abe9d3005efc7ce39ebedc0776" title="Returns a reference to the component of type TComponent." alt="" coords="265,5,431,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,29,251,26,252,31,218,35"/>
+<area shape="rect" id="Node000006" href="$classSystem.html#ac15b3d09b3f3c485af1364255f21dbd5" title="Adds a required component type to the system&#39;s signature." alt="" coords="479,56,683,81"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="218,46,465,60,465,65,217,52"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html#a97595f0490bb3f6439f66d89ae31a4a7" title="Returns a reference to the component of type TComponent attached to an entity." alt="" coords="490,7,671,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,16,476,16,476,21,431,21"/>
+<area shape="rect" id="Node000004" href="$classComponent.html#a44ecd04a89b4c110f6915985eef6fe68" title="Returns the unique ID associated with this component type." alt="" coords="731,56,871,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="639,29,730,50,729,56,637,35"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a478be4b3bc1cc77e5fd92a7dda6689a4" title="Returns the unique ID of the entity." alt="" coords="749,7,852,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="672,17,736,17,736,22,672,22"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="683,66,717,66,717,71,683,71"/>
+</map>

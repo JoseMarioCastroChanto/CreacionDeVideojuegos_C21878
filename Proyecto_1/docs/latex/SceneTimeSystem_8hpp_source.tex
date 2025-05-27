@@ -1,0 +1,72 @@
+\doxysection{Scene\+Time\+System.\+hpp}
+\hypertarget{SceneTimeSystem_8hpp_source}{}\label{SceneTimeSystem_8hpp_source}\index{src/Systems/SceneTimeSystem.hpp@{src/Systems/SceneTimeSystem.hpp}}
+\mbox{\hyperlink{SceneTimeSystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENETIMESYSTEM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENETIMESYSTEM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSceneTimeSystem}{SceneTimeSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSystem}{System}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pauseStartTime}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{totalPausedTime}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a00bf552c2ce0a1a9bd6a0c6696c020b2}{SceneTimeSystem}}()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}}\ =\ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}}\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pauseStartTime}}\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{totalPausedTime}}\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneTimeSystem_a450c7b3fb270b212410eccb0a43c494b}{Pause}}()\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pauseStartTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneTimeSystem_a9c0a8ed21bde935d43f71b436de3c63a}{Resume}}()\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}})\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{pauseDuration}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}()\ -\/\ \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pauseStartTime}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{totalPausedTime}}\ +=\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{pauseDuration}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneTimeSystem_a1b54a27a18d309214d8191c80cea9cac}{Update}}()\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}})\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}}\ =\ 0;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{now}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{now}}\ -\/\ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{now}};}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_a1733dcaf2596ce453f39e1831ad793ae}{GetSceneTime}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}}\ -\/\ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}}\ -\/\ \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{totalPausedTime}});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSceneTimeSystem_aea12badb97f468d09aa1c869bd74e561}{GetDeltaTime}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneTimeSystem_a478c2f518a551caa9457f368e02c5645}{Reset}}()\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}}\ =\ \mbox{\hyperlink{classSystem_ac15b3d09b3f3c485af1364255f21dbd5}{SDL\_GetTicks}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a830505759b72e51695f8155c4862de92}{currentTime}}\ =\ \mbox{\hyperlink{classSceneTimeSystem_aa273c72184414ec42ba1d0abb63a03d8}{sceneStartTime}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a3d8aa0c9312fb8d37fe2822eb195c0b1}{deltaTime}}\ =\ 0;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a78f15519a64fc6f6e5d77545a50008e8}{paused}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a2ab60a3f9807f299819dc4e012a25877}{pauseStartTime}}\ =\ 0;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSceneTimeSystem_a0784ecef1a559cbea0465d8c6dd6a02c}{totalPausedTime}}\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

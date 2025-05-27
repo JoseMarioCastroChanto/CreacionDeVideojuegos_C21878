@@ -1,0 +1,639 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{10}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{10}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}AnimationComponent()}{10}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.3}Member Data Documentation}{10}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}currentFrame}{10}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}frameSpeedRate}{10}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}isLoop}{10}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}numFrames}{10}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}startTime}{11}{subsubsection.4.1.3.5}%
+\contentsline {section}{\numberline {4.2}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{11}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{13}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{13}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}AnimationSystem()}{13}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{13}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}Update()}{13}{subsubsection.4.2.3.1}%
+\contentsline {section}{\numberline {4.3}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{14}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{15}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{15}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}AssetManager()}{15}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}$\sim $AssetManager()}{15}{subsubsection.4.3.2.2}%
+\contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{15}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}AddFont()}{15}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}AddTexture()}{16}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}ClearAssets()}{16}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}ClearMusic()}{16}{subsubsection.4.3.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}GetFont()}{17}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}GetTexture()}{17}{subsubsection.4.3.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.3.7}LoadMusic()}{17}{subsubsection.4.3.3.7}%
+\contentsline {subsubsection}{\numberline {4.3.3.8}PauseMusic()}{18}{subsubsection.4.3.3.8}%
+\contentsline {subsubsection}{\numberline {4.3.3.9}PlayMusic()}{18}{subsubsection.4.3.3.9}%
+\contentsline {subsubsection}{\numberline {4.3.3.10}ResumeMusic()}{18}{subsubsection.4.3.3.10}%
+\contentsline {subsubsection}{\numberline {4.3.3.11}StopMusic()}{18}{subsubsection.4.3.3.11}%
+\contentsline {subsection}{\numberline {4.3.4}Member Data Documentation}{19}{subsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.4.1}currentMusic}{19}{subsubsection.4.3.4.1}%
+\contentsline {subsubsection}{\numberline {4.3.4.2}fonts}{19}{subsubsection.4.3.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.4.3}musics}{19}{subsubsection.4.3.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.4.4}textures}{19}{subsubsection.4.3.4.4}%
+\contentsline {section}{\numberline {4.4}Circle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{20}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Constructor \& Destructor Documentation}{20}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}CircleColliderComponent()}{20}{subsubsection.4.4.2.1}%
+\contentsline {subsection}{\numberline {4.4.3}Member Data Documentation}{20}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}height}{20}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}radius}{20}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}width}{21}{subsubsection.4.4.3.3}%
+\contentsline {section}{\numberline {4.5}Clean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{21}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{23}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{23}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}CleanSystem()}{23}{subsubsection.4.5.2.1}%
+\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{23}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}Update()}{23}{subsubsection.4.5.3.1}%
+\contentsline {section}{\numberline {4.6}Clickable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{24}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{24}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Constructor \& Destructor Documentation}{24}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}ClickableComponent()}{24}{subsubsection.4.6.2.1}%
+\contentsline {subsection}{\numberline {4.6.3}Member Data Documentation}{24}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}isClicked}{24}{subsubsection.4.6.3.1}%
+\contentsline {section}{\numberline {4.7}Click\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event Class Reference}{25}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{26}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Constructor \& Destructor Documentation}{26}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}ClickEvent()}{26}{subsubsection.4.7.2.1}%
+\contentsline {subsection}{\numberline {4.7.3}Member Data Documentation}{26}{subsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.1}buttonCode}{26}{subsubsection.4.7.3.1}%
+\contentsline {subsubsection}{\numberline {4.7.3.2}posX}{27}{subsubsection.4.7.3.2}%
+\contentsline {subsubsection}{\numberline {4.7.3.3}posY}{27}{subsubsection.4.7.3.3}%
+\contentsline {section}{\numberline {4.8}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event Class Reference}{27}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{29}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Constructor \& Destructor Documentation}{29}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}CollisionEvent()}{29}{subsubsection.4.8.2.1}%
+\contentsline {subsection}{\numberline {4.8.3}Member Data Documentation}{29}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}a}{29}{subsubsection.4.8.3.1}%
+\contentsline {subsubsection}{\numberline {4.8.3.2}b}{29}{subsubsection.4.8.3.2}%
+\contentsline {section}{\numberline {4.9}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{30}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{32}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Constructor \& Destructor Documentation}{32}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}CollisionSystem()}{32}{subsubsection.4.9.2.1}%
+\contentsline {subsection}{\numberline {4.9.3}Member Function Documentation}{32}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}CheckCircleVsCircle()}{32}{subsubsection.4.9.3.1}%
+\contentsline {subsubsection}{\numberline {4.9.3.2}CheckCircleVsPolygon()}{33}{subsubsection.4.9.3.2}%
+\contentsline {subsubsection}{\numberline {4.9.3.3}DistancePointToSegment()}{34}{subsubsection.4.9.3.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.4}Update()}{35}{subsubsection.4.9.3.4}%
+\contentsline {section}{\numberline {4.10}Component$<$ TComponent $>$ Class Template Reference}{35}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{37}{subsection.4.10.1}%
+\contentsline {subsection}{\numberline {4.10.2}Member Function Documentation}{37}{subsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.2.1}GetId()}{37}{subsubsection.4.10.2.1}%
+\contentsline {section}{\numberline {4.11}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{38}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{40}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Constructor \& Destructor Documentation}{40}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}ControllerManager()}{40}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}$\sim $ControllerManager()}{40}{subsubsection.4.11.2.2}%
+\contentsline {subsection}{\numberline {4.11.3}Member Function Documentation}{40}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}AddActionKey()}{40}{subsubsection.4.11.3.1}%
+\contentsline {subsubsection}{\numberline {4.11.3.2}AddMouseButton()}{41}{subsubsection.4.11.3.2}%
+\contentsline {subsubsection}{\numberline {4.11.3.3}Clear()}{41}{subsubsection.4.11.3.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.4}GetMousePosition()}{41}{subsubsection.4.11.3.4}%
+\contentsline {subsubsection}{\numberline {4.11.3.5}IsActionActivated()}{41}{subsubsection.4.11.3.5}%
+\contentsline {subsubsection}{\numberline {4.11.3.6}IsMouseButtonDown()}{42}{subsubsection.4.11.3.6}%
+\contentsline {subsubsection}{\numberline {4.11.3.7}KeyDown()}{42}{subsubsection.4.11.3.7}%
+\contentsline {subsubsection}{\numberline {4.11.3.8}KeyUp()}{42}{subsubsection.4.11.3.8}%
+\contentsline {subsubsection}{\numberline {4.11.3.9}MouseButtonDown()}{42}{subsubsection.4.11.3.9}%
+\contentsline {subsubsection}{\numberline {4.11.3.10}MouseButtonUp()}{43}{subsubsection.4.11.3.10}%
+\contentsline {subsubsection}{\numberline {4.11.3.11}SetMousePosition()}{43}{subsubsection.4.11.3.11}%
+\contentsline {subsection}{\numberline {4.11.4}Member Data Documentation}{43}{subsection.4.11.4}%
+\contentsline {subsubsection}{\numberline {4.11.4.1}actionKeyName}{43}{subsubsection.4.11.4.1}%
+\contentsline {subsubsection}{\numberline {4.11.4.2}keyDown}{43}{subsubsection.4.11.4.2}%
+\contentsline {subsubsection}{\numberline {4.11.4.3}mouseButtonDown}{43}{subsubsection.4.11.4.3}%
+\contentsline {subsubsection}{\numberline {4.11.4.4}mouseButtonName}{44}{subsubsection.4.11.4.4}%
+\contentsline {subsubsection}{\numberline {4.11.4.5}mousePosX}{44}{subsubsection.4.11.4.5}%
+\contentsline {subsubsection}{\numberline {4.11.4.6}mousePosY}{44}{subsubsection.4.11.4.6}%
+\contentsline {section}{\numberline {4.12}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{44}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{45}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Constructor \& Destructor Documentation}{45}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}DamageComponent()}{45}{subsubsection.4.12.2.1}%
+\contentsline {subsection}{\numberline {4.12.3}Member Data Documentation}{45}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}damage\_dealt}{45}{subsubsection.4.12.3.1}%
+\contentsline {section}{\numberline {4.13}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{45}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{48}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Constructor \& Destructor Documentation}{48}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}DamageSystem()}{48}{subsubsection.4.13.2.1}%
+\contentsline {subsection}{\numberline {4.13.3}Member Function Documentation}{48}{subsection.4.13.3}%
+\contentsline {subsubsection}{\numberline {4.13.3.1}CreateExplosion()}{48}{subsubsection.4.13.3.1}%
+\contentsline {subsubsection}{\numberline {4.13.3.2}DestroyAllEnemies()}{49}{subsubsection.4.13.3.2}%
+\contentsline {subsubsection}{\numberline {4.13.3.3}OnCollision()}{49}{subsubsection.4.13.3.3}%
+\contentsline {subsubsection}{\numberline {4.13.3.4}SubscribeToCollisionEvent()}{50}{subsubsection.4.13.3.4}%
+\contentsline {section}{\numberline {4.14}Defeat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{50}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{53}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.2}Constructor \& Destructor Documentation}{53}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}DefeatSystem()}{53}{subsubsection.4.14.2.1}%
+\contentsline {subsection}{\numberline {4.14.3}Member Function Documentation}{53}{subsection.4.14.3}%
+\contentsline {subsubsection}{\numberline {4.14.3.1}Update()}{53}{subsubsection.4.14.3.1}%
+\contentsline {subsection}{\numberline {4.14.4}Member Data Documentation}{54}{subsection.4.14.4}%
+\contentsline {subsubsection}{\numberline {4.14.4.1}Defeat}{54}{subsubsection.4.14.4.1}%
+\contentsline {section}{\numberline {4.15}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{54}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{55}{subsection.4.15.1}%
+\contentsline {subsection}{\numberline {4.15.2}Constructor \& Destructor Documentation}{55}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}DepthComponent()}{55}{subsubsection.4.15.2.1}%
+\contentsline {subsection}{\numberline {4.15.3}Member Data Documentation}{55}{subsection.4.15.3}%
+\contentsline {subsubsection}{\numberline {4.15.3.1}max\_scale}{55}{subsubsection.4.15.3.1}%
+\contentsline {subsubsection}{\numberline {4.15.3.2}min\_scale}{55}{subsubsection.4.15.3.2}%
+\contentsline {subsubsection}{\numberline {4.15.3.3}original\_width}{55}{subsubsection.4.15.3.3}%
+\contentsline {subsubsection}{\numberline {4.15.3.4}reference\_point}{56}{subsubsection.4.15.3.4}%
+\contentsline {subsubsection}{\numberline {4.15.3.5}scale\_speed}{56}{subsubsection.4.15.3.5}%
+\contentsline {section}{\numberline {4.16}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{56}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{58}{subsection.4.16.1}%
+\contentsline {subsection}{\numberline {4.16.2}Constructor \& Destructor Documentation}{58}{subsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.1}DepthSystem()}{58}{subsubsection.4.16.2.1}%
+\contentsline {subsection}{\numberline {4.16.3}Member Function Documentation}{58}{subsection.4.16.3}%
+\contentsline {subsubsection}{\numberline {4.16.3.1}Update()}{58}{subsubsection.4.16.3.1}%
+\contentsline {section}{\numberline {4.17}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IASystem Class Reference}{59}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{61}{subsection.4.17.1}%
+\contentsline {subsection}{\numberline {4.17.2}Constructor \& Destructor Documentation}{61}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}EnemyIASystem()}{61}{subsubsection.4.17.2.1}%
+\contentsline {subsection}{\numberline {4.17.3}Member Function Documentation}{61}{subsection.4.17.3}%
+\contentsline {subsubsection}{\numberline {4.17.3.1}SearchClosestObjective()}{61}{subsubsection.4.17.3.1}%
+\contentsline {subsubsection}{\numberline {4.17.3.2}SearchClosestObjectiveDepth()}{62}{subsubsection.4.17.3.2}%
+\contentsline {section}{\numberline {4.18}Entity Class Reference}{63}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Detailed Description}{64}{subsection.4.18.1}%
+\contentsline {subsection}{\numberline {4.18.2}Constructor \& Destructor Documentation}{64}{subsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.1}Entity()}{64}{subsubsection.4.18.2.1}%
+\contentsline {subsection}{\numberline {4.18.3}Member Function Documentation}{65}{subsection.4.18.3}%
+\contentsline {subsubsection}{\numberline {4.18.3.1}AddComponent()}{65}{subsubsection.4.18.3.1}%
+\contentsline {subsubsection}{\numberline {4.18.3.2}GetComponent()}{65}{subsubsection.4.18.3.2}%
+\contentsline {subsubsection}{\numberline {4.18.3.3}GetId()}{67}{subsubsection.4.18.3.3}%
+\contentsline {subsubsection}{\numberline {4.18.3.4}HasComponent()}{68}{subsubsection.4.18.3.4}%
+\contentsline {subsubsection}{\numberline {4.18.3.5}Kill()}{69}{subsubsection.4.18.3.5}%
+\contentsline {subsubsection}{\numberline {4.18.3.6}operator"!=()}{70}{subsubsection.4.18.3.6}%
+\contentsline {subsubsection}{\numberline {4.18.3.7}operator$<$()}{70}{subsubsection.4.18.3.7}%
+\contentsline {subsubsection}{\numberline {4.18.3.8}operator==()}{70}{subsubsection.4.18.3.8}%
+\contentsline {subsubsection}{\numberline {4.18.3.9}operator$>$()}{70}{subsubsection.4.18.3.9}%
+\contentsline {subsubsection}{\numberline {4.18.3.10}RemoveComponent()}{70}{subsubsection.4.18.3.10}%
+\contentsline {subsection}{\numberline {4.18.4}Member Data Documentation}{70}{subsection.4.18.4}%
+\contentsline {subsubsection}{\numberline {4.18.4.1}id}{70}{subsubsection.4.18.4.1}%
+\contentsline {subsubsection}{\numberline {4.18.4.2}registry}{71}{subsubsection.4.18.4.2}%
+\contentsline {section}{\numberline {4.19}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{71}{section.4.19}%
+\contentsline {subsection}{\numberline {4.19.1}Detailed Description}{71}{subsection.4.19.1}%
+\contentsline {subsection}{\numberline {4.19.2}Constructor \& Destructor Documentation}{71}{subsection.4.19.2}%
+\contentsline {subsubsection}{\numberline {4.19.2.1}EntitySpawnerComponent()}{71}{subsubsection.4.19.2.1}%
+\contentsline {subsection}{\numberline {4.19.3}Member Data Documentation}{72}{subsection.4.19.3}%
+\contentsline {subsubsection}{\numberline {4.19.3.1}is\_player}{72}{subsubsection.4.19.3.1}%
+\contentsline {section}{\numberline {4.20}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{72}{section.4.20}%
+\contentsline {subsection}{\numberline {4.20.1}Detailed Description}{74}{subsection.4.20.1}%
+\contentsline {subsection}{\numberline {4.20.2}Constructor \& Destructor Documentation}{74}{subsection.4.20.2}%
+\contentsline {subsubsection}{\numberline {4.20.2.1}EntitySpawnerSystem()}{74}{subsubsection.4.20.2.1}%
+\contentsline {subsection}{\numberline {4.20.3}Member Function Documentation}{74}{subsection.4.20.3}%
+\contentsline {subsubsection}{\numberline {4.20.3.1}GenerateEntity()}{74}{subsubsection.4.20.3.1}%
+\contentsline {subsection}{\numberline {4.20.4}Member Data Documentation}{75}{subsection.4.20.4}%
+\contentsline {subsubsection}{\numberline {4.20.4.1}entities}{75}{subsubsection.4.20.4.1}%
+\contentsline {section}{\numberline {4.21}Event Class Reference}{75}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Detailed Description}{76}{subsection.4.21.1}%
+\contentsline {subsection}{\numberline {4.21.2}Constructor \& Destructor Documentation}{76}{subsection.4.21.2}%
+\contentsline {subsubsection}{\numberline {4.21.2.1}Event()}{76}{subsubsection.4.21.2.1}%
+\contentsline {section}{\numberline {4.22}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Callback$<$ TOwner, TEvent $>$ Class Template Reference}{77}{section.4.22}%
+\contentsline {subsection}{\numberline {4.22.1}Detailed Description}{79}{subsection.4.22.1}%
+\contentsline {subsection}{\numberline {4.22.2}Member Typedef Documentation}{79}{subsection.4.22.2}%
+\contentsline {subsubsection}{\numberline {4.22.2.1}CallbackFunction}{79}{subsubsection.4.22.2.1}%
+\contentsline {subsection}{\numberline {4.22.3}Constructor \& Destructor Documentation}{79}{subsection.4.22.3}%
+\contentsline {subsubsection}{\numberline {4.22.3.1}EventCallback()}{79}{subsubsection.4.22.3.1}%
+\contentsline {subsection}{\numberline {4.22.4}Member Function Documentation}{80}{subsection.4.22.4}%
+\contentsline {subsubsection}{\numberline {4.22.4.1}Call()}{80}{subsubsection.4.22.4.1}%
+\contentsline {subsection}{\numberline {4.22.5}Member Data Documentation}{80}{subsection.4.22.5}%
+\contentsline {subsubsection}{\numberline {4.22.5.1}callbackFunction}{80}{subsubsection.4.22.5.1}%
+\contentsline {subsubsection}{\numberline {4.22.5.2}ownerInstance}{80}{subsubsection.4.22.5.2}%
+\contentsline {section}{\numberline {4.23}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{80}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Detailed Description}{81}{subsection.4.23.1}%
+\contentsline {subsection}{\numberline {4.23.2}Constructor \& Destructor Documentation}{81}{subsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.1}EventManager()}{81}{subsubsection.4.23.2.1}%
+\contentsline {subsubsection}{\numberline {4.23.2.2}$\sim $EventManager()}{82}{subsubsection.4.23.2.2}%
+\contentsline {subsection}{\numberline {4.23.3}Member Function Documentation}{82}{subsection.4.23.3}%
+\contentsline {subsubsection}{\numberline {4.23.3.1}EmitEvent()}{82}{subsubsection.4.23.3.1}%
+\contentsline {subsubsection}{\numberline {4.23.3.2}Reset()}{82}{subsubsection.4.23.3.2}%
+\contentsline {subsubsection}{\numberline {4.23.3.3}SubscribeToEvent()}{82}{subsubsection.4.23.3.3}%
+\contentsline {subsection}{\numberline {4.23.4}Member Data Documentation}{83}{subsection.4.23.4}%
+\contentsline {subsubsection}{\numberline {4.23.4.1}subscribers}{83}{subsubsection.4.23.4.1}%
+\contentsline {section}{\numberline {4.24}Game Class Reference}{83}{section.4.24}%
+\contentsline {subsection}{\numberline {4.24.1}Detailed Description}{86}{subsection.4.24.1}%
+\contentsline {subsection}{\numberline {4.24.2}Constructor \& Destructor Documentation}{86}{subsection.4.24.2}%
+\contentsline {subsubsection}{\numberline {4.24.2.1}Game()}{86}{subsubsection.4.24.2.1}%
+\contentsline {subsubsection}{\numberline {4.24.2.2}$\sim $Game()}{86}{subsubsection.4.24.2.2}%
+\contentsline {subsection}{\numberline {4.24.3}Member Function Documentation}{86}{subsection.4.24.3}%
+\contentsline {subsubsection}{\numberline {4.24.3.1}Destroy()}{86}{subsubsection.4.24.3.1}%
+\contentsline {subsubsection}{\numberline {4.24.3.2}GetInstance()}{87}{subsubsection.4.24.3.2}%
+\contentsline {subsubsection}{\numberline {4.24.3.3}Init()}{87}{subsubsection.4.24.3.3}%
+\contentsline {subsubsection}{\numberline {4.24.3.4}ProcessInput()}{88}{subsubsection.4.24.3.4}%
+\contentsline {subsubsection}{\numberline {4.24.3.5}Render()}{88}{subsubsection.4.24.3.5}%
+\contentsline {subsubsection}{\numberline {4.24.3.6}Run()}{89}{subsubsection.4.24.3.6}%
+\contentsline {subsubsection}{\numberline {4.24.3.7}RunScene()}{89}{subsubsection.4.24.3.7}%
+\contentsline {subsubsection}{\numberline {4.24.3.8}Setup()}{90}{subsubsection.4.24.3.8}%
+\contentsline {subsubsection}{\numberline {4.24.3.9}Update()}{90}{subsubsection.4.24.3.9}%
+\contentsline {subsection}{\numberline {4.24.4}Member Data Documentation}{91}{subsection.4.24.4}%
+\contentsline {subsubsection}{\numberline {4.24.4.1}assetManager}{91}{subsubsection.4.24.4.1}%
+\contentsline {subsubsection}{\numberline {4.24.4.2}controllerManager}{91}{subsubsection.4.24.4.2}%
+\contentsline {subsubsection}{\numberline {4.24.4.3}eventManager}{91}{subsubsection.4.24.4.3}%
+\contentsline {subsubsection}{\numberline {4.24.4.4}isPaused}{91}{subsubsection.4.24.4.4}%
+\contentsline {subsubsection}{\numberline {4.24.4.5}isRunning}{91}{subsubsection.4.24.4.5}%
+\contentsline {subsubsection}{\numberline {4.24.4.6}lua}{91}{subsubsection.4.24.4.6}%
+\contentsline {subsubsection}{\numberline {4.24.4.7}milisecsPreviousFrame}{91}{subsubsection.4.24.4.7}%
+\contentsline {subsubsection}{\numberline {4.24.4.8}registry}{92}{subsubsection.4.24.4.8}%
+\contentsline {subsubsection}{\numberline {4.24.4.9}renderer}{92}{subsubsection.4.24.4.9}%
+\contentsline {subsubsection}{\numberline {4.24.4.10}sceneManager}{92}{subsubsection.4.24.4.10}%
+\contentsline {subsubsection}{\numberline {4.24.4.11}wasPaused}{92}{subsubsection.4.24.4.11}%
+\contentsline {subsubsection}{\numberline {4.24.4.12}window}{92}{subsubsection.4.24.4.12}%
+\contentsline {subsubsection}{\numberline {4.24.4.13}windowHeight}{92}{subsubsection.4.24.4.13}%
+\contentsline {subsubsection}{\numberline {4.24.4.14}windowWidth}{92}{subsubsection.4.24.4.14}%
+\contentsline {section}{\numberline {4.25}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{93}{section.4.25}%
+\contentsline {subsection}{\numberline {4.25.1}Detailed Description}{95}{subsection.4.25.1}%
+\contentsline {subsection}{\numberline {4.25.2}Constructor \& Destructor Documentation}{95}{subsection.4.25.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.1}HealthBarSystem()}{95}{subsubsection.4.25.2.1}%
+\contentsline {subsection}{\numberline {4.25.3}Member Function Documentation}{95}{subsection.4.25.3}%
+\contentsline {subsubsection}{\numberline {4.25.3.1}Update()}{95}{subsubsection.4.25.3.1}%
+\contentsline {section}{\numberline {4.26}IComponent Struct Reference}{96}{section.4.26}%
+\contentsline {subsection}{\numberline {4.26.1}Detailed Description}{97}{subsection.4.26.1}%
+\contentsline {subsection}{\numberline {4.26.2}Member Data Documentation}{97}{subsection.4.26.2}%
+\contentsline {subsubsection}{\numberline {4.26.2.1}nextId}{97}{subsubsection.4.26.2.1}%
+\contentsline {section}{\numberline {4.27}IEvent\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Callback Class Reference}{97}{section.4.27}%
+\contentsline {subsection}{\numberline {4.27.1}Detailed Description}{98}{subsection.4.27.1}%
+\contentsline {subsection}{\numberline {4.27.2}Constructor \& Destructor Documentation}{98}{subsection.4.27.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.1}$\sim $IEventCallback()}{98}{subsubsection.4.27.2.1}%
+\contentsline {subsection}{\numberline {4.27.3}Member Function Documentation}{98}{subsection.4.27.3}%
+\contentsline {subsubsection}{\numberline {4.27.3.1}Call()}{98}{subsubsection.4.27.3.1}%
+\contentsline {subsubsection}{\numberline {4.27.3.2}Execute()}{99}{subsubsection.4.27.3.2}%
+\contentsline {section}{\numberline {4.28}IPool Class Reference}{99}{section.4.28}%
+\contentsline {subsection}{\numberline {4.28.1}Detailed Description}{101}{subsection.4.28.1}%
+\contentsline {subsection}{\numberline {4.28.2}Constructor \& Destructor Documentation}{101}{subsection.4.28.2}%
+\contentsline {subsubsection}{\numberline {4.28.2.1}$\sim $IPool()}{101}{subsubsection.4.28.2.1}%
+\contentsline {section}{\numberline {4.29}Life\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{101}{section.4.29}%
+\contentsline {subsection}{\numberline {4.29.1}Detailed Description}{102}{subsection.4.29.1}%
+\contentsline {subsection}{\numberline {4.29.2}Constructor \& Destructor Documentation}{102}{subsection.4.29.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.1}LifeComponent()}{102}{subsubsection.4.29.2.1}%
+\contentsline {subsection}{\numberline {4.29.3}Member Data Documentation}{102}{subsection.4.29.3}%
+\contentsline {subsubsection}{\numberline {4.29.3.1}life\_count}{102}{subsubsection.4.29.3.1}%
+\contentsline {subsubsection}{\numberline {4.29.3.2}life\_max}{102}{subsubsection.4.29.3.2}%
+\contentsline {section}{\numberline {4.30}Movement\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{102}{section.4.30}%
+\contentsline {subsection}{\numberline {4.30.1}Detailed Description}{105}{subsection.4.30.1}%
+\contentsline {subsection}{\numberline {4.30.2}Constructor \& Destructor Documentation}{105}{subsection.4.30.2}%
+\contentsline {subsubsection}{\numberline {4.30.2.1}MovementSystem()}{105}{subsubsection.4.30.2.1}%
+\contentsline {subsection}{\numberline {4.30.3}Member Function Documentation}{105}{subsection.4.30.3}%
+\contentsline {subsubsection}{\numberline {4.30.3.1}Update()}{105}{subsubsection.4.30.3.1}%
+\contentsline {section}{\numberline {4.31}Polygon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{106}{section.4.31}%
+\contentsline {subsection}{\numberline {4.31.1}Detailed Description}{106}{subsection.4.31.1}%
+\contentsline {subsection}{\numberline {4.31.2}Constructor \& Destructor Documentation}{106}{subsection.4.31.2}%
+\contentsline {subsubsection}{\numberline {4.31.2.1}PolygonColliderComponent()}{106}{subsubsection.4.31.2.1}%
+\contentsline {subsection}{\numberline {4.31.3}Member Data Documentation}{107}{subsection.4.31.3}%
+\contentsline {subsubsection}{\numberline {4.31.3.1}vertices}{107}{subsubsection.4.31.3.1}%
+\contentsline {section}{\numberline {4.32}Pool$<$ TComponent $>$ Class Template Reference}{107}{section.4.32}%
+\contentsline {subsection}{\numberline {4.32.1}Detailed Description}{109}{subsection.4.32.1}%
+\contentsline {subsection}{\numberline {4.32.2}Constructor \& Destructor Documentation}{109}{subsection.4.32.2}%
+\contentsline {subsubsection}{\numberline {4.32.2.1}Pool()}{109}{subsubsection.4.32.2.1}%
+\contentsline {subsubsection}{\numberline {4.32.2.2}$\sim $Pool()}{109}{subsubsection.4.32.2.2}%
+\contentsline {subsection}{\numberline {4.32.3}Member Function Documentation}{110}{subsection.4.32.3}%
+\contentsline {subsubsection}{\numberline {4.32.3.1}Add()}{110}{subsubsection.4.32.3.1}%
+\contentsline {subsubsection}{\numberline {4.32.3.2}Clear()}{110}{subsubsection.4.32.3.2}%
+\contentsline {subsubsection}{\numberline {4.32.3.3}Get()}{110}{subsubsection.4.32.3.3}%
+\contentsline {subsubsection}{\numberline {4.32.3.4}GetSize()}{110}{subsubsection.4.32.3.4}%
+\contentsline {subsubsection}{\numberline {4.32.3.5}IsEmpty()}{111}{subsubsection.4.32.3.5}%
+\contentsline {subsubsection}{\numberline {4.32.3.6}operator[]()}{111}{subsubsection.4.32.3.6}%
+\contentsline {subsubsection}{\numberline {4.32.3.7}Resize()}{111}{subsubsection.4.32.3.7}%
+\contentsline {subsubsection}{\numberline {4.32.3.8}Set()}{111}{subsubsection.4.32.3.8}%
+\contentsline {subsection}{\numberline {4.32.4}Member Data Documentation}{112}{subsection.4.32.4}%
+\contentsline {subsubsection}{\numberline {4.32.4.1}data}{112}{subsubsection.4.32.4.1}%
+\contentsline {section}{\numberline {4.33}Registry Class Reference}{112}{section.4.33}%
+\contentsline {subsection}{\numberline {4.33.1}Detailed Description}{114}{subsection.4.33.1}%
+\contentsline {subsection}{\numberline {4.33.2}Constructor \& Destructor Documentation}{115}{subsection.4.33.2}%
+\contentsline {subsubsection}{\numberline {4.33.2.1}Registry()}{115}{subsubsection.4.33.2.1}%
+\contentsline {subsubsection}{\numberline {4.33.2.2}$\sim $Registry()}{115}{subsubsection.4.33.2.2}%
+\contentsline {subsection}{\numberline {4.33.3}Member Function Documentation}{115}{subsection.4.33.3}%
+\contentsline {subsubsection}{\numberline {4.33.3.1}AddComponent()}{115}{subsubsection.4.33.3.1}%
+\contentsline {subsubsection}{\numberline {4.33.3.2}AddEntityToSystems()}{116}{subsubsection.4.33.3.2}%
+\contentsline {subsubsection}{\numberline {4.33.3.3}AddSystem()}{116}{subsubsection.4.33.3.3}%
+\contentsline {subsubsection}{\numberline {4.33.3.4}ClearAllEntities()}{117}{subsubsection.4.33.3.4}%
+\contentsline {subsubsection}{\numberline {4.33.3.5}CreateEntity()}{117}{subsubsection.4.33.3.5}%
+\contentsline {subsubsection}{\numberline {4.33.3.6}GetComponent()}{117}{subsubsection.4.33.3.6}%
+\contentsline {subsubsection}{\numberline {4.33.3.7}GetSystem()}{119}{subsubsection.4.33.3.7}%
+\contentsline {subsubsection}{\numberline {4.33.3.8}HasComponent()}{119}{subsubsection.4.33.3.8}%
+\contentsline {subsubsection}{\numberline {4.33.3.9}HasSystem()}{120}{subsubsection.4.33.3.9}%
+\contentsline {subsubsection}{\numberline {4.33.3.10}KillEntity()}{120}{subsubsection.4.33.3.10}%
+\contentsline {subsubsection}{\numberline {4.33.3.11}RemoveAllComponentsOfEntity()}{120}{subsubsection.4.33.3.11}%
+\contentsline {subsubsection}{\numberline {4.33.3.12}RemoveComponent()}{121}{subsubsection.4.33.3.12}%
+\contentsline {subsubsection}{\numberline {4.33.3.13}RemoveEntityFromSystems()}{121}{subsubsection.4.33.3.13}%
+\contentsline {subsubsection}{\numberline {4.33.3.14}RemoveSystem()}{122}{subsubsection.4.33.3.14}%
+\contentsline {subsubsection}{\numberline {4.33.3.15}Update()}{122}{subsubsection.4.33.3.15}%
+\contentsline {subsection}{\numberline {4.33.4}Member Data Documentation}{123}{subsection.4.33.4}%
+\contentsline {subsubsection}{\numberline {4.33.4.1}componentsPools}{123}{subsubsection.4.33.4.1}%
+\contentsline {subsubsection}{\numberline {4.33.4.2}entitiesToBeAdded}{123}{subsubsection.4.33.4.2}%
+\contentsline {subsubsection}{\numberline {4.33.4.3}entitiesToBeKilled}{123}{subsubsection.4.33.4.3}%
+\contentsline {subsubsection}{\numberline {4.33.4.4}entityComponentSignatures}{123}{subsubsection.4.33.4.4}%
+\contentsline {subsubsection}{\numberline {4.33.4.5}freeIds}{123}{subsubsection.4.33.4.5}%
+\contentsline {subsubsection}{\numberline {4.33.4.6}numEntity}{123}{subsubsection.4.33.4.6}%
+\contentsline {subsubsection}{\numberline {4.33.4.7}systems}{123}{subsubsection.4.33.4.7}%
+\contentsline {section}{\numberline {4.34}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{124}{section.4.34}%
+\contentsline {subsection}{\numberline {4.34.1}Detailed Description}{126}{subsection.4.34.1}%
+\contentsline {subsection}{\numberline {4.34.2}Constructor \& Destructor Documentation}{126}{subsection.4.34.2}%
+\contentsline {subsubsection}{\numberline {4.34.2.1}RenderSystem()}{126}{subsubsection.4.34.2.1}%
+\contentsline {subsection}{\numberline {4.34.3}Member Function Documentation}{126}{subsection.4.34.3}%
+\contentsline {subsubsection}{\numberline {4.34.3.1}Update()}{126}{subsubsection.4.34.3.1}%
+\contentsline {section}{\numberline {4.35}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{127}{section.4.35}%
+\contentsline {subsection}{\numberline {4.35.1}Detailed Description}{129}{subsection.4.35.1}%
+\contentsline {subsection}{\numberline {4.35.2}Constructor \& Destructor Documentation}{129}{subsection.4.35.2}%
+\contentsline {subsubsection}{\numberline {4.35.2.1}RenderTextSystem()}{129}{subsubsection.4.35.2.1}%
+\contentsline {subsection}{\numberline {4.35.3}Member Function Documentation}{129}{subsection.4.35.3}%
+\contentsline {subsubsection}{\numberline {4.35.3.1}RenderFixedText()}{129}{subsubsection.4.35.3.1}%
+\contentsline {subsubsection}{\numberline {4.35.3.2}Update()}{130}{subsubsection.4.35.3.2}%
+\contentsline {section}{\numberline {4.36}Rigid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Body\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{131}{section.4.36}%
+\contentsline {subsection}{\numberline {4.36.1}Detailed Description}{131}{subsection.4.36.1}%
+\contentsline {subsection}{\numberline {4.36.2}Constructor \& Destructor Documentation}{131}{subsection.4.36.2}%
+\contentsline {subsubsection}{\numberline {4.36.2.1}RigidBodyComponent()}{131}{subsubsection.4.36.2.1}%
+\contentsline {subsection}{\numberline {4.36.3}Member Data Documentation}{132}{subsection.4.36.3}%
+\contentsline {subsubsection}{\numberline {4.36.3.1}velocity}{132}{subsubsection.4.36.3.1}%
+\contentsline {section}{\numberline {4.37}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader Class Reference}{132}{section.4.37}%
+\contentsline {subsection}{\numberline {4.37.1}Detailed Description}{133}{subsection.4.37.1}%
+\contentsline {subsection}{\numberline {4.37.2}Constructor \& Destructor Documentation}{133}{subsection.4.37.2}%
+\contentsline {subsubsection}{\numberline {4.37.2.1}SceneLoader()}{133}{subsubsection.4.37.2.1}%
+\contentsline {subsubsection}{\numberline {4.37.2.2}$\sim $SceneLoader()}{133}{subsubsection.4.37.2.2}%
+\contentsline {subsection}{\numberline {4.37.3}Member Function Documentation}{133}{subsection.4.37.3}%
+\contentsline {subsubsection}{\numberline {4.37.3.1}LoadButtons()}{133}{subsubsection.4.37.3.1}%
+\contentsline {subsubsection}{\numberline {4.37.3.2}LoadEntities()}{134}{subsubsection.4.37.3.2}%
+\contentsline {subsubsection}{\numberline {4.37.3.3}LoadFonts()}{134}{subsubsection.4.37.3.3}%
+\contentsline {subsubsection}{\numberline {4.37.3.4}LoadKeys()}{135}{subsubsection.4.37.3.4}%
+\contentsline {subsubsection}{\numberline {4.37.3.5}LoadMusic()}{135}{subsubsection.4.37.3.5}%
+\contentsline {subsubsection}{\numberline {4.37.3.6}LoadScene()}{136}{subsubsection.4.37.3.6}%
+\contentsline {subsubsection}{\numberline {4.37.3.7}LoadSprites()}{137}{subsubsection.4.37.3.7}%
+\contentsline {section}{\numberline {4.38}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{137}{section.4.38}%
+\contentsline {subsection}{\numberline {4.38.1}Detailed Description}{139}{subsection.4.38.1}%
+\contentsline {subsection}{\numberline {4.38.2}Constructor \& Destructor Documentation}{139}{subsection.4.38.2}%
+\contentsline {subsubsection}{\numberline {4.38.2.1}SceneManager()}{139}{subsubsection.4.38.2.1}%
+\contentsline {subsubsection}{\numberline {4.38.2.2}$\sim $SceneManager()}{139}{subsubsection.4.38.2.2}%
+\contentsline {subsection}{\numberline {4.38.3}Member Function Documentation}{139}{subsection.4.38.3}%
+\contentsline {subsubsection}{\numberline {4.38.3.1}GetNextScene()}{139}{subsubsection.4.38.3.1}%
+\contentsline {subsubsection}{\numberline {4.38.3.2}IsSceneRunning()}{140}{subsubsection.4.38.3.2}%
+\contentsline {subsubsection}{\numberline {4.38.3.3}LoadScene()}{140}{subsubsection.4.38.3.3}%
+\contentsline {subsubsection}{\numberline {4.38.3.4}LoadSceneFromScript()}{140}{subsubsection.4.38.3.4}%
+\contentsline {subsubsection}{\numberline {4.38.3.5}SetNextScene()}{140}{subsubsection.4.38.3.5}%
+\contentsline {subsubsection}{\numberline {4.38.3.6}StartScene()}{141}{subsubsection.4.38.3.6}%
+\contentsline {subsubsection}{\numberline {4.38.3.7}StopScene()}{141}{subsubsection.4.38.3.7}%
+\contentsline {subsection}{\numberline {4.38.4}Member Data Documentation}{141}{subsection.4.38.4}%
+\contentsline {subsubsection}{\numberline {4.38.4.1}isSceneRunning}{141}{subsubsection.4.38.4.1}%
+\contentsline {subsubsection}{\numberline {4.38.4.2}nextScene}{141}{subsubsection.4.38.4.2}%
+\contentsline {subsubsection}{\numberline {4.38.4.3}sceneLoader}{141}{subsubsection.4.38.4.3}%
+\contentsline {subsubsection}{\numberline {4.38.4.4}scenes}{142}{subsubsection.4.38.4.4}%
+\contentsline {section}{\numberline {4.39}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{142}{section.4.39}%
+\contentsline {subsection}{\numberline {4.39.1}Detailed Description}{144}{subsection.4.39.1}%
+\contentsline {subsection}{\numberline {4.39.2}Constructor \& Destructor Documentation}{145}{subsection.4.39.2}%
+\contentsline {subsubsection}{\numberline {4.39.2.1}SceneTimeSystem()}{145}{subsubsection.4.39.2.1}%
+\contentsline {subsection}{\numberline {4.39.3}Member Function Documentation}{145}{subsection.4.39.3}%
+\contentsline {subsubsection}{\numberline {4.39.3.1}GetDeltaTime()}{145}{subsubsection.4.39.3.1}%
+\contentsline {subsubsection}{\numberline {4.39.3.2}GetSceneTime()}{145}{subsubsection.4.39.3.2}%
+\contentsline {subsubsection}{\numberline {4.39.3.3}Pause()}{145}{subsubsection.4.39.3.3}%
+\contentsline {subsubsection}{\numberline {4.39.3.4}Reset()}{146}{subsubsection.4.39.3.4}%
+\contentsline {subsubsection}{\numberline {4.39.3.5}Resume()}{146}{subsubsection.4.39.3.5}%
+\contentsline {subsubsection}{\numberline {4.39.3.6}Update()}{146}{subsubsection.4.39.3.6}%
+\contentsline {subsection}{\numberline {4.39.4}Member Data Documentation}{146}{subsection.4.39.4}%
+\contentsline {subsubsection}{\numberline {4.39.4.1}currentTime}{146}{subsubsection.4.39.4.1}%
+\contentsline {subsubsection}{\numberline {4.39.4.2}deltaTime}{147}{subsubsection.4.39.4.2}%
+\contentsline {subsubsection}{\numberline {4.39.4.3}paused}{147}{subsubsection.4.39.4.3}%
+\contentsline {subsubsection}{\numberline {4.39.4.4}pauseStartTime}{147}{subsubsection.4.39.4.4}%
+\contentsline {subsubsection}{\numberline {4.39.4.5}sceneStartTime}{147}{subsubsection.4.39.4.5}%
+\contentsline {subsubsection}{\numberline {4.39.4.6}totalPausedTime}{147}{subsubsection.4.39.4.6}%
+\contentsline {section}{\numberline {4.40}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{147}{section.4.40}%
+\contentsline {subsection}{\numberline {4.40.1}Detailed Description}{148}{subsection.4.40.1}%
+\contentsline {subsection}{\numberline {4.40.2}Constructor \& Destructor Documentation}{148}{subsection.4.40.2}%
+\contentsline {subsubsection}{\numberline {4.40.2.1}ScriptComponent()}{148}{subsubsection.4.40.2.1}%
+\contentsline {subsection}{\numberline {4.40.3}Member Data Documentation}{148}{subsection.4.40.3}%
+\contentsline {subsubsection}{\numberline {4.40.3.1}onClick}{148}{subsubsection.4.40.3.1}%
+\contentsline {subsubsection}{\numberline {4.40.3.2}update}{148}{subsubsection.4.40.3.2}%
+\contentsline {section}{\numberline {4.41}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{149}{section.4.41}%
+\contentsline {subsection}{\numberline {4.41.1}Detailed Description}{151}{subsection.4.41.1}%
+\contentsline {subsection}{\numberline {4.41.2}Constructor \& Destructor Documentation}{151}{subsection.4.41.2}%
+\contentsline {subsubsection}{\numberline {4.41.2.1}ScriptSystem()}{151}{subsubsection.4.41.2.1}%
+\contentsline {subsection}{\numberline {4.41.3}Member Function Documentation}{151}{subsection.4.41.3}%
+\contentsline {subsubsection}{\numberline {4.41.3.1}CreateLuaBinding()}{151}{subsubsection.4.41.3.1}%
+\contentsline {subsubsection}{\numberline {4.41.3.2}Update()}{152}{subsubsection.4.41.3.2}%
+\contentsline {section}{\numberline {4.42}Sprite\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{153}{section.4.42}%
+\contentsline {subsection}{\numberline {4.42.1}Detailed Description}{154}{subsection.4.42.1}%
+\contentsline {subsection}{\numberline {4.42.2}Constructor \& Destructor Documentation}{154}{subsection.4.42.2}%
+\contentsline {subsubsection}{\numberline {4.42.2.1}SpriteComponent()}{154}{subsubsection.4.42.2.1}%
+\contentsline {subsection}{\numberline {4.42.3}Member Data Documentation}{154}{subsection.4.42.3}%
+\contentsline {subsubsection}{\numberline {4.42.3.1}height}{154}{subsubsection.4.42.3.1}%
+\contentsline {subsubsection}{\numberline {4.42.3.2}srcRect}{154}{subsubsection.4.42.3.2}%
+\contentsline {subsubsection}{\numberline {4.42.3.3}textureId}{154}{subsubsection.4.42.3.3}%
+\contentsline {subsubsection}{\numberline {4.42.3.4}width}{155}{subsubsection.4.42.3.4}%
+\contentsline {section}{\numberline {4.43}System Class Reference}{155}{section.4.43}%
+\contentsline {subsection}{\numberline {4.43.1}Detailed Description}{156}{subsection.4.43.1}%
+\contentsline {subsection}{\numberline {4.43.2}Constructor \& Destructor Documentation}{156}{subsection.4.43.2}%
+\contentsline {subsubsection}{\numberline {4.43.2.1}System()}{156}{subsubsection.4.43.2.1}%
+\contentsline {subsubsection}{\numberline {4.43.2.2}$\sim $System()}{156}{subsubsection.4.43.2.2}%
+\contentsline {subsection}{\numberline {4.43.3}Member Function Documentation}{156}{subsection.4.43.3}%
+\contentsline {subsubsection}{\numberline {4.43.3.1}AddEntityToSystem()}{156}{subsubsection.4.43.3.1}%
+\contentsline {subsubsection}{\numberline {4.43.3.2}GetComponentSignature()}{157}{subsubsection.4.43.3.2}%
+\contentsline {subsubsection}{\numberline {4.43.3.3}GetSystemEntities()}{157}{subsubsection.4.43.3.3}%
+\contentsline {subsubsection}{\numberline {4.43.3.4}RemoveEntityFromSystem()}{158}{subsubsection.4.43.3.4}%
+\contentsline {subsubsection}{\numberline {4.43.3.5}RequireComponent()}{158}{subsubsection.4.43.3.5}%
+\contentsline {subsection}{\numberline {4.43.4}Member Data Documentation}{159}{subsection.4.43.4}%
+\contentsline {subsubsection}{\numberline {4.43.4.1}componentSignature}{159}{subsubsection.4.43.4.1}%
+\contentsline {subsubsection}{\numberline {4.43.4.2}entities}{160}{subsubsection.4.43.4.2}%
+\contentsline {section}{\numberline {4.44}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{160}{section.4.44}%
+\contentsline {section}{\numberline {4.45}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objective\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{160}{section.4.45}%
+\contentsline {section}{\numberline {4.46}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{161}{section.4.46}%
+\contentsline {section}{\numberline {4.47}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Projectile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{161}{section.4.47}%
+\contentsline {section}{\numberline {4.48}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{162}{section.4.48}%
+\contentsline {section}{\numberline {4.49}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{162}{section.4.49}%
+\contentsline {subsection}{\numberline {4.49.1}Detailed Description}{163}{subsection.4.49.1}%
+\contentsline {subsection}{\numberline {4.49.2}Constructor \& Destructor Documentation}{163}{subsection.4.49.2}%
+\contentsline {subsubsection}{\numberline {4.49.2.1}TextComponent()}{163}{subsubsection.4.49.2.1}%
+\contentsline {subsection}{\numberline {4.49.3}Member Data Documentation}{163}{subsection.4.49.3}%
+\contentsline {subsubsection}{\numberline {4.49.3.1}color}{163}{subsubsection.4.49.3.1}%
+\contentsline {subsubsection}{\numberline {4.49.3.2}fontId}{164}{subsubsection.4.49.3.2}%
+\contentsline {subsubsection}{\numberline {4.49.3.3}height}{164}{subsubsection.4.49.3.3}%
+\contentsline {subsubsection}{\numberline {4.49.3.4}text}{164}{subsubsection.4.49.3.4}%
+\contentsline {subsubsection}{\numberline {4.49.3.5}width}{164}{subsubsection.4.49.3.5}%
+\contentsline {section}{\numberline {4.50}Transform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Struct Reference}{164}{section.4.50}%
+\contentsline {subsection}{\numberline {4.50.1}Detailed Description}{165}{subsection.4.50.1}%
+\contentsline {subsection}{\numberline {4.50.2}Constructor \& Destructor Documentation}{165}{subsection.4.50.2}%
+\contentsline {subsubsection}{\numberline {4.50.2.1}TransformComponent()}{165}{subsubsection.4.50.2.1}%
+\contentsline {subsection}{\numberline {4.50.3}Member Data Documentation}{165}{subsection.4.50.3}%
+\contentsline {subsubsection}{\numberline {4.50.3.1}position}{165}{subsubsection.4.50.3.1}%
+\contentsline {subsubsection}{\numberline {4.50.3.2}rotation}{166}{subsubsection.4.50.3.2}%
+\contentsline {subsubsection}{\numberline {4.50.3.3}scale}{166}{subsubsection.4.50.3.3}%
+\contentsline {section}{\numberline {4.51}UISystem Class Reference}{166}{section.4.51}%
+\contentsline {subsection}{\numberline {4.51.1}Detailed Description}{168}{subsection.4.51.1}%
+\contentsline {subsection}{\numberline {4.51.2}Constructor \& Destructor Documentation}{168}{subsection.4.51.2}%
+\contentsline {subsubsection}{\numberline {4.51.2.1}UISystem()}{168}{subsubsection.4.51.2.1}%
+\contentsline {subsection}{\numberline {4.51.3}Member Function Documentation}{168}{subsection.4.51.3}%
+\contentsline {subsubsection}{\numberline {4.51.3.1}OnClickEvent()}{168}{subsubsection.4.51.3.1}%
+\contentsline {subsubsection}{\numberline {4.51.3.2}SubscribeToClickEvent()}{169}{subsubsection.4.51.3.2}%
+\contentsline {section}{\numberline {4.52}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System Class Reference}{169}{section.4.52}%
+\contentsline {subsection}{\numberline {4.52.1}Detailed Description}{172}{subsection.4.52.1}%
+\contentsline {subsection}{\numberline {4.52.2}Constructor \& Destructor Documentation}{172}{subsection.4.52.2}%
+\contentsline {subsubsection}{\numberline {4.52.2.1}WallCollisionSystem()}{172}{subsubsection.4.52.2.1}%
+\contentsline {subsection}{\numberline {4.52.3}Member Function Documentation}{172}{subsection.4.52.3}%
+\contentsline {subsubsection}{\numberline {4.52.3.1}OnCollision()}{172}{subsubsection.4.52.3.1}%
+\contentsline {subsubsection}{\numberline {4.52.3.2}SubscribeToCollisionEvent()}{173}{subsubsection.4.52.3.2}%
+\contentsline {chapter}{\numberline {5}File Documentation}{175}{chapter.5}%
+\contentsline {section}{\numberline {5.1}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{175}{section.5.1}%
+\contentsline {section}{\numberline {5.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.hpp File Reference}{175}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{176}{section.5.3}%
+\contentsline {section}{\numberline {5.4}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Binding/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lua\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Binding.hpp File Reference}{177}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{178}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Function Documentation}{179}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}CreateDynamicEntity()}{179}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}DestroyAllEnemies()}{179}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}GetDefeat()}{180}{subsubsection.5.4.2.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.4}GetDeltaTime()}{181}{subsubsection.5.4.2.4}%
+\contentsline {subsubsection}{\numberline {5.4.2.5}GetDepth()}{181}{subsubsection.5.4.2.5}%
+\contentsline {subsubsection}{\numberline {5.4.2.6}GetPositionX()}{182}{subsubsection.5.4.2.6}%
+\contentsline {subsubsection}{\numberline {5.4.2.7}GetPositionY()}{183}{subsubsection.5.4.2.7}%
+\contentsline {subsubsection}{\numberline {5.4.2.8}GetScale()}{184}{subsubsection.5.4.2.8}%
+\contentsline {subsubsection}{\numberline {5.4.2.9}GetTime()}{185}{subsubsection.5.4.2.9}%
+\contentsline {subsubsection}{\numberline {5.4.2.10}GetVelocity()}{185}{subsubsection.5.4.2.10}%
+\contentsline {subsubsection}{\numberline {5.4.2.11}GoToScene()}{186}{subsubsection.5.4.2.11}%
+\contentsline {subsubsection}{\numberline {5.4.2.12}IsActionActivated()}{187}{subsubsection.5.4.2.12}%
+\contentsline {subsubsection}{\numberline {5.4.2.13}Kill()}{188}{subsubsection.5.4.2.13}%
+\contentsline {subsubsection}{\numberline {5.4.2.14}SearchObjectiveDepth()}{188}{subsubsection.5.4.2.14}%
+\contentsline {subsubsection}{\numberline {5.4.2.15}SearchObjectiveScale()}{190}{subsubsection.5.4.2.15}%
+\contentsline {subsubsection}{\numberline {5.4.2.16}SearchObjectiveX()}{191}{subsubsection.5.4.2.16}%
+\contentsline {subsubsection}{\numberline {5.4.2.17}SearchObjectiveY()}{192}{subsubsection.5.4.2.17}%
+\contentsline {subsubsection}{\numberline {5.4.2.18}SetNumFrames()}{193}{subsubsection.5.4.2.18}%
+\contentsline {subsubsection}{\numberline {5.4.2.19}SetPosition()}{194}{subsubsection.5.4.2.19}%
+\contentsline {subsubsection}{\numberline {5.4.2.20}SetScale()}{195}{subsubsection.5.4.2.20}%
+\contentsline {subsubsection}{\numberline {5.4.2.21}SetSrcRect()}{195}{subsubsection.5.4.2.21}%
+\contentsline {subsubsection}{\numberline {5.4.2.22}SetText()}{196}{subsubsection.5.4.2.22}%
+\contentsline {subsubsection}{\numberline {5.4.2.23}SetTimer()}{197}{subsubsection.5.4.2.23}%
+\contentsline {subsubsection}{\numberline {5.4.2.24}SetVelocity()}{197}{subsubsection.5.4.2.24}%
+\contentsline {section}{\numberline {5.5}Lua\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Binding.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{198}{section.5.5}%
+\contentsline {section}{\numberline {5.6}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{200}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{201}{subsection.5.6.1}%
+\contentsline {section}{\numberline {5.7}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{202}{section.5.7}%
+\contentsline {section}{\numberline {5.8}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{202}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{202}{subsection.5.8.1}%
+\contentsline {section}{\numberline {5.9}Circle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{203}{section.5.9}%
+\contentsline {section}{\numberline {5.10}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clickable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{203}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{203}{subsection.5.10.1}%
+\contentsline {section}{\numberline {5.11}Clickable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{204}{section.5.11}%
+\contentsline {section}{\numberline {5.12}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{204}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{204}{subsection.5.12.1}%
+\contentsline {section}{\numberline {5.13}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{205}{section.5.13}%
+\contentsline {section}{\numberline {5.14}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{205}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{206}{subsection.5.14.1}%
+\contentsline {section}{\numberline {5.15}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{206}{section.5.15}%
+\contentsline {section}{\numberline {5.16}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{206}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{207}{subsection.5.16.1}%
+\contentsline {section}{\numberline {5.17}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{207}{section.5.17}%
+\contentsline {section}{\numberline {5.18}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Life\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{207}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{208}{subsection.5.18.1}%
+\contentsline {section}{\numberline {5.19}Life\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{208}{section.5.19}%
+\contentsline {section}{\numberline {5.20}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Polygon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{208}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{209}{subsection.5.20.1}%
+\contentsline {section}{\numberline {5.21}Polygon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{209}{section.5.21}%
+\contentsline {section}{\numberline {5.22}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rigid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Body\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{209}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{210}{subsection.5.22.1}%
+\contentsline {section}{\numberline {5.23}Rigid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Body\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{210}{section.5.23}%
+\contentsline {section}{\numberline {5.24}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{211}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{211}{subsection.5.24.1}%
+\contentsline {section}{\numberline {5.25}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{212}{section.5.25}%
+\contentsline {section}{\numberline {5.26}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sprite\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{212}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{213}{subsection.5.26.1}%
+\contentsline {section}{\numberline {5.27}Sprite\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{213}{section.5.27}%
+\contentsline {section}{\numberline {5.28}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{213}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{214}{subsection.5.28.1}%
+\contentsline {section}{\numberline {5.29}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{214}{section.5.29}%
+\contentsline {section}{\numberline {5.30}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objective\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{214}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{214}{subsection.5.30.1}%
+\contentsline {section}{\numberline {5.31}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objective\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{215}{section.5.31}%
+\contentsline {section}{\numberline {5.32}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{215}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{215}{subsection.5.32.1}%
+\contentsline {section}{\numberline {5.33}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{215}{section.5.33}%
+\contentsline {section}{\numberline {5.34}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Projectile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{216}{section.5.34}%
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{216}{subsection.5.34.1}%
+\contentsline {section}{\numberline {5.35}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Projectile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{216}{section.5.35}%
+\contentsline {section}{\numberline {5.36}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{217}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{217}{subsection.5.36.1}%
+\contentsline {section}{\numberline {5.37}Tag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{217}{section.5.37}%
+\contentsline {section}{\numberline {5.38}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{218}{section.5.38}%
+\contentsline {section}{\numberline {5.39}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{218}{section.5.39}%
+\contentsline {section}{\numberline {5.40}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.hpp File Reference}{219}{section.5.40}%
+\contentsline {section}{\numberline {5.41}Transform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{220}{section.5.41}%
+\contentsline {section}{\numberline {5.42}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{220}{section.5.42}%
+\contentsline {section}{\numberline {5.43}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.hpp File Reference}{220}{section.5.43}%
+\contentsline {section}{\numberline {5.44}Controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{221}{section.5.44}%
+\contentsline {section}{\numberline {5.45}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ECS/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ECS.cpp File Reference}{222}{section.5.45}%
+\contentsline {section}{\numberline {5.46}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ECS/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ECS.hpp File Reference}{223}{section.5.46}%
+\contentsline {subsection}{\numberline {5.46.1}Typedef Documentation}{224}{subsection.5.46.1}%
+\contentsline {subsubsection}{\numberline {5.46.1.1}Signature}{224}{subsubsection.5.46.1.1}%
+\contentsline {subsection}{\numberline {5.46.2}Variable Documentation}{224}{subsection.5.46.2}%
+\contentsline {subsubsection}{\numberline {5.46.2.1}MAX\_COMPONENTS}{224}{subsubsection.5.46.2.1}%
+\contentsline {section}{\numberline {5.47}ECS.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{224}{section.5.47}%
+\contentsline {section}{\numberline {5.48}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event.hpp File Reference}{227}{section.5.48}%
+\contentsline {section}{\numberline {5.49}Event.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{228}{section.5.49}%
+\contentsline {section}{\numberline {5.50}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.hpp File Reference}{228}{section.5.50}%
+\contentsline {subsection}{\numberline {5.50.1}Typedef Documentation}{229}{subsection.5.50.1}%
+\contentsline {subsubsection}{\numberline {5.50.1.1}HandlerList}{229}{subsubsection.5.50.1.1}%
+\contentsline {section}{\numberline {5.51}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{229}{section.5.51}%
+\contentsline {section}{\numberline {5.52}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Events/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Click\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event.hpp File Reference}{230}{section.5.52}%
+\contentsline {section}{\numberline {5.53}Click\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{231}{section.5.53}%
+\contentsline {section}{\numberline {5.54}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Events/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event.hpp File Reference}{231}{section.5.54}%
+\contentsline {section}{\numberline {5.55}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{232}{section.5.55}%
+\contentsline {section}{\numberline {5.56}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.cpp File Reference}{233}{section.5.56}%
+\contentsline {section}{\numberline {5.57}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.hpp File Reference}{233}{section.5.57}%
+\contentsline {subsection}{\numberline {5.57.1}Variable Documentation}{234}{subsection.5.57.1}%
+\contentsline {subsubsection}{\numberline {5.57.1.1}FPS}{234}{subsubsection.5.57.1.1}%
+\contentsline {subsubsection}{\numberline {5.57.1.2}MILISECS\_PER\_FRAME}{234}{subsubsection.5.57.1.2}%
+\contentsline {section}{\numberline {5.58}Game.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{235}{section.5.58}%
+\contentsline {section}{\numberline {5.59}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.cpp File Reference}{235}{section.5.59}%
+\contentsline {subsection}{\numberline {5.59.1}Function Documentation}{236}{subsection.5.59.1}%
+\contentsline {subsubsection}{\numberline {5.59.1.1}main()}{236}{subsubsection.5.59.1.1}%
+\contentsline {section}{\numberline {5.60}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.cpp File Reference}{236}{section.5.60}%
+\contentsline {section}{\numberline {5.61}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.hpp File Reference}{237}{section.5.61}%
+\contentsline {section}{\numberline {5.62}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{238}{section.5.62}%
+\contentsline {section}{\numberline {5.63}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cpp File Reference}{238}{section.5.63}%
+\contentsline {section}{\numberline {5.64}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.hpp File Reference}{239}{section.5.64}%
+\contentsline {section}{\numberline {5.65}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{239}{section.5.65}%
+\contentsline {section}{\numberline {5.66}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{240}{section.5.66}%
+\contentsline {section}{\numberline {5.67}Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{241}{section.5.67}%
+\contentsline {section}{\numberline {5.68}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{241}{section.5.68}%
+\contentsline {subsection}{\numberline {5.68.1}Macro Definition Documentation}{242}{subsection.5.68.1}%
+\contentsline {subsubsection}{\numberline {5.68.1.1}CLEANTSYSTEM\_HPP}{242}{subsubsection.5.68.1.1}%
+\contentsline {section}{\numberline {5.69}Clean\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{242}{section.5.69}%
+\contentsline {section}{\numberline {5.70}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{242}{section.5.70}%
+\contentsline {subsection}{\numberline {5.70.1}Macro Definition Documentation}{243}{subsection.5.70.1}%
+\contentsline {subsubsection}{\numberline {5.70.1.1}COLLISIONSYSTEM\_HPP}{243}{subsubsection.5.70.1.1}%
+\contentsline {section}{\numberline {5.71}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{244}{section.5.71}%
+\contentsline {section}{\numberline {5.72}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{245}{section.5.72}%
+\contentsline {section}{\numberline {5.73}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{246}{section.5.73}%
+\contentsline {section}{\numberline {5.74}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Defeat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{247}{section.5.74}%
+\contentsline {section}{\numberline {5.75}Defeat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{248}{section.5.75}%
+\contentsline {section}{\numberline {5.76}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{249}{section.5.76}%
+\contentsline {subsection}{\numberline {5.76.1}Macro Definition Documentation}{250}{subsection.5.76.1}%
+\contentsline {subsubsection}{\numberline {5.76.1.1}DEPTHTSYSTEM\_HPP}{250}{subsubsection.5.76.1.1}%
+\contentsline {section}{\numberline {5.77}Depth\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{250}{section.5.77}%
+\contentsline {section}{\numberline {5.78}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IASystem.hpp File Reference}{250}{section.5.78}%
+\contentsline {section}{\numberline {5.79}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IASystem.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{251}{section.5.79}%
+\contentsline {section}{\numberline {5.80}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{252}{section.5.80}%
+\contentsline {section}{\numberline {5.81}Entity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Spawner\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{254}{section.5.81}%
+\contentsline {section}{\numberline {5.82}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{256}{section.5.82}%
+\contentsline {section}{\numberline {5.83}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{257}{section.5.83}%
+\contentsline {section}{\numberline {5.84}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Movement\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{258}{section.5.84}%
+\contentsline {section}{\numberline {5.85}Movement\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{258}{section.5.85}%
+\contentsline {section}{\numberline {5.86}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{259}{section.5.86}%
+\contentsline {section}{\numberline {5.87}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{260}{section.5.87}%
+\contentsline {section}{\numberline {5.88}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{261}{section.5.88}%
+\contentsline {section}{\numberline {5.89}Render\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Text\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{261}{section.5.89}%
+\contentsline {section}{\numberline {5.90}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{262}{section.5.90}%
+\contentsline {section}{\numberline {5.91}Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{263}{section.5.91}%
+\contentsline {section}{\numberline {5.92}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{264}{section.5.92}%
+\contentsline {section}{\numberline {5.93}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{265}{section.5.93}%
+\contentsline {section}{\numberline {5.94}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UISystem.hpp File Reference}{266}{section.5.94}%
+\contentsline {section}{\numberline {5.95}UISystem.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{267}{section.5.95}%
+\contentsline {section}{\numberline {5.96}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Systems/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.hpp File Reference}{267}{section.5.96}%
+\contentsline {section}{\numberline {5.97}Wall\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{268}{section.5.97}%
+\contentsline {section}{\numberline {5.98}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utils/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pool.hpp File Reference}{269}{section.5.98}%
+\contentsline {section}{\numberline {5.99}Pool.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{270}{section.5.99}%
+\contentsline {chapter}{Index}{273}{section*.490}%
